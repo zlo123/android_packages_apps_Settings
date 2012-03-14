@@ -4120,6 +4120,10 @@
     <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
+    <!-- About device screen, Cpu info. -->
+    <string name="cpu_info">CPU</string>
+    <!-- About phone screen, Free memory info -->
+    <string name="mem_info">Memory</string>
 
     <!-- *
          *
