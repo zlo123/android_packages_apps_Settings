@@ -1358,6 +1358,10 @@
 
         <activity android:name=".cyanogenmod.LockscreenTargets" />
 
+        <activity android:name=".cyanogenmod.LockscreenInterface" />
+
+        <activity android:name=".cyanogenmod.Weather" />
+
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>

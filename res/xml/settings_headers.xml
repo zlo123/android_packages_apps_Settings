@@ -68,8 +68,21 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <header android:icon="@drawable/ic_settings_themes"
-            android:title="@string/themes_title">
+    <!-- INTERFACE -->
+    <header android:title="@string/header_category_interface" />
+
+    <!-- Lockscreen -->
+    <header
+        android:id="@+id/lock_screen_settings"
+        android:fragment="com.android.settings.cyanogenmod.LockscreenInterface"
+        android:title="@string/lock_screen_title"
+        android:icon="@drawable/ic_settings_lockscreen" />
+
+    <!-- Themes -->
+    <header
+        android:id="@+id/themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/themes_settings_title">
         <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.tmobile.themechooser"
@@ -167,7 +180,6 @@
         android:icon="@drawable/ic_settings_backup"
         android:title="@string/privacy_settings"
         android:id="@+id/privacy_settings" />
-
 
     <!-- SYSTEM -->
     <header android:title="@string/header_category_system" />
