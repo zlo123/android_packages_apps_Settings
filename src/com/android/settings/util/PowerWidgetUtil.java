@@ -17,7 +17,7 @@
 package com.android.settings.util;
 
 import android.content.Context;
-// import android.net.wimax.WimaxHelper;
+import android.net.wimax.WimaxHelper;
 import android.provider.Settings;
 
 import android.telephony.TelephonyManager;
@@ -49,7 +49,8 @@ public class PowerWidgetUtil {
     public static final String BUTTON_MEDIA_PREVIOUS = "toggleMediaPrevious";
     public static final String BUTTON_MEDIA_NEXT = "toggleMediaNext";
     public static final String BUTTON_LTE = "toggleLte";
-//    public static final String BUTTON_WIMAX = "toggleWimax";
+    public static final String BUTTON_WIMAX = "toggleWimax";
+    public static final String BUTTON_PROFILE = "toggleProfile";
 
     public static final HashMap<String, ButtonInfo> BUTTONS = new HashMap<String, ButtonInfo>();
     static {
@@ -112,9 +113,12 @@ public class PowerWidgetUtil {
                     BUTTON_LTE, R.string.title_toggle_lte,
                     "com.android.systemui:drawable/stat_lte_on"));
         }
-       /* BUTTONS.put(BUTTON_WIMAX, new PowerWidgetUtil.ButtonInfo(
+        BUTTONS.put(BUTTON_WIMAX, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_WIMAX, R.string.title_toggle_wimax,
-                "com.android.systemui:drawable/stat_wimax_on")); */
+                "com.android.systemui:drawable/stat_wimax_on"));
+        BUTTONS.put(BUTTON_PROFILE, new PowerWidgetUtil.ButtonInfo(
+                BUTTON_PROFILE, R.string.title_toggle_profile,
+                "com.android.systemui:drawable/ic_settings_profile"));
     }
 
     private static final String BUTTON_DELIMITER = "|";
@@ -130,9 +134,9 @@ public class PowerWidgetUtil {
                 Settings.System.WIDGET_BUTTONS);
         if (buttons == null) {
             buttons = BUTTONS_DEFAULT;
-            /* if (WimaxHelper.isWimaxSupported(context)) { buttons +=
+            if (WimaxHelper.isWimaxSupported(context)) { buttons +=
             BUTTON_DELIMITER + BUTTON_WIMAX; }
-             if (context.getResources().getBoolean(R.bools.has_led_flash)) {
+            /* if (context.getResources().getBoolean(R.bools.has_led_flash)) {
                 buttons += BUTTON_DELIMITER + BUTTON_FLASHLIGHT;
             } */
         }
