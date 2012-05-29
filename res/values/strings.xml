@@ -1160,8 +1160,6 @@
     <string name="slide_lock_timeout_delay_summary">How long to delay before enabling screen lock when screen times out</string>
     <string name="slide_lock_screenoff_delay_title">Screen turned off delay</string>
     <string name="slide_lock_screenoff_delay_summary">How long to delay before enabling screen lock when screen is turned off</string>
-    <string name="slide_lock_timeout_delay_title">Delay after timeout</string>
-    <string name="slide_lock_screenoff_delay_title">Delay after turned off</string>
     <string name="slide_lock_delay_none">None</string>
     <string name="slide_lock_delay_1s">1 second</string>
     <string name="slide_lock_delay_5s">5 seconds</string>
