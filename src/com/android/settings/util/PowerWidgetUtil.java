@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class PowerWidgetUtil {
     public static final String BUTTON_WIFI = "toggleWifi";

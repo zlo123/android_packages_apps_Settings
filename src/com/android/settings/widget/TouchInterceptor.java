@@ -32,7 +32,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class TouchInterceptor extends ListView {
 

@@ -47,7 +47,7 @@ import android.widget.TextView;
 import com.android.internal.telephony.Phone;
 import com.android.settings.util.PowerWidgetUtil;
 import com.android.settings.widget.TouchInterceptor;
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class PowerWidget extends PreferenceFragment implements
         OnPreferenceChangeListener {

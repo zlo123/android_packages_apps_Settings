@@ -27,7 +27,7 @@ import com.android.internal.app.AlertActivity;
 import com.android.internal.app.AlertController;
 
 import com.android.settings.util.CMDProcessor;
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

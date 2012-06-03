@@ -45,7 +45,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.internal.telephony.Phone;
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.widget.TouchInterceptor;
 
 public class StatusBarToggles extends PreferenceFragment implements

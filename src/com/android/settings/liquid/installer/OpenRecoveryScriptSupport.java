@@ -36,7 +36,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.widgets.Md5Preference;

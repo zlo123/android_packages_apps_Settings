@@ -28,7 +28,7 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class StatusBarBattery extends PreferenceFragment implements
         OnPreferenceChangeListener {

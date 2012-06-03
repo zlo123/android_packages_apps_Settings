@@ -29,7 +29,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.android.settings.util.KernelUtils;
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class ColorTuningPreference extends DialogPreference {
 

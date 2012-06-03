@@ -22,9 +22,9 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 
 import com.android.settings.liquid.SettingsPreferenceFragment;
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
-public class About extends SettingsPreferenceFragment {
+public class AboutLiquid extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 

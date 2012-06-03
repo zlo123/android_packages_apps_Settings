@@ -24,7 +24,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class NavBarItemPreference extends ListPreference {
 

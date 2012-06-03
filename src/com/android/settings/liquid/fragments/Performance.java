@@ -30,7 +30,7 @@ import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.tools.VoltageControl;
 import com.android.settings.util.CMDProcessor;

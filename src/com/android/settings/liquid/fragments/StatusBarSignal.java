@@ -25,7 +25,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import android.util.Log;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

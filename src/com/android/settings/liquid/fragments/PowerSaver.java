@@ -33,7 +33,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.internal.telephony.Phone;
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class PowerSaver extends PreferenceFragment implements
         OnPreferenceChangeListener {

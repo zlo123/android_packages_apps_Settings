@@ -20,7 +20,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settingsliquid.SettingsPreferenceFragment;
 import com.android.settings.util.ShortcutPickerHelper;
 

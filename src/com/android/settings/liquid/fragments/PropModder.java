@@ -54,7 +54,7 @@ import java.io.IOException;
 import java.io.File;
 import java.io.FileWriter;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.Helpers;

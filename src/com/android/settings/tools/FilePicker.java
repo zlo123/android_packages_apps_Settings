@@ -39,7 +39,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class FilePicker extends ListActivity {
 

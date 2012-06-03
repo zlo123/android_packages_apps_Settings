@@ -24,7 +24,7 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class PowerMenu extends PreferenceFragment {
 

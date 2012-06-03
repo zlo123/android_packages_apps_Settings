@@ -54,7 +54,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.util.CMDProcessor;
 
 public class VoltageControl extends Activity {

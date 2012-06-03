@@ -54,7 +54,7 @@ import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Toast;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

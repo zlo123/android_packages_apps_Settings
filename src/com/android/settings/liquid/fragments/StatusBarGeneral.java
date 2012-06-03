@@ -43,7 +43,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Toast;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 import com.android.settings.util.Helpers;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.widget.SeekBarPreference;

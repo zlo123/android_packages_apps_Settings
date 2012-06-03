@@ -32,7 +32,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
 
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 public class ShortcutPickerHelper {
 

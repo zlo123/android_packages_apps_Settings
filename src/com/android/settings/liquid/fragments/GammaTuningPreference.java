@@ -28,7 +28,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.android.settings.util.KernelUtils;
-import com.android.settings.liquid.R;
+import com.android.settings.R;
 
 /**
  * Special preference type that allows configuration of both the ring volume and

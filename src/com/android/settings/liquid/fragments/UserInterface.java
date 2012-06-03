@@ -34,7 +34,7 @@ import android.provider.Settings;
 import android.text.Spannable;
 import android.widget.EditText;
 
-import com.android.settings.liquid.control.R;
+import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.Helpers;
