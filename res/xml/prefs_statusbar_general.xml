@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/statusbar_expanded_title"
+        android:key="statusbar_expanded_cat">
+
+        <Preference
+            android:key="user_background"
+            android:title="@string/user_background_title"
+            android:summary="@string/user_background_summary" />
+
+        <com.liquid.control.widgets.SeekBarPreference
+            android:key="statusbar_alpha"
+            android:title="@string/statusbar_alpha_title" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="statusbar_windowshade_background_color"
+            android:title="@string/statusbar_windowshade_background_title"
+            android:defaultValue="#FF000000" />
+                                    
+        <CheckBoxPreference
+            android:key="show_date"
+            android:title="@string/statusbar_show_date_title"
+            android:summary="@string/statusbar_show_date_summary"
+            android:disableDependentsState="true" />
+
+        <CheckBoxPreference
+            android:key="date_behavior"
+            android:title="@string/title_date_behavior"
+            android:summary="@string/summary_date_behavior"
+            android:dependency="show_date" />
+
+        <ListPreference
+            android:key="date_format"
+            android:entries="@array/statusbar_date_format"
+            android:entryValues="@array/statusbar_date_format_values"
+            android:title="@string/statusbar_date_format_title"
+            android:summary="@string/statusbar_date_format_summary"
+            android:dependency="show_date" />
+
+        <CheckBoxPreference
+            android:key="show_aosp_settings"
+            android:title="@string/statusbar_show_aosp_title"
+            android:summary="@string/statusbar_show_aosp_summary"
+            android:disableDependentsState="true" />
+
+        <CheckBoxPreference
+            android:key="settings_behavior"
+            android:title="@string/title_settings_behavior"
+            android:summary="@string/summary_settings_behavior"
+            android:dependency="show_aosp_settings" />
+
+        <CheckBoxPreference
+            android:key="auto_hide_toggles"
+            android:title="@string/title_auto_hide_toggles"
+            android:summary="@string/summary_auto_hide_toggles"
+            android:dependency="show_aosp_settings" />
+
+        <CheckBoxPreference
+            android:key="show_liquid_control"
+            android:title="@string/statusbar_show_liquid_control_title"
+            android:summary="@string/statusbar_show_liquid_control_summary" />
+
+        <CheckBoxPreference
+            android:key="status_bar_brightness_toggle"
+            android:title="@string/title_status_bar_brightness_toggle"
+            android:summary="@string/summary_status_bar_brightness_toggle" />
+
+        <CheckBoxPreference
+            android:key="adb_icon" 
+            android:title="@string/adb_icon_title"
+            android:summary="@string/adb_icon_summary" />
+        
+        <ListPreference
+            android:key="status_bar_fontsize"
+            android:title="@string/statusbar_fontsize"
+            android:summary="@string/statusbar_fontsize_summary"
+            android:entries="@array/statusbar_fontsize_entries"
+            android:entryValues="@array/statusbar_fontsize_values" />
+
+        <ListPreference
+            android:key="windowshade_handle"
+            android:title="@string/windowshade_handle_title"
+            android:summary="@string/windowshade_handle_summary"
+            android:entries="@array/windowshade_handle_entries"
+            android:entryValues="@array/windowshade_handle_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="statusbar_unexpanded"
+        android:title="@string/statusbar_unexpanded_title" >
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="statusbar_unexpanded_color"
+            android:title="@string/statusbar_unexpanded_color_title"
+            android:defaultValue="#ff000000" />
+
+        <com.liquid.control.widgets.SeekBarPreference
+            android:key="statusbar_handle_alpha"
+            android:title="@string/statusbar_handle_alpha_title" />
+
+        <ListPreference
+            android:key="status_bar_layout"
+            android:title="@string/statusbar_layout"
+            android:summary="@string/statusbar_layout_summary"
+            android:entries="@array/statusbar_layout_entries"
+            android:entryValues="@array/statusbar_layout_values" />
+
+        <com.liquid.control.widgets.SeekBarPreference
+            android:key="notification_alpha"
+            android:title="@string/notification_alpha_title" />
+            
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="notification_color" 
+            android:title="@string/notification_color_title"
+            android:defaultValue="#ff33b5e5" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
