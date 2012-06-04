@@ -583,7 +583,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
 
     private void runRestore() {
         // call the file picker then apply in the result
-        Intent open_file = new Intent(mContext, com.liquid.control.tools.FilePicker.class);
+        Intent open_file = new Intent(mContext, com.android.settings.tools.FilePicker.class);
         open_file.putExtra(OPEN_FILENAME, BLANK);
         // false because we are not saving
         open_file.putExtra("action", false);
@@ -1033,7 +1033,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
                 askTheme.setNegativeButton(getString(R.string.negative_theme_button), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         // just run a normal backup
-                        Intent save_file = new Intent(mContext, com.liquid.control.tools.FilePicker.class);
+                        Intent save_file = new Intent(mContext, com.android.settings.tools.FilePicker.class);
                         save_file.putExtra(SAVE_FILENAME, BLANK);
                         // true because we are saving
                         save_file.putExtra("action", true);

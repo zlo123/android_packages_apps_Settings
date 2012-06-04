@@ -14,10 +14,19 @@
      limitations under the License.
 -->
 
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical" >
 
-    <size android:width="44dip" android:height="44dip" />
-    <solid android:color="@android:color/transparent" />
+    <com.liquid.control.widgets.TouchInterceptor
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="true" />
 
-</shape>
+</LinearLayout>

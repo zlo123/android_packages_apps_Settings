@@ -21,7 +21,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.settings.R;
-import com.android.settingsliquid.SettingsPreferenceFragment;
+import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.util.ShortcutPickerHelper;
 
 public class Led extends SettingsPreferenceFragment {

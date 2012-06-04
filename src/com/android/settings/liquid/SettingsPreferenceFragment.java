@@ -35,6 +35,8 @@ import android.view.ViewGroup;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 
+import com.android.settings.R;
+
 /**
  * Base class for Settings fragments, with some helper functions and dialog management.
  */

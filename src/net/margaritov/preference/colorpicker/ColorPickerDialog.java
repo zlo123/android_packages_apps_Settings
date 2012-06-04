@@ -27,7 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import com.liquid.control.R;
+import com.android.settings.R;
 
 public class ColorPickerDialog extends Dialog implements
         ColorPickerView.OnColorChangedListener, View.OnClickListener {

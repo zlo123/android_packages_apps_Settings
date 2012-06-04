@@ -33,7 +33,7 @@ import android.util.Log;
 import com.android.settings.tools.Voltage;
 import com.android.settings.tools.VoltageControl;
 import com.android.settings.util.CMDProcessor;
-import com.android.settings..util.KernelUtils;
+import com.android.settings.util.KernelUtils;
 
 public class BootService extends Service {
 

@@ -39,7 +39,7 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.util.CMDProcessor;
-import com.android.settings.widgets.Md5Preference;
+import com.android.settings.widget.Md5Preference;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
@@ -80,8 +80,8 @@ public class OpenRecoveryScriptSupport extends SettingsPreferenceFragment {
     private static final String LINE_RETURN = "\n";
     private final CMDProcessor cmd = new CMDProcessor();
     private static String ZIP_PATH = null;
-    private static final String LIQUID_JSON_PARSER = com.liquid.control.installer.GooImSupport.LIQUID_JSON_PARSER;
-    private static final String JSON_PARSER = com.liquid.control.installer.GooImSupport.JSON_PARSER;
+    private static final String LIQUID_JSON_PARSER = com.android.settings.liquid.installer.GooImSupport.LIQUID_JSON_PARSER;
+    private static final String JSON_PARSER = com.android.settings.liquid.installer.GooImSupport.JSON_PARSER;
 
     Context mContext;
     Handler mHandler;
@@ -189,7 +189,7 @@ public class OpenRecoveryScriptSupport extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mFileInfo) {
-            Intent pickZIP = new Intent(mContext, com.liquid.control.tools.FilePicker.class);
+            Intent pickZIP = new Intent(mContext, com.android.settings.tools.FilePicker.class);
             pickZIP.putExtra("zip", true);
             startActivityForResult(pickZIP, 1);
             return true;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.system.util;
+package com.android.settings.util;
 
 import android.util.Log;
 

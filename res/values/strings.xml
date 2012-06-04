@@ -19,7 +19,6 @@
 
     <!-- String for ShortcutPickHelper -->
     <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom application</string>
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="icon_picker_choose_icon_title">Choose icon</string>
     <string name="icon_picker_alarm">Alarm</string>
@@ -890,10 +889,10 @@
     <string name="pref_screentimeout_mode_summary">Choose how the Screentimeout button changes modes</string>
     <string name="pref_ring_mode_title">Sound modes</string>
     <string name="pref_ring_mode_summary">Choose how the sound button changes modes</string>
-    <string name="cm_sound_mode_silent">Silent</string>
-    <string name="cm_sound_mode_vibrate">Vibrate</string>
-    <string name="cm_sound_mode_sound">Sound</string>
-    <string name="cm_sound_mode_soundVibrate">Sound+Vibrate</string>
+    <string name="sound_mode_silent">Silent</string>
+    <string name="sound_mode_vibrate">Vibrate</string>
+    <string name="sound_mode_sound">Sound</string>
+    <string name="sound_mode_soundVibrate">Sound+Vibrate</string>
     <string name="pref_flash_mode_title">Flash mode</string>
     <string name="pref_flash_mode_summary">Choose High / Death Ray</string>
 
@@ -3416,6 +3415,8 @@ found in the list of installed apps.</string>
     <string name="testing_usage_stats">Usage statistics</string>
     <!-- label for text to indicate sort options -->
     <string name="display_order_text">Sort by:</string>
+    <!-- Appname -->
+    <string name="app_name">Liquid Controls</string>
     <!-- label for application name -->
     <string name="app_name_label">App</string>
     <!-- label for launch count -->
@@ -4451,5 +4452,492 @@ found in the list of installed apps.</string>
     <!--********************START LIQUID MODS************************************************-->
     <string name="header_category_shortcuts">SHORTCUTS</string>
     <string name="liquid_control_title">Liquid Control</string>
+	
+	<!-- Mainmenu -->
+    <string name="general_ui">General</string>
+    <string name="user_interface">Interface</string>
+    <string name="lockscreen_options">Lockscreens</string>
+    <string name="power_menu_optons">Powermenu</string>
+    <string name="functionality">Functionality</string>
+    <string name="power_saver">Powersaver</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="general">General</string>
+    <string name="signal">Signal</string>    
+    <string name="toggles_layout">Toggles</string>
+    <string name="clock">Clock</string>
+    <string name="battery">Battery</string>
+    <string name="nav_bar">Navigation</string>
+    <string name="tools">Goodies</string>
+    <string name="pt_performance">Performance</string>
+    <string name="propmodder_title">Propmodder</string>
+    <string name="goo_im_title">Download ROMs</string>
+    <string name="open_recovery_title">Open Recovery</string>
+    <string name="misc_short">Misc</string>
+    <string name="system">System</string>
+    <string name="drawables_main_screen_title">Images</string>
+    <string name="meet_the_team">Meet TeamLiquid</string>
+    <string name="about_title">About TeamLiquid</string>
+
+    <!-- Navigation -->
+    <string name="enable_navbar_title">Enable Navbar</string>
+    <string name="navbar_width_title">Navbar Width</string>
+    <string name="navbar_height_title">Navbar Height</string>
+    <string name="title_pref_menu_display">Menu Location</string>
+    <string name="summary_pref_menu_display">Position of menu button</string>
+    <string name="navigation_bar">Navigation</string>
+    <string name="navigation_bar_tint_title">Navbar Color</string>
+    <string name="navigation_bar_glow_tint_title">Navbar Glow Color</string>
+    <string name="navigation_bar_glow_tint_summary">Custom button press glow color</string>
+    <string name="nav_button_background_color_title">Navbar Background Color</string>
+    <string name="title_pref_navigation_menu_display">Menu Visibility</string>
+    <string name="summary_pref_navigation_menu_display">Appearance of the menus</string>
+    <string name="navbar_order_title">Button Order</string>
+    <string name="navbar_order_summary">The order of your softkeys</string>
+    <string name="enabled_navbar_buttons_title">Enabled Buttons</string>
+    <string name="enabled_navbar_buttons_summary">Choose the desired softkeys</string>
+    <string name="button_transparency_title">Button Transparency</string>
+    <string name="long_press_home_title">Longpress Home</string>
+    <string name="long_press_home_summary">Long pressing the home softkey</string>
+    <string name="glow_times_title">Button Glow</string>
+    <string name="glow_times_summary">Adjust button animation speeds</string>
+    <string name="navbar_qty_title">Navigation bar buttons</string>
+    <string name="navbar_qty_summary">Number of buttons</string>
+    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
+    <string name="navbar_longpress_title">Button %1$s longpress action</string>
+    <string name="navbar_button_cat">Navigation bar buttons</string>
+    <string name="navbar_action_home">Home</string>
+    <string name="navbar_action_back">Back</string>
+    <string name="navbar_action_recents">Recents</string>
+    <string name="navbar_action_search">Search</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_power">Power</string>
+    <string name="navbar_action_none">Empty</string>
+
+    <!-- Interface -->
+    <string name="rotation_animation_delay_title">Rotation Delay</string>
+    <string name="rotation_animation_delay_summary">Time which device must be stable</string>
+    <string name="ime_switcher_title">IME Switcher</string>
+    <string name="ime_switcher_summary">In statusbar, while typing</string>
+    <string name="custom_carrier_label_title">Carrier Label</string>
+    <string name="longpress_to_kill_title">App Killer</string>
+    <string name="longpress_to_kill_summary">Holding back kills current activity</string>
+    <string name="rotate_180_title">180° Rotation</string>
+    <string name="rotate_180_summary">Allow your device to rotate upside down!</string>
+    <string name="recent_app_switcher_title">Recents window style</string>
+    <string name="recent_app_switcher_summary">Change the recents window style (requires UI restart)</string>
+    <string name="disable_bootanimation_title">Boot Animation</string>
+    <string name="disable_bootanimation_summary">Disable boot animation for faster boot</string>
+    <string name="disable_bugmailer_title">Android Bugmailer</string>
+    <string name="disable_bugmailer_summary">Disable integrated bugmailer support</string>
+    <string name="crt_animations_header">CRT Animations</string>
+    <string name="crt_on_title">CRT animation is now enabled</string>
+    <string name="crt_off_title">CRT animation is now disabled</string>
+    <string name="sounds_category_title">Sounds</string>
+    <string name="screenshot_sound_title">Screenshot</string>
+    <string name="screenshot_sound_summary">Disable sound when capturing screen</string>
+    <string name="enable_volume_options">Volume Options</string>
+    <string name="disable_bootaudio_title">Disable boot audio</string>
+    <string name="disable_bootaudio_summary">Quiet.</string>
+    <string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/boot_audio.mp3</string>
+
+    <!-- Lockscreen -->
+    <string name="title_pref_lockscreen_menu_unlock">Menu Unlock</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen</string>
+    <string name="title_lockscreen_user_timeout_override">Lockscreen Timeout</string>
+    <string name="summary_lockscreen_user_timeout_override">Default timeout after screen is off</string>
+    <string name="show_lock_before_unlock_title">Show Before Unlock</string>
+    <string name="show_lock_before_unlock_summary">Show lockscreen before secure unlock</string>
+    <string name="lockscreen_battery_title">Battery Percent</string>
+    <string name="lockscreen_battery_summary">Always show percentage on lockscreen</string>
+    <string name="volume_wake_title">Volume Wake</string>
+    <string name="volume_wake_summary">Tapping volume keys wakes phone</string>
+    <string name="volume_music_controls_title">Volume Controls</string>
+    <string name="volume_music_controls_summary">Longpress volume keys skips tracks</string>
+    <string name="lockscreen_show_nav_title">Navigation Bar</string>
+    <string name="lockscreen_show_nav_summary">Hide the navbar on the lockscreen</string>
+    <string name="lockscreen_text_color_title">Lockscreen Text Color</string>
+    <string name="lockscreen_landscape_title">Horizontal Lockscreen</string>
+    <string name="lockscreen_landscape_summary">Enable horizontal lock orientation</string>
+    <string name="lockscreen_quick_unlock_control_title">Quick Unlock</string>
+    <string name="lockscreen_quick_unlock_control_summary">Unlock secure lock without enter</string>
+    <string name="enable_fast_torch_title">Fast Torch</string>
+    <string name="enable_fast_torch_summary">Screen is off, long-press power key</string>
+    <string name="lockscreen_wallpaper_title">Lockscreen Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Remove wallpaper from menu above</string>
+
+    <!-- Powermenu -->
+    <string name="title_show_airplane">Show Airplane</string>
+    <string name="title_show_easteregg">Show Easteregg</string>
+    <string name="title_show_flashlight">Show Flashlight</string>
+    <string name="title_show_hidenavbar">Show Navigation</string>
+    <string name="title_show_powersaver">Show Powersaver</string>
+    <string name="title_show_profiles">Show Profiles</string>
+    <string name="title_show_screenshot">Show Screenshot</string>
+
+    <!-- Powersaver -->
+    <string name="title_pref_powersaving_pref_mode">Enable Powersaver</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+    <string name="title_pref_powersaving_data_screen_off">Screen Off Action</string>
+    <string name="summary_pref_powersaving_data_screen_off">Data state when screen turns off</string>
+    <string name="title_pref_powersaving_data_screen_off_delay">Data Action Delay</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Delay of selected data action</string>
+    <string name="title_pref_powersaving_sync_screen_off">Sync Action</string>
+    <string name="summary_pref_powersaving_sync_screen_off">Auto sync data and contacts</string>
+    <string name="title_pref_powersaving_sync_screen_off_delay">Time Interval</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">Current sync time interval</string>
+    <string name="powersaver_data_cat">Data</string>
+    <string name="powersaver_sync_cat">Sync</string>
+
+    <!-- Statusbar -->
+    <string name="title_settings_behavior">Settings Behavior</string>
+    <string name="statusbar_expanded_title">Statusbar Expanded</string>
+    <string name="statusbar_unexpanded_title">Statusbar Unexpanded</string>
+    <string name="summary_settings_behavior">Default behavior is long press</string>
+    <string name="title_auto_hide_toggles">Autohide Toggles</string>
+    <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
+    <string name="title_date_behavior">Date Behavior</string>
+    <string name="summary_date_behavior">Launch calender if checked alarm if not</string>
+    <string name="title_status_bar_brightness_toggle">Brightness Control</string>
+    <string name="summary_status_bar_brightness_toggle">Slide finger slowly across statusbar</string>
+    <string name="adb_icon_title">Usb Debugging</string>
+    <string name="adb_icon_summary">Hide adb debugging statusbar icon</string>
+    <string name="statusbar_show_aosp_title">Settings</string>
+    <string name="statusbar_show_aosp_summary">Hide settings statusbar icon</string>
+    <string name="statusbar_show_liquid_control_title">Liquid Control</string>
+    <string name="statusbar_show_liquid_control_summary">Hide Liquid Control statusbar icon</string>
+    <string name="statusbar_show_date_title">Date</string>
+    <string name="statusbar_show_date_summary">Hide date in pull down statusbar</string>
+    <string name="statusbar_date_format_title">Date Format</string>
+    <string name="statusbar_date_format_summary">Customize the statusbar date</string>
+    <string name="statusbar_windowshade_background_title">Windowshade Color</string>
+    <string name="statusbar_alpha_title">Transparency</string>
+    <string name="statusbar_unexpanded_color_title">Statusbar Color</string>
+    <string name="notification_alpha_title">Notification Transparency</string>
+    <string name="notification_color_title">Notification Color</string>	
+    <string name="statusbar_layout">Drawer Layout</string>
+    <string name="statusbar_layout_summary">Change notification drawer layout</string>
+    <string name="windowshade_background_title">Statusbar background</string>
+    <string name="liquid_background_title">Liquid Status</string>
+    <string name="liquid_background_summary">Liquid themed statusbar backgrounds</string>
+    <string name="user_background_title">Custom statusbar background</string>
+    <string name="user_background_summary">You supply the image</string>
+    <string name="windowshade_handle_title">Window Handle</string>
+    <string name="windowshade_handle_summary">customize the statusbar close handle bar image</string>
+    <string name="windowshade_handle_default">ICS Default</string>
+    <string name="windowshade_handle_liquid_1">Exiled option</string>
+    <string name="statusbar_handle_alpha_title">Statusbar handle alpha</string>
+    <string name="statusbar_fontsize">Font Size</string>
+    <string name="statusbar_fontsize_summary">Change size of text elements on statusbar</string>
+
+    <!-- Battery -->
+    <string name="battery_icon">Battery Style</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_bar">Battery Location</string>
+    <string name="battery_bar_color">Battery Color</string>
+    <string name="battery_bar_cat">Battery Options</string>
+    <string name="battery_bar_style_title">Battery Style</string>
+    <string name="battery_bar_thickness_title">Battery Size</string>
+    <string name="battery_bar_animate_title">Charging Animation</string>
+    <string name="battery_bar_animate_summary">Bad things could happen</string>
+    
+    <!-- Clock -->
+    <string name="clock_title_enable">Clock Style</string>
+    <string name="title_clock_ampm_entries">AM/PM Style</string>
+    <string name="colors">Colors</string>
+    <string name="clock_color_title">Clock Color</string>
+    <string name="reset_color_title">Reset Color</string>
+    <string name="enable_alarm_title">Alarm Icon</string>
+    <string name="enable_alarm_summary">Toggle alarms for it to show</string>
+    <string name="enable_clock_weekday">Current Weekday</string>
+    <string name="enable_clock_weekday_summary">Abbreviated current day of week</string>
+
+    <!-- Toggles -->
+    <string name="toggle_style_title">Toggle Style</string>
+    <string name="toggle_style_summary">Show icons or text on toggles</string>
+    <string name="alternate_button_layout_title">Alternate Toggles</string>
+    <string name="alternate_button_layout_summary">Use toggle buttons instead</string>
+    <string name="enabled_toggles_title">Enabled Toggles</string>
+    <string name="enabled_toggles_summary">Choose toggles to display</string>
+    <string name="toggles_order_title">Toggle Order</string>
+    <string name="toggles_order_summary">The order toggles are displayed</string>
+    <string name="brightness_location_title">Brightness Location</string>
+    
+    <!-- Signal -->
+    <string name="signal_style">Signal Style</string>
+    <string name="signal_color_title">Signal Color</string>
+    <string name="hide_signal_title">Hide Signal</string>
+    <string name="hide_signal_summary">Hides data indicator for now</string>
+    <string name="sixbar_signal_title">Sixbar Signal</string>
+    <string name="sixbar_signal_summary">Use sixbar signal mod (Requires Reboot)</string>
+    <string name="wifi_signal_style">WiFi Text Style</string>
+    <string name="wifi_signal_color_title">WiFi Text Color</string>
+
+    <!-- Colorpicker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press On color to apply</string>
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">Default</string>
+    
+    <!-- Shortcuts -->
+    <string name="use_custom_app_summary">Use selected custom application</string>
+    <string name="select_custom_app_title">Select App</string>
+    <string name="group_applications">Applications</string>
+
+    <!-- Overclocking -->
+    <string name="pt_set_max">Maximum</string>
+    <string name="pt_set_min">Minimum</string>
+    <string name="pt_set_gov">Governor</string>
+    <string name="pt_cpu_boot">Set On Boot</string>
+    <string name="ps_set_max">Maxium\nCurrent: %s</string>
+    <string name="ps_set_min">Minium\nCurrent: %s</string>
+    <string name="ps_set_gov">Governor\nCurrent: %s</string>
+    <string name="ps_cpu_boot">Set On Boot</string>
+    <string name="toast_min_max_error01">Frequency cannot be lower than minmium</string>
+    <string name="toast_min_max_error02">Frequency cannot be higher than maximum</string>
+
+    <!-- Performance -->
+    <string name="pt_voltage">Voltage</string>
+    <string name="pt_cpu">Overclocking</string>
+    <string name="pt_free_memory">Free Memory</string>
+    <string name="dt_free_memory">Memory Taskkiller</string>
+    <string name="pt_free_memory_boot">Free On Startup</string>
+    <string name="ps_set_cpu_activity">Set frequencies and current governor</string>
+    <string name="ps_free_memory">Amount of ram taskkiller keeps | Current: %s</string>
+    <string name="ps_free_memory_boot">Apply amount above at startup</string>
+	<string name="pt_disable_logcat">Disable logcat</string>
+	<string name="ps_disable_logcat">Disable logcat to possibly save some resources and get a little performance boost</string>
+
+    <!-- Voltage -->
+    <string name="freq">Frequency</string>
+    <string name="current">mV Current</string>
+    <string name="saved">mV Saved</string>
+    <string name="error_values">Error Getting Values</string>
+    <string name="set_boot">Set On Boot</string>
+    <string name="apply_values">Apply Values</string>
+
+    <!-- Scrolling -->
+    <string name="pref_scrollingcache_title">Scrolling Cache</string>
+    <string name="pref_scrollingcache_summary">May improve scrolling performance</string>
+    <string name="pref_scrollingcache_force_enable">Force Enable</string>
+    <string name="pref_scrollingcache_default_enable">Default Enable</string>
+    <string name="pref_scrollingcache_default_disable">Default Disable</string>
+    <string name="pref_scrollingcache_force_disable">Force Disable</string>
+
+    <!-- Apptasker -->
+    <string name="longpress_app_tasker_title">Longpress Apptasker</string>
+    <string name="longpress_app_tasker_summary">New task to be launched when selected</string>
+
+    <!-- PropModder -->
+    <string name="buildprop_title">/system/build.prop mods</string>
+    <string name="nonprop_cat_title">Mods involving init.d script</string>
+    <string name="main_warning_title">YOU HAVE BEEN WARNED</string>
+    <string name="main_warning_summary">This app was conceived while watching monkeys juggling knives.  It hacks your \'/system/build.prop\' WE ARE NOT RESPONSIBLE FOR ACCIDENTAL KNIFE CUTS! Your device your responsibility</string>
+    <string name="pref_wifi_scan_interval_title">Wifi scan interval</string>
+    <string name="pref_wifi_scan_interval_summary">The time between wifi scans when no stored access points are available (requires reboot)</string>
+    <string name="pref_wifi_scan_alt_summary">Time between wifi scans: %s</string>
+    <string name="pref_lcd_density_title">LCD density</string>
+    <string name="pref_lcd_density_summary">This is the screen density allowing more high definition look (requires reboot)</string>
+    <string name="pref_lcd_density_alt_summary">Screen density: %s</string>
+    <string name="pref_max_events_title">Windows Manager\'s max events per second</string>
+    <string name="pref_max_events_summary">This is a runtime value that controls the number of events the system will allow in a second (requires reboot)</string>
+    <string name="pref_max_events_alt_summary">Max number of system events: %s</string>
+    <string name="pref_usb_mode_title">Default USB mode</string>
+    <string name="pref_usb_mode_summary">This decides what the default setting is when you plug in to a computer via USB (requires reboot)</string>
+    <string name="pref_ring_delay_title">Telephone ringer delay</string>
+    <string name="pref_ring_delay_summary">The amount of time from when the system registers an incoming phone call until the ringer starts (requires reboot)</string>
+    <string name="pref_ring_delay_alt_summary">Incoming call Delay: %s</string>
+    <string name="pref_vm_heapsize_title">Dalvik cache heapsize</string>
+    <string name="pref_vm_heapsize_summary">This controls the size of the cache the Dalvik VM has access to (requires reboot)</string>
+    <string name="pref_vm_heapsize_alt_summary">Dalvik VM cache size: %s</string>
+    <string name="propmodder_warning_title">ROOT IS REQUIRED</string>
+    <string name="propmodder_warning">This program changes system properties in /system/build.prop DO NOT USE if you don\'t know what you are doing. We (n00bware, makers of PropModder) are not responsible for your device PERIOD. You have been warned</string>
+    <string name="showbuild_title">Do you know what is in your build.prop</string>
+    <string name="showbuild_dialog">This is your /system/build.prop</string>
+    <string name="showbuild_loading">Loading build.prop\u2026</string>
+    <string name="showbuild_error">Error loading build.prop\u2026</string>
+    <string name="showbuild_unknown">Unknown</string>
+    <string name="showbuild_version">Version</string>
+    <string name="showbuild_label">We should look because knowing is half the battle</string>
+    <string name="pref_fast_up_title">HSUPA upload speed hack</string>
+    <string name="pref_fast_up_summary">*WARNING* if you change this value it will add the needed values to your build.prop if they are not already present (requires reboot)</string>
+    <string name="pref_fast_up_alt_summary">Fast up found active: %s</string>
+    <string name="pref_prox_delay_title">Proximity sensor delay</string>
+    <string name="pref_prox_delay_summary">When you are in-call screen is off when the device moves away from your face this delay value controls how long before screen turns on (requires reboot)</string>
+    <string name="pref_prox_delay_alt_summary">Proximity sensor set to: %s</string>
+    <string name="pref_logcat_title">Disable logcat</string>
+    <string name="pref_logcat_summary">Disabling logcat can improve system speed, but makes debugging very difficult</string>
+    <string name="pref_mod_version_title">Change your Build Number</string>
+    <string name="pref_mod_version_summary">This is astetic and doesn\'t improve the system</string>
+    <string name="pref_mod_version_alt_summary">Build Number: %s</string>
+    <string name="pref_mod_version_default">PropModder!!!</string>
+    <string name="pref_sleep_title">PM Sleep mode</string>
+    <string name="pref_sleep_summary">Modify Nighttime sleep policy</string>
+    <string name="pref_sleep_alt_summary">Current Sleep Mode: %s</string>
+    <string name="pref_tcp_stack_title">Optimize TCP Stack</string>
+    <string name="pref_tcp_stack_summary">Modify the buffer-size for better performance</string>
+    <string name="pref_check_in_title">Check in service</string>
+    <string name="pref_check_in_summary">Stop sending system usage data to Google and HTC</string>
+    <string name="pref_sdcard_buffer_title">Sdcard speed hack</string>
+    <string name="pref_sdcard_buffer_summary">Modify the sdcard buffer-size for better performance</string>
+    <string name="pref_g_speed_title">3G Speed Hack</string>
+    <string name="pref_g_speed_summary">Uncap 3g speed</string>
+    <string name="pref_gpu_title">GPU Acceleration</string>
+    <string name="pref_gpu_summary">To enable hardware acceleration where the GPU controls the UI instead of the CPU</string>
+    <string name="pref_vvmail_title">VVMail (Sense ROMs ONLY)</string>
+    <string name="pref_vvmail_summary">force Sense ROMS compatibility with VVMail</string>
+
+    <!-- Backup Restore -->
+    <string name="backup_string">Backup Restore</string>
+    <string name="backup_alert_title">Filename</string>
+    <string name="backup_alert_message">Name your settings file</string>
+    <string name="backup_category_title">Backup</string>
+    <string name="restore_category_title">Restore</string>
+    <string name="theme_category_title">Theme</string>
+    <string name="backup_title">Backup LiquidControl</string>
+    <string name="backup_summary">save your settings</string>
+    <string name="restore_title">Restore LiquidControl</string>
+    <string name="restore_summary">apply your backup</string>
+    <string name="name_theme_title">Name your theme!</string>
+    <string name="positive_button">Make Theme</string>
+    <string name="positive_thanks_button">Thanks</string>
+    <string name="positive_theme_button">Theme</string>
+    <string name="negative_button">I\'m scared</string>
+    <string name="negative_theme_button">Backup</string>
+    <string name="delete_button">Delete Theme (final)</string>
+    <string name="apply_button">Apply Theme</string>
+    <string name="title_prompt">Title: </string>
+    <string name="summary_prompt">Summary: </string>
+    <string name="want_to_make_theme_message">Theme or backup</string>
+    <string name="want_to_make_theme_title">What would you like to do?</string>
+    <string name="what_happened_title">So whats going on?</string>
+    <string name="delete_or_apply">Apply or delete theme?</string>
+
+    <!-- File Picker -->
+    <string name="clear">Clear screen</string>
+    <string name="empty_text">No Data</string>
+    <string name="filename_text">Filename: </string>
+    <string name="new_file_title">Save text to new file?</string>
+    <string name="open_button_text">Open</string>
+    <string name="ro_fail_notice">Couldn\'t write to that destination</string>
+    <string name="save">Save</string>
+    <string name="save_blank">Can\'t save a blank document</string>
+    <string name="save_button_text">Create file</string>
+    <string name="prompt_title">{%s}</string>
+    <string name="file_selection_error_write">We can\'t write to {%s}</string>
+    <string name="file_selection_error_read">We can\'t read {%s}</string>
+    <string name="save_prompt">Save as?</string>
+    <string name="open_prompt">Open?</string>
+    <string name="no_filename_save_error">No filename detected ...Please enter a filename to save</string>
+    <string name="location_tracker">Location: %s</string>
+
+    <!--  Kernel Tweaks -->
+    <string name="pt_fast_charge_boot">Fast Charge</string>
+    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+    <string name="kernel">Kernel Tweaks</string>
+    <string name="color_tuning_title_head">Color Multipliers Tuning</string>
+    <string name="color_tuning_summary_head">Calibrate multipliers screen color</string>
+    <string name="gamma_tuning_title_head">Color Gamma Tuning</string>
+    <string name="gamma_tuning_summary_head">Calibrate gamma color correction</string>
+    <string name="color_red_title">Red</string>
+    <string name="color_green_title">Green</string>
+    <string name="color_blue_title">Blue</string>
+    <string name="reset_defaults">Reset to Defaults</string>
+
+    <!-- about the team -->
+    <string name="learn_more_title">Learn more about the team</string>
+    <string name="liquid_website_title">LiquidSmoothROMs Website</string>
+    <string name="liquid_website_summary">Visit our website</string>
+    <string name="liquid_source_title">LiquidSmoothROMs Github</string>
+    <string name="liquid_source_summary">View our code!</string>
+    <string name="liquid_irc_title">LiquidSmoothROMs IRC</string>
+    <string name="liquid_irc_summary">Visit freenode #liquids</string>
+    <string name="devs">Meet the developers</string>
+    <string name="dev_liquid_title">Liquid</string>
+    <string name="dev_liquid_twitter">liquid0624</string>
+    <string name="dev_liquid_donate">http://bit.ly/qGR38c</string>
+    <string name="dev_jbird_title">JBirdVegas</string>
+    <string name="dev_jbird_twitter">JBird_Vegas</string>
+    <string name="dev_jbird_donate">http://bit.ly/oCWMo0</string>
+    <string name="dev_n0coast_title">n0coast</string>
+    <string name="dev_n0coast_twitter">n0coast</string>
+    <string name="dev_n0coast_donate">http://bit.ly/HRA3Kc</string>
+    <string name="dev_liquidzgrl_title">Liquidzgrl</string>
+    <string name="dev_liquidzgrl_twitter">LiQuIDzGrL</string>
+    <string name="dev_liquidzgrl_donate">http://bit.ly/I9wHBA</string>
+    <string name="dev_amplified_title">amplified</string>
+    <string name="dev_amplified_twitter">JacobVanCleve</string>
+    <string name="dev_amplified_donate">http://bit.ly/H0ZFRV</string>
+    <string name="dev_blueharford_title">blueharford</string>
+    <string name="dev_blueharford_twitter">blueharford</string>
+    <string name="dev_blueharford_donate">http://bit.ly/KNIaZM</string>
+    <string name="dev_austrie_title">Austrie</string>
+    <string name="dev_austrie_twitter"></string>
+    <string name="dev_austrie_donate"></string>
+
+    <!-- Open Recovery -->
+    <string name="open_recovery_cat_title">Versions found</string>
+    <string name="request_download_description">Downloading: </string>
+    <string name="request_download_title">Just relax and let it happen</string>
+    <string name="download_title">Download file</string>
+    <string name="wipe_cache_checkbox_title">Wipe Cache</string>
+    <string name="wipe_data_checkbox_title">Wipe Data</string>
+    <string name="wipe_dalvik_checkbox_title">Wipe Dalvik Cache</string>
+    <string name="backup_checkbox_title">Perform Backup</string>
+    <string name="backup_compression_checkbox_title">Use Backup Compression</string>
+    <string name="installation_button_title">Install new LiquidSmoothROM</string>
+    <string name="warn_about_dirty_flash">If you don\'t perform a clean install we don\'t want your bug reports... FYI</string>
+    <string name="warn_about_no_backup">Really??? One should always keep a backup</string>
+    <string name="filewrite_success">Writing recovery script: success</string>
+    <string name="filewrite_fail">Writing recovery script: fail</string>
+    <string name="file_path_title">FilePath</string>
+    <string name="file_size_title">FileSize</string>
+    <string name="md5_title">MD5 Checksum</string>
+    <string name="execute_title">Execute Install</string>
+    <string name="generating_md5">Calculating md5 checksum...</string>
+    <string name="click_here_to_find_zips">No file detected click here to find .zip files</string>
+    <string name="verify_md5_with_gooim">verifying md5...</string>
+    <string name="verify_md5_pass">Goo.im verified md5</string>
+    <string name="verify_md5_fail">Goo.im failed to verify md5</string>
+    <string name="other_devs_list">Goo.im devs list</string>
+    <string name="other_gooim_devs_menu_title">Cheat on TeamLiquid</string>
+    <string name="username">Username: </string>
+    <string name="password">Password: </string>
+    <string name="gooim_supporters_menu_title">GooIm Supporters</string>
+    <string name="dev_list">Dev List</string>
+    <string name="button_ok">Ok</string>
+    <string name="button_cancel">Canecl</string>
+    <string name="inform_user_about_cipher">LiquidControl stores your password using 128 bit AES encryption</string>
+
+    <!-- Dynamic Changelog -->
+    <string name="dynamic_changelog">Dynamic ChangeLog</string>
+    <string name="initial_changelog_category_title">Changelog</string>
+    <string name="changelog_menu_projects_title">View Projects List</string>
+    <string name="changelog_menu_commitlog_title">View Most Recent Commits</string>
+    <string name="button_close">Close</string>
+    <string name="button_webview">WebView</string>
+    <string name="commit_extended_info_title">Extended Commit Info</string>
+    <string name="commit_message">Commit Message</string>
+    <string name="commit_date">Commit Date</string>
+    <string name="commit_sha">Commit SHA-1 Hash</string>
+    <string name="next_commits_page_title">More...</string>
+    <string name="next_commits_page_summary">display next 30 commits</string>
+    <string name="loading_commits">Loading commits...</string>
+    <string name="commits_title">Commits</string>
+    <string name="loading_projects">Loading projects list...</string>
+    <string name="org_projects">Organization projects</string>
+    <string name="author_title">Author</string>
+    <string name="commit_committer_title">Committer</string>
+    <string name="sort_commits_title">Sort</string>
+    <string name="sort_commits_message">Commits are now in order by repository, would you like to sort them by date regardless of which repository in which they exist?</string>
+    <string name="button_sort">Sort by date</string>
+    <string name="button_donot_sort">Do not sort</string>
+    <string name="unknown_author">Unknown Author</string>
+    <string name="unknown_committer">Unknown Committer</string>
+    <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
 
 </resources>
