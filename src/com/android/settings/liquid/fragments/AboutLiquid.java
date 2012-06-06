@@ -26,7 +26,7 @@ import com.android.settings.R;
 
 public class AboutLiquid extends SettingsPreferenceFragment {
 
-    public static final String TAG = "About";
+    public static final String TAG = "About Liquid";
 
     Preference mSiteUrl;
     Preference mSourceUrl;

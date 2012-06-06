@@ -16,6 +16,15 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/privacy_settings_title">
+		<!-- Liquid Controls for Privacy -->
+    <PreferenceCategory android:key="app_name"
+            android:title="@string/app_name">
+        <PreferenceScreen
+                android:key="@+id/backup"
+                android:title="@string/backup_string"
+		android:summary="@string/backup_summary"
+                android:fragment="com.android.settings.liquid.fragments.BackupRestore" />
+	</PreferenceCategory>
 
     <PreferenceCategory android:key="backup_category"
             android:title="@string/backup_section_title">

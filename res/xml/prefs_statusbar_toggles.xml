@@ -19,7 +19,7 @@
 
     <PreferenceScreen
         android:key="notification_drawer"
-        android:fragment="com.liquid.control.fragments.PowerWidget"
+        android:fragment="com.android.settings.liquid.fragments.PowerWidget"
         android:title="@string/power_widget_title" />
 
 	<Preference

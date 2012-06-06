@@ -1357,13 +1357,13 @@
 
         <activity android:name=".profiles.NFCProfileWriter" />
 
-        <activity android:name=".cyanogenmod.LockscreenTargets" />
+        <activity android:name=".liquid.fragments.LockscreenTargets" />
 
-        <activity android:name=".cyanogenmod.LockscreenInterface" />
+        <activity android:name=".liquid.fragments.LockscreenInterface" />
 
-        <activity android:name=".cyanogenmod.Weather" />
+        <activity android:name=".liquid.fragments.Weather" />
 
-        <activity android:name=".cyanogenmod.Calendar" />
+        <activity android:name=".liquid.fragments.Calendar" />
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
@@ -1406,15 +1406,75 @@
                 android:resource="@id/wireless_settings" />
         </activity>
 
-        <activity android:name="com.liquid.control.LiquidActivity"
-            android:label="@string/liquid_control_title">
+	 <activity
+            android:label="@string/advanced_settings_title"
+            android:name=".liquid.fragments.AdvancedSettings">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:label="@string/ui_activity"
+            android:name=".liquid.fragments.UIActivity">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".tools.VoltageControl" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".liquid.installer.OpenRecoveryScriptSupport"
+            android:label="OpenRecoveryScript Support" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" android:host="*"
+                    android:pathPattern=".*\\.zip" />
+                <data android:scheme="file" android:host="*"
+                    android:pathPattern=".*\\.zip" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".tools.FilePicker">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".util.ShowBuildProp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".liquid.installer.GooImSupport"
+            android:label="goo.im Suppport" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-	    <activity android:name=".LightLevelsActivity"
+        <activity android:name=".liquid.fragments.PropModder"
+            android:label="Propmodder" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.lsr.control.SHORTCUT" />
+            </intent-filter>
+   <receiver android:name="com.android.server.AppsLaunchFailureReceiver" >
+            <intent-filter>
+                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE" />
+                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE_RESET" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="com.tmobile.intent.action.THEME_PACKAGE_UPDATED" />
+                <category android:name="com.tmobile.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        </activity>
+         <activity android:name=".LightLevelsActivity"
             android:label="@string/backlight_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -81,7 +81,7 @@
                 android:summary="@string/glow_times_summary" 
                 android:defaultValue="100|10" />
 
-            <com.liquid.control.widgets.SeekBarPreference
+            <com.android.settings.widget.SeekBarPreference
                 android:key="button_transparency"
                 android:title="@string/button_transparency_title" />
 

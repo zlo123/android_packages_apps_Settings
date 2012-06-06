@@ -27,8 +27,8 @@
             android:title="@string/showbuild_title"
             android:summary="@string/showbuild_label">
             <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.liquid.control"
-                android:targetClass="com.liquid.control.util.ShowBuildProp" />
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.util.ShowBuildProp" />
         </PreferenceScreen>
 
         <ListPreference android:key="pref_wifi_scan_interval"

@@ -26,7 +26,7 @@
             android:title="@string/user_background_title"
             android:summary="@string/user_background_summary" />
 
-        <com.liquid.control.widgets.SeekBarPreference
+        <com.android.settings.widget.SeekBarPreference
             android:key="statusbar_alpha"
             android:title="@string/statusbar_alpha_title" />
 
@@ -113,7 +113,7 @@
             android:title="@string/statusbar_unexpanded_color_title"
             android:defaultValue="#ff000000" />
 
-        <com.liquid.control.widgets.SeekBarPreference
+        <com.android.settings.widget.SeekBarPreference
             android:key="statusbar_handle_alpha"
             android:title="@string/statusbar_handle_alpha_title" />
 
@@ -124,7 +124,7 @@
             android:entries="@array/statusbar_layout_entries"
             android:entryValues="@array/statusbar_layout_values" />
 
-        <com.liquid.control.widgets.SeekBarPreference
+        <com.android.settings.widget.SeekBarPreference
             android:key="notification_alpha"
             android:title="@string/notification_alpha_title" />
             

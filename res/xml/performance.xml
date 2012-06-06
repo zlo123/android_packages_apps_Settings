@@ -53,8 +53,8 @@
 			android:title="@string/pt_voltage">
 			<intent
 				android:action="android.intent.action.MAIN"
-				android:targetPackage="com.liquid.control"
-				android:targetClass="com.liquid.control.tools.VoltageControl" />
+				android:targetPackage="com.android.settings"
+				android:targetClass="com.android.settings.tools.VoltageControl" />
 		</PreferenceScreen>
 
 	</PreferenceCategory>
@@ -92,12 +92,12 @@
         android:key="kernel"
         android:title="@string/kernel">
 
-         <com.liquid.control.fragments.ColorTuningPreference
+         <com.android.settings.liquid.fragments.ColorTuningPreference
              android:key="color_tuning"
              android:title="@string/color_tuning_title_head"
              android:summary="@string/color_tuning_summary_head" />
 
-        <com.liquid.control.fragments.GammaTuningPreference
+        <com.android.settings.liquid.fragments.GammaTuningPreference
             android:key="gamma_tuning"
             android:title="@string/gamma_tuning_title_head"
             android:summary="@string/gamma_tuning_summary_head" />

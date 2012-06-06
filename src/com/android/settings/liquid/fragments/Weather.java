@@ -1,5 +1,5 @@
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.liquid.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

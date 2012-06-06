@@ -27,43 +27,43 @@
         android:key="devs"
         android:title="@string/devs">
 
-        <com.liquid.control.widgets.DeveloperPreference
+        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_liquid_title"
             liquid:twitterHandle="@string/dev_liquid_twitter"
             liquid:donateLink="@string/dev_liquid_donate"
             liquid:avatar="@drawable/avatar_liquid" />
 
-        <com.liquid.control.widgets.DeveloperPreference
+        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_liquidzgrl_title"
             liquid:twitterHandle="@string/dev_liquidzgrl_twitter"
             liquid:donateLink="@string/dev_liquidzgrl_donate"
             liquid:avatar="@drawable/avatar_liquidzgrl" />
 
-        <com.liquid.control.widgets.DeveloperPreference
+        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_jbird_title"
             liquid:twitterHandle="@string/dev_jbird_twitter"
             liquid:donateLink="@string/dev_jbird_donate"
             liquid:avatar="@drawable/avatar_jbirdvegas" />
 
-        <com.liquid.control.widgets.DeveloperPreference
+        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_n0coast_title"
             liquid:twitterHandle="@string/dev_n0coast_twitter"
             liquid:donateLink="@string/dev_n0coast_donate"
             liquid:avatar="@drawable/avatar_n0coast" />
 
-        <com.liquid.control.widgets.DeveloperPreference
+        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_amplified_title"
             liquid:twitterHandle="@string/dev_amplified_twitter"
             liquid:donateLink="@string/dev_amplified_donate"
             liquid:avatar="@drawable/avatar_amplified" />
 	
-	<com.liquid.control.widgets.DeveloperPreference
+	<com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_blueharford_title"
             liquid:twitterHandle="@string/dev_blueharford_twitter"
             liquid:donateLink="@string/dev_blueharford_donate"
             liquid:avatar="@drawable/avatar_blueharford" />
 		
-	<com.liquid.control.widgets.DeveloperPreference
+	<com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_austrie_title"
             liquid:twitterHandle="@string/dev_austrie_twitter"
             liquid:donateLink="@string/dev_austrie_donate"

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.liquid.fragments;
 
 import android.app.Activity;
 import android.content.ContentResolver;

@@ -16,7 +16,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/development_settings_title">
-        
+    <PreferenceCategory android:key="aosp_name"
+                android:title="@string/aosp_name">
     <CheckBoxPreference 
         android:key="enable_adb" 
         android:title="@string/enable_adb" 
@@ -69,7 +70,7 @@
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.android.settings.SetFullBackupPassword" />
     </PreferenceScreen>
-
+    </PreferenceCategory>
     <PreferenceCategory android:key="debug_ui_category"
             android:title="@string/debug_ui_category">
 

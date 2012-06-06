@@ -58,14 +58,14 @@
             android:key="widget_picker"
             android:title="@string/title_widget_picker"
             android:summary="@string/summary_widget_picker"
-            android:fragment="com.liquid.control.fragments.PowerWidget$PowerWidgetChooser">
+            android:fragment="com.android.settings.liquid.fragments.PowerWidget$PowerWidgetChooser">
         </PreferenceScreen>
 
         <PreferenceScreen
             android:key="widget_order"
             android:title="@string/title_widget_order" 
             android:summary="@string/summary_widget_order"
-            android:fragment="com.liquid.control.fragments.PowerWidget$PowerWidgetOrder">
+            android:fragment="com.android.settings.liquid.fragments.PowerWidget$PowerWidgetOrder">
         </PreferenceScreen>
 
     </PreferenceCategory>

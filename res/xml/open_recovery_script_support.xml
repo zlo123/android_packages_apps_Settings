@@ -20,7 +20,7 @@
     <Preference
         android:key="fileinfo" />
 
-    <com.liquid.control.widgets.Md5Preference
+    <com.android.settings.widget.Md5Preference
         android:key="md5_preference" />
 
     <CheckBoxPreference

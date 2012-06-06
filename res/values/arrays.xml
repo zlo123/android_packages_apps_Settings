@@ -726,8 +726,8 @@
 
     <!-- Arrays required by Notification Widgets. -->
     <string-array name="entries_brightness_widget" formatted="false" translatable="false">
-        <item>@string/cm_brightness_mode_auto</item>
-        <item>@string/cm_brightness_mode_dim</item>
+        <item>@string/brightness_mode_auto</item>
+        <item>@string/brightness_mode_dim</item>
         <item>25%</item>
         <item>50%</item>
         <item>75%</item>
@@ -2143,7 +2143,7 @@
         <item>Search</item>
         <item>Menu</item>
         <item>Kill app</item>
-        <item>Power</item>
+	<item>Power</item>
         <item>Custom app</item>
         <item>Blank</item>
     </string-array>

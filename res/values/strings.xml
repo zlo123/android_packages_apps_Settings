@@ -818,9 +818,6 @@
     <string name="pulse_speed_slow">Slow</string>
     <string name="pulse_speed_very_slow">Very slow</string>
 
-    <!-- Advanced, Device specific (DeviceParts) settings #CM -->
-    <string name="advanced_settings_title">Advanced</string>
-
 <!-- INTERFACE Settings #CM -->
     <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_interface">INTERFACE</string>
@@ -881,8 +878,8 @@
     <string name="title_button_modes">Button modes</string>
     <string name="pref_brightness_mode_title">Brightness modes</string>
     <string name="pref_brightness_mode_summary">Choose how the brightness button changes modes</string>
-    <string name="cm_brightness_mode_auto">Auto</string>
-    <string name="cm_brightness_mode_dim">Dim</string>
+    <string name="brightness_mode_auto">Auto</string>
+    <string name="brightness_mode_dim">Dim</string>
     <string name="pref_network_mode_title">Network modes</string>
     <string name="pref_network_mode_summary">Choose how the NetworkMode button changes modes</string>
     <string name="pref_screentimeout_mode_title">Screentimeout modes</string>
@@ -3416,6 +3413,7 @@ found in the list of installed apps.</string>
     <!-- label for text to indicate sort options -->
     <string name="display_order_text">Sort by:</string>
     <!-- Appname -->
+    <string name="aosp_name">AOSP</string>
     <string name="app_name">Liquid Controls</string>
     <!-- label for application name -->
     <string name="app_name_label">App</string>
@@ -4470,7 +4468,7 @@ found in the list of installed apps.</string>
     <string name="tools">Goodies</string>
     <string name="pt_performance">Performance</string>
     <string name="propmodder_title">Propmodder</string>
-    <string name="goo_im_title">Download ROMs</string>
+    <string name="goo_im_title">Download Updates</string>
     <string name="open_recovery_title">Open Recovery</string>
     <string name="misc_short">Misc</string>
     <string name="system">System</string>
@@ -4591,6 +4589,8 @@ found in the list of installed apps.</string>
 
     <!-- Statusbar -->
     <string name="title_settings_behavior">Settings Behavior</string>
+    <string name="statusbar_activity"> StatusBar Settings</string>
+    <string name="ui_activity"> User Interface</string>
     <string name="statusbar_expanded_title">Statusbar Expanded</string>
     <string name="statusbar_unexpanded_title">Statusbar Unexpanded</string>
     <string name="summary_settings_behavior">Default behavior is long press</string>
@@ -4792,7 +4792,7 @@ found in the list of installed apps.</string>
     <string name="pref_vvmail_summary">force Sense ROMS compatibility with VVMail</string>
 
     <!-- Backup Restore -->
-    <string name="backup_string">Backup Restore</string>
+    <string name="backup_string">Liquid Backup/Restore</string>
     <string name="backup_alert_title">Filename</string>
     <string name="backup_alert_message">Name your settings file</string>
     <string name="backup_category_title">Backup</string>
@@ -4939,5 +4939,12 @@ found in the list of installed apps.</string>
     <string name="unknown_author">Unknown Author</string>
     <string name="unknown_committer">Unknown Committer</string>
     <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
+
+
+    <!-- Advanced Settings -->
+    <string name="advanced_settings_title">Advanced Settings</string>
+    <string name="developments_settings_title">Development settings</string>
+    <string name="spareparts_settings_title">Spare Parts settings</string>
+    <string name="testing_settings_title">Testing settings</string>
 
 </resources>
