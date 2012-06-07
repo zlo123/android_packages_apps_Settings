@@ -1405,7 +1405,13 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/wireless_settings" />
         </activity>
-
+	<activity android:name=".liquid.fragments.StatusBarGeneral"
+            android:label="General" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.lsr.control.SHORTCUT" />
+            </intent-filter>
+        </activity>
 	 <activity
             android:label="@string/advanced_settings_title"
             android:name=".liquid.fragments.AdvancedSettings">
