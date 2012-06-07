@@ -4591,7 +4591,7 @@ found in the list of installed apps.</string>
 
     <!-- Statusbar -->
     <string name="title_settings_behavior">Settings Behavior</string>
-    <string name="statusbar_activity"> StatusBar Settings</string>
+    <string name="statusbar_activity"> Statusbar</string>
     <string name="ui_activity"> User Interface</string>
     <string name="statusbar_expanded_title">Statusbar Expanded</string>
     <string name="statusbar_unexpanded_title">Statusbar Unexpanded</string>
