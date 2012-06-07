@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.setitngs.liquid.fragments;
+package com.android.settings.liquid.fragments;
 
 import android.app.Activity;
 import android.app.Notification;
