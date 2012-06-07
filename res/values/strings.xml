@@ -4800,9 +4800,9 @@ found in the list of installed apps.</string>
     <string name="backup_category_title">Backup</string>
     <string name="restore_category_title">Restore</string>
     <string name="theme_category_title">Theme</string>
-    <string name="backup_title">Backup LiquidControl</string>
+    <string name="backup_title">Backup Liquid Settings</string>
     <string name="backup_summary">save your settings</string>
-    <string name="restore_title">Restore LiquidControl</string>
+    <string name="restore_title">Restore Liquid Settings</string>
     <string name="restore_summary">apply your backup</string>
     <string name="name_theme_title">Name your theme!</string>
     <string name="positive_button">Make Theme</string>

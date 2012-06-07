@@ -79,9 +79,9 @@ public class BackupRestore extends SettingsPreferenceFragment {
     private static String CONFIG_FILENAME = null;
     private static final File fSDCARD = Environment.getExternalStorageDirectory();
     private static final String SDCARD = fSDCARD.getAbsolutePath();
-    private static String CONFIG_CHECK_PASS = SDCARD + "/LiquidControl/%s has been created";
-    private static final String PATH_TO_CONFIGS = SDCARD + "/LiquidControl";
-    private static final String PATH_TO_THEMES = SDCARD + "/LiquidControl/themes";
+    private static String CONFIG_CHECK_PASS = SDCARD + "/LiquidSettings/%s has been created";
+    private static final String PATH_TO_CONFIGS = SDCARD + "/LiquidSettings";
+    private static final String PATH_TO_THEMES = SDCARD + "/LiquidSettings/themes";
     private static boolean success = false;
     private final String OPEN_FILENAME = "open_filepath";
     private final String SAVE_FILENAME = "save_filepath";
@@ -614,7 +614,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
 
                     // theme path is final but let user restores can come from anywhere
                     final String filename_strings = open_data_string;
-                    final String theme_filename_strings = String.format("%s/LiquidControl/themes/%s",
+                    final String theme_filename_strings = String.format("%s/LiquidSettings/themes/%s",
                             Environment.getExternalStorageDirectory(), userSuppliedFilename);
 
                     // TODO handle missing files
@@ -988,7 +988,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
                         String value_title = ((Spannable) titleText.getText()).toString();
                         String value_summary = ((Spannable) summaryText.getText()).toString();
                         if (DEBUG) Log.d(TAG, String.format("found title: %s 	found summary: %s", value_title, value_summary));
-                        String formatThemePath = String.format("%s/LiquidControl/themes/%s",
+                        String formatThemePath = String.format("%s/LiquidSettings/themes/%s",
                                 Environment.getExternalStorageDirectory(), timeBasedThemeName);
                         runBackup(formatThemePath, value_title, value_summary);
                     }
