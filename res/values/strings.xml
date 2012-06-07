@@ -4477,7 +4477,6 @@ found in the list of installed apps.</string>
     <string name="about_title">About TeamLiquid</string>
 
     <!-- Navigation -->
-    <string name="enable_navbar_title">Enable Navbar</string>
     <string name="navbar_width_title">Navbar Width</string>
     <string name="navbar_height_title">Navbar Height</string>
     <string name="title_pref_menu_display">Menu Location</string>
@@ -4511,6 +4510,9 @@ found in the list of installed apps.</string>
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_none">Empty</string>
+    <string name="navbar_enable_bar">Enable Navbar</string>
+    <string name="navbar_widgets">Navbar Widgets</string>
+    <string name="navbar_widgets_reset">Reset Widgets</string>
 
     <!-- Interface -->
     <string name="rotation_animation_delay_title">Rotation Delay</string>
@@ -4939,7 +4941,6 @@ found in the list of installed apps.</string>
     <string name="unknown_author">Unknown Author</string>
     <string name="unknown_committer">Unknown Committer</string>
     <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
-
 
     <!-- Advanced Settings -->
     <string name="advanced_settings_title">Advanced Settings</string>

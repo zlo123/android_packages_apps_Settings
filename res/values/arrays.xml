@@ -2142,8 +2142,9 @@
         <item>Recents</item>
         <item>Search</item>
         <item>Menu</item>
+        <item>Widgets</item>
         <item>Kill app</item>
-	<item>Power</item>
+	    <item>Power</item>
         <item>Custom app</item>
         <item>Blank</item>
     </string-array>
@@ -2154,6 +2155,7 @@
         <item>**recents**</item>
         <item>**search**</item>
         <item>**menu**</item>
+        <item>**widgets**</item>
         <item>**kill**</item>
         <item>**power**</item>
         <item>**app**</item>

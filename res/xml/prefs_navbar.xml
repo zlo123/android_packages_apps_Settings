@@ -19,7 +19,7 @@
 
 	<CheckBoxPreference
 		android:key="enable_nav_bar"
-		android:title="@string/enable_navbar_title" />
+		android:title="@string/navbar_enable_bar" />
 
 	<ListPreference
 		android:entries="@array/pref_navigation_menu_entries"
@@ -103,6 +103,12 @@
                 android:entryValues="@array/navigation_bar_height"
                 android:key="navigation_bar_height"
                 android:title="@string/navbar_height_title" />
+
+        </PreferenceCategory>
+
+	    <PreferenceCategory
+                android:key="navbar_widgets"
+                android:title="@string/navbar_widgets">
 
         </PreferenceCategory>
 
