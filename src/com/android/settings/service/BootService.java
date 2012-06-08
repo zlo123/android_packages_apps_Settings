@@ -128,7 +128,7 @@ public class BootService extends Service {
     		bwriter.write(FChargeOn ? "1" : "0");
     		bwriter.close();
     		Intent i = new Intent();
-    		i.setAction("com.liquid.control.FCHARGE_CHANGED");
+    		i.setAction("com.android.settings.liquid.FCHARGE_CHANGED");
     		getApplicationContext().sendBroadcast(i);
     	} catch (IOException e) {
     		Log.e("FChargeBoot","Couldn't write fast_charge file");

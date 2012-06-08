@@ -296,13 +296,13 @@ public class PropModder extends PreferenceFragment implements
     @Override
     public void onPause() {
         super.onPause();
-        Log.d(TAG, "com.liquid.control.fragments.PropModder has been paused");
+        Log.d(TAG, "com.android.settings.liquid.fragments.PropModder has been paused");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(TAG, "com.liquid.control.fragments.PropModder is being resumed");
+        Log.d(TAG, "com.android.settings.liquid.fragments.PropModder is being resumed");
     }
 
     /* handle CheckBoxPreference clicks */
