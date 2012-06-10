@@ -84,7 +84,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     //public static final int REQUEST_PICK_CUSTOM_ICON = 200;
-    //public static final int SELECT_ACTIVITY = 2;
+    public static final int SELECT_ACTIVITY = 2;
     public static final int SELECT_WALLPAPER = 3;
     private static final String WALLPAPER_NAME = "lockscreen_wallpaper.jpg";
 
