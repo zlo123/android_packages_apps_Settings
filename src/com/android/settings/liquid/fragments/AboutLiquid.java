@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.liquid;
+package com.android.settings.liquid.fragments;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 
+import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.R;
 
-public class AboutLiquid extends Activity {
+public class AboutLiquid extends SettingsPreferenceFragment {
 
     public static final String TAG = "About Liquid";
 
@@ -40,6 +40,7 @@ public class AboutLiquid extends Activity {
         mSiteUrl = findPreference("liquid_website");
         mSourceUrl = findPreference("liquid_source");
         mIrcUrl = findPreference("liquid_irc");
+
     }
 
     @Override
