@@ -15,56 +15,48 @@
  */
 package com.android.settings.liquid;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 
 import com.android.settings.R;
 
-public class AboutLiquid extends PreferenceActivity {
+public class AboutLiquid extends Activity {
 
     public static final String TAG = "About Liquid";
 
-    private static final String LIQUID_WEBSITE_PREF = "liquid_website";
-    private static final String LIQUID_SOURCE_PREF = "liquid_source";
-    private static final String LIQUID_IRC_PREF = "liquid_irc";
-
-    private Preference mSiteUrl;
-    private Preference mSourceUrl;
-    private Preference mIrcUrl;
+    Preference mSiteUrl;
+    Preference mSourceUrl;
+    Preference mIrcUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.prefs_about);
-        PreferenceScreen prefSet = getPreferenceScreen();
-
-        mSiteUrl = prefSet.findPreference(LIQUID_WEBSITE_PREF);
-        mSourceUrl = prefSet.findPreference(LIQUID_SOURCE_PREF);
-        mIrcUrl = prefSet.findPreference(LIQUID_IRC_PREF);
+        mSiteUrl = findPreference("liquid_website");
+        mSourceUrl = findPreference("liquid_source");
+        mIrcUrl = findPreference("liquid_irc");
     }
 
+    @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
             launchUrl("http://liquidsmoothroms.com/");
-            return true;
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/LiquidSmoothROMs");
-            return true;
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=liquids");
-            return true;
         }
-        return false;
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void launchUrl(String url) {
         Uri uriUrl = Uri.parse(url);
-        Intent mActivity = new Intent(Intent.ACTION_VIEW, uriUrl);
-        startActivity(mActivity);
+        Intent donate = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(donate);
     }
 }
