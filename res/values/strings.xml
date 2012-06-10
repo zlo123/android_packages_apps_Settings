@@ -917,23 +917,23 @@
     <string name="status_bar_signal_text_show_text">Text</string>
     <string name="status_bar_signal_text_hidden">Hidden</string>
 
-    <string name="lock_screen_title">Lock screen</string>
+    <string name="lock_screen_title">Lockscreen</string>
 
-    <!-- Lock Screen Shortcuts -->
-    <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
-    <string name="lockscreen_target_title">Slider shortcuts</string>
-    <string name="lockscreen_target_summary">View or change custom lock screen shortcuts</string>
-    <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
-    <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
+    <!-- Lockscreen Shortcuts -->
+    <string name="lockscreen_target_info">Drag to target to assign shortcut</string>
+    <string name="lockscreen_target_title">Lockscreen Targets</string>
+    <string name="lockscreen_target_summary">View or change custom lockscreen shortcuts</string>
+    <string name="lockscreen_target_reset">Lockscreen shortcuts reset to default</string>
+    <string name="lockscreen_target_save">Lockscreen shortcuts saved</string>
     <string name="lockscreen_target_reset_title">Reset</string>
-    <string name="lockscreen_target_reset_message">Delete all user created lock screen shortcuts and restore to default?</string>
+    <string name="lockscreen_target_reset_message">Delete all user created lockscreen shortcuts and restore to default?</string>
     <string name="lockscreen_target_empty">Empty</string>
     <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
 
-    <!-- Lock Screen Weather -->
+    <!-- Lockscreen Weather -->
     <string name="lockscreen_weather_title">Weather</string>
-    <string name="lockscreen_weather_summary">Display weather information on the lock screen</string>
+    <string name="lockscreen_weather_summary">Display weather information on the lockscreen</string>
     <string name="lockscreen_weather_enabled">Enabled</string>
     <string name="weather_enable">Display weather</string>
     <string name="weather_source">Yahoo! Weather</string>
@@ -953,7 +953,7 @@
     <string name="weather_retrieve_location_dialog_message">Network geolocation is disabled.\n\nSet a custom location or enable network location</string>
     <string name="weather_retrieve_location_dialog_enable_button">Enable</string>
 
-    <!-- Lock screen Weather - Update frequency -->
+    <!-- Lockscreen Weather - Update frequency -->
     <string name="weather_refresh_manual">Manual</string>
     <string name="weather_refresh_30min">30 minutes</string>
     <string name="weather_refresh_60min">60 minutes</string>
@@ -962,9 +962,9 @@
     <string name="weather_refresh_6hrs">6 hours</string>
     <string name="weather_refresh_8hrs">8 hours</string>
 
-    <!-- Lock screen Calendar -->
+    <!-- Lockscreen Calendar -->
     <string name="lockscreen_calendar_title">Calendar</string>
-    <string name="lockscreen_calendar_summary">Display the next calendar event on the lock screen</string>
+    <string name="lockscreen_calendar_summary">Display the next calendar event on the lockscreen</string>
     <string name="lockscreen_calendar_enabled">Enabled</string>
     <string name="calendar_title">Display next event</string>
     <string name="calendars_title">Event calendars</string>
@@ -975,7 +975,7 @@
     <string name="calendar_show_location_title">Event location</string>
     <string name="calendar_show_description_title">Event description</string>
 
-    <!-- Lock screen calendar - lookahead -->
+    <!-- Lockscreen calendar - lookahead -->
     <string name="calendar_lookahead_3hrs">3 hours</string>
     <string name="calendar_lookahead_6hrs">6 hours</string>
     <string name="calendar_lookahead_12hrs">12 hours</string>
@@ -983,7 +983,7 @@
     <string name="calendar_lookahead_3days">3 days</string>
     <string name="calendar_lookahead_1wk">1 week</string>
 
-    <!-- Lock screen calendar - event metadata -->
+    <!-- Lockscreen calendar - event metadata -->
     <string name="calendar_metadata_none">Do not show</string>
     <string name="calendar_metadata_first_line">Show first line</string>
     <string name="calendar_metadata_all">Show all</string>
@@ -1077,12 +1077,12 @@
 
     <!-- Profiles - system settings -->
     <string name="profile_system_settings_title">System settings</string>
-    <string name="profile_lockmode_title">Lock screen mode</string>
+    <string name="profile_lockmode_title">Lockscreen mode</string>
     <string name="profile_lockmode_default">Default</string>
     <string name="profile_lockmode_insecure">Insecure</string>
     <string name="profile_lockmode_disabled">Disabled</string>
     <string name="profile_lockmode_default_summary">Use system default</string>
-    <string name="profile_lockmode_insecure_summary">Use insecure lock screen</string>
+    <string name="profile_lockmode_insecure_summary">Use insecure lockscreen</string>
     <string name="profile_airplanemode_title">Airplane mode</string>
     <string name="profile_airplanemode_default">Default</string>
     <string name="profile_airplanemode_enabled">Enabled</string>
@@ -1090,8 +1090,8 @@
     <string name="profile_airplanemode_default_summary">Use system default</string>
     <string name="profile_airplanemode_enabled_summary">Airplane mode is enabled</string>
     <string name="profile_airplanemode_disabled_summary">Airplane mode is disabled</string>
-    <string name="profile_lockmode_disabled_summary">Lock screen is disabled</string>
-    <string name="profile_disable_screen_lock_summary">Disable lock screen security while this profile is active</string>
+    <string name="profile_lockmode_disabled_summary">Lockscreen is disabled</string>
+    <string name="profile_disable_screen_lock_summary">Disable lockscreen security while this profile is active</string>
 
     <!-- Connection override toggles (not all are used at this time ) -->
     <string name="possibleButtons">Possible Buttons</string>
@@ -1108,7 +1108,7 @@
     <string name="toggleScreenTimeout">Screen Timeout</string>
     <string name="toggleAirplane">Airplane</string>
     <string name="toggleFlashlight">Flashlight</string>
-    <string name="toggleLockScreen">Lock Screen</string>
+    <string name="toggleLockScreen">Lockscreen</string>
     <string name="toggleWimax">WiMAX</string>
 
     <!-- Security Settings --><skip />
@@ -1126,7 +1126,7 @@
     <!-- Text shown for summary of owner info setting [CHAR LIMIT=40]-->
     <string name="owner_info_settings_summary"></string>
     <!-- Hint text shown in owner info edit text [CHAR LIMIT=50] -->
-    <string name="owner_info_settings_edit_text_hint">Type text to display on the lock screen</string>
+    <string name="owner_info_settings_edit_text_hint">Type text to display on the lockscreen</string>
     <!-- Main Settings screen setting option title for the item to take you to the location screen -->
     <string name="location_settings_title">Location services</string>
     <!-- Main Settings screen setting option title for the item to take you to the security screen -->
@@ -1140,8 +1140,8 @@
 
     <!-- Screen security - Screen security  #CM -->
     <string name="screen_security_category">Screen Security</string>
-    <string name="screen_security_title">Lock screen</string>
-    <string name="screen_security_summary">View or change lock screen security, delay and timeout settings</string>
+    <string name="screen_security_title">Lockscreen</string>
+    <string name="screen_security_summary">View or change lockscreen security, delay and timeout settings</string>
     <string name="additional_options_title">Additional options</string>
     <string name="unlock_menu_unlock_title">Menu unlock</string>
     <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
@@ -1216,9 +1216,9 @@
     <string name="crypt_keeper_unplugged_text">Plug in your charger and try again.</string>
 
     <!-- Dialog title, shown when encryption cannot proceed because a PIN/Password is needed -->
-    <string name="crypt_keeper_dialog_need_password_title">No lock screen PIN or password</string>
+    <string name="crypt_keeper_dialog_need_password_title">No lockscreen PIN or password</string>
     <!-- Dialog message, shown when encryption cannot proceed because a PIN/Password is needed -->
-    <string name="crypt_keeper_dialog_need_password_message">You must set a lock screen PIN or
+    <string name="crypt_keeper_dialog_need_password_message">You must set a lockscreen PIN or
     password before you can start encryption.</string>
 
     <!-- Title of the final confirmation screen before starting device encryption -->
@@ -1286,7 +1286,7 @@
     <string name="unlock_set_unlock_launch_picker_title">Screen lock</string>
 
     <!--  Title for PreferenceScreen to change security method: None/Pattern/PIN/Password [CHAR LIMIT=22] -->
-    <string name="unlock_set_unlock_launch_picker_change_title">Change lock screen</string>
+    <string name="unlock_set_unlock_launch_picker_change_title">Change lockscreen</string>
 
     <!--  Summary for PreferenceScreen to changeecurity method: None/Pattern/PIN/Password [CHAR LIMIT=45]  -->
     <string name="unlock_set_unlock_launch_picker_change_summary">Change or disable pattern, PIN, or password security</string>
@@ -1330,7 +1330,7 @@
     <!-- Summary for preference that has been disabled by because of the DevicePolicyAdmin, or because device encryption is enabled, or because there are credentials in the credential storage [CHAR LIMIT=50] -->
     <string name="unlock_set_unlock_disabled_summary">Disabled by administrator, encryption policy, or credential storage</string>
 
-    <!-- Summary for "Configure lockscreen" when lock screen is off [CHAR LIMIT=45] -->
+    <!-- Summary for "Configure lockscreen" when lockscreen is off [CHAR LIMIT=45] -->
     <string name="unlock_set_unlock_mode_off">None</string>
     <!-- Summary for "Configure lockscreen" when security is disabled [CHAR LIMIT=45] -->
     <string name="unlock_set_unlock_mode_none">Slide</string>
@@ -1988,7 +1988,7 @@
     <!-- Bluetooth settings screen, Discoverable timout list dialog summary text -->
     <string name="bluetooth_visibility_timeout_summary">Set how long device will be discoverable</string>
     <!-- Bluetooth settings screen, check box label whether or not to allow
-        bluetooth voice dialing when lock screen is up-->
+        bluetooth voice dialing when lockscreen is up-->
     <string name="bluetooth_lock_voice_dialing">Lock voice dialing</string>
     <!-- Bluetooth settings screen, lock voice dialing checkbox summary text -->
     <string name="bluetooth_lock_voice_dialing_summary">
@@ -3414,7 +3414,7 @@ found in the list of installed apps.</string>
     <string name="display_order_text">Sort by:</string>
     <!-- Appname -->
     <string name="aosp_name">AOSP</string>
-    <string name="app_name">Liquid Controls</string>
+
     <!-- label for application name -->
     <string name="app_name_label">App</string>
     <!-- label for launch count -->
@@ -3848,8 +3848,8 @@ found in the list of installed apps.</string>
     <string name="credentials_not_erased">Credential storage couldn\'t be erased.</string>
     <!-- Toast message [CHAR LIMIT=30] -->
     <string name="credentials_enabled">Credential storage is enabled.</string>
-    <!-- Description of dialog to explain that a lock screen password is required to use credential storage [CHAR LIMIT=NONE] -->
-    <string name="credentials_configure_lock_screen_hint">You must set a lock screen PIN or password before you can use credential storage.</string>
+    <!-- Description of dialog to explain that a lockscreen password is required to use credential storage [CHAR LIMIT=NONE] -->
+    <string name="credentials_configure_lock_screen_hint">You must set a lockscreen PIN or password before you can use credential storage.</string>
 
     <!-- Sound settings screen, setting check box label -->
     <string name="emergency_tone_title">Emergency tone</string>
@@ -4449,12 +4449,11 @@ found in the list of installed apps.</string>
 
     <!--********************START LIQUID MODS************************************************-->
     <string name="header_category_shortcuts">SHORTCUTS</string>
-    <string name="liquid_control_title">Liquid Control</string>
 	
 	<!-- Mainmenu -->
     <string name="general_ui">General</string>
     <string name="user_interface">Interface</string>
-    <string name="lockscreen_options">Lockscreens</string>
+    <string name="lockscreen_options">Lockscreen</string>
     <string name="power_menu_optons">Powermenu</string>
     <string name="functionality">Functionality</string>
     <string name="power_saver">Powersaver</string>
@@ -4518,9 +4517,9 @@ found in the list of installed apps.</string>
     <string name="rotation_animation_delay_title">Rotation Delay</string>
     <string name="rotation_animation_delay_summary">Time which device must be stable</string>
     <string name="ime_switcher_title">IME Switcher</string>
-    <string name="ime_switcher_summary">In statusbar, while typing</string>
+    <string name="ime_switcher_summary">Icon in statusbar, while typing</string>
     <string name="custom_carrier_label_title">Carrier Label</string>
-    <string name="longpress_to_kill_title">App Killer</string>
+    <string name="longpress_to_kill_title">Appkiller</string>
     <string name="longpress_to_kill_summary">Holding back kills current activity</string>
     <string name="rotate_180_title">180° Rotation</string>
     <string name="rotate_180_summary">Allow your device to rotate upside down!</string>
@@ -4537,8 +4536,8 @@ found in the list of installed apps.</string>
     <string name="screenshot_sound_title">Screenshot</string>
     <string name="screenshot_sound_summary">Disable sound when capturing screen</string>
     <string name="enable_volume_options">Volume Options</string>
-    <string name="disable_bootaudio_title">Disable boot audio</string>
-    <string name="disable_bootaudio_summary">Quiet.</string>
+    <string name="disable_bootaudio_title">Boot Audio</string>
+    <string name="disable_bootaudio_summary">Disables audio on startup</string>
     <string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/boot_audio.mp3</string>
 
     <!-- Lockscreen -->
@@ -4591,8 +4590,8 @@ found in the list of installed apps.</string>
 
     <!-- Statusbar -->
     <string name="title_settings_behavior">Settings Behavior</string>
-    <string name="statusbar_activity"> Statusbar</string>
-    <string name="ui_activity"> User Interface</string>
+    <string name="statusbar_activity">Statusbar</string>
+    <string name="ui_activity">User Interface</string>
     <string name="statusbar_expanded_title">Statusbar Expanded</string>
     <string name="statusbar_unexpanded_title">Statusbar Unexpanded</string>
     <string name="summary_settings_behavior">Default behavior is long press</string>
@@ -4606,8 +4605,8 @@ found in the list of installed apps.</string>
     <string name="adb_icon_summary">Hide adb debugging statusbar icon</string>
     <string name="statusbar_show_aosp_title">Settings</string>
     <string name="statusbar_show_aosp_summary">Hide settings statusbar icon</string>
-    <string name="statusbar_show_liquid_control_title">Liquid Control</string>
-    <string name="statusbar_show_liquid_control_summary">Hide Liquid Control statusbar icon</string>
+    <string name="statusbar_show_liquid_control_title">About Liquid</string>
+    <string name="statusbar_show_liquid_control_summary">Hide about liquid statusbar icon</string>
     <string name="statusbar_show_date_title">Date</string>
     <string name="statusbar_show_date_summary">Hide date in pull down statusbar</string>
     <string name="statusbar_date_format_title">Date Format</string>
@@ -4627,7 +4626,7 @@ found in the list of installed apps.</string>
     <string name="windowshade_handle_title">Window Handle</string>
     <string name="windowshade_handle_summary">customize the statusbar close handle bar image</string>
     <string name="windowshade_handle_default">ICS Default</string>
-    <string name="windowshade_handle_liquid_1">Exiled option</string>
+    <string name="windowshade_handle_liquid_1">Themed option</string>
     <string name="statusbar_handle_alpha_title">Statusbar handle alpha</string>
     <string name="statusbar_fontsize">Font Size</string>
     <string name="statusbar_fontsize_summary">Change size of text elements on statusbar</string>
@@ -4695,8 +4694,8 @@ found in the list of installed apps.</string>
     <string name="pt_set_min">Minimum</string>
     <string name="pt_set_gov">Governor</string>
     <string name="pt_cpu_boot">Set On Boot</string>
-    <string name="ps_set_max">Maxium\nCurrent: %s</string>
-    <string name="ps_set_min">Minium\nCurrent: %s</string>
+    <string name="ps_set_max">Maximum\nCurrent: %s</string>
+    <string name="ps_set_min">Minimum\nCurrent: %s</string>
     <string name="ps_set_gov">Governor\nCurrent: %s</string>
     <string name="ps_cpu_boot">Set On Boot</string>
     <string name="toast_min_max_error01">Frequency cannot be lower than minmium</string>
@@ -4877,9 +4876,6 @@ found in the list of installed apps.</string>
     <string name="dev_blueharford_title">blueharford</string>
     <string name="dev_blueharford_twitter">blueharford</string>
     <string name="dev_blueharford_donate">http://bit.ly/KNIaZM</string>
-    <string name="dev_austrie_title">Austrie</string>
-    <string name="dev_austrie_twitter"></string>
-    <string name="dev_austrie_donate"></string>
 
     <!-- Open Recovery -->
     <string name="open_recovery_cat_title">Versions found</string>
