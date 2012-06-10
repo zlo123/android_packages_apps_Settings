@@ -57,17 +57,11 @@
             liquid:donateLink="@string/dev_amplified_donate"
             liquid:avatar="@drawable/avatar_amplified" />
 	
-	<com.android.settings.widget.DeveloperPreference
+	    <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_blueharford_title"
             liquid:twitterHandle="@string/dev_blueharford_twitter"
             liquid:donateLink="@string/dev_blueharford_donate"
             liquid:avatar="@drawable/avatar_blueharford" />
-		
-	<com.android.settings.widget.DeveloperPreference
-            android:title="@string/dev_austrie_title"
-            liquid:twitterHandle="@string/dev_austrie_twitter"
-            liquid:donateLink="@string/dev_austrie_donate"
-            liquid:avatar="@drawable/avatar_austrie" />
 
     </PreferenceCategory>
 
