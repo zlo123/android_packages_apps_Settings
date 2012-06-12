@@ -24,6 +24,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -54,6 +55,9 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_DISABLE_BOOT_AUDIO = "disable_bootaudio";
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
+    private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
+    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
+    private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
 
     CheckBoxPreference mAllow180Rotation;
     ListPreference mAnimationRotationDelay;
@@ -112,8 +116,9 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.RECENT_APP_SWITCHER,
                 0)));
 
-        mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
-        mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
+        mDisableBootAnimation = (CheckBoxPreference) findPreference("DISABLE_BOOTANIMATION_PREF");
+        String disableBootanimation = SystemProperties.get(DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
+        mDisableBootAnimation.setChecked("1".equals(disableBootanimation));
 
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
@@ -163,7 +168,11 @@ public class UserInterface extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mCrtOffAnimation) {
+	if (preference == mDisableBootAnimation) {
+	    SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
+                        mDisableBootAnimation.isChecked() ? "1" : "0");
+	    return true;
+        } else if (preference == mCrtOffAnimation) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.CRT_OFF_ANIMATION, checked ? 1 : 0);
@@ -226,20 +235,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES, checked ? (1 | 2 | 4 | 8)
                             : (1 | 2 | 8));
             return true;
-        } else if (preference == mDisableBootAnimation) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            if (checked) {
-                Helpers.getMount("rw");
-                new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.unicorn");
-                Helpers.getMount("ro");
-                preference.setSummary(R.string.disable_bootanimation_summary);
-            } else {
-                Helpers.getMount("rw");
-                new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
-                Helpers.getMount("ro");
-            }
         } else if (preference == mDisableBootAudio) {
             if (mDisableBootAudio.isChecked()) {
                 Helpers.getMount("rw");
