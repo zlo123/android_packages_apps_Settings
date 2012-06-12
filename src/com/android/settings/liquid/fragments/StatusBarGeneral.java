@@ -65,6 +65,7 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
     private static final String PREF_AUTO_HIDE_TOGGLES = "auto_hide_toggles";
     private static final String PREF_DATE_BEHAVIOR = "date_behavior";
     private static final String PREF_BRIGHTNESS_TOGGLE = "status_bar_brightness_toggle";
+    private static final String PREF_STATUSBAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String PREF_SHOW_AOSP = "show_aosp_settings";
     private static final String PREF_SHOW_LIQUIDCONTROL = "show_liquid_control";
     private static final String PREF_ADB_ICON = "adb_icon";
@@ -102,6 +103,7 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
     CheckBoxPreference mAutoHideToggles;
     CheckBoxPreference mDateBehavior;
     CheckBoxPreference mStatusBarBrightnessToggle;
+    CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mShowLiquidControl;
     CheckBoxPreference mAdbIcon;
     ColorPickerPreference mWindowshadeBackground;
@@ -130,6 +132,7 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
         mAutoHideToggles = (CheckBoxPreference) findPreference(PREF_AUTO_HIDE_TOGGLES);
         mDateBehavior = (CheckBoxPreference) findPreference(PREF_DATE_BEHAVIOR);
         mStatusBarBrightnessToggle = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_TOGGLE);
+        mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUSBAR_NOTIF_COUNT);
         mShowAospSettings = (CheckBoxPreference) findPreference(PREF_SHOW_AOSP);
         mShowLiquidControl = (CheckBoxPreference) findPreference(PREF_SHOW_LIQUIDCONTROL);
         mAdbIcon = (CheckBoxPreference) findPreference(PREF_ADB_ICON);
@@ -221,6 +224,8 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUSBAR_DATE_BEHAVIOR, 0) == 1);
         mStatusBarBrightnessToggle.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE, 0) == 1);
+        mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
+                .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1);
         mShowAospSettings.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUSBAR_REMOVE_AOSP_SETTINGS_LINK, 0) == 1);
         mShowLiquidControl.setChecked(Settings.System.getInt(mContext
@@ -402,6 +407,11 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
         } else if (preference == mStatusBarBrightnessToggle) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarNotifCount) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NOTIF_COUNT,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mShowAospSettings) {

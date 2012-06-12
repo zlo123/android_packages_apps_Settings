@@ -13,7 +13,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -84,10 +83,15 @@
             android:summary="@string/summary_status_bar_brightness_toggle" />
 
         <CheckBoxPreference
+            android:key="status_bar_notif_count"
+            android:title="@string/status_bar_notif_count_title"
+            android:summary="@string/status_bar_notif_count_summary" />
+
+        <CheckBoxPreference
             android:key="adb_icon" 
             android:title="@string/adb_icon_title"
             android:summary="@string/adb_icon_summary" />
-        
+
         <ListPreference
             android:key="status_bar_fontsize"
             android:title="@string/statusbar_fontsize"

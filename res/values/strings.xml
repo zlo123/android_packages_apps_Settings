@@ -574,7 +574,7 @@
     <string name="android_beam_label">Android Beam</string>
     <!-- Explanation of the Android Beam feature in the Android Beam settings panel. The use of "beam" here is as a verb and not considered trademarked. [CHAR LIMIT=NONE] -->
     <string name="android_beam_explained">When this feature is turned on, you can beam app content to another NFC-capable device by holding the devices close together. For example, you can beam Browser pages, YouTube videos, People contacts, and more.\n\nJust bring the devices together (typically back to back) and then touch your screen. The app determines what gets beamed.</string>
-<!-- DEVICE Settings -->
+    <!-- DEVICE Settings -->
     <!-- Settings main menu category heading. Device (Sound, display, battery, applications...). [CHAR LIMIT=40] -->
     <string name="header_category_device">DEVICE</string>
 
@@ -917,9 +917,8 @@
     <string name="status_bar_signal_text_show_text">Text</string>
     <string name="status_bar_signal_text_hidden">Hidden</string>
 
-    <string name="lock_screen_title">Lockscreen</string>
-
     <!-- Lockscreen Shortcuts -->
+    <string name="lock_screen_title">Lockscreen</string>
     <string name="lockscreen_target_info">Drag to target to assign shortcut</string>
     <string name="lockscreen_target_title">Lockscreen Targets</string>
     <string name="lockscreen_target_summary">View or change custom lockscreen shortcuts</string>
@@ -940,18 +939,17 @@
     <string name="weather_use_custom_location">Use custom location</string>
     <string name="weather_geolocated">Geolocated using network</string>
     <string name="weather_custom_location_dialog_title">Enter location</string>
-    <string name="weather_custom_location_dialog_message">Caution: Entering an invalid location will stop updates.</string>
     <string name="weather_custom_location_hint">City, State/Country</string>
     <string name="weather_custom_location_title">Location</string>
     <string name="weather_show_location_title">Show location</string>
     <string name="weather_show_timestamp_title">Show timestamp</string>
     <string name="weather_refresh_interval">Update interval</string>
-    <string name="weather_update">Update</string>
     <string name="weather_use_metric">Use metric</string>
-    <string name="weather_refreshing">Updating weather</string>
     <string name="weather_retrieve_location_dialog_title">Cannot retrieve location!</string>
     <string name="weather_retrieve_location_dialog_message">Network geolocation is disabled.\n\nSet a custom location or enable network location</string>
     <string name="weather_retrieve_location_dialog_enable_button">Enable</string>
+    <string name="weather_invert_lowhigh">Invert low/high temperatures</string>
+    <string name="weather_progress_title">Verifying location</string>
 
     <!-- Lockscreen Weather - Update frequency -->
     <string name="weather_refresh_manual">Manual</string>
@@ -987,6 +985,15 @@
     <string name="calendar_metadata_none">Do not show</string>
     <string name="calendar_metadata_first_line">Show first line</string>
     <string name="calendar_metadata_all">Show all</string>
+
+    <!-- Lock screen background -->
+    <string name="lockscreen_custom_background_title">Background</string>
+    <string name="lockscreen_custom_background_dialog_title">Choose color</string>
+    <string name="lockscreen_background_result_successful">Background changed</string>
+    <string name="lockscreen_background_result_not_successful">Background not changed</string>
+    <string name="lockscreen_background_color_fill">Color fill</string>
+    <string name="lockscreen_background_custom_image">Custom image</string>
+    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Wallpaper settings title [CHAR LIMIT=30] -->
     <string name="wallpaper_settings_title">Wallpaper</string>
@@ -4473,8 +4480,8 @@ found in the list of installed apps.</string>
     <string name="misc_short">Misc</string>
     <string name="system">System</string>
     <string name="drawables_main_screen_title">Images</string>
-    <string name="meet_the_team">Meet TeamLiquid</string>
-    <string name="about_title">About TeamLiquid</string>
+    <string name="meet_the_team">Meet Team Liquid</string>
+    <string name="about_title">About Team Liquid</string>
 
     <!-- Navigation -->
     <string name="navbar_width_title">Navbar Width</string>
@@ -4531,8 +4538,8 @@ found in the list of installed apps.</string>
     <string name="disable_bugmailer_title">Android Bugmailer</string>
     <string name="disable_bugmailer_summary">Disable integrated bugmailer support</string>
     <string name="crt_animations_header">CRT Animations</string>
-    <string name="crt_on_title">CRT animation is now enabled</string>
-    <string name="crt_off_title">CRT animation is now disabled</string>
+    <string name="crt_on_title">CRT animation is now disabled</string>
+    <string name="crt_off_title">CRT animation is now enabled</string>
     <string name="sounds_category_title">Sounds</string>
     <string name="screenshot_sound_title">Screenshot</string>
     <string name="screenshot_sound_summary">Disable sound when capturing screen</string>
@@ -4592,7 +4599,7 @@ found in the list of installed apps.</string>
     <!-- Statusbar -->
     <string name="title_settings_behavior">Settings Behavior</string>
     <string name="statusbar_activity">Statusbar</string>
-    <string name="ui_activity">User Interface</string>
+    <string name="ui_activity">Interface</string>
     <string name="statusbar_expanded_title">Statusbar Expanded</string>
     <string name="statusbar_unexpanded_title">Statusbar Unexpanded</string>
     <string name="summary_settings_behavior">Default behavior is long press</string>
@@ -4606,8 +4613,8 @@ found in the list of installed apps.</string>
     <string name="adb_icon_summary">Hide adb debugging statusbar icon</string>
     <string name="statusbar_show_aosp_title">Settings</string>
     <string name="statusbar_show_aosp_summary">Hide settings statusbar icon</string>
-    <string name="statusbar_show_liquid_control_title">About Liquid</string>
-    <string name="statusbar_show_liquid_control_summary">Hide about liquid statusbar icon</string>
+    <string name="statusbar_show_liquid_control_title">Liquid Settings</string>
+    <string name="statusbar_show_liquid_control_summary">Hide liquid settings statusbar icon</string>
     <string name="statusbar_show_date_title">Date</string>
     <string name="statusbar_show_date_summary">Hide date in pull down statusbar</string>
     <string name="statusbar_date_format_title">Date Format</string>
@@ -4903,14 +4910,14 @@ found in the list of installed apps.</string>
     <string name="verify_md5_pass">Goo.im verified md5</string>
     <string name="verify_md5_fail">Goo.im failed to verify md5</string>
     <string name="other_devs_list">Goo.im devs list</string>
-    <string name="other_gooim_devs_menu_title">Cheat on TeamLiquid</string>
+    <string name="other_gooim_devs_menu_title">Cheat on Team Liquid</string>
     <string name="username">Username: </string>
     <string name="password">Password: </string>
     <string name="gooim_supporters_menu_title">GooIm Supporters</string>
     <string name="dev_list">Dev List</string>
     <string name="button_ok">Ok</string>
     <string name="button_cancel">Canecl</string>
-    <string name="inform_user_about_cipher">LiquidControl stores your password using 128 bit AES encryption</string>
+    <string name="inform_user_about_cipher">Liquid Settings stores your password using 128 bit AES encryption</string>
 
     <!-- Dynamic Changelog -->
     <string name="dynamic_changelog">Dynamic ChangeLog</string>
@@ -4940,7 +4947,7 @@ found in the list of installed apps.</string>
     <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
 
     <!-- Advanced Settings -->
-    <string name="advanced_settings_title">Advanced Settings</string>
+    <string name="advanced_settings_title">Advanced</string>
     <string name="developments_settings_title">Development settings</string>
     <string name="spareparts_settings_title">Spare Parts settings</string>
     <string name="testing_settings_title">Testing settings</string>
@@ -4959,4 +4966,15 @@ found in the list of installed apps.</string>
     <string name="increasing_ring_interval_3seconds">3 seconds</string>
     <string name="increasing_ring_interval_5seconds">5 seconds</string>
     <string name="increasing_ring_interval_10seconds">10 seconds</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
+
+    <!-- Status bar notification count -->
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
 </resources>

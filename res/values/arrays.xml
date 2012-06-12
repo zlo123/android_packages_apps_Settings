@@ -1030,7 +1030,6 @@
         <item>5000</item>
     </string-array>
 
-
     <string-array name="weather_interval_entries">
         <item>@string/weather_refresh_manual</item>
         <item>@string/weather_refresh_30min</item>
@@ -1074,7 +1073,7 @@
         <item>86400</item>
     </string-array>
 
-        <string-array name="calendar_lookahead_entries">
+    <string-array name="calendar_lookahead_entries">
         <item>@string/calendar_lookahead_3hrs</item>
         <item>@string/calendar_lookahead_6hrs</item>
         <item>@string/calendar_lookahead_12hrs</item>
@@ -2174,7 +2173,6 @@
 	<item>2</item>
     </string-array>
 
-    <!-- long press home -->
     <string-array name="long_press_home_entries">
         <item>Default</item>
         <item>Nothing</item>
@@ -2208,4 +2206,17 @@
         <item>5000</item>
         <item>10000</item>
     </integer-array>
+
+    <string-array name="lockscreen_background_entries" translatable="false">
+        <item>@string/lockscreen_background_color_fill</item>
+        <item>@string/lockscreen_background_custom_image</item>
+        <item>@string/lockscreen_background_default_wallpaper</item>
+    </string-array>
+
+    <string-array name="lockscreen_background_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

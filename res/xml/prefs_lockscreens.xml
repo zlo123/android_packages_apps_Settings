@@ -89,9 +89,4 @@
 
 	</PreferenceCategory>
 
-<!-- <PreferenceCategory
-        android:key="lockscreen_targets"
-        android:title="@string/lockscreen_targets">
-    </PreferenceCategory> -->
-
 </PreferenceScreen>
