@@ -75,7 +75,6 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
     private static final String PREF_MENU = "pref_lockscreen_menu_unlock";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
-    //private static final String PREF_LOCKSCREEN_LAYOUT = "pref_lockscreen_layout";
     private static final String PREF_VOLUME_WAKE = "volume_wake";
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
@@ -83,14 +82,12 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     private static final String PREF_SHOW_LOCK_BEFORE_UNLOCK = "show_lock_before_unlock";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
-    //public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int SELECT_ACTIVITY = 2;
     public static final int SELECT_WALLPAPER = 3;
     private static final String WALLPAPER_NAME = "lockscreen_wallpaper.jpg";
 
     CheckBoxPreference menuButtonLocation;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
-    //ListPreference mLockscreenOption;
     CheckBoxPreference mVolumeWake;
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mLockscreenLandscape;
@@ -99,16 +96,12 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     ColorPickerPreference mLockscreenTextColor;
     CheckBoxPreference mShowLockBeforeUnlock;
 
-    //private int currentIconIndex;
-    //private Preference mCurrentCustomActivityPreference;
-    //private String mCurrentCustomActivityString;
-    //private ShortcutPickerHelper mPicker;
     ArrayList<String> keys = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-Log.d(TAG, "NEW LOGGING");
+
         keys.add(Settings.System.LOCKSCREEN_HIDE_NAV);
         keys.add(Settings.System.LOCKSCREEN_LANDSCAPE);
         keys.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
@@ -124,11 +117,6 @@ Log.d(TAG, "NEW LOGGING");
         mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
         mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
                 .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
-
-        //mLockscreenOption = (ListPreference) findPreference(PREF_LOCKSCREEN_LAYOUT);
-        //mLockscreenOption.setOnPreferenceChangeListener(this);
-        //mLockscreenOption.setValue(Settings.System.getInt(
-                //getActivity().getContentResolver(), Settings.System.LOCKSCREEN_LAYOUT, 2) + "");
 
         mShowLockBeforeUnlock = (CheckBoxPreference) findPreference(PREF_SHOW_LOCK_BEFORE_UNLOCK);
         mShowLockBeforeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -147,7 +135,6 @@ Log.d(TAG, "NEW LOGGING");
                 .getContentResolver(), Settings.System.LOCKSCREEN_BATTERY, 0) == 1);
 
         mLockscreenWallpaper = findPreference("wallpaper");
-        //mPicker = new ShortcutPickerHelper(this, this);
 
         for (String key : keys) {
             try {
@@ -163,7 +150,6 @@ Log.d(TAG, "NEW LOGGING");
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
 
-        //refreshSettings();
         setHasOptionsMenu(true);
     }
 
@@ -179,7 +165,6 @@ Log.d(TAG, "NEW LOGGING");
             mLockscreenWallpaper
                     .setSummary("No external storage available (/sdcard)");
         }
-        //refreshSettings();
     }
 
     @Override
@@ -237,9 +222,6 @@ Log.d(TAG, "NEW LOGGING");
         } else if (keys.contains(preference.getKey())) {
             return Settings.System.putInt(getActivity().getContentResolver(), preference.getKey(),
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-        //} else if (preference.getKey().startsWith("lockscreen_icon")) {
-        //    return true;
-        //} else if (preference.getKey().startsWith("lockscreen_target")) {
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -269,232 +251,11 @@ Log.d(TAG, "NEW LOGGING");
         return new File(Environment.getExternalStorageDirectory(), WALLPAPER_NAME);
     }
 
-/*    private Uri getTempFileUri() {
-        return Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
-                "tmp_icon_" + currentIconIndex + ".png"));
-    }
 
-    private String getIconFileName(int index) {
-        return "lockscreen_icon_" + index + ".png";
-    }
-
-    public void refreshSettings() {
-        int lockscreenTargets = Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKSCREEN_LAYOUT, 2);
-        PreferenceGroup targetGroup = (PreferenceGroup) findPreference("lockscreen_targets");
-        targetGroup.removeAll();
-
-        // quad only uses first 4, but we make the system think there's 6 for
-        // the alternate layout
-        // so only show 4
-        if (lockscreenTargets == 6) {
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[4], "**null**");
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[5], "**null**");
-            lockscreenTargets = 4;
-        }
-
-        PackageManager pm = mContext.getPackageManager();
-        Resources res = mContext.getResources();
-
-        for (int i = 0; i < lockscreenTargets; i++) {
-            LockscreenItemPreference p = new LockscreenItemPreference(getActivity());
-            String dialogTitle = String.format(
-                    getResources().getString(R.string.custom_app_n_dialog_title), i + 1);
-            p.setDialogTitle(dialogTitle);
-            p.setEntries(R.array.lockscreen_choice_entries);
-            p.setEntryValues(R.array.lockscreen_choice_values);
-            String title = String.format(getResources().getString(R.string.custom_app_n), i + 1);
-            p.setTitle(title);
-            p.setKey("lockscreen_target_" + i);
-            p.setSummary(getProperSummary(i));
-            p.setOnPreferenceChangeListener(this);
-            targetGroup.addPreference(p);
-            final int index = i;
-            p.setImageListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    Boolean isSDPresent = android.os.Environment.getExternalStorageState().equals(
-                            android.os.Environment.MEDIA_MOUNTED);
-                    if (!isSDPresent) {
-                        Toast.makeText(v.getContext(), "Insert SD card to use this feature",
-                                Toast.LENGTH_LONG).show();
-                        return;
-                    }
-
-                    currentIconIndex = index;
-                    int width = 100;
-                    int height = width;
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                    intent.setType("image/*");
-                    intent.putExtra("crop", "true");
-                    intent.putExtra("aspectX", width);
-                    intent.putExtra("aspectY", height);
-                    intent.putExtra("outputX", width);
-                    intent.putExtra("outputY", height);
-                    intent.putExtra("scale", true);
-                    // intent.putExtra("return-data", false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getTempFile()));
-                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-                    Log.i(TAG, "started for result, should output to: " + getTempFile());
-                    startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
-                }
-            });
-
-            String customIconUri = Settings.System.getString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[i]);
-            Log.i(TAG, "customIconUri: " + customIconUri);
-
-            if (customIconUri != null && !customIconUri.equals("")
-                    && customIconUri.startsWith("file")) {
-                // it's an icon the user chose from the gallery here
-                File icon = new File(Uri.parse(customIconUri).getPath());
-                if (icon.exists())
-                    p.setIcon(resize(new BitmapDrawable(getResources(), icon.getAbsolutePath())));
-
-            } else if (customIconUri != null && !customIconUri.equals("")) {
-                // here they chose another app icon
-                try {
-                    p.setIcon(resize(pm.getActivityIcon(Intent.parseUri(customIconUri, 0))));
-                } catch (NameNotFoundException e) {
-                    e.printStackTrace();
-                } catch (URISyntaxException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                // ok use default icons here
-                p.setIcon(resize(getLockscreenIconImage(i)));
-            }
-        }
-    }
-
-    private Drawable resize(Drawable image) {
-        int size = 50;
-        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources().getDisplayMetrics());
-
-        Bitmap d = ((BitmapDrawable) image).getBitmap();
-        Bitmap bitmapOrig = Bitmap.createScaledBitmap(d, px, px, false);
-        return new BitmapDrawable(mContext.getResources(), bitmapOrig);
-    }
-    
-     private Drawable getLockscreenIconImage(int index) {
-        String uri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index]);
-
-        if (uri == null)
-            return getResources().getDrawable(R.drawable.ic_null);
-
-        if (uri.startsWith("**")) {
-            if (uri.equals("**unlock**"))
-                return getResources().getDrawable(R.drawable.ic_lockscreen_unlock);
-            else if (uri.equals("**sound**"))
-                return getResources().getDrawable(R.drawable.ic_lockscreen_soundon);
-            else if (uri.equals("**camera**"))
-                return getResources().getDrawable(R.drawable.ic_lockscreen_camera);
-            else if (uri.equals("**phone**"))
-                return getResources().getDrawable(R.drawable.ic_lockscreen_phone);
-            else if (uri.equals("**mms**"))
-                return getResources().getDrawable(R.drawable.ic_lockscreen_sms);
-            else if (uri.equals("**torch**"))
-                return getResources().getDrawable(R.drawable.ic_lockscreen_flashlight);
-            else if (uri.equals("**null**"))
-                return getResources().getDrawable(R.drawable.ic_null);
-        } else {
-            try {
-                return mContext.getPackageManager().getActivityIcon(Intent.parseUri(uri, 0));
-            } catch (NameNotFoundException e) {
-                e.printStackTrace();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return getResources().getDrawable(R.drawable.ic_null);
-    }
-
-    private String getProperSummary(int i) {
-        String uri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[i]);
-        if (uri == null)
-            return getResources().getString(R.string.lockscreen_action_none);
-        if (uri.startsWith("**")) {
-            if (uri.equals("**unlock**"))
-                return getResources().getString(R.string.lockscreen_action_unlock);
-            else if (uri.equals("**sound**"))
-                return getResources().getString(R.string.lockscreen_action_sound);
-            else if (uri.equals("**camera**"))
-                return getResources().getString(R.string.lockscreen_action_camera);
-            else if (uri.equals("**phone**"))
-                return getResources().getString(R.string.lockscreen_action_phone);
-            else if (uri.equals("**mms**"))
-                return getResources().getString(R.string.lockscreen_action_mms);
-            else if (uri.equals("**torch**"))
-                return getResources().getString(R.string.lockscreen_action_flashlight);
-            else if (uri.equals("**null**"))
-                return getResources().getString(R.string.lockscreen_action_none);
-        } else {
-            return mPicker.getFriendlyNameForUri(uri);
-        }
-        return null;
-    }
-
-    @Override
-    public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
-        if (Settings.System.putString(getActivity().getContentResolver(),
-                mCurrentCustomActivityString, uri)) {
-
-            String i = mCurrentCustomActivityString.substring(mCurrentCustomActivityString
-                    .lastIndexOf("_") + 1);
-            int index = Integer.parseInt(i);
-            Log.i(TAG, "shortcut picked, index: " + i);
-            if (bmp == null) {
-                Settings.System.putString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[index], "");
-            } else {
-                String iconName = getIconFileName(index);
-                FileOutputStream iconStream = null;
-                try {
-                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
-                }
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-                Settings.System.putString(
-                        getContentResolver(),
-                        Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[index],
-                        Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
-            }
-            mCurrentCustomActivityPreference.setSummary(friendlyName);
-            refreshSettings();
-        }
-    } */
 
     @Override
     public boolean onPreferenceChange(Preference pref, Object newValue) {
         boolean handled = false;
-    /*    if (pref == mLockscreenOption) {
-            int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.LOCKSCREEN_LAYOUT, val);
-            refreshSettings();
-            return true;
-        } else if (pref.getKey().startsWith("lockscreen_target")) {
-            int index = Integer.parseInt(pref.getKey().substring(pref.getKey().lastIndexOf("_") + 1));
-            if (newValue.equals("**app**")) {
-                mCurrentCustomActivityPreference = pref;
-                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index];
-                mPicker.pickShortcut();
-            } else {
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index], (String) newValue);
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[index], "");
-                refreshSettings();
-            }
-            return true;
-        } else */
         if (pref == mLockscreenTextColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));
@@ -505,22 +266,6 @@ Log.d(TAG, "NEW LOGGING");
             if (DEBUG)
                 Log.d(TAG, String.format("new color hex value: %d", intHex));
             return true;
-      /*  } else if (pref.getKey().startsWith("lockscreen_target")) {
-            int index = Integer.parseInt(pref.getKey().substring(
-                    pref.getKey().lastIndexOf("_") + 1));
-
-            if (newValue.equals("**app**")) {
-                mCurrentCustomActivityPreference = pref;
-                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index];
-                mPicker.pickShortcut();
-            } else {
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index], (String) newValue);
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[index], "");
-                refreshSettings();
-            }
-            return true; */
         }
         return false;
     }
@@ -556,42 +301,6 @@ Log.d(TAG, "NEW LOGGING");
                 // go ahead and clean up if it was successful or not
                 if (galleryImage.exists())
                     galleryImage.delete();
-
-           /* } else if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
-                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
-                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
-                mPicker.onActivityResult(requestCode, resultCode, data);
-
-            } else if (requestCode == REQUEST_PICK_CUSTOM_ICON) {
-
-                File galleryImage = getTempFile();
-                String iconName = getIconFileName(currentIconIndex);
-                FileOutputStream iconStream = null;
-                try {
-                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
-                }
-
-                Bitmap bitmap = BitmapFactory.decodeFile(galleryImage.getAbsolutePath());
-                if (bitmap != null && bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream)) {
-
-                    Settings.System.putString(getContentResolver(),
-                            Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[currentIconIndex],
-                            Uri.fromFile(
-                                    new File(mContext.getFilesDir(), iconName)).toString());
-
-                    if (galleryImage.exists())
-                        galleryImage.delete();
-
-                    Toast.makeText(getActivity(), currentIconIndex + "'s icon set successfully!",
-                            Toast.LENGTH_SHORT).show();
-                    refreshSettings();
-                } else {
-                    Toast.makeText(getActivity(), "Setting icon failed! Is your SD mounted?",
-                            Toast.LENGTH_SHORT).show();
-                } */
-
             } 
         }
         super.onActivityResult(requestCode, resultCode, data);
