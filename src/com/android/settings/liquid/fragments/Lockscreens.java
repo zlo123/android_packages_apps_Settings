@@ -108,7 +108,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+Log.d(TAG, "NEW LOGGING");
         keys.add(Settings.System.LOCKSCREEN_HIDE_NAV);
         keys.add(Settings.System.LOCKSCREEN_LANDSCAPE);
         keys.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);

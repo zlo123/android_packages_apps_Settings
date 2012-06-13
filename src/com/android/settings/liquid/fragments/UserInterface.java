@@ -55,9 +55,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_DISABLE_BOOT_AUDIO = "disable_bootaudio";
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
-    private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
+    private static final String DISABLE_BOOTANIMATION_PREF = "disable_bootanimation";
     private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
-    private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
 
     CheckBoxPreference mAllow180Rotation;
     ListPreference mAnimationRotationDelay;
@@ -116,9 +115,16 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.RECENT_APP_SWITCHER,
                 0)));
 
-        mDisableBootAnimation = (CheckBoxPreference) findPreference("DISABLE_BOOTANIMATION_PREF");
-        String disableBootanimation = SystemProperties.get(DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
-        mDisableBootAnimation.setChecked("1".equals(disableBootanimation));
+        mDisableBootAnimation = (CheckBoxPreference) findPreference(DISABLE_BOOTANIMATION_PREF);
+        int disableBootanimation;
+        try {
+            disableBootanimation = Integer.parseInt(SystemProperties.get(
+                DISABLE_BOOTANIMATION_PERSIST_PROP, "0"));
+        } catch (NumberFormatException nfe) {
+            disableBootanimation = 0;
+        }
+        // String.equals("String") can throw null where (int == int) will never throw null
+        mDisableBootAnimation.setChecked(disableBootanimation == 1);
 
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
