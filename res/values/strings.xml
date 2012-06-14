@@ -818,7 +818,7 @@
     <string name="pulse_speed_slow">Slow</string>
     <string name="pulse_speed_very_slow">Very slow</string>
 
-<!-- INTERFACE Settings #CM -->
+    <!-- INTERFACE Settings #CM -->
     <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_interface">INTERFACE</string>
 
@@ -1749,23 +1749,6 @@
     <string name="donate_settings_title">Donate</string>
     <!-- About device screen, list item summary. Takes the user to the screen about how to donate -->
     <string name="donate_settings_summary">""</string>
-
-    <!-- Anonymous Statistics #CM -->
-    <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-    <string name="anonymous_statistics_title">CyanogenMod Statistics</string>
-    <string name="anonymous_statistics_summary">Help make CyanogenMod better by opting into anonymous statistics reporting</string>
-    <string name="anonymous_statistics_warning_title">About</string>
-    <string name="anonymous_statistics_warning">Opting into CyanogenMod Statistics will allow non-personal data to be submitted to the
-        developers of CyanogenMod to track unique installations across devices. The information submitted includes an unique identifier,
-        which does not compromise your privacy or personal data. The data is submitted during each boot.\n\nFor an example of the data that is submitted, tap on Preview Data.</string>
-    <string name="enable_reporting_title">Enable reporting</string>
-    <string name="preview_data_title">Preview data</string>
-    <string name="preview_data_summary">%s</string>
-    <string name="view_stats_title">View stats</string>
-    <string name="anonymous_learn_more">Learn more</string>
-
-    <!-- Anonymous Statistics - Notification -->
-    <string name="anonymous_notification_desc">Enable or Disable CyanogenMod Statistics</string>
 
     <!-- Anonymous Statistics - Preview -->
     <string name="preview_id_title">Unique ID</string>
@@ -4613,8 +4596,8 @@ found in the list of installed apps.</string>
     <string name="adb_icon_summary">Hide adb debugging statusbar icon</string>
     <string name="statusbar_show_aosp_title">Settings</string>
     <string name="statusbar_show_aosp_summary">Hide settings statusbar icon</string>
-    <string name="statusbar_show_liquid_control_title">Liquid Settings</string>
-    <string name="statusbar_show_liquid_control_summary">Hide liquid settings statusbar icon</string>
+    <string name="statusbar_show_liquid_control_title">Launcher Settings</string>
+    <string name="statusbar_show_liquid_control_summary">Hide launcher settings statusbar icon</string>
     <string name="statusbar_show_date_title">Date</string>
     <string name="statusbar_show_date_summary">Hide date in pull down statusbar</string>
     <string name="statusbar_date_format_title">Date Format</string>

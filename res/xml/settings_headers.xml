@@ -63,7 +63,7 @@
     <header
         android:id="@+id/advanced_testing"
         android:fragment="com.android.settings.liquid.fragments.AdvancedSettings"
-        android:icon="@drawable/ic_settings_liquid"
+        android:icon="@drawable/ic_settings_advanced"
         android:title="@string/advanced_settings_title" />
 
     <!-- Interface -->
@@ -73,6 +73,12 @@
         android:icon="@drawable/ic_settings_system"
         android:title="@string/ui_activity" />
 
+    <!-- Launcher -->
+    <header
+        android:id="@+id/launcher_settings"
+        android:title="@string/launcher_settings_title"
+        android:icon="@drawable/ic_settings_liquid" />
+
     <!-- Lockscreen -->
     <header
         android:id="@+id/lock_screen_settings"
@@ -80,7 +86,7 @@
         android:title="@string/lock_screen_title"
         android:icon="@drawable/ic_settings_lockscreen" />
 
-     <!-- Themes -->
+    <!-- Themes -->
     <header
         android:id="@+id/themes_settings"
         android:icon="@drawable/ic_settings_themes"
