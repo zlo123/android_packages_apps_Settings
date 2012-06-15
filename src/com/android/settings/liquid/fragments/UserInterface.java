@@ -33,6 +33,7 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.text.Spannable;
+import android.util.Log;
 import android.widget.EditText;
 
 import com.android.settings.R;
@@ -122,9 +123,11 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 DISABLE_BOOTANIMATION_PERSIST_PROP, "0"));
         } catch (NumberFormatException nfe) {
             disableBootanimation = 0;
+            nfe.printStackTrace();
         }
         // String.equals("String") can throw null where (int == int) will never throw null
         mDisableBootAnimation.setChecked(disableBootanimation == 1);
+        Log.d("BootAnimation Disabler", "current value: " + disableBootanimation);
 
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());

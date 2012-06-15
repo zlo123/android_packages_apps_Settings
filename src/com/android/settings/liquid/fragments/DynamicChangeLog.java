@@ -171,6 +171,7 @@ public class DynamicChangeLog extends SettingsPreferenceFragment {
         // load blank screen & set initial title
         addPreferencesFromResource(R.xml.open_recovery); //we can hijack this for our needs
         mCategory = (PreferenceCategory) findPreference(PREF_CAT);
+        mCategory.setOrderingAsAdded(false);
         mCategory.setTitle(getString(R.string.initial_changelog_category_title));
 
         // network communication must be done async
@@ -579,8 +580,12 @@ public class DynamicChangeLog extends SettingsPreferenceFragment {
                                     return true;
                                 }
                             });
-
-                            mCategory.addPreference(gitCommitPref);
+                            if (alreadyFoundCommit(gitCommitPref)) {
+                                foundTheEnd = true;
+                                break;
+                            } else {
+                                mCategory.addPreference(gitCommitPref);
+                            }
                         } else {
                             // before our time
                             foundTheEnd = true;
@@ -616,24 +621,6 @@ public class DynamicChangeLog extends SettingsPreferenceFragment {
 
             if (DEBUG) Log.d(TAG, "show sort commits? " + LAST_PROJECT);
             if (LAST_PROJECT) {
-                mStopTime = System.currentTimeMillis();
-
-                // lets build this toast manually because its a lot to string
-                // and I want a custom layout
-                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View layout = inflater.inflate(R.layout.icon_toast_layout, null);
-
-                ImageView image = (ImageView) layout.findViewById(R.id.image);
-                image.setImageResource(R.drawable.octocat_class_act);
-                TextView text = (TextView) layout.findViewById(R.id.text);
-                text.setText(String.format(getString(R.string.toast_commitlog_info),
-                        mCategory.getPreferenceCount(), (mStopTime - mStartTime) / 1000));
-
-                Toast toast = new Toast(mContext);
-                toast.setGravity(Gravity.TOP, 0, 5);
-                toast.setDuration(Toast.LENGTH_LONG);
-                toast.setView(layout);
-                toast.show();
                 showDialog(SORT_COMMITS);
             }
         }
@@ -730,6 +717,90 @@ public class DynamicChangeLog extends SettingsPreferenceFragment {
             mStopTime = System.currentTimeMillis();
             if (DEBUG) Log.d(TAG, "found: " + mCategory.getPreferenceCount() +
                 "commits in: " + (mStopTime - mStartTime)/1000 + "s");
+        }
+    }
+
+    private boolean alreadyFoundCommit(Preference pref) {
+        boolean same = false;
+        for (int i = 0; mCategory.getPreferenceCount() > i; i++) {
+            Preference mCatPref = mCategory.getPreference(i);
+            same = (pref.compareTo(mCatPref) == 0);
+            if (same) break;
+        }
+        return same;
+    }
+
+    private void sortScreen(boolean chronologicalOrder) {
+        if (chronologicalOrder) {
+            ArrayList<Preference> foundCommits = new ArrayList<Preference>();
+            ArrayList<String> orderDates = new ArrayList<String>();
+            for (int i = 0; mCategory.getPreferenceCount() > i; i++) {
+                Preference p = mCategory.getPreference(i);
+                foundCommits.add(p);
+                String stamp = p.getKey();
+                // format the date using unix code for accutate sorting
+                Calendar commitTimeStamp = GregorianCalendar.getInstance();
+                // how substrings are derived (example format, account for 0 offset)
+                // 2012-05-27T22:16:56-07:00
+                // 012345678901234567890
+                // 0         1         2
+                try {
+                    final int year = Integer.parseInt(stamp.substring(0, 4));
+                    final int month = Integer.parseInt(stamp.substring(5, 7));
+                    final int day = Integer.parseInt(stamp.substring(8, 10));
+                    final int hours = Integer.parseInt(stamp.substring(11, 13));
+                    final int mins = Integer.parseInt(stamp.substring(14, 16));
+                    final int secs = Integer.parseInt(stamp.substring(17, 19));
+                    commitTimeStamp.set(year, month, day, hours, mins, secs);
+                    long unix = commitTimeStamp.getTimeInMillis();
+                    if (DEBUG) Log.d(TAG, String.format("adding value: %d", unix));
+                        orderDates.add(String.format("%d", unix));
+                } catch (NumberFormatException badDate) {
+                    badDate.printStackTrace();
+                }
+            }
+            if (DEBUG) Log.d(TAG, "presorted orderDates.toString() {" + orderDates.toString() + "}");
+
+            // use clone to find positions of numbers before sorting we
+            // use that number to index where our preference *SHOULD* be
+            ArrayList<String> clone = new ArrayList<String>(orderDates);
+            ArrayList<Preference> orderedCommits = new ArrayList<Preference>(foundCommits);
+
+            Collections.sort(orderDates);
+            Collections.reverse(orderDates);
+            // these are in the correct order (SHIT) hence a SUPER ANNOYING TODO: FIX SORTING!!!
+            if (DEBUG) Log.d(TAG, "postsorted orderDates.toString() {" + orderDates.toString() + "}");
+
+            // clear the screen and repopulate with ordered commits
+            mCategory.removeAll();
+            mCategory.setOrderingAsAdded(true);
+            if (DEBUG) Log.d(TAG, "population of mCategory should be zero... mCategory.getPreferenceCount(): "
+                    + mCategory.getPreferenceCount());
+            ArrayList<Preference> commitsOrdered = new ArrayList<Preference>();
+            for (int i = 0; orderDates.size() > i; i++) {
+                int prevPosition = clone.lastIndexOf(orderDates.get(i));
+                Preference pref = foundCommits.get(prevPosition);
+                // since we are scrolling through the ordered times
+                // we can just add as we see them and not worry about
+                // size or compacity of the ArrayLists
+                if (DEBUG) Log.d(TAG, "Moving from " + prevPosition + " to mCategory[index] " + i);
+
+                // move to correct place
+                orderedCommits.set(i, pref);
+            }
+
+            // apply order
+            for (int i = 0; orderedCommits.size() > i; i++) {
+                mCategory.addPreference(orderedCommits.get(i));
+            }
+
+            if (DEBUG) {
+                Log.d(TAG, "foundCommits.size():" + foundCommits.size() + "\nclone.size():" +
+                        clone.size() + "\norderDates.size():" + orderDates.size());
+            }
+        // we don't want to sort so just ensure we are in alphabetical order
+        } else {
+            mCategory.setOrderingAsAdded(false);
         }
     }
 
@@ -850,80 +921,31 @@ public class DynamicChangeLog extends SettingsPreferenceFragment {
 
             case SORT_COMMITS:
                 mStopTime = System.currentTimeMillis();
+
+                LayoutInflater mLayoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View layout = mLayoutInflater.inflate(R.layout.sort_commits_dialog, null);
+                ImageView octocat = (ImageView) layout.findViewById(R.id.github);
+                octocat.setImageResource(R.drawable.octocat_class_act);
+                TextView timeAndCount = (TextView) layout.findViewById(R.id.time_and_count);
+                TextView message = (TextView) layout.findViewById(R.id.message);
+                timeAndCount.setText(String.format(getString(R.string.toast_commitlog_info),
+                        mCategory.getPreferenceCount(), (mStopTime - mStartTime) / 1000));
+                message.setText(getString(R.string.sort_commits_message));
+
                 if (DEBUG) Log.d(TAG, "found: " + mCategory.getPreferenceCount() +
                         "commits in: " + (mStopTime - mStartTime)/1000 + "s");
                 if (DEBUG) Log.d(TAG, "Should we sort commits?");
                 final AlertDialog.Builder sortDialog = new AlertDialog.Builder(getActivity());
                 sortDialog.setTitle(getString(R.string.sort_commits_title));
-                sortDialog.setMessage(getString(R.string.sort_commits_message));
+                sortDialog.setView(layout);
                 sortDialog.setNegativeButton(getString(R.string.button_donot_sort), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface di, int button) {
-                        // already unsorted
+                        sortScreen(false);
                     }
                 });
                 sortDialog.setPositiveButton(getString(R.string.button_sort), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface di, int button) {
-                        ArrayList<Preference> foundCommits = new ArrayList<Preference>();
-                        ArrayList<String> orderDates = new ArrayList<String>();
-                        for (int i = 0; mCategory.getPreferenceCount() > i; i++) {
-                            Preference p = mCategory.getPreference(i);
-                            foundCommits.add(p);
-                            String stamp = p.getKey();
-                            // format the date using unix code for accutate sorting
-                            Calendar commitTimeStamp = GregorianCalendar.getInstance();
-                            // how substrings are derived (example format, account for 0 offset)
-                            // 2012-05-27T22:16:56-07:00
-                            // 012345678901234567890
-                            // 0         1         2
-                            try {
-                                final int year = Integer.parseInt(stamp.substring(0, 4));
-                                final int month = Integer.parseInt(stamp.substring(5, 7));
-                                final int day = Integer.parseInt(stamp.substring(8, 10));
-                                final int hours = Integer.parseInt(stamp.substring(11, 13));
-                                final int mins = Integer.parseInt(stamp.substring(14, 16));
-                                final int secs = Integer.parseInt(stamp.substring(17, 19));
-                                commitTimeStamp.set(year, month, day, hours, mins, secs);
-                                long unix = commitTimeStamp.getTimeInMillis();
-                                if (DEBUG) Log.d(TAG, String.format("adding value: %d", unix));
-                                orderDates.add(String.format("%d", unix));
-                            } catch (NumberFormatException badDate) {
-                                badDate.printStackTrace();
-                            }
-                        }
-                        if (DEBUG) Log.d(TAG, "presorted orderDates.toString() {" + orderDates.toString() + "}");
-                        // sort by date stamp in unix
-
-                        // use clone to find positions of numbers before sorting we
-                        // use that number to index where our preference *SHOULD* be
-                        ArrayList<String> clone = new ArrayList<String>(orderDates);
-
-                        Collections.sort(orderDates);
-                        // these are in the correct order (SHIT) hence a SUPER ANNOYING TODO: FIX SORTING!!!
-                        if (DEBUG) Log.d(TAG, "postsorted orderDates.toString() {" + orderDates.toString() + "}");
-
-                        // clear the screen and repopulate with ordered commits
-                        mCategory.removeAll();
-                        if (DEBUG) Log.d(TAG, "population of mCategory should be zero... mCategory.getPreferenceCount(): "
-                                 + mCategory.getPreferenceCount());
-                        ArrayList<Preference> commitsOrdered = new ArrayList<Preference>();
-                        for (int i = 0; orderDates.size() > i; i++) {
-                            int prevPosition = clone.lastIndexOf(orderDates.get(i));
-                            Preference pref = foundCommits.get(prevPosition);
-                            // since we are scrolling through the ordered times
-                            // we can just add as we see them and not worry about
-                            // size or compacity of the ArrayLists
-                            if (DEBUG) Log.d(TAG, "Moving from " + prevPosition + " to mCategory[index] " + i);
-                            commitsOrdered.add(pref);
-                        }
-
-                        for (int i = 0; commitsOrdered.size() > i; i++) {
-                            mCategory.addPreference(commitsOrdered.get(i));
-                        }
-
-                        if (DEBUG) {
-                            Log.d(TAG, "foundCommits.size():" + foundCommits.size() + "\nclone.size():" +
-                                    clone.size() + "\norderDates.size():" + orderDates.size());
-                        }
+                        sortScreen(true);
                     }
                 });
                 AlertDialog ad_sort = sortDialog.create();
