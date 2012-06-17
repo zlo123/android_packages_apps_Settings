@@ -57,7 +57,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
     private static final String DISABLE_BOOTANIMATION_PREF = "disable_bootanimation";
-    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
 
     CheckBoxPreference mAllow180Rotation;
     ListPreference mAnimationRotationDelay;
@@ -116,18 +115,10 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.RECENT_APP_SWITCHER,
                 0)));
 
-        mDisableBootAnimation = (CheckBoxPreference) findPreference(DISABLE_BOOTANIMATION_PREF);
-        int disableBootanimation;
-        try {
-            disableBootanimation = Integer.parseInt(SystemProperties.get(
-                DISABLE_BOOTANIMATION_PERSIST_PROP, "0"));
-        } catch (NumberFormatException nfe) {
-            disableBootanimation = 0;
-            nfe.printStackTrace();
-        }
-        // String.equals("String") can throw null where (int == int) will never throw null
-        mDisableBootAnimation.setChecked(disableBootanimation == 1);
-        Log.d("BootAnimation Disabler", "current value: " + disableBootanimation);
+        mDisableBootAnimation = (CheckBoxPreference) findPreference(
+                DISABLE_BOOTANIMATION_PREF);
+        mDisableBootAnimation.setChecked(!new File(
+                "/system/media/bootanimation.zip").exists());
 
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
@@ -166,21 +157,30 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private void updateCustomLabelTextSummary() {
         mCustomLabelText = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.CUSTOM_CARRIER_LABEL);
-        if (mCustomLabelText == null) {
-            mCustomLabel
-                    .setSummary("Custom label currently not set. Once you specify a custom one, there's no way back without doing a data wipe.");
-        } else {
+        if (mCustomLabelText == null)
+            mCustomLabel.setSummary(getString(R.string.custom_carrier_warning));
+        else
             mCustomLabel.setSummary(mCustomLabelText);
-        }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-	if (preference == mDisableBootAnimation) {
-	    SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
-                        mDisableBootAnimation.isChecked() ? "1" : "0");
-	    return true;
+        if (preference == mDisableBootAnimation) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            if (checked) {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.liquid");
+                Helpers.getMount("ro");
+                preference.setSummary(R.string.disable_bootanimation_summary);
+            } else {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.liquid /system/media/bootanimation.zip");
+                Helpers.getMount("ro");
+            }
+            return true;
         } else if (preference == mCrtOffAnimation) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),

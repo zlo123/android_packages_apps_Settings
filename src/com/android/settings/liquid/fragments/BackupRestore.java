@@ -831,9 +831,10 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.NAVIGATION_BAR_BUTTONS_SHOW);
         settingsArray.add(Settings.System.NAVIGATION_BAR_BUTTONS_QTY);
         settingsArray.add(Settings.System.NAVIGATION_BAR_GLOW_TINT);
+        settingsArray.add(Settings.System.NAVIGATION_BAR_WIDGETS);
+        settingsArray.add(Settings.System.LOCKSCREEN_TARGETS);
         // Lockscreen
         settingsArray.add(Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR);
-        //settingsArray.add(Settings.System.LOCKSCREEN_LAYOUT);
         settingsArray.add(Settings.System.LOCKSCREEN_ENABLE_MENU_KEY);
         settingsArray.add(Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE);
         settingsArray.add(Settings.System.SHOW_LOCK_BEFORE_UNLOCK);
@@ -844,7 +845,14 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.LOCKSCREEN_LANDSCAPE);
         settingsArray.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
         settingsArray.add(Settings.System.ENABLE_FAST_TORCH);
-        //settingsArray.add(Settings.System.LOCKSCREEN_4TAB);
+        settingsArray.add(Settings.System.LOCKSCREEN_BACKGROUND);
+        // Lockscreen Calendar
+        settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR);
+        settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR_SHOW_LOCATION);
+        settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR_SHOW_DESCRIPTION);
+        settingsArray.add(Settings.System.LOCKSCREEN_CALENDARS);
+        settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR_LOOKAHEAD);
+        settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR_REMINDERS_ONLY);
         // Powermenu
         settingsArray.add(Settings.System.POWER_DIALOG_SHOW_AIRPLANE);
         settingsArray.add(Settings.System.POWER_DIALOG_SHOW_EASTEREGG);
@@ -890,6 +898,8 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.EXPANDED_VIEW_WIDGET_COLOR);
         settingsArray.add(Settings.System.EXPANDED_BRIGHTNESS_MODE);
         settingsArray.add(Settings.System.EXPANDED_SCREENTIMEOUT_MODE);
+        settingsArray.add(Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY);
+        settingsArray.add(Settings.System.STATUS_BAR_NOTIF_COUNT);
 
         // StatusBarToggles
         settingsArray.add(Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS);
@@ -933,6 +943,18 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.STATUSBAR_NOTIFICATION_ALPHA);
         settingsArray.add(Settings.System.STATUSBAR_HANDLE_ALPHA);
 
+        // CM Stuff
+        // Notifications
+        settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR);
+        settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON);
+        settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF);
+        settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR);
+        settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON);
+        settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF);
+
+        // SoundSettings
+        settingsArray.add(Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED);
+
         // easy stuff 0.o I wish i knew this was here a LONG TIME AGO!!!
         int mProperBackupLength = Settings.System.SETTINGS_TO_BACKUP.length;
         for (int i = 0; i < mProperBackupLength; i++) {
@@ -961,6 +983,9 @@ public class BackupRestore extends SettingsPreferenceFragment {
                 // TODO add filename and text watcher for valid filename
                 final EditText titleText = (EditText) customLayout.findViewById(R.id.title_input_edittext);
                 final EditText summaryText = (EditText) customLayout.findViewById(R.id.summary_input_edittext);
+                titleText.setHint(R.string.theme_title_hint);
+                titleText.setText(System.currentTimeMillis() + "");
+                summaryText.setHint(R.string.theme_summary_hint);
 
                 // for that personal touch //TODO make setText not hint
                 if (makeThemFeelAtHome != null) titleText.setText(makeThemFeelAtHome);
@@ -973,7 +998,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
                 String delimiter = "_";
                 Calendar mTimeStamp = Calendar.getInstance();
                 final String timeBasedThemeName = Calendar.MONTH + Calendar.DAY_OF_MONTH + Calendar.YEAR + delimiter
-                        + Calendar.HOUR_OF_DAY + Calendar.MINUTE + Calendar.SECOND + delimiter + java.lang.System.currentTimeMillis();
+                        + Calendar.HOUR_OF_DAY + Calendar.MINUTE + Calendar.SECOND + delimiter + System.currentTimeMillis();
 
                 getInfo.setNegativeButton(getString(R.string.negative_button), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -998,7 +1023,13 @@ public class BackupRestore extends SettingsPreferenceFragment {
                 ad_info.show();
 
                 final Button makeThemeButton = (Button) ad_info.getButton(AlertDialog.BUTTON_POSITIVE);
-                makeThemeButton.setEnabled(false);
+                if (titleText.getText().length() > 0) {
+                    makeThemeButton.setEnabled(true);
+                    makeThemeButton.setText(getText(R.string.positive_button));
+                } else {
+                    makeThemeButton.setEnabled(false);
+                    makeThemeButton.setText(TEXT_IS_EMPTY);
+                }
                 makeThemeButton.setText(TEXT_IS_EMPTY);
                 titleText.addTextChangedListener(new TextWatcher() {
                     public void afterTextChanged(Editable e) {
@@ -1006,7 +1037,6 @@ public class BackupRestore extends SettingsPreferenceFragment {
                     public void beforeTextChanged(CharSequence cs, int start, int count, int after) {
                     }
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        String text = titleText.getText().toString();
                         int textLength = titleText.getText().length();
                         if (textLength > 0) {
                             makeThemeButton.setEnabled(true);
