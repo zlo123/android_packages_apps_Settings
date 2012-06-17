@@ -265,8 +265,10 @@ public class PropModder extends PreferenceFragment implements
         mVvmailPref = (CheckBoxPreference) prefSet.findPreference(VVMAIL_PREF);
 
         new UpdateScreen().execute();
+    }
 
-        Handler mHandlerOnCreate = new Handler();
+    public void writeScript() {
+        Handler mHandler = new Handler();
         final Runnable mCheckForDirectories = new Runnable() {
             public void run() {
                 //Mounting takes the most time so lets avoid doing it if possible
@@ -290,7 +292,7 @@ public class PropModder extends PreferenceFragment implements
                 }
             }
         };
-        mHandlerOnCreate.post(mCheckForDirectories);
+        mHandler.post(mCheckForDirectories);
     }
 
     @Override
@@ -412,8 +414,12 @@ public class PropModder extends PreferenceFragment implements
         return false;
     }
 
+    public boolean doMod(String persist, String key, String value) {
+        return doMod(persist, key, value, false);
+    }
+
     /* method to handle mods */
-    private boolean doMod(final String persist, final String key, final String value) {
+    public boolean doMod(final String persist, final String key, final String value, final boolean externalThread) {
         Handler mModHandler = new Handler();
         Runnable mMakeChanges = new Runnable() {
             public void run() {
@@ -442,13 +448,14 @@ public class PropModder extends PreferenceFragment implements
                     if (!success) {
                         restoreBuildProp();
                     } else {
-                        new UpdateScreen().execute();
+                        if (!externalThread)
+                            new UpdateScreen().execute();
                     }
                 } finally {
                     mount("ro");
                 }
-
-                rebootRequired();
+                if (!externalThread)
+                    rebootRequired();
             }
         };
         mModHandler.post(mMakeChanges);
@@ -462,8 +469,7 @@ public class PropModder extends PreferenceFragment implements
     }
 
     public boolean mount(String read_value) {
-        Log.d(TAG, "Remounting /system " + read_value);
-        return cmd.su.runWaitFor(String.format(REMOUNT_CMD, read_value)).success();
+        return Helpers.mountSystem(read_value);
     }
 
     public boolean propExists(String prop) {
@@ -663,6 +669,8 @@ public class PropModder extends PreferenceFragment implements
             } else {
                 mLogcatPref.setChecked(false);
             }
+            writeScript();
+
         }
     }
 }
