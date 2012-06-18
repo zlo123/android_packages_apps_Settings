@@ -810,7 +810,6 @@ public class BackupRestore extends SettingsPreferenceFragment {
         // Misc
         settingsArray.add(Settings.System.WIDGET_BUTTONS);
 
-        // ints next
         // UserInterface
         settingsArray.add(Settings.System.ACCELEROMETER_ROTATION_ANGLES);
         settingsArray.add(Settings.System.RECENT_APP_SWITCHER);
@@ -819,7 +818,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.SHOW_STATUSBAR_IME_SWITCHER);
         settingsArray.add(Settings.Secure.KILL_APP_LONGPRESS_BACK);
         settingsArray.add(Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME);
-        settingsArray.add(Settings.System.TORCH_STATE);
+
         // Navbar
         settingsArray.add(Settings.System.MENU_LOCATION);
         settingsArray.add(Settings.System.MENU_VISIBILITY);
@@ -850,6 +849,8 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
         settingsArray.add(Settings.System.ENABLE_FAST_TORCH);
         settingsArray.add(Settings.System.LOCKSCREEN_BACKGROUND);
+        settingsArray.add(Settings.System.LOCKSCREEN_WEATHER);
+
         // Lockscreen Calendar
         settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR);
         settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR_SHOW_LOCATION);
@@ -857,6 +858,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.LOCKSCREEN_CALENDARS);
         settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR_LOOKAHEAD);
         settingsArray.add(Settings.System.LOCKSCREEN_CALENDAR_REMINDERS_ONLY);
+
         // Powermenu
         settingsArray.add(Settings.System.POWER_DIALOG_SHOW_AIRPLANE);
         settingsArray.add(Settings.System.POWER_DIALOG_SHOW_EASTEREGG);
@@ -865,6 +867,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.POWER_DIALOG_SHOW_POWERSAVER);
         settingsArray.add(Settings.System.POWER_DIALOG_SHOW_PROFILES);
         settingsArray.add(Settings.System.POWER_DIALOG_SHOW_SCREENSHOT);
+
         // Powersaver
         settingsArray.add(Settings.Secure.POWER_SAVER_MODE);
         settingsArray.add(Settings.Secure.POWER_SAVER_DATA_MODE);
@@ -874,12 +877,14 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.Secure.POWER_SAVER_WIFI_MODE);
         settingsArray.add(Settings.Secure.POWER_SAVER_SYNC_DATA_MODE);
         settingsArray.add(Settings.Secure.POWER_SAVER_SYNC_MOBILE_PREFERENCE);
+
         //Led
         settingsArray.add(Settings.System.NOTIFICATION_LIGHT_OFF);
         settingsArray.add(Settings.System.NOTIFICATION_LIGHT_ON);
         settingsArray.add(Settings.Secure.LED_SCREEN_ON);
         settingsArray.add(Settings.System.NOTIFICATION_LIGHT_COLOR);
-        // StatusBarGeneral
+
+        // StatusBar General
         settingsArray.add(Settings.System.STATUSBAR_SHOW_DATE);
         settingsArray.add(Settings.System.STATUSBAR_DATE_FORMAT);
         settingsArray.add(Settings.System.STATUSBAR_REMOVE_AOSP_SETTINGS_LINK);
@@ -905,31 +910,35 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY);
         settingsArray.add(Settings.System.STATUS_BAR_NOTIF_COUNT);
 
-        // StatusBarToggles
+        // StatusBar Toggles
         settingsArray.add(Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS);
         settingsArray.add(Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC);
         settingsArray.add(Settings.System.STATUSBAR_TOGGLES_STYLE);
-        // StatusBarClock
+
+        // StatusBar Clock
         settingsArray.add(Settings.System.STATUSBAR_CLOCK_STYLE);
         settingsArray.add(Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE);
         settingsArray.add(Settings.System.STATUSBAR_SHOW_ALARM);
         settingsArray.add(Settings.System.STATUSBAR_CLOCK_COLOR);
         settingsArray.add(Settings.System.STATUSBAR_CLOCK_WEEKDAY);
-        // StatusBarBattery
+
+        // StatusBar Battery
         settingsArray.add(Settings.System.STATUSBAR_BATTERY_ICON);
         settingsArray.add(Settings.System.STATUSBAR_BATTERY_BAR);
         settingsArray.add(Settings.System.STATUSBAR_BATTERY_BAR_STYLE);
         settingsArray.add(Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE);
         settingsArray.add(Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS);
         settingsArray.add(Settings.System.STATUSBAR_BATTERY_BAR_COLOR);
-        // StatusBarSignal
+
+        // StatusBar Signal
         settingsArray.add(Settings.System.STATUSBAR_SIGNAL_TEXT);
         settingsArray.add(Settings.System.STATUSBAR_SIGNAL_TEXT_COLOR);
         settingsArray.add(Settings.System.STATUSBAR_SIXBAR_SIGNAL);
         settingsArray.add(Settings.System.STATUSBAR_HIDE_SIGNAL_BARS);
         settingsArray.add(Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT);
         settingsArray.add(Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT_COLOR);
-        // Misc
+
+        // Others
         settingsArray.add(Settings.System.EXPANDED_VIEW_WIDGET);
         settingsArray.add(Settings.System.IS_TABLET);
         settingsArray.add(Settings.System.MODE_VOLUME_OVERLAY);
@@ -947,7 +956,6 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.STATUSBAR_NOTIFICATION_ALPHA);
         settingsArray.add(Settings.System.STATUSBAR_HANDLE_ALPHA);
 
-        // CM Stuff
         // Notifications
         settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR);
         settingsArray.add(Settings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON);
@@ -966,8 +974,6 @@ public class BackupRestore extends SettingsPreferenceFragment {
         }
 
         // add String[] to ArrayList<String[]>
-        //arrayOfStrings.add(Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS);
-        //arrayOfStrings.add(Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES);
         arrayOfStrings.add(Settings.System.NAVIGATION_BAR_GLOW_DURATION);
         arrayOfStrings.add(Settings.System.NAVIGATION_CUSTOM_APP_ICONS);
         arrayOfStrings.add(Settings.System.NAVIGATION_CUSTOM_ACTIVITIES);
