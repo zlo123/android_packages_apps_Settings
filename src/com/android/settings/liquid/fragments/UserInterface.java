@@ -57,6 +57,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
     private static final String DISABLE_BOOTANIMATION_PREF = "disable_bootanimation";
+    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.boot_enabled";
+    private static final String DISABLE_BOOTANIMATION_DEFAULT = "1";
 
     CheckBoxPreference mAllow180Rotation;
     ListPreference mAnimationRotationDelay;
@@ -115,10 +117,9 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.RECENT_APP_SWITCHER,
                 0)));
 
-        mDisableBootAnimation = (CheckBoxPreference) findPreference(
-                DISABLE_BOOTANIMATION_PREF);
-        mDisableBootAnimation.setChecked(!new File(
-                "/system/media/bootanimation.zip").exists());
+        mDisableBootAnimation = (CheckBoxPreference) findPreference(DISABLE_BOOTANIMATION_PREF);
+        String disableBootanimation = SystemProperties.get(DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
+        mDisableBootAnimation.setChecked("0".equals(disableBootanimation));
 
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
@@ -129,8 +130,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
         //TODO: summarys in ics shouldn't be dynamic; only exception is dialog input events
         // summary should be true if checked and false if unchecked
-        if (mDisableBootAnimation.isChecked())
-            mDisableBootAnimation.setSummary(R.string.disable_bootanimation_summary);
 
         if (!getResources().getBoolean(com.android.internal.R.bool.config_enableCrtAnimations)) {
             prefs.removePreference((PreferenceGroup) findPreference("crt"));
@@ -166,21 +165,10 @@ public class UserInterface extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mDisableBootAnimation) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            if (checked) {
-                Helpers.getMount("rw");
-                new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.liquid");
-                Helpers.getMount("ro");
-                preference.setSummary(R.string.disable_bootanimation_summary);
-            } else {
-                Helpers.getMount("rw");
-                new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.liquid /system/media/bootanimation.zip");
-                Helpers.getMount("ro");
-            }
-            return true;
+	if (preference == mDisableBootAnimation) {
+	    SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
+                        mDisableBootAnimation.isChecked() ? "0" : "1");
+	    return true;
         } else if (preference == mCrtOffAnimation) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
