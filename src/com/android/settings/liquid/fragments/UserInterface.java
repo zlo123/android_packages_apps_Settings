@@ -55,8 +55,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
     private static final String DISABLE_BOOTANIMATION_PREF = "disable_bootanimation";
-    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.boot_enabled";
-    private static final String DISABLE_BOOTANIMATION_DEFAULT = "1";
+    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
+    private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
 
     CheckBoxPreference mAllow180Rotation;
     ListPreference mAnimationRotationDelay;
@@ -111,7 +111,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
         mDisableBootAnimation = (CheckBoxPreference) findPreference(DISABLE_BOOTANIMATION_PREF);
         String disableBootanimation = SystemProperties.get(DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
-        mDisableBootAnimation.setChecked("0".equals(disableBootanimation));
+        mDisableBootAnimation.setChecked("1".equals(disableBootanimation));
 
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
@@ -158,7 +158,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
             Preference preference) {
 	if (preference == mDisableBootAnimation) {
 	    SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
-                        mDisableBootAnimation.isChecked() ? "0" : "1");
+                        mDisableBootAnimation.isChecked() ? "1" : "0");
 	    return true;
         } else if (preference == mCrtOffAnimation) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
