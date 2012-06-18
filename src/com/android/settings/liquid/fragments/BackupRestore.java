@@ -832,8 +832,12 @@ public class BackupRestore extends SettingsPreferenceFragment {
         settingsArray.add(Settings.System.NAVIGATION_BAR_BUTTONS_QTY);
         settingsArray.add(Settings.System.NAVIGATION_BAR_GLOW_TINT);
         settingsArray.add(Settings.System.NAVIGATION_BAR_WIDGETS);
-        settingsArray.add(Settings.System.LOCKSCREEN_TARGETS);
+        settingsArray.add(Settings.System.NAVIGATION_BAR_WIDTH);
+        settingsArray.add(Settings.System.NAVIGATION_BAR_HEIGHT);
+        settingsArray.add(Settings.System.NAVIGATION_BAR_WIDGETS);
+
         // Lockscreen
+        settingsArray.add(Settings.System.LOCKSCREEN_TARGETS);
         settingsArray.add(Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR);
         settingsArray.add(Settings.System.LOCKSCREEN_ENABLE_MENU_KEY);
         settingsArray.add(Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE);
