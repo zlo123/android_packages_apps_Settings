@@ -45,11 +45,6 @@
             android:title="@string/lockscreen_text_color_title"
             android:defaultValue="#ffffffff" />
 
-        <CheckBoxPreference
-            android:key="lockscreen_center_objects"
-            android:title="@string/lockscreen_center_objects_title"
-            android:summary="@string/lockscreen_center_objects_summary" />
-
 <!--    <ListPreference
             android:entries="@array/pref_lockscreen_options_entries"
             android:entryValues="@array/pref_lockscreen_options_values"

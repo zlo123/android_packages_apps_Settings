@@ -4552,8 +4552,6 @@ found in the list of installed apps.</string>
     <string name="enable_fast_torch_summary">Screen is off, long-press power key</string>
     <string name="lockscreen_wallpaper_title">Lockscreen Wallpaper</string>
     <string name="lockscreen_wallpaper_summary">Remove wallpaper from menu above</string>
-    <string name="lockscreen_center_objects_title">Center Lockscreen</string>
-    <string name="lockscreen_center_objects_summary">Force objects to center of screen</string>
 
     <!-- Powermenu -->
     <string name="title_show_airplane">Show Airplane</string>
