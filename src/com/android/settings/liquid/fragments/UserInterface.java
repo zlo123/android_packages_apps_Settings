@@ -48,12 +48,10 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_CRT_OFF = "crt_off";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
-    private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
     private static final String PREF_LONGPRESS_APP_TASKER = "longpress_app_tasker";
     private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
     private static final String PREF_180 = "rotate_180";
     private static final String PREF_DISABLE_SCREENSHOT_SOUND = "screenshot_sound";
-    private static final String PREF_DISABLE_BOOT_AUDIO = "disable_bootaudio";
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
     private static final String DISABLE_BOOTANIMATION_PREF = "disable_bootanimation";
@@ -66,10 +64,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     CheckBoxPreference mCrtOnAnimation;
     Preference mCustomLabel;
     CheckBoxPreference mDisableBootAnimation;
-    CheckBoxPreference mDisableBootAudio;
     CheckBoxPreference mDisableBugMailer;
     CheckBoxPreference mShowImeSwitcher;
-    CheckBoxPreference mEnableVolumeOptions;
     CheckBoxPreference mLongPressAppTasker;
     CheckBoxPreference mDisableScreenshotSound;
     ListPreference mRecentAppSwitcher;
@@ -94,10 +90,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
-
-        mEnableVolumeOptions = (CheckBoxPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
-        mEnableVolumeOptions.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ENABLE_VOLUME_OPTIONS, 0) == 1);
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -138,7 +130,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
             ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);
         }
 
-        mDisableBootAudio = (CheckBoxPreference) findPreference(PREF_DISABLE_BOOT_AUDIO);
 
         mHomeLongpress = (ListPreference) findPreference(PREF_HOME_LONGPRESS);
         mHomeLongpress.setOnPreferenceChangeListener(this);
@@ -184,11 +175,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER, checked ? 1 : 0);
             return true;
-        } else if (preference == mEnableVolumeOptions) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ENABLE_VOLUME_OPTIONS, checked ? 1 : 0);
-            return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle("Custom Carrier Label");
@@ -232,16 +218,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES, checked ? (1 | 2 | 4 | 8)
                             : (1 | 2 | 8));
             return true;
-        } else if (preference == mDisableBootAudio) {
-            if (mDisableBootAudio.isChecked()) {
-                Helpers.getMount("rw");
-                new CMDProcessor().su.runWaitFor("mv /system/media/boot_audio.mp3 /system/media/boot_audio.unicorn");
-                Helpers.getMount("ro");
-            } else {
-                Helpers.getMount("rw");
-                new CMDProcessor().su.runWaitFor("mv /system/media/boot_audio.unicorn /system/media/boot_audio.mp3");
-                Helpers.getMount("ro");
-            }
         } else if (preference == mDisableBugMailer) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             if (checked) {
@@ -308,8 +284,5 @@ public class UserInterface extends SettingsPreferenceFragment implements
         int mRotate = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME, 200);
         mAnimationRotationDelay.setSummary(String.format("Current: %s", mRotate));
-
-        File audioFile = new File("/system/media/boot_audio.unicorn");
-        mDisableBootAudio.setChecked(audioFile.isFile());
     }
 }

@@ -22,11 +22,7 @@
         android:title="@string/disable_bootanimation_title"
         android:summary="@string/disable_bootanimation_summary" />
 
-    <CheckBoxPreference
-        android:key="disable_bootaudio"
-        android:title="@string/disable_bootaudio_title" />
-
-    <CheckBoxPreference
+   <CheckBoxPreference
         android:key="disable_bugmailer"
         android:title="@string/disable_bugmailer_title"
         android:summary="@string/disable_bugmailer_summary" />
@@ -79,10 +75,6 @@
         <Preference
             android:key="custom_carrier_label"
             android:title="@string/custom_carrier_label_title" />
-
-        <CheckBoxPreference
-            android:key="enable_volume_options"
-            android:title="@string/enable_volume_options" />
 
         <ListPreference
             android:entries="@array/rotation_animation_delay_entries"

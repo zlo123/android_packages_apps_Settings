@@ -4526,10 +4526,6 @@ found in the list of installed apps.</string>
     <string name="sounds_category_title">Sounds</string>
     <string name="screenshot_sound_title">Screenshot</string>
     <string name="screenshot_sound_summary">Disable sound when capturing screen</string>
-    <string name="enable_volume_options">Volume Options</string>
-    <string name="disable_bootaudio_title">Boot Audio</string>
-    <string name="disable_bootaudio_summary">Disables audio on startup</string>
-    <string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/boot_audio.mp3</string>
     <string name="custom_carrier_warning">Custom label currently not set. Once you specify a custom one, there\'s no way back without doing a data wipe</string>
 
     <!-- Lockscreen -->
