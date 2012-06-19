@@ -4866,6 +4866,9 @@ found in the list of installed apps.</string>
     <string name="dev_blueharford_title">blueharford</string>
     <string name="dev_blueharford_twitter">blueharford</string>
     <string name="dev_blueharford_donate">http://bit.ly/KNIaZM</string>
+    <string name="dev_winner00_title">winner00</string>
+    <string name="dev_winner00_twitter">expertontech</string>
+    <string name="dev_winner00_donate">http://bit.ly/Ml12Ac</string>
 
     <!-- Open Recovery -->
     <string name="open_recovery_cat_title">Versions found</string>

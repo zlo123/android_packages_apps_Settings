@@ -63,6 +63,12 @@
             liquid:donateLink="@string/dev_blueharford_donate"
             liquid:avatar="@drawable/avatar_blueharford" />
 
+	    <com.android.settings.widget.DeveloperPreference
+            android:title="@string/dev_winner00_title"
+            liquid:twitterHandle="@string/dev_winner00_twitter"
+            liquid:donateLink="@string/dev_winner00_donate"
+            liquid:avatar="@drawable/avatar_winner00" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
