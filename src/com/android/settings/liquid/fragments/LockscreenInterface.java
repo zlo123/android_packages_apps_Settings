@@ -61,7 +61,6 @@ import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.liquid.SettingsPreferenceFragment;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.notificationlight.ColorPickerView;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
