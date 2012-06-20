@@ -122,6 +122,7 @@ public class BackupRestore extends SettingsPreferenceFragment {
 
         // gain reference to theme category so we can drop our prefs if not found
         mThemeCat = (PreferenceCategory) prefs.findPreference(THEME_CAT_PREF);
+        mThemeCat.setOrderingAsAdded(false);
 
         setupArrays();
         // TODO add themes dir to mkdirs
