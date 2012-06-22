@@ -1348,16 +1348,6 @@
 
         <activity android:name=".profiles.ProfilesSettings" />
 
-        <activity android:name="Settings$ProfileSettingsActivity"
-                android:label="@string/profile_settings_title">
-            <intent-filter>
-                <action android:name="android.settings.PROFILE_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.profiles.ProfilesList" />
-        </activity>
-
         <activity android:name=".profiles.ProfileConfig" />
 
         <activity android:name=".profiles.AppGroupList" />
