@@ -90,7 +90,6 @@ public class Navbar extends SettingsPreferenceFragment implements
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAV_BACKGROUND_COLOR = "nav_button_background_color";
-    private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -221,10 +220,6 @@ public class Navbar extends SettingsPreferenceFragment implements
 
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
-
-        mLongPressToKill = (CheckBoxPreference) findPreference(PREF_LONGPRESS_TO_KILL);
-        mLongPressToKill.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
         if (mTablet) {
             Log.e("LIQUID", "is tablet");
