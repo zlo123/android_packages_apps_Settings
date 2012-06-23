@@ -150,10 +150,6 @@ public class PropModder extends PreferenceFragment implements
     private static final String GPU_PREF = "pref_gpu";
     private static final String GPU_PERSIST_PROP = "persist_gpu";
     private static final String GPU_PROP = "debug.sf.hw";
-    private static final String VVMAIL_PREF = "pref_vvmail";
-    private static final String VVMAIL_PERSIST_PROP = "persist_vvmail";
-    private static final String VVMAIL_PROP_0 = "HorizontalVVM";
-    private static final String VVMAIL_PROP_1 = "HorizontalBUA";
     private boolean NEEDS_SETUP = false;
     private boolean success = false;
 
@@ -184,7 +180,6 @@ public class PropModder extends PreferenceFragment implements
     private ListPreference mSdcardBufferPref;
     private CheckBoxPreference m3gSpeedPref;
     private CheckBoxPreference mGpuPref;
-    private CheckBoxPreference mVvmailPref;
     private AlertDialog mAlertDialog;
     private NotificationManager mNotificationManager;
 
@@ -261,8 +256,6 @@ public class PropModder extends PreferenceFragment implements
         m3gSpeedPref = (CheckBoxPreference) prefSet.findPreference(THREE_G_PREF);
 
         mGpuPref = (CheckBoxPreference) prefSet.findPreference(GPU_PREF);
-
-        mVvmailPref = (CheckBoxPreference) prefSet.findPreference(VVMAIL_PREF);
 
         new UpdateScreen().execute();
     }
@@ -351,10 +344,6 @@ public class PropModder extends PreferenceFragment implements
         } else if (preference == mGpuPref) {
             value = mGpuPref.isChecked();
             return doMod(GPU_PERSIST_PROP, GPU_PROP, String.valueOf(value ? 1 : DISABLE));
-        } else if (preference == mVvmailPref) {
-            value = mVvmailPref.isChecked();
-            return doMod(VVMAIL_PERSIST_PROP, VVMAIL_PROP_0, String.valueOf(value ? true : DISABLE))
-                && doMod(null, VVMAIL_PROP_1, String.valueOf(value ? true : DISABLE));
         } else if (preference == mRebootMsg) {
             return cmd.su.runWaitFor("reboot").success();
         }
@@ -556,8 +545,6 @@ public class PropModder extends PreferenceFragment implements
         String g3;
         String g6;
         String gpu;
-        String vvmail0;
-        String vvmail1;
 
         public UpdateScreen() {
         }
@@ -583,8 +570,6 @@ public class PropModder extends PreferenceFragment implements
             g3 = Helpers.findBuildPropValueOf(THREE_G_PROP_3);
             g6 = Helpers.findBuildPropValueOf(THREE_G_PROP_6);
             gpu = Helpers.findBuildPropValueOf(GPU_PROP);
-            vvmail0 = Helpers.findBuildPropValueOf(VVMAIL_PROP_0);
-            vvmail1 = Helpers.findBuildPropValueOf(VVMAIL_PROP_1);
             return null;
         }
 
@@ -658,11 +643,6 @@ public class PropModder extends PreferenceFragment implements
                 mGpuPref.setChecked(true);
             } else {
                 mGpuPref.setChecked(false);
-            }
-            if (!vvmail0.equals(DISABLE) && !vvmail1.equals(DISABLE)) {
-                mVvmailPref.setChecked(true);
-            } else {
-                mVvmailPref.setChecked(false);
             }
             if (initScriptLogcat.isFile()) {
                 mLogcatPref.setChecked(true);

@@ -4780,8 +4780,6 @@ found in the list of installed apps.</string>
     <string name="pref_g_speed_summary">Uncap 3g speed</string>
     <string name="pref_gpu_title">GPU Acceleration</string>
     <string name="pref_gpu_summary">To enable hardware acceleration where the GPU controls the UI instead of the CPU</string>
-    <string name="pref_vvmail_title">VVMail (Sense ROMs ONLY)</string>
-    <string name="pref_vvmail_summary">force Sense ROMS compatibility with VVMail</string>
 
     <!-- Backup Restore -->
     <string name="backup_string">Liquid Backup/Restore</string>

@@ -123,11 +123,6 @@
             android:summary="@string/pref_gpu_summary"
             android:persistent="true" />
 
-        <CheckBoxPreference android:key="pref_vvmail"
-            android:title="@string/pref_vvmail_title"
-            android:summary="@string/pref_vvmail_summary"
-            android:persistent="true" />
-
     </PreferenceCategory>
 
     <PreferenceCategory android:key="nonProp_category"
