@@ -4545,7 +4545,7 @@ found in the list of installed apps.</string>
     <string name="lockscreen_show_nav_title">Navigation Bar</string>
     <string name="lockscreen_show_nav_summary">Hide the navbar on the lockscreen</string>
     <string name="lockscreen_text_color_title">Lockscreen Text Color</string>
-    <string name="lockscreen_text_color_title_summary">Modifies Lockscreen Weather & Calendar</string>
+    <string name="lockscreen_text_color_title_summary">Modifies lockscreen weather and calendar</string>
     <string name="lockscreen_landscape_title">Horizontal Lockscreen</string>
     <string name="lockscreen_landscape_summary">Enable horizontal lock orientation</string>
     <string name="lockscreen_quick_unlock_control_title">Quick Unlock</string>
