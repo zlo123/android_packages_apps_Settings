@@ -47,20 +47,21 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String TAG = "DisplaySettings";
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
+    private static final String KEY_AUTOMATIC_BACKLIGHT = "backlight_widget";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_ACCELEROMETER = "accelerometer";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
-    private static final String KEY_BATTERY_PULSE = "battery_pulse";
-    private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
 
     private CheckBoxPreference mAccelerometer;
     private ListPreference mFontSizePref;
-    private CheckBoxPreference mVolumeWake;
-    private CheckBoxPreference mBatteryPulse;
     private PreferenceScreen mNotificationPulse;
+    private PreferenceScreen mBatteryPulse;
+
     private final Configuration mCurConfig = new Configuration();
     private ListPreference mScreenTimeoutPreference;
+    private PreferenceScreen mAutomaticBacklightPreference;
 
     private ContentObserver mAccelerometerRotationObserver = new ContentObserver(new Handler()) {
         @Override
@@ -86,9 +87,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mScreenTimeoutPreference.setOnPreferenceChangeListener(this);
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
-
         mFontSizePref = (ListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
+
+        mAutomaticBacklightPreference = (PreferenceScreen) findPreference(KEY_AUTOMATIC_BACKLIGHT);
+        if (mAutomaticBacklightPreference != null
+                && !getResources().getBoolean(
+                        com.android.internal.R.bool.config_automatic_brightness_available)) {
+            getPreferenceScreen().removePreference(mAutomaticBacklightPreference);
+        }
 
         mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);
         if (mNotificationPulse != null) {
@@ -99,23 +106,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
-        mBatteryPulse = (CheckBoxPreference) findPreference(KEY_BATTERY_PULSE);
+        mBatteryPulse = (PreferenceScreen) findPreference(KEY_BATTERY_LIGHT);
         if (mBatteryPulse != null) {
             if (getResources().getBoolean(
                     com.android.internal.R.bool.config_intrusiveBatteryLed) == false) {
                 getPreferenceScreen().removePreference(mBatteryPulse);
             } else {
-                mBatteryPulse.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.BATTERY_LIGHT_PULSE, 1) == 1);
-                mBatteryPulse.setOnPreferenceChangeListener(this);
+                updateBatteryPulseDescription();
             }
-        }
-
-        mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
-        if (mVolumeWake != null) {
-            mVolumeWake.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
-
         }
     }
 
@@ -217,10 +215,20 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
+    private void updateBatteryPulseDescription() {
+        if (Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.BATTERY_LIGHT_ENABLED, 0) == 1) {
+            mBatteryPulse.setSummary(getString(R.string.notification_light_enabled));
+        } else {
+            mBatteryPulse.setSummary(getString(R.string.notification_light_disabled));
+        }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
         updateLightPulseDescription();
+        updateBatteryPulseDescription();
 
         updateState();
         getContentResolver().registerContentObserver(
@@ -257,26 +265,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mAccelerometer) {
-            try {
-                IWindowManager wm = IWindowManager.Stub.asInterface(
-                        ServiceManager.getService(Context.WINDOW_SERVICE));
-                if (mAccelerometer.isChecked()) {
-                    wm.thawRotation();
-                } else {
-                    wm.freezeRotation(Surface.ROTATION_0);
-                }
-            } catch (RemoteException exc) {
-                Log.w(TAG, "Unable to save auto-rotate setting");
-            }
-        } else if (preference == mBatteryPulse) {
-            if (preference == mBatteryPulse) {
-                boolean value = mBatteryPulse.isChecked();
-                Settings.System.putInt(getContentResolver(), Settings.System.BATTERY_LIGHT_PULSE,
-                        value ? 1 : 0);
-                return true;
-            }
-        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
