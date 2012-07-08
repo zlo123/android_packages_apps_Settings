@@ -89,7 +89,7 @@ public class ReportingService extends Service {
         stopSelf();
     }
 
-    private void promptUser() {
+     private void promptUser() {
         NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         Intent nI = new Intent();
         nI.setComponent(new ComponentName(getPackageName(),Settings.AnonymousStatsActivity.class.getName()));

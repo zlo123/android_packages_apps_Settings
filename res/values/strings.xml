@@ -1770,6 +1770,8 @@
     <string name="view_stats_title">View stats</string>
     <string name="anonymous_learn_more">Learn more</string>
 
+     <!-- Anonymous Statistics - Notification -->
+     <string name="anonymous_notification_desc">Enable or Disable LiquidSmooth Statistics</string>
 
     <!-- Anonymous Statistics - Preview -->
     <string name="preview_id_title">Unique ID</string>
