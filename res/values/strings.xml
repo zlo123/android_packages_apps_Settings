@@ -1777,6 +1777,8 @@
     <!-- About phone screen, ModVersion-->
    <string name="mod_version">Liquid Smooth version</string>
     <string name="mod_version_default">Unknown</string>
+    <!-- About phone screen, Build Date-->
+   <string name="build_date">Build date</string>
 
     <!-- About phone screen, show when a value of some status item is unavailable. -->
     <string name="device_info_not_available">Not available</string>
