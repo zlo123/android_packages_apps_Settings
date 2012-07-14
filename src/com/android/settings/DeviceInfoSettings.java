@@ -76,8 +76,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
-        setStringSummary(KEY_MOD_VERSION, "ro.modversion");
-        setStringSummary(KEY_BUILD_DATE, "ro.build.date");
+        setValueSummary(KEY_MOD_VERSION, "ro.modversion");
+        setValueSummary(KEY_BUILD_DATE, "ro.build.date");
 
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), "safetylegal",
