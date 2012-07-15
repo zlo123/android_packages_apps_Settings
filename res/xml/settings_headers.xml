@@ -17,6 +17,12 @@
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- LiquidSmooth Mods -->
+    <header
+        android:id="@+id/birdsnest"
+        android:fragment="com.android.settings.liquid.BirdNest"
+        android:title="@string/birdnest_title"
+        android:icon="@drawable/ic_settings_birdnest" />
 
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />

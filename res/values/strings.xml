@@ -4109,4 +4109,226 @@
     <string name="cell_broadcast_settings">Cell broadcasts</string>
     <!-- Cell Broadcast settings description [CHAR LIMIT=100] -->
     <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
+
+
+
+    <!-- *
+         *
+         * Begin Liquid Strings
+         *
+         *
+     -->
+    <!-- Liquid Settings Headers -->
+    <string name="about_the_team">About the Team</string>
+    <string name="birdnest_title">BirdNest</string>
+    <string name="open_recovery_title">OpenRecoveryScript</string>
+    <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
+    <string name="backup_restore_title">Backup Restore</string>
+    <string name="gooim_support_title">Goo.im Support</string>
+    <string name="propmodder_title">PropModder</string>
+
+    <!-- Colorpicker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press On color to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">Default</string>
+
+    <!-- about the team -->
+    <string name="learn_more_title">Learn more about the team</string>
+    <string name="liquid_website_title">LiquidSmoothROMs Website</string>
+    <string name="liquid_website_summary">Visit our website</string>
+    <string name="liquid_source_title">LiquidSmoothROMs Github</string>
+    <string name="liquid_source_summary">View our code!</string>
+    <string name="liquid_irc_title">LiquidSmoothROMs IRC</string>
+    <string name="liquid_irc_summary">Visit freenode #liquids</string>
+    <string name="devs">Meet the developers</string>
+    <string name="dev_liquid_title">Liquid</string>
+    <string name="dev_liquid_twitter">liquid0624</string>
+    <string name="dev_liquid_donate">http://bit.ly/qGR38c</string>
+    <string name="dev_jbird_title">JBirdVegas</string>
+    <string name="dev_jbird_twitter">JBird_Vegas</string>
+    <string name="dev_jbird_donate">http://bit.ly/oCWMo0</string>
+    <string name="dev_n0coast_title">n0coast</string>
+    <string name="dev_n0coast_twitter">n0coast</string>
+    <string name="dev_n0coast_donate">http://bit.ly/HRA3Kc</string>
+    <string name="dev_liquidzgrl_title">Liquidzgrl</string>
+    <string name="dev_liquidzgrl_twitter">LiQuIDzGrL</string>
+    <string name="dev_liquidzgrl_donate">http://bit.ly/I9wHBA</string>
+    <string name="dev_amplified_title">amplified</string>
+    <string name="dev_amplified_twitter">JacobVanCleve</string>
+    <string name="dev_amplified_donate">http://bit.ly/H0ZFRV</string>
+    <string name="dev_blueharford_title">blueharford</string>
+    <string name="dev_blueharford_twitter">blueharford</string>
+    <string name="dev_blueharford_donate">http://bit.ly/KNIaZM</string>
+    <string name="dev_winner00_title">winner00</string>
+    <string name="dev_winner00_twitter">expertontech</string>
+    <string name="dev_winner00_donate">http://bit.ly/Ml12Ac</string>
+
+    <!-- File Picker -->
+    <string name="clear">Clear screen</string>
+    <string name="empty_text">No Data</string>
+    <string name="filename_text">Filename: </string>
+    <string name="new_file_title">Save text to new file?</string>
+    <string name="open_button_text">Open</string>
+    <string name="ro_fail_notice">Couldn\'t write to that destination</string>
+    <string name="save">Save</string>
+    <string name="save_blank">Can\'t save a blank document</string>
+    <string name="save_button_text">Create file</string>
+    <string name="prompt_title">{%s}</string>
+    <string name="file_selection_error_write">We can\'t write to {%s}</string>
+    <string name="file_selection_error_read">We can\'t read {%s}</string>
+    <string name="save_prompt">Save as?</string>
+    <string name="open_prompt">Open?</string>
+    <string name="no_filename_save_error">No filename detected ...Please enter a filename to save</string>
+    <string name="location_tracker">Location: %s</string>
+
+    <!-- Backup Restore -->
+    <string name="backup_string">Liquid Backup/Restore</string>
+    <string name="backup_alert_title">Filename</string>
+    <string name="backup_alert_message">Name your settings file</string>
+    <string name="backup_category_title">Backup</string>
+    <string name="restore_category_title">Restore</string>
+    <string name="theme_category_title">Theme</string>
+    <string name="backup_title">Backup Liquid Settings</string>
+    <string name="backup_summary">save your settings</string>
+    <string name="restore_title">Restore Liquid Settings</string>
+    <string name="restore_summary">apply your backup</string>
+    <string name="name_theme_title">Name your theme!</string>
+    <string name="positive_button">Make Theme</string>
+    <string name="positive_thanks_button">Thanks</string>
+    <string name="positive_theme_button">Theme</string>
+    <string name="negative_button">I\'m scared</string>
+    <string name="negative_theme_button">Backup</string>
+    <string name="delete_button">Delete Theme (final)</string>
+    <string name="apply_button">Apply Theme</string>
+    <string name="title_prompt">Title: </string>
+    <string name="summary_prompt">Summary: </string>
+    <string name="want_to_make_theme_message">Theme or backup</string>
+    <string name="want_to_make_theme_title">What would you like to do?</string>
+    <string name="what_happened_title">So whats going on?</string>
+    <string name="delete_or_apply">Apply or delete theme?</string>
+    <string name="theme_title_hint">Name your theme.</string>
+    <string name="theme_summary_hint">Give description</string>
+
+    <!-- PropModder -->
+    <string name="buildprop_title">/system/build.prop mods</string>
+    <string name="nonprop_cat_title">Mods involving init.d script</string>
+    <string name="main_warning_title">YOU HAVE BEEN WARNED</string>
+    <string name="main_warning_summary">This app was conceived while watching monkeys juggling knives.  It hacks your \'/system/build.prop\' WE ARE NOT RESPONSIBLE FOR ACCIDENTAL KNIFE CUTS! Your device your responsibility</string>
+    <string name="pref_wifi_scan_interval_title">Wifi scan interval</string>
+    <string name="pref_wifi_scan_interval_summary">The time between wifi scans when no stored access points are available (requires reboot)</string>
+    <string name="pref_wifi_scan_alt_summary">Time between wifi scans: %s</string>
+    <string name="pref_lcd_density_title">LCD density</string>
+    <string name="pref_lcd_density_summary">This is the screen density allowing more high definition look (requires reboot)</string>
+    <string name="pref_lcd_density_alt_summary">Screen density: %s</string>
+    <string name="pref_max_events_title">Windows Manager\'s max events per second</string>
+    <string name="pref_max_events_summary">This is a runtime value that controls the number of events the system will allow in a second (requires reboot)</string>
+    <string name="pref_max_events_alt_summary">Max number of system events: %s</string>
+    <string name="pref_usb_mode_title">Default USB mode</string>
+    <string name="pref_usb_mode_summary">This decides what the default setting is when you plug in to a computer via USB (requires reboot)</string>
+    <string name="pref_ring_delay_title">Telephone ringer delay</string>
+    <string name="pref_ring_delay_summary">The amount of time from when the system registers an incoming phone call until the ringer starts (requires reboot)</string>
+    <string name="pref_ring_delay_alt_summary">Incoming call Delay: %s</string>
+    <string name="pref_vm_heapsize_title">Dalvik cache heapsize</string>
+    <string name="pref_vm_heapsize_summary">This controls the size of the cache the Dalvik VM has access to (requires reboot)</string>
+    <string name="pref_vm_heapsize_alt_summary">Dalvik VM cache size: %s</string>
+    <string name="propmodder_warning_title">ROOT IS REQUIRED</string>
+    <string name="propmodder_warning">This program changes system properties in /system/build.prop DO NOT USE if you don\'t know what you are doing. We (n00bware, makers of PropModder) are not responsible for your device PERIOD. You have been warned</string>
+    <string name="showbuild_title">Do you know what is in your build.prop</string>
+    <string name="showbuild_dialog">This is your /system/build.prop</string>
+    <string name="showbuild_loading">Loading build.prop\u2026</string>
+    <string name="showbuild_error">Error loading build.prop\u2026</string>
+    <string name="showbuild_unknown">Unknown</string>
+    <string name="showbuild_version">Version</string>
+    <string name="showbuild_label">We should look because knowing is half the battle</string>
+    <string name="pref_fast_up_title">HSUPA upload speed hack</string>
+    <string name="pref_fast_up_summary">*WARNING* if you change this value it will add the needed values to your build.prop if they are not already present (requires reboot)</string>
+    <string name="pref_fast_up_alt_summary">Fast up found active: %s</string>
+    <string name="pref_prox_delay_title">Proximity sensor delay</string>
+    <string name="pref_prox_delay_summary">When you are in-call screen is off when the device moves away from your face this delay value controls how long before screen turns on (requires reboot)</string>
+    <string name="pref_prox_delay_alt_summary">Proximity sensor set to: %s</string>
+    <string name="pref_logcat_title">Disable logcat</string>
+    <string name="pref_logcat_summary">Disabling logcat can improve system speed, but makes debugging very difficult</string>
+    <string name="pref_mod_version_title">Change your Build Number</string>
+    <string name="pref_mod_version_summary">This is astetic and doesn\'t improve the system</string>
+    <string name="pref_mod_version_alt_summary">Build Number: %s</string>
+    <string name="pref_mod_version_default">PropModder!!!</string>
+    <string name="pref_sleep_title">PM Sleep mode</string>
+    <string name="pref_sleep_summary">Modify Nighttime sleep policy</string>
+    <string name="pref_sleep_alt_summary">Current Sleep Mode: %s</string>
+    <string name="pref_tcp_stack_title">Optimize TCP Stack</string>
+    <string name="pref_tcp_stack_summary">Modify the buffer-size for better performance</string>
+    <string name="pref_check_in_title">Check in service</string>
+    <string name="pref_check_in_summary">Stop sending system usage data to Google and HTC</string>
+    <string name="pref_sdcard_buffer_title">Sdcard speed hack</string>
+    <string name="pref_sdcard_buffer_summary">Modify the sdcard buffer-size for better performance</string>
+    <string name="pref_g_speed_title">3G Speed Hack</string>
+    <string name="pref_g_speed_summary">Uncap 3g speed</string>
+    <string name="pref_gpu_title">GPU Acceleration</string>
+    <string name="pref_gpu_summary">To enable hardware acceleration where the GPU controls the UI instead of the CPU</string>
+
+    <!-- Open Recovery -->
+    <string name="open_recovery_cat_title">Versions found</string>
+    <string name="request_download_description">Downloading: </string>
+    <string name="request_download_title">Just relax and let it happen</string>
+    <string name="download_title">Download file</string>
+    <string name="wipe_cache_checkbox_title">Wipe Cache</string>
+    <string name="wipe_data_checkbox_title">Wipe Data</string>
+    <string name="wipe_dalvik_checkbox_title">Wipe Dalvik Cache</string>
+    <string name="backup_checkbox_title">Perform Backup</string>
+    <string name="backup_compression_checkbox_title">Use Backup Compression</string>
+    <string name="installation_button_title">Install new LiquidSmoothROM</string>
+    <string name="warn_about_dirty_flash">If you don\'t perform a clean install we don\'t want your bug reports... FYI</string>
+    <string name="warn_about_no_backup">Really??? One should always keep a backup</string>
+    <string name="filewrite_success">Writing recovery script: success</string>
+    <string name="filewrite_fail">Writing recovery script: fail</string>
+    <string name="file_path_title">FilePath</string>
+    <string name="file_size_title">FileSize</string>
+    <string name="md5_title">MD5 Checksum</string>
+    <string name="execute_title">Execute Install</string>
+    <string name="generating_md5">Calculating md5 checksum...</string>
+    <string name="click_here_to_find_zips">No file detected click here to find .zip files</string>
+    <string name="verify_md5_with_gooim">verifying md5...</string>
+    <string name="verify_md5_pass">Goo.im verified md5</string>
+    <string name="verify_md5_fail">Goo.im failed to verify md5</string>
+    <string name="other_devs_list">Goo.im devs list</string>
+    <string name="other_gooim_devs_menu_title">Cheat on Team Liquid</string>
+    <string name="username">Username: </string>
+    <string name="password">Password: </string>
+    <string name="gooim_supporters_menu_title">GooIm Supporters</string>
+    <string name="dev_list">Dev List</string>
+    <string name="button_ok">Ok</string>
+    <string name="button_cancel">Canecl</string>
+    <string name="inform_user_about_cipher">Liquid Settings stores your password using 128 bit AES encryption</string>
+
+    <!-- Dynamic Changelog -->
+    <string name="dynamic_changelog">Dynamic ChangeLog</string>
+    <string name="initial_changelog_category_title">Changelog</string>
+    <string name="changelog_menu_projects_title">View Projects List</string>
+    <string name="changelog_menu_commitlog_title">View Most Recent Commits</string>
+    <string name="button_close">Close</string>
+    <string name="button_webview">WebView</string>
+    <string name="commit_extended_info_title">Extended Commit Info</string>
+    <string name="commit_message">Commit Message</string>
+    <string name="commit_date">Commit Date</string>
+    <string name="commit_sha">Commit SHA-1 Hash</string>
+    <string name="next_commits_page_title">More...</string>
+    <string name="next_commits_page_summary">display next 30 commits</string>
+    <string name="loading_commits">Loading commits...</string>
+    <string name="commits_title">Commits</string>
+    <string name="loading_projects">Loading projects list...</string>
+    <string name="org_projects">Organization projects</string>
+    <string name="author_title">Author</string>
+    <string name="commit_committer_title">Committer</string>
+    <string name="sort_commits_title">Sort</string>
+    <string name="sort_commits_message">Commits are now in order by repository, would you like to sort them by date regardless of which repository in which they exist?</string>
+    <string name="button_sort">Sort by date</string>
+    <string name="button_donot_sort">Do not sort</string>
+    <string name="unknown_author">Unknown Author</string>
+    <string name="unknown_committer">Unknown Committer</string>
+    <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
 </resources>

@@ -17,6 +17,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
+        <PreferenceScreen android:key="about_the_team"
+                          android:title="@string/about_the_team">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings.liquid"
+                    android:targetClass="com.android.settings.liquid.AboutLiquid" />
+        </PreferenceScreen>
+
         <PreferenceScreen android:key="additional_system_update_settings"
                           android:title="@string/additional_system_update_settings_list_item_title">
             <intent android:action="android.intent.action.MAIN"
