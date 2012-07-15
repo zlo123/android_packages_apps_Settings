@@ -55,6 +55,8 @@
     <uses-permission android:name="android.permission.MANAGE_USB" />
     <uses-permission android:name="android.permission.SET_POINTER_SPEED" />
     <uses-permission android:name="android.permission.SET_KEYBOARD_LAYOUT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
 
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
@@ -979,7 +981,6 @@
 
         <!-- Second and third-level settings -->
 
-
         <!-- Lock screen settings -->
         <activity android:name="ConfirmLockPattern"/>
 
@@ -1084,6 +1085,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
                 <action android:name="com.android.settings.APPLICATION_DEVELOPMENT_SETTINGS" />
+                <category android:name="com.android.settings.SHORTCUT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
@@ -1225,7 +1227,7 @@
 
         <activity android:name="ActivityPicker"
                 android:label="@string/activity_picker_label"
-                android:theme="@*android:style/Theme.Dialog.Alert"
+                android:theme="@*android:style/Theme.Holo.Dialog.Alert"
                 android:finishOnCloseSystemDialogs="true">
             <intent-filter>
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
@@ -1246,9 +1248,6 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.nfc.AndroidBeam" />
         </activity>
-
-
-
 
         <!-- Development settings -->
 
@@ -1452,6 +1451,55 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
+        <activity android:name=".liquid.fragments.LightLevelsActivity" />
+
+        <activity android:name=".liquid.fragments.PowerWidget" />
+
+        <activity android:name=".liquid.fragments.TabletPowerWidget" />
+
+        <activity android:name=".liquid.fragments.ThemesSettings" />
+
+        <activity android:name=".liquid.fragments.SystemSettings" />
+
+        <activity android:name=".liquid.fragments.PerformanceSettings" />
+
+        <activity android:name=".liquid.fragments.LockscreenTargets" />
+
+        <activity android:name=".liquid.fragments.LockscreenInterface" />
+
+        <activity android:name=".liquid.fragments.Weather" />
+
+        <activity android:name=".liquid.fragments.Calendar" />
+
+        <activity android:name=".profiles.ProfilesSettings" />
+
+        <activity android:name=".profiles.ProfileConfig" />
+
+        <activity android:name=".profiles.AppGroupList" />
+
+        <activity android:name=".profiles.AppGroupConfig" />
+
+        <activity android:name=".profiles.ProfileGroupConfig" />
+
+        <activity android:name=".profiles.NFCProfileWriter" />
+
+        <activity android:name=".profiles.NFCProfileSelect" />
+
+        <activity android:name=".profiles.NFCProfile"
+                android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="liquid/profile" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ApnEditor" />
+
+        <activity android:name=".notificationlight.NotificationLightSettings" />
+
+        <activity android:name=".notificationlight.BatteryLightSettings" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
@@ -1523,7 +1571,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".liquid.installer.GooImSupport"
-            android:label="goo.im Suppport" >
+            android:label="Goo.im Suppport" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -1568,6 +1616,13 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>    
+        </activity>
+
+        <receiver android:name=".liquid.fragments.BootReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>

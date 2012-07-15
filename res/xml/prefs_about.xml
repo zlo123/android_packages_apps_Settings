@@ -56,12 +56,14 @@
             liquid:twitterHandle="@string/dev_amplified_twitter"
             liquid:donateLink="@string/dev_amplified_donate"
             liquid:avatar="@drawable/avatar_amplified" />
-	
+
+        <!-- Hide
 	    <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_blueharford_title"
             liquid:twitterHandle="@string/dev_blueharford_twitter"
             liquid:donateLink="@string/dev_blueharford_donate"
             liquid:avatar="@drawable/avatar_blueharford" />
+        Hide -->
 
 	    <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_winner00_title"

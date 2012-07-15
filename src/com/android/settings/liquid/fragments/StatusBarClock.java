@@ -78,7 +78,6 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -104,7 +103,6 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
-            Log.e("ROMAN", intHex + "");
         } else if (preference == mClockWeekday) {
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),

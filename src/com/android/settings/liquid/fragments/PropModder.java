@@ -62,7 +62,7 @@ import com.android.settings.util.Helpers;
 public class PropModder extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "LiquidControl :PropModder";
+    private static final String TAG = "PropModder";
     private static final String APPEND_CMD = "echo \"%s=%s\" >> /system/build.prop";
     private static final String KILL_PROP_CMD = "busybox sed -i \"/%s/D\" /system/build.prop";
     private static final String REPLACE_CMD = "busybox sed -i \"/%s/ c %<s=%s\" /system/build.prop";
@@ -650,7 +650,6 @@ public class PropModder extends PreferenceFragment implements
                 mLogcatPref.setChecked(false);
             }
             writeScript();
-
         }
     }
 }

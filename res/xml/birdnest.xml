@@ -42,7 +42,7 @@
             android:key="@+id/statusbar_clock"
             android:title="@string/statusbar_clock_title"
             android:fragment="com.android.settings.liquid.fragments.StatusBarClock" />
-	<PreferenceScreen
+	    <PreferenceScreen
             android:key="@+id/statusbar_battery"
             android:title="@string/statusbar_battery_title"
             android:fragment="com.android.settings.liquid.fragments.StatusBarBattery" />

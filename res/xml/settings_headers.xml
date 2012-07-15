@@ -17,13 +17,6 @@
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- LiquidSmooth Mods -->
-    <header
-        android:id="@+id/birdsnest"
-        android:fragment="com.android.settings.liquid.BirdNest"
-        android:title="@string/birdnest_title"
-        android:icon="@drawable/ic_settings_birdnest" />
-
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />
 
@@ -62,6 +55,48 @@
         android:breadCrumbTitle="@string/wireless_networks_settings_title"
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
+
+    <!-- INTERFACE -->
+    <header android:title="@string/header_category_interface" />
+
+    <!-- BirdNest -->
+    <header
+        android:id="@+id/birdnest"
+        android:fragment="com.android.settings.liquid.BirdNest"
+        android:title="@string/birdnest_title"
+        android:icon="@drawable/ic_settings_birdnest" />
+
+    <!-- Launcher -->
+    <header
+        android:id="@+id/launcher_settings"
+        android:title="@string/launcher_settings_title"
+        android:icon="@drawable/ic_settings_launcher" />
+
+    <!-- Lockscreen -->
+    <header
+        android:id="@+id/lock_screen_settings"
+        android:fragment="com.android.settings.liquid.fragments.LockscreenInterface"
+        android:title="@string/lock_screen_title"
+        android:icon="@drawable/ic_settings_lockscreen" />
+
+    <!-- Themes -->
+<!-- Hide until code is ported from CM9
+    <header
+        android:id="@+id/themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/themes_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </header>
+-->
+    <!-- System -->
+    <header
+        android:id="@+id/system_settings"
+        android:icon="@drawable/ic_settings_system"
+        android:fragment="com.android.settings.liquid.fragments.SystemSettings"
+        android:title="@string/system_settings_title" />
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
@@ -108,9 +143,26 @@
         <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
     </header>
 
+    <!-- DeviceParts Device Specific settings -->
+    <header
+        android:id="@+id/advanced_settings"
+        android:title="@string/advanced_settings_title"
+        android:icon="@drawable/ic_settings_advanced">
+        <intent
+            android:action="com.liquid.action.LAUNCH_DEVICE_SETTINGS"
+            android:targetPackage="com.liquid.settings.device"
+            android:targetClass="com.liquid.settings.device.DeviceSettings" />
+    </header>
 
     <!-- PERSONAL -->
     <header android:title="@string/header_category_personal" />
+
+    <!-- Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
 
     <!-- Manage users -->
     <header
@@ -190,6 +242,13 @@
         android:fragment="com.android.settings.DevelopmentSettings"
         android:icon="@drawable/ic_settings_development"
         android:title="@string/development_settings_title" />
+
+    <!-- Performance -->
+    <header
+        android:id="@+id/performance_settings"
+        android:fragment="com.android.settings.liquid.fragments.PerformanceSettings"
+        android:icon="@drawable/ic_settings_performance"
+        android:title="@string/performance_settings_title" />
 
     <!-- About Device -->
     <header

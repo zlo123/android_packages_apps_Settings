@@ -20,8 +20,8 @@
         <PreferenceScreen android:key="about_the_team"
                           android:title="@string/about_the_team">
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.settings.liquid"
-                    android:targetClass="com.android.settings.liquid.AboutLiquid" />
+                    android:targetPackage="com.android.settings.liquid.fragments"
+                    android:targetClass="com.android.settings.liquid.fragments.AboutLiquid" />
         </PreferenceScreen>
 
         <PreferenceScreen android:key="additional_system_update_settings"
