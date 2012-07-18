@@ -203,6 +203,7 @@
         <item>Questo è un esempio di sintesi vocale in italiano.</item>
         <item>Este es un ejemplo de síntesis de voz en español.</item>
     </string-array>
+
     <string-array name="tts_demo_string_langs" translatable="false">
         <item>eng</item>
         <item>fra</item>
@@ -1743,5 +1744,17 @@
         <item>5000</item>
         <item>10000</item>
     </integer-array>
+
+    <string-array name="dithering_entries" translatable="false">
+        <item>@string/dithering_no_dither</item>
+        <item>@string/dithering_color_banding</item>
+        <item>@string/dithering_blur_effect</item>
+    </string-array>
+
+    <string-array name="dithering_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
 </resources>
