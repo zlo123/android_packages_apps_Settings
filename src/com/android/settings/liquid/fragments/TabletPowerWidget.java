@@ -17,6 +17,8 @@
 
 package com.android.settings.liquid.fragments;
 
+import java.util.ArrayList;
+
 import android.app.ListFragment;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -24,10 +26,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.ListPreferenceMultiSelect;
 import android.preference.Preference;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -38,7 +37,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.settings.Utils;
 import com.android.settings.R;
