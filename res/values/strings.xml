@@ -4331,4 +4331,29 @@
     <string name="unknown_author">Unknown Author</string>
     <string name="unknown_committer">Unknown Committer</string>
     <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
+    
+    <!-- Battery -->
+    <string name="statusbar_battery_title">Battery Style</string>
+    <string name="battery_icon">Battery Style</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_bar">Battery Location</string>
+    <string name="battery_bar_color">Battery Color</string>
+    <string name="battery_bar_cat">Battery Options</string>
+    <string name="battery_bar_style_title">Battery Style</string>
+    <string name="battery_bar_thickness_title">Battery Size</string>
+    <string name="battery_bar_animate_title">Charging Animation</string>
+    <string name="battery_bar_animate_summary">Bad things could happen</string>
+    
+    <!-- Clock -->
+    <string name="statusbar_clock_title">Clock Style</string>
+    <string name="clock_title_enable">Clock Style</string>
+    <string name="title_clock_ampm_entries">AM/PM Style</string>
+    <string name="colors">Colors</string>
+    <string name="clock_color_title">Clock Color</string>
+    <string name="reset_color_title">Reset Color</string>
+    <string name="enable_alarm_title">Alarm Icon</string>
+    <string name="enable_alarm_summary">Toggle alarms for it to show</string>
+    <string name="enable_clock_weekday">Current Weekday</string>
+    <string name="enable_clock_weekday_summary">Abbreviated current day of week</string>
+
 </resources>

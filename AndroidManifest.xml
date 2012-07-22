@@ -332,6 +332,26 @@
         <activity android:name="Settings$WifiP2pSettingsActivity"
                 android:clearTaskOnLaunch="true"
                 android:parentActivityName="Settings$WifiSettingsActivity">
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
+                android:paddingLeft="4dip"
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -1535,5 +1555,19 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity android:name=".liquid.fragments.StatusBarBattery"
+            android:label="StatusBar Battery" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".liquid.fragments.StatusBarClock"
+            android:label="StatusBar Clock" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>    
     </application>
 </manifest>
