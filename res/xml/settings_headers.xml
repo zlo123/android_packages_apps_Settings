@@ -17,6 +17,13 @@
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- BirdNest -->
+    <header
+        android:id="@+id/birdnest"
+        android:fragment="com.android.settings.liquid.BirdNest"
+        android:title="@string/birdnest_title"
+        android:icon="@drawable/ic_settings_birdnest" />
+
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />
 
@@ -59,18 +66,12 @@
     <!-- INTERFACE -->
     <header android:title="@string/header_category_interface" />
 
-    <!-- BirdNest -->
-    <header
-        android:id="@+id/birdnest"
-        android:fragment="com.android.settings.liquid.BirdNest"
-        android:title="@string/birdnest_title"
-        android:icon="@drawable/ic_settings_birdnest" />
-
-    <!-- Launcher -->
+<!-- Launcher
     <header
         android:id="@+id/launcher_settings"
         android:title="@string/launcher_settings_title"
         android:icon="@drawable/ic_settings_launcher" />
+ -->
 
     <!-- Lockscreen -->
     <header
@@ -79,8 +80,7 @@
         android:title="@string/lock_screen_title"
         android:icon="@drawable/ic_settings_lockscreen" />
 
-    <!-- Themes -->
-<!-- Hide until code is ported from CM9
+<!-- Themes
     <header
         android:id="@+id/themes_settings"
         android:icon="@drawable/ic_settings_themes"
@@ -91,6 +91,7 @@
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 -->
+
     <!-- System -->
     <header
         android:id="@+id/system_settings"
