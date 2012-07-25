@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.liquid.fragments;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,7 +58,7 @@ import com.android.internal.widget.multiwaveview.GlowPadView;
 import com.android.internal.widget.multiwaveview.TargetDrawable;
 import com.android.settings.R;
 import com.android.settings.Utils;
-import com.android.settings.cyanogenmod.IconPicker.OnIconPickListener;
+import com.android.settings.liquid.fragments.IconPicker.OnIconPickListener;
 
 public class LockscreenTargets extends Fragment implements ShortcutPickHelper.OnPickListener,
     GlowPadView.OnTriggerListener, OnIconPickListener {

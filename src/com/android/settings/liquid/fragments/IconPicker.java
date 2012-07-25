@@ -141,7 +141,6 @@ public class IconPicker {
     }
 
     class IconAdapter extends BaseAdapter {
-
         String[] labels;
         TypedArray icons;
 
