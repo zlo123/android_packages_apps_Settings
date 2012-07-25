@@ -386,7 +386,7 @@ public class Settings extends PreferenceActivity
             } else if (id == R.id.operator_settings || id == R.id.manufacturer_settings ||
                     id == R.id.advanced_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
-            } else if (id == R.id.launcher_settings) {
+         /* } else if (id == R.id.launcher_settings) {
                 Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
                 launcherIntent.addCategory(Intent.CATEGORY_HOME);
                 launcherIntent.addCategory(Intent.CATEGORY_DEFAULT);
@@ -402,7 +402,7 @@ public class Settings extends PreferenceActivity
                             launcherPreferences.activityInfo.name);
                 } else {
                     target.remove(header);
-                }
+                } */
             } else if (id == R.id.wifi_settings) {
                 // Remove WiFi Settings if WiFi service is not available.
                 if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI)) {
