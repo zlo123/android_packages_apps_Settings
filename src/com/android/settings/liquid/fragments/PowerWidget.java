@@ -98,7 +98,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mPowerWidgetHapticFeedback.setValue(Integer.toString(Settings.System.getInt(
                     getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, 2)));
-            updateHapticFeedbackSummary();
         }
     }
 
