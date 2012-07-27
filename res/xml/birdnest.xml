@@ -46,5 +46,9 @@
             android:key="@+id/statusbar_battery"
             android:title="@string/statusbar_battery_title"
             android:fragment="com.android.settings.liquid.fragments.StatusBarBattery" />
+        <PreferenceScreen
+            android:key="@+id/navbar"
+            android:title="@string/navigation_bar_title"
+            android:fragment="com.android.settings.liquid.fragments.NavBar.java" />
     </PreferenceCategory>
 </PreferenceScreen>
