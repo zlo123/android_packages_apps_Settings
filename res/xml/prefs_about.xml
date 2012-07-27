@@ -52,6 +52,24 @@
             liquid:avatar="@drawable/avatar_n0coast" />
 
         <com.android.settings.widget.DeveloperPreference
+            android:title="@string/dev_hiemanshu_title"
+            liquid:twitterHandle="@string/dev_hiemanshu_twitter"
+            liquid:donateLink="@string/dev_hiemanshu_donate"
+            liquid:avatar="@drawable/avatar_hiemanshu" />
+
+        <com.android.settings.widget.DeveloperPreference
+            android:title="@string/dev_morfic_title"
+            liquid:twitterHandle="@string/dev_morfic_twitter"
+            liquid:donateLink="@string/dev_morfic_donate"
+            liquid:avatar="@drawable/avatar_morfic" />
+
+        <com.android.settings.widget.DeveloperPreference
+            android:title="@string/dev_purian23_title"
+            liquid:twitterHandle="@string/dev_purian23_twitter"
+            liquid:donateLink="@string/dev_purian23_donate"
+            liquid:avatar="@drawable/avatar_purian23" />
+
+        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_amplified_title"
             liquid:twitterHandle="@string/dev_amplified_twitter"
             liquid:donateLink="@string/dev_amplified_donate"
