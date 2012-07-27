@@ -1594,6 +1594,17 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        <receiver android:name="com.android.server.AppsLaunchFailureReceiver" >
+            <intent-filter>
+                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE" />
+                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE_RESET" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="com.tmobile.intent.action.THEME_PACKAGE_UPDATED" />
+                <category android:name="com.tmobile.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
         </activity>
         <activity android:name=".liquid.fragments.AboutLiquid"
             android:label="About Team Liquid" >
