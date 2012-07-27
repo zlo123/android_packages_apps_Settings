@@ -49,6 +49,6 @@
         <PreferenceScreen
             android:key="@+id/navbar"
             android:title="@string/navigation_bar_title"
-            android:fragment="com.android.settings.liquid.fragments.NavBar.java" />
+            android:fragment="com.android.settings.liquid.fragments.Navbar.java" />
     </PreferenceCategory>
 </PreferenceScreen>
