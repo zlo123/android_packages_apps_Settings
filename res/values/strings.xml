@@ -4176,6 +4176,9 @@
     <string name="dev_morfic_title">The Real Morfic</string>
     <string name="dev_morfic_twitter">morfique</string>
     <string name="dev_morfic_donate">http://tinyurl.com/c8hkot3</string>
+    <string name="dev_jdkoreclipse_title">jdkoreclipse</string>
+    <string name="dev_jdkoreclipse_twitter">jdkoreclipse</string>
+    <string name="dev_jdkoreclipse_donate">http://jdkoreclipse.net/donate.html</string>
 
     <!-- File Picker -->
     <string name="clear">Clear screen</string>

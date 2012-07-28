@@ -64,6 +64,12 @@
             liquid:avatar="@drawable/avatar_morfic" />
 
         <com.android.settings.widget.DeveloperPreference
+            android:title="@string/dev_jdkoreclipse_title"
+            liquid:twitterHandle="@string/dev_jdkoreclipse_twitter"
+            liquid:donateLink="@string/dev_jdkoreclipse_donate"
+            liquid:avatar="@drawable/avatar_jdkoreclipse" />
+
+        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_purian23_title"
             liquid:twitterHandle="@string/dev_purian23_twitter"
             liquid:donateLink="@string/dev_purian23_donate"
