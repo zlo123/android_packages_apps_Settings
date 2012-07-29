@@ -63,13 +63,6 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- System -->
-    <header
-        android:id="@+id/system_settings"
-        android:icon="@drawable/ic_settings_system"
-        android:fragment="com.android.settings.liquid.fragments.SystemSettings"
-        android:title="@string/system_settings_title" />
-
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
 
