@@ -4140,6 +4140,7 @@
     <string name="status_bar_title">Statusbar</string>
     <string name="navigation_bar_title">Navigation</string>
     <string name="notification_drawer_title">Notification</string>
+    <string name="header_category_interface">INTERFACE</string>
 
     <!-- Colorpicker -->
     <string name="dialog_color_picker">Color Picker</string>

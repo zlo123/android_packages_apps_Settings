@@ -47,10 +47,6 @@
             android:title="@string/performance_settings_title"
             android:fragment="com.android.settings.liquid.fragments.PerformanceSettings" />
         <PreferenceScreen
-            android:key="@+id/profiles_settings"
-            android:title="@string/profiles_settings_title"
-            android:fragment="com.android.settings.profiles.ProfilesSettings" />
-        <PreferenceScreen
             android:key="@+id/propmodder"
             android:title="@string/propmodder_title"
             android:fragment="com.android.settings.liquid.fragments.PropModder" />
