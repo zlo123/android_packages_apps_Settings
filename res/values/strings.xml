@@ -5029,4 +5029,10 @@
     
     <string name="dpi">DPI</string>
     <string name="group_applications">Applications</string>
+
+    <!-- Power menu screenshot -->
+    <string name="power_menu_screenshot_title">Power menu screenshot</string>
+
+    <!-- **** LiQuiD Edits ADDITIONS END **** -->
+
 </resources>
