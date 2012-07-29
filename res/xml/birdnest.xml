@@ -31,24 +31,32 @@
             android:title="@string/gooim_support_title"
             android:fragment="com.android.settings.liquid.installer.GooImSupport" />
         <PreferenceScreen
+            android:key="@+id/interface_settings"
+            android:title="@string/interface_settings_title"
+            android:fragment="com.android.settings.liquid.fragments.InterfaceSettings" />
+        <PreferenceScreen
+            android:key="@+id/lock_screen_settings"
+            android:title="@string/lock_screen_title"
+            android:fragment="com.android.settings.liquid.fragments.LockscreenInterface" />
+        <PreferenceScreen
             android:key="@+id/open_recovery"
             android:title="@string/open_recovery_title"
             android:fragment="com.android.settings.liquid.installer.OpenRecoveryScriptSupport" />
+        <PreferenceScreen
+            android:key="@+id/performance_settings"
+            android:title="@string/performance_settings_title"
+            android:fragment="com.android.settings.liquid.fragments.PerformanceSettings" />
+        <PreferenceScreen
+            android:key="@+id/profiles_settings"
+            android:title="@string/profiles_settings_title"
+            android:fragment="com.android.settings.profiles.ProfilesSettings" />
         <PreferenceScreen
             android:key="@+id/propmodder"
             android:title="@string/propmodder_title"
             android:fragment="com.android.settings.liquid.fragments.PropModder" />
         <PreferenceScreen
-            android:key="@+id/statusbar_clock"
-            android:title="@string/statusbar_clock_title"
-            android:fragment="com.android.settings.liquid.fragments.StatusBarClock" />
-        <PreferenceScreen
-            android:key="@+id/statusbar_battery"
-            android:title="@string/statusbar_battery_title"
-            android:fragment="com.android.settings.liquid.fragments.StatusBarBattery" />
-        <PreferenceScreen
-            android:key="@+id/navbar"
-            android:title="@string/navigation_bar_title"
-            android:fragment="com.android.settings.liquid.fragments.Navbar" />
+            android:key="@+id/themes_settings"
+            android:title="@string/themes_settings_title"
+            android:fragment="com.tmobile.themechooser.ThemeChooser" />
     </PreferenceCategory>
 </PreferenceScreen>

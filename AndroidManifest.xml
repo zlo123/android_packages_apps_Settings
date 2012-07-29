@@ -1463,7 +1463,7 @@
 
         <activity android:name=".liquid.fragments.ThemesSettings" />
 
-        <activity android:name=".liquid.fragments.SystemSettings" />
+        <activity android:name=".liquid.fragments.InterfaceSettings" />
 
         <activity android:name=".liquid.fragments.PerformanceSettings" />
 
