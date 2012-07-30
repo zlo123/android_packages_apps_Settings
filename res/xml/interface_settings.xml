@@ -19,7 +19,7 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-   <!-- <PreferenceScreen
+    <PreferenceScreen
         android:key="@+id/statusbar_battery"
         android:title="@string/statusbar_battery_title"
         android:fragment="com.android.settings.liquid.fragments.StatusBarBattery" />
@@ -27,7 +27,7 @@
     <PreferenceScreen
         android:key="@+id/statusbar_clock"
         android:title="@string/statusbar_clock_title"
-        android:fragment="com.android.settings.liquid.fragments.StatusBarClock" />-->
+        android:fragment="com.android.settings.liquid.fragments.StatusBarClock" />
 
     <PreferenceScreen
         android:key="@+id/navbar"
