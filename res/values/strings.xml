@@ -4522,6 +4522,7 @@
     <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
 
     <!-- Power Widget  -->
+    <string name="status_bar_tweaks">Status Bar Tweaks</string>
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
     <string name="power_widget_behavior">Widget behavior</string>

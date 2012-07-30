@@ -44,10 +44,11 @@
         android:fragment="com.android.settings.liquid.fragments.TabletPowerWidget"
         android:title="@string/notification_drawer_title" />
 
-    <PreferenceScreen
+ <!--   <PreferenceScreen
         android:key="status_bar"
         android:fragment="com.android.settings.liquid.fragments.StatusBar"
-        android:title="@string/combined_status_bar_title" />
+        android:title="@string/combined_status_bar_title" />-->
+
     <PreferenceScreen
         android:key="wallpaper"
         android:title="@string/wallpaper_settings_title"
