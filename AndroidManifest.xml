@@ -1563,8 +1563,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".liquid.installer.OpenRecoveryInstallerActivity"
-            android:label="OpenRecoveryScript Support" >
+        <activity android:name=".liquid.installer.ZipArchiveHandlerActivity"
+            android:label="Zip Archive Handler (OpenRecoverySupport)" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

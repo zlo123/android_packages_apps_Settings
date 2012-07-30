@@ -28,6 +28,7 @@ import android.os.Handler;
 import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
@@ -64,9 +65,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class OpenRecoveryScriptSupport extends Activity {
+public class ZipArchiveHandlerActivity extends PreferenceActivity {
 
-    private static final String TAG = "LC : OpenRecoveryScriptSupport";
+    private static final String TAG = "ZipArchiveHandlerActivity";
     private static final boolean DEBUG = true;
 
     private static final int INSTALL_PROMPT = 1001;
@@ -105,7 +106,7 @@ public class OpenRecoveryScriptSupport extends Activity {
     @Override
     public void onCreate(Bundle liquid) {
         super.onCreate(liquid);
-        mContext = getActivity().getApplicationContext();
+        mContext = getApplicationContext();
 
         // initialize the worker thread handler
         mHandler = new Handler();
@@ -114,7 +115,7 @@ public class OpenRecoveryScriptSupport extends Activity {
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
 
         // capture absolute file path
-        mIntent = getActivity().getIntent();
+        mIntent = getIntent();
         if (mIntent != null) {
             Log.d(TAG, "Intent found: " + mIntent);
             final Uri mUri = mIntent.getData();
