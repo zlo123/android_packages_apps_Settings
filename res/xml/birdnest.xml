@@ -50,9 +50,9 @@
             android:key="@+id/propmodder"
             android:title="@string/propmodder_title"
             android:fragment="com.android.settings.liquid.fragments.PropModder" />
-        <PreferenceScreen
+   <!--     <PreferenceScreen
             android:key="@+id/themes_settings"
             android:title="@string/themes_settings_title"
-            android:fragment="com.tmobile.themechooser.ThemeChooser" />
+            android:fragment="com.tmobile.themechooser.ThemeChooser" />-->
     </PreferenceCategory>
 </PreferenceScreen>
