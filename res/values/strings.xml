@@ -1700,11 +1700,11 @@
     <!-- Sound & display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
     <string name="automatic_brightness">Automatic brightness</string>
     <!-- [CHAR LIMIT=30] Sound & display settings screen, setting option name to change font size -->
-    <string name="title_font_size">Font size</string>
+    <string name="title_font_size">Fontsize</string>
     <!-- Sound & display settings screen, setting option summary displaying the currently selected font size -->
     <string name="summary_font_size" translatable="false">%1$s</string>
     <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
-    <string name="dialog_title_font_size">Font size</string>
+    <string name="dialog_title_font_size">Fontsize</string>
 
     <!-- SIM lock settings title -->
     <string name="sim_lock_settings">SIM card lock settings</string>
@@ -2844,6 +2844,10 @@
     <string name="enable_adb">Android debugging</string>
     <!-- Setting checkbox summary for Whether to enable USB debugging support on the phone -->
     <string name="enable_adb_summary">Allow Android debug mode, the adb interface on USB (or on network)</string>
+    <!-- Setting checkbox summary for displaying USB debugging notification -->
+    <string name="adb_notify">USB debugging notify</string>
+    <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
+
     <string name="keep_screen_on">Stay awake</string>
     <!-- setting Checkbox summary whether to keep the screen on when plugged in  -->
     <string name="keep_screen_on_summary">Screen will never sleep while charging</string>
@@ -4119,13 +4123,28 @@
      -->
 
     <!-- Liquid Settings Headers -->
-    <string name="about_the_team">About the Team</string>
     <string name="birdnest_title">BirdNest</string>
-    <string name="open_recovery_title">OpenRecoveryScript</string>
-    <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
+    <string name="visual_settings_title">VISUAL CUSTOMIZATION SETTINGS</string>
+    <string name="uth_settings_title">UNDER-THE-HOOD SETTINGS</string>
+    <string name="misc_title">MISCELLANEOUS SETTINGS</string>
+    <string name="about_the_team">About TeamLiquid</string>
     <string name="backup_restore_title">Backup Restore</string>
+    <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
     <string name="gooim_support_title">Goo.im Support</string>
-    <string name="propmodder_title">PropModder</string>
+    <string name="lock_screen_title">Lockscreen</string>
+    <string name="open_recovery_title">Open Recovery</string>
+    <string name="performance_settings_title">Performance</string>
+    <string name="profiles_settings_title">Profiles</string>
+    <string name="propmodder_title">Propmodder</string>
+    <string name="themes_settings_title">Themes</string>
+    <string name="interface_settings_title">Interface</string>
+    <string name="statusbar_battery_title">Battery</string>
+    <string name="statusbar_clock_title">Clock</string>
+    <string name="status_bar_title">Statusbar</string>
+    <string name="navigation_bar_title">Navigation</string>
+    <string name="notification_drawer_title">Notification</string>
+    <string name="header_category_interface">INTERFACE</string>
+    <string name="header_category_customization">ROM CUSTOMIZATION</string>
 
     <!-- Colorpicker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -4161,9 +4180,6 @@
     <string name="dev_amplified_title">amplified</string>
     <string name="dev_amplified_twitter">JacobVanCleve</string>
     <string name="dev_amplified_donate">http://bit.ly/H0ZFRV</string>
-    <string name="dev_blueharford_title">blueharford</string>
-    <string name="dev_blueharford_twitter">blueharford</string>
-    <string name="dev_blueharford_donate">http://bit.ly/KNIaZM</string>
     <string name="dev_winner00_title">winner00</string>
     <string name="dev_winner00_twitter">expertontech</string>
     <string name="dev_winner00_donate">http://bit.ly/Ml12Ac</string>
@@ -4345,7 +4361,6 @@
     <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
     
     <!-- Battery -->
-    <string name="statusbar_battery_title">Battery Style</string>
     <string name="battery_icon">Battery Style</string>
     <string name="battery_summary_text_widget">@null</string>
     <string name="battery_bar">Battery Location</string>
@@ -4357,7 +4372,6 @@
     <string name="battery_bar_animate_summary">Bad things could happen</string>
     
     <!-- Clock -->
-    <string name="statusbar_clock_title">Clock Style</string>
     <string name="clock_title_enable">Clock Style</string>
     <string name="title_clock_ampm_entries">AM/PM Style</string>
     <string name="colors">Colors</string>
@@ -4491,22 +4505,8 @@
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="advanced_settings_title">Advanced</string>
 
-    <!-- INTERFACE Settings  -->
-    <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_interface">INTERFACE</string>
-
     <!-- Launcher settings  -->
     <string name="launcher_settings_title">Launcher</string>
-
-    <!-- Themes settings  -->
-    <string name="themes_settings_title">Themes</string>
-
-    <!-- System Interface settings  -->
-    <string name="system_settings_title">System</string>
-    <string name="system_interface_title">System interface</string>
-
-    <!-- Notification Drawer  -->
-    <string name="notification_drawer_title">Notification drawer</string>
 
     <!-- Combined Bar  -->
     <string name="combined_bar_title">Combined bar</string>
@@ -4514,8 +4514,6 @@
     <string name="combined_bar_auto_hide_summary">Allow combined bar to hide when showing a fullscreen app</string>
 
     <!-- Navigation Bar  -->
-    <string name="navigation_bar_title">Navigation bar</string>
-
     <string name="navigation_bar_help_text">1 - To begin editing, tap the lock icon\n\n2 - Tap any button to assign or change functionality\n\n3 - Long press any button to rearrange the order\n\n4 - To save, tap the lock icon again\n\n5 - To restore system default, tap the reset button\n\n</string>
     <string name="navigation_bar_tips">&#8226; Actions can only be assigned to one button at a time\n\n&#8226; The home button cannot be re-assigned\n\n&#8226; Side buttons cannot be rearranged</string>
     <string name="navigation_bar_tips_title">Quick tips</string>
@@ -4572,7 +4570,6 @@
 
     <!-- Status bar  -->
     <string name="combined_status_bar_title">@string/status_bar_title</string>
-    <string name="status_bar_title">Status bar</string>
     <string name="status_bar_clock_title">Clock</string>
     <string name="status_bar_general_title">General</string>
     <string name="status_bar_show_clock_title">Show clock</string>
@@ -4586,7 +4583,6 @@
     <string name="status_bar_signal_text_show_bars">Icon (default)</string>
     <string name="status_bar_signal_text_show_text">Text</string>
     <string name="status_bar_signal_text_hidden">Hidden</string>
-    <string name="lock_screen_title">Lockscreen</string>
 
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
@@ -4666,11 +4662,11 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Profiles settings  -->
-    <string name="profiles_settings_title">Profiles</string>
     <string name="profiles_general_title">General</string>
     <string name="profiles_add">Add</string>
     <string name="profile_menu_delete">Delete</string>
     <string name="profile_settings_title">Profile</string>
+    <string name="profile_empty_list_profiles_off">To configure and use System profiles, turn Profiles on.</string>
 
     <!-- Add Profile -->
     <string name="add_profile_dialog_title">Create new profile</string>
@@ -4806,9 +4802,6 @@
     <string name="slide_lock_delay_5m">5 minutes</string>
     <string name="slide_lock_delay_10m">10 minutes</string>
     <string name="slide_lock_delay_30m">30 minutes</string>
-
-    <!-- Performance settings  -->
-    <string name="performance_settings_title">Performance</string>
 
     <!-- Performance Settings : Warning dialog  -->
     <string name="performance_settings_warning_title">Proceed with Caution</string>
@@ -5041,4 +5034,10 @@
     
     <string name="dpi">DPI</string>
     <string name="group_applications">Applications</string>
+
+    <!-- Power menu screenshot -->
+    <string name="power_menu_screenshot_title">Power menu screenshot</string>
+
+    <!-- **** LiQuiD Edits ADDITIONS END **** -->
+
 </resources>

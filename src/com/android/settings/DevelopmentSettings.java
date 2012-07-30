@@ -75,6 +75,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private static final String ENABLE_ADB = "enable_adb";
     private static final String ADB_TCPIP  = "adb_over_network";
+    private static final String ADB_NOTIFY = "adb_notify";
 
     private static final String KEEP_SCREEN_ON = "keep_screen_on";
     private static final String ALLOW_MOCK_LOCATION = "allow_mock_location";
@@ -128,6 +129,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private CheckBoxPreference mEnableAdb;
     private CheckBoxPreference mAdbOverNetwork;
+    private CheckBoxPreference mAdbNotify;
     private CheckBoxPreference mKeepScreenOn;
     private CheckBoxPreference mEnforceReadExternal;
     private CheckBoxPreference mAllowMockLocation;
@@ -191,7 +193,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
         mEnableAdb = findAndInitCheckboxPref(ENABLE_ADB);
         mAdbOverNetwork = findAndInitCheckboxPref(ADB_TCPIP);
-
+        mAdbNotify = findAndInitCheckboxPref(ADB_NOTIFY);
         mKeepScreenOn = findAndInitCheckboxPref(KEEP_SCREEN_ON);
         mEnforceReadExternal = findAndInitCheckboxPref(ENFORCE_READ_EXTERNAL);
         mAllowMockLocation = findAndInitCheckboxPref(ALLOW_MOCK_LOCATION);
@@ -372,6 +374,8 @@ public class DevelopmentSettings extends PreferenceFragment
         updateCheckBox(mEnableAdb, Settings.Secure.getInt(cr,
                 Settings.Secure.ADB_ENABLED, 0) != 0);
         updateAdbOverNetwork();
+        mAdbNotify.setChecked(Settings.Secure.getInt(cr,
+                Settings.Secure.ADB_NOTIFY, 1) != 0);
         updateCheckBox(mKeepScreenOn, Settings.System.getInt(cr,
                 Settings.System.STAY_ON_WHILE_PLUGGED_IN, 0) != 0);
         updateCheckBox(mEnforceReadExternal, isPermissionEnforced(context, READ_EXTERNAL_STORAGE));
@@ -401,7 +405,7 @@ public class DevelopmentSettings extends PreferenceFragment
         int mPort = Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.ADB_PORT, 0);
         boolean mEnabled = mPort > 0;
-        mAdbOverNetwork.setChecked(mEnabled);
+        updateCheckBox(mAdbOverNetwork, mEnabled);
         if (mEnabled) {
             IWifiManager mWifiManager = IWifiManager.Stub.asInterface(
                     ServiceManager.getService(Context.WIFI_SERVICE));
@@ -926,6 +930,10 @@ public class DevelopmentSettings extends PreferenceFragment
                         Settings.Secure.ADB_PORT, -1);
                 updateAdbOverNetwork();
             }
+        } else if (preference == mAdbNotify) {
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.ADB_NOTIFY,
+                    mAdbNotify.isChecked() ? 1 : 0);
         } else if (preference == mKeepScreenOn) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STAY_ON_WHILE_PLUGGED_IN, 
@@ -1025,6 +1033,10 @@ public class DevelopmentSettings extends PreferenceFragment
         if (mAdbDialog != null) {
             mAdbDialog.dismiss();
             mAdbDialog = null;
+        }
+        if (mOkDialog != null) {
+            mOkDialog.dismiss();
+            mOkDialog = null;
         }
         if (mEnableDialog != null) {
             mEnableDialog.dismiss();
