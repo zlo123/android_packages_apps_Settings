@@ -15,8 +15,16 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="">
-
-    <PreferenceCategory android:key="category"
+ <PreferenceCategory android:key="category"
+             android:title="@string/birdnest_title">
+ <PreferenceScreen android:key="about_the_team"
+                          android:title="@string/about_the_team">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.liquid.fragments.AboutLiquid" />
+        </PreferenceScreen>
+       </PreferenceCategory>
+     <PreferenceCategory android:key="category"
               android:title="@string/visual_settings_title">
   <PreferenceScreen
             android:key="@+id/interface_settings"
