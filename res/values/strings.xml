@@ -4124,6 +4124,9 @@
 
     <!-- Liquid Settings Headers -->
     <string name="birdnest_title">BirdNest</string>
+    <string name="visual_settings_title">VISUAL CUSTOMIZATION SETTINGS</string>
+    <string name="uth_settings_title">UNDER-THE-HOOD SETTINGS</string>
+    <string name="misc_title">MISCELLANEOUS SETTINGS</string>
     <string name="about_the_team">About TeamLiquid</string>
     <string name="backup_restore_title">Backup Restore</string>
     <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
@@ -4141,6 +4144,7 @@
     <string name="navigation_bar_title">Navigation</string>
     <string name="notification_drawer_title">Notification</string>
     <string name="header_category_interface">INTERFACE</string>
+    <string name="header_category_customization">ROM CUSTOMIZATION</string>
 
     <!-- Colorpicker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -4518,6 +4522,7 @@
     <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
 
     <!-- Power Widget  -->
+    <string name="status_bar_tweaks">Status Bar Tweaks</string>
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
     <string name="power_widget_behavior">Widget behavior</string>
