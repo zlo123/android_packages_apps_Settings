@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings;
+package com.android.settings.liquid.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
