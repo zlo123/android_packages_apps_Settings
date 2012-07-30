@@ -4124,6 +4124,9 @@
 
     <!-- Liquid Settings Headers -->
     <string name="birdnest_title">BirdNest</string>
+    <string name="visual_settings_title">VISUAL CUSTOMIZATION SETTINGS</string>
+    <string name="uth_settings_title">UNDER-THE-HOOD SETTINGS</string>
+    <string name="misc_title">MISCELLANEOUS SETTINGS</string>
     <string name="about_the_team">About TeamLiquid</string>
     <string name="backup_restore_title">Backup Restore</string>
     <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
