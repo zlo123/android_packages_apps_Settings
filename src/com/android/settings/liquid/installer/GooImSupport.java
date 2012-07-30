@@ -88,9 +88,9 @@ public class GooImSupport extends SettingsPreferenceFragment {
     private static final String DEVICE_NAME = android.os.Build.DEVICE;
 
     public static final String LIQUID_JSON_PARSER = "http://goo.im/json2&path=/devs/teamliquid/"
-            + (DEVICE_NAME.contains("toro") ? "vzw" : "gsm");
-    public static final String JSON_PARSER = "http://goo.im/json2&path=/devs&ro_board=toro";
-    private static final String FORMATED_JSON_PATH = "http://goo.im/json2&path=%s&ro_board=toro";
+            + DEVICE_NAME;
+    public static final String JSON_PARSER = "http://goo.im/json2&path=/devs&ro_board=" + DEVICE_NAME;
+    private static final String FORMATED_JSON_PATH = "http://goo.im/json2&path=%s&ro_board=" + DEVICE_NAME;
     private static final String PREF_VERSIONS = "version_preference_screens";
     private static final String ERROR = "error";
     private static final String KEY_USERNAME = "username";
