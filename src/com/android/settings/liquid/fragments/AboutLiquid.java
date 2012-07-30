@@ -24,7 +24,7 @@ import android.preference.PreferenceScreen;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
-public class AboutLiquid extends SettingsPreferenceFragment {
+public static class AboutLiquid extends SettingsPreferenceFragment {
 
     public static final String TAG = "About Liquid";
 
