@@ -16,6 +16,7 @@
 
 package com.android.settings;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -25,12 +26,10 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.MotionEvent;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -41,8 +40,14 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DeviceInfoSettings extends PreferenceActivity {
-    private static final String TAG = "DeviceInfoSettings";
+public class DeviceInfoSettings extends SettingsPreferenceFragment {
+
+    private static final String LOG_TAG = "DeviceInfoSettings";
+
+    private static final String FILENAME_PROC_VERSION = "/proc/version";
+    private static final String FILENAME_MSV = "/sys/board_properties/soc/msv";
+    private static final String FILENAME_PROC_MEMINFO = "/proc/meminfo";
+    private static final String FILENAME_PROC_CPUINFO = "/proc/cpuinfo";
 
     private static final String KEY_CONTAINER = "container";
     private static final String KEY_TEAM = "team";
@@ -52,67 +57,107 @@ public class DeviceInfoSettings extends PreferenceActivity {
     private static final String KEY_COPYRIGHT = "copyright";
     private static final String KEY_SYSTEM_UPDATE_SETTINGS = "system_update_settings";
     private static final String PROPERTY_URL_SAFETYLEGAL = "ro.url.safetylegal";
+    private static final String KEY_KERNEL_VERSION = "kernel_version";
+    private static final String KEY_BUILD_NUMBER = "build_number";
+    private static final String KEY_DEVICE_MODEL = "device_model";
+    private static final String KEY_BASEBAND_VERSION = "baseband_version";
+    private static final String KEY_FIRMWARE_VERSION = "firmware_version";
     private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
+    private static final String KEY_MOD_VERSION="mod_version";
+    private static final String KEY_BUILD_DATE="build_date";
+    private static final String KEY_DEVICE_CPU = "device_cpu";
+    private static final String KEY_DEVICE_MEMORY = "device_memory";
 
     long[] mHits = new long[3];
 
     @Override
-    protected void onCreate(Bundle icicle) {
+    public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.device_info_settings);
 
-        // If we don't have an IME tutorial, remove that option
-        String currentIme = Settings.Secure.getString(getContentResolver(),
-                Settings.Secure.DEFAULT_INPUT_METHOD);
-        ComponentName component = ComponentName.unflattenFromString(currentIme);
-        Intent imeIntent = new Intent(component.getPackageName() + ".tutorial");
-        PackageManager pm = getPackageManager();
-        List<ResolveInfo> tutorials = pm.queryIntentActivities(imeIntent, 0);
-        if(tutorials == null || tutorials.isEmpty()) {
-            getPreferenceScreen().removePreference(findPreference("system_tutorial"));
+        setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
+        findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
+        setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
+        setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
+        setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
+        findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
+        setValueSummary(KEY_MOD_VERSION, "ro.modversion");
+        setValueSummary(KEY_BUILD_DATE, "ro.build.date");
+
+        String cpuInfo = getCPUInfo();
+        String memInfo = getMemInfo();
+
+        if (cpuInfo != null) {
+            setStringSummary(KEY_DEVICE_CPU, cpuInfo);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_CPU));
         }
 
-        setStringSummary("device_cpu", getCPUInfo());
-        setStringSummary("device_memory", getMemAvail().toString()+" MB / "+getMemTotal().toString()+" MB");
-        setValueSummary("baseband_version", "gsm.version.baseband");
-        setStringSummary("device_model", Build.MODEL);
+        if (memInfo != null) {
+            setStringSummary(KEY_DEVICE_MEMORY, memInfo);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_MEMORY));
+        }
 
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), "safetylegal",
                 PROPERTY_URL_SAFETYLEGAL);
 
+        // Remove Baseband version if wifi-only device
+        if (Utils.isWifiOnly(getActivity())) {
+            getPreferenceScreen().removePreference(findPreference(KEY_BASEBAND_VERSION));
+        }
+
         /*
          * Settings is a generic app and should not contain any device-specific
          * info.
          */
-
+        final Activity act = getActivity();
         // These are contained in the "container" preference group
         PreferenceGroup parentPreference = (PreferenceGroup) findPreference(KEY_CONTAINER);
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parentPreference, KEY_TERMS,
+        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_TERMS,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parentPreference, KEY_LICENSE,
+        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_LICENSE,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parentPreference, KEY_COPYRIGHT,
+        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_COPYRIGHT,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parentPreference, KEY_TEAM,
+        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_TEAM,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
 
         // These are contained by the root preference screen
         parentPreference = getPreferenceScreen();
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parentPreference,
+        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference,
                 KEY_SYSTEM_UPDATE_SETTINGS,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parentPreference, KEY_CONTRIBUTORS,
+        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_CONTRIBUTORS,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
 
         // Read platform settings for additional system update setting
-        boolean mUpdateSettingAvailable =
+        boolean isUpdateSettingAvailable =
                 getResources().getBoolean(R.bool.config_additional_system_update_setting_enable);
-
-        if(mUpdateSettingAvailable == false) {
+        if (isUpdateSettingAvailable == false) {
             getPreferenceScreen().removePreference(findPreference(KEY_UPDATE_SETTING));
         }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference.getKey().equals(KEY_FIRMWARE_VERSION)) {
+            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("android",
+                        com.android.internal.app.PlatLogoActivity.class.getName());
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
+            }
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void removePreferenceIfPropertyMissing(PreferenceGroup preferenceGroup,
@@ -123,7 +168,7 @@ public class DeviceInfoSettings extends PreferenceActivity {
             try {
                 preferenceGroup.removePreference(findPreference(preference));
             } catch (RuntimeException e) {
-                Log.d(TAG, "Property '" + property + "' missing and no '"
+                Log.d(LOG_TAG, "Property '" + property + "' missing and no '"
                         + preference + "' preference");
             }
         }
@@ -144,118 +189,126 @@ public class DeviceInfoSettings extends PreferenceActivity {
                     SystemProperties.get(property,
                             getResources().getString(R.string.device_info_default)));
         } catch (RuntimeException e) {
-
+            // No recovery
         }
     }
 
-    private Long getMemTotal() {
-      Long total = null;
-      BufferedReader reader = null;
-
-      try {
-         // Grab a reader to /proc/meminfo
-         reader = new BufferedReader(new InputStreamReader(new FileInputStream("/proc/meminfo")), 1000);
-
-         // Grab the first line which contains mem total
-         String line = reader.readLine();
-
-         // Split line on the colon, we need info to the right of the colon
-         String[] info = line.split(":");
-
-         // We have to remove the kb on the end
-         String[] memTotal = info[1].trim().split(" ");
-
-         // Convert kb into mb
-         total = Long.parseLong(memTotal[0]);
-         total = total / 1024;
-      }
-      catch(Exception e) {
-         e.printStackTrace();
-         // We don't want to return null so default to 0
-         total = Long.parseLong("0");
-      }
-      finally {
-         // Make sure the reader is closed no matter what
-         try { reader.close(); }
-         catch(Exception e) {}
-         reader = null;
-      }
-
-      return total;
+    /**
+     * Reads a line from the specified file.
+     * @param filename the file to read from
+     * @return the first line, if any.
+     * @throws IOException if the file couldn't be read
+     */
+    private String readLine(String filename) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(filename), 256);
+        try {
+            return reader.readLine();
+        } finally {
+            reader.close();
+        }
     }
 
-    private Long getMemAvail() {
-      Long avail = null;
-      BufferedReader reader = null;
+    private String getFormattedKernelVersion() {
+        String procVersionStr;
 
-      try {
-         // Grab a reader to /proc/meminfo
-         reader = new BufferedReader(new InputStreamReader(new FileInputStream("/proc/meminfo")), 1000);
+        try {
+            procVersionStr = readLine(FILENAME_PROC_VERSION);
 
-         // This is memTotal which we don't need
-         String line = reader.readLine();
+            final String PROC_VERSION_REGEX =
+                "\\w+\\s+" + /* ignore: Linux */
+                "\\w+\\s+" + /* ignore: version */
+                "([^\\s]+)\\s+" + /* group 1: 2.6.22-omap1 */
+                "\\(([^\\s@]+(?:@[^\\s.]+)?)[^)]*\\)\\s+" + /* group 2: (xxxxxx@xxxxx.constant) */
+                // "(gcc" followed by anything up to two consecutive ")"
+                // separated by only white space (which seems to be the norm)
+                "(?:\\(gcc.*\\)\\s+\\))?\\s+" + /* ignore: (gcc ..) */
+                "([^\\s]+)\\s+" + /* group 3: #26 */
+                "(?:SMP\\s+)?" + /* ignore: SMP (optional) */
+                "(?:PREEMPT\\s+)?" + /* ignore: PREEMPT (optional) */
+                "(.+)"; /* group 4: date */
 
-         // This is memFree which we need
-         line = reader.readLine();
-         String[] free = line.split(":");
-         // Have to remove the kb on the end
-         String [] memFree = free[1].trim().split(" ");
+            Pattern p = Pattern.compile(PROC_VERSION_REGEX);
+            Matcher m = p.matcher(procVersionStr);
 
-         // This is Buffers which we don't need
-         line = reader.readLine();
+            if (!m.matches()) {
+                Log.e(LOG_TAG, "Regex did not match on /proc/version: " + procVersionStr);
+                return "Unavailable";
+            } else if (m.groupCount() < 4) {
+                Log.e(LOG_TAG, "Regex match on /proc/version only returned " + m.groupCount()
+                        + " groups");
+                return "Unavailable";
+            } else {
+                return (new StringBuilder(m.group(1)).append("\n").append(
+                        m.group(2)).append(" ").append(m.group(3)).append("\n")
+                        .append(m.group(4))).toString();
+            }
+        } catch (IOException e) {
+            Log.e(LOG_TAG,
+                "IO Exception when getting kernel version for Device Info screen",
+                e);
 
-         // This is Cached which we need
-         line = reader.readLine();
-         String[] cached = line.split(":");
-         // Have to remove the kb on the end
-         String[] memCached = cached[1].trim().split(" ");
-
-         avail = Long.parseLong(memFree[0]) + Long.parseLong(memCached[0]);
-         avail = avail / 1024;
-      }
-      catch(Exception e) {
-         e.printStackTrace();
-         // We don't want to return null so default to 0
-         avail = Long.parseLong("0");
-      }
-      finally {
-         // Make sure the reader is closed no matter what
-         try { reader.close(); }
-         catch(Exception e) {}
-         reader = null;
-      }
-
-      return avail;
+            return "Unavailable";
+        }
     }
 
-   private String getCPUInfo() {
-      String[] info = null;
-      BufferedReader reader = null;
-
-      try {
-         // Grab a reader to /proc/cpuinfo
-         reader = new BufferedReader(new InputStreamReader(new FileInputStream("/proc/cpuinfo")), 1000);
-
-         // Grab a single line from cpuinfo
-         String line = reader.readLine();
-
-         // Split on the colon, we need info to the right of colon
-         info = line.split(":");
-      }
-      catch(IOException io) {
-         io.printStackTrace();
-         info = new String[1];
-         info[1] = "error";
-      }
-      finally {
-         // Make sure the reader is closed no matter what
-         try { reader.close(); }
-         catch(Exception e) {}
-         reader = null;
-      }
-
-      return info[1];
+    /**
+     * Returns " (ENGINEERING)" if the msv file has a zero value, else returns "".
+     * @return a string to append to the model number description.
+     */
+    private String getMsvSuffix() {
+        // Production devices should have a non-zero value. If we can't read it, assume it's a
+        // production device so that we don't accidentally show that it's an ENGINEERING device.
+        try {
+            String msv = readLine(FILENAME_MSV);
+            // Parse as a hex number. If it evaluates to a zero, then it's an engineering build.
+            if (Long.parseLong(msv, 16) == 0) {
+                return " (ENGINEERING)";
+            }
+        } catch (IOException ioe) {
+            // Fail quietly, as the file may not exist on some devices.
+        } catch (NumberFormatException nfe) {
+            // Fail quietly, returning empty string should be sufficient
+        }
+        return "";
     }
 
+    private String getMemInfo() {
+        String result = null;
+        BufferedReader reader = null;
 
+        try {
+            /* /proc/meminfo entries follow this format:
+             * MemTotal:         362096 kB
+             * MemFree:           29144 kB
+             * Buffers:            5236 kB
+             * Cached:            81652 kB
+             */
+            String firstLine = readLine(FILENAME_PROC_MEMINFO);
+            if (firstLine != null) {
+                String parts[] = firstLine.split("\\s+");
+                if (parts.length == 3) {
+                    result = Long.parseLong(parts[1])/1024 + " MB";
+                }
+            }
+        } catch (IOException e) {}
+
+        return result;
+    }
+
+    private String getCPUInfo() {
+        String result = null;
+
+        try {
+            /* The expected /proc/cpuinfo output is as follows:
+             * Processor	: ARMv7 Processor rev 2 (v7l)
+             * BogoMIPS	: 272.62
+             */
+            String firstLine = readLine(FILENAME_PROC_CPUINFO);
+            if (firstLine != null) {
+                result = firstLine.split(":")[1].trim();
+            }
+        } catch (IOException e) {}
+
+        return result;
+    }
 }

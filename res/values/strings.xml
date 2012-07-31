@@ -1772,9 +1772,6 @@
     <string name="mod_version_default">Unknown</string>
     <!-- About phone screen, Build Date-->
    <string name="build_date">Build date</string>
-    <!-- About phone screen,  Compby-->
-   <string name="comp_by">Compiled by</string>
-
 
     <!-- About phone screen, show when a value of some status item is unavailable. -->
     <string name="device_info_not_available">Not available</string>
@@ -4131,7 +4128,6 @@
     <string name="uth_settings_title">UNDER-THE-HOOD SETTINGS</string>
     <string name="misc_title">MISCELLANEOUS SETTINGS</string>
     <string name="about_the_team">About TeamLiquid</string>
-    <string name="about_the_rom">About ROM</string>
     <string name="backup_restore_title">Backup Restore</string>
     <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
     <string name="gooim_support_title">Goo.im Support</string>
