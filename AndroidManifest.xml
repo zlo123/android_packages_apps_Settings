@@ -1613,6 +1613,13 @@
             </intent-filter>
         </receiver>
         </activity>
+  <activity android:name=".RomInfoSettings"
+            android:label="About Rom" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".liquid.fragments.AboutLiquid"
             android:label="About Team Liquid" >
             <intent-filter>

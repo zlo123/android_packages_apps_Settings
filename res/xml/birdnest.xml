@@ -18,6 +18,10 @@
  <PreferenceCategory android:key="category"
              android:title="@string/birdnest_title">
  <PreferenceScreen 
+            android:key="about_the_rom"
+            android:title="@string/about_the_rom"
+            android:fragment="com.android.settings.RomInfoSettings" />
+ <PreferenceScreen 
             android:key="about_the_team"
             android:title="@string/about_the_team"
             android:fragment="com.android.settings.liquid.fragments.AboutLiquid" />
