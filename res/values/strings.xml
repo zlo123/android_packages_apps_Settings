@@ -4662,9 +4662,6 @@
     <string name="lockscreen_background_custom_image">Custom image</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
-    <!-- Lock screen misc. settings -->
-    <string name="lockscreen_always_battery_title">Always display battery status</string>
-
     <!-- Profiles settings  -->
     <string name="profiles_general_title">General</string>
     <string name="profiles_add">Add</string>

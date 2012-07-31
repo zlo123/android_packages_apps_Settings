@@ -30,7 +30,6 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -52,11 +51,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
-    private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_always_battery";
     private ListPreference mCustomBackground;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
-    private CheckBoxPreference mAlwaysShowBattery;
     private Activity mActivity;
     ContentResolver mResolver;
 
@@ -73,9 +70,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         mWeatherPref = (Preference) findPreference(KEY_WEATHER_PREF);
         mCalendarPref = (Preference) findPreference(KEY_CALENDAR_PREF);
-        mAlwaysShowBattery = (CheckBoxPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
-        mAlwaysShowBattery.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0) == 1));
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
         mIsScreenLarge = Utils.isTablet(getActivity());
@@ -161,17 +155,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        boolean value;
-
-        if (preference == mAlwaysShowBattery) {
-            value = mAlwaysShowBattery.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                   Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value ? 1 : 0);
-        } else {
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
-        }
-
-        return true;
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
