@@ -77,13 +77,6 @@
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
- <!-- Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
-
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
 
@@ -142,6 +135,13 @@
 
     <!-- PERSONAL -->
     <header android:title="@string/header_category_personal" />
+
+    <!-- Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
 
     <!-- Manage users -->
     <header
