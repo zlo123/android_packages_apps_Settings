@@ -30,6 +30,11 @@
         android:fragment="com.android.settings.liquid.fragments.NavBar" />
 
     <PreferenceScreen
+        android:key="navigation_bar"
+        android:fragment="com.android.settings.liquid.fragments.NavigationBar"
+        android:title="@string/combined_navigation_bar_title" />
+
+    <PreferenceScreen
         android:key="notification_drawer"
         android:fragment="com.android.settings.liquid.fragments.PowerWidget"
         android:title="@string/notification_drawer_title" />
