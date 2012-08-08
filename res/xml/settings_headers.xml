@@ -128,9 +128,9 @@
         android:title="@string/advanced_settings_title"
         android:icon="@drawable/ic_settings_advanced">
         <intent
-            android:action="com.liquid.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.liquid.settings.device"
-            android:targetClass="com.liquid.settings.device.DeviceSettings" />
+            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </header>
 
     <!-- PERSONAL -->

@@ -336,26 +336,6 @@
         <activity android:name="Settings$WifiP2pSettingsActivity"
                 android:clearTaskOnLaunch="true"
                 android:parentActivityName="Settings$WifiSettingsActivity">
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
-                android:paddingLeft="4dip"
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />

@@ -36,7 +36,7 @@
 
         <PreferenceScreen
             android:key="widget_order"
-            android:title="@string/title_widget_order" 
+            android:title="@string/title_widget_order"
             android:summary="@string/summary_widget_order"
             android:dependency="expanded_widget"
             android:fragment="com.android.settings.liquid.fragments.PowerWidget$PowerWidgetOrder">
@@ -70,7 +70,7 @@
     </PreferenceCategory>
 
 <PreferenceCategory
-       android:title="@string/status_bar_tweaks">
+       android:title="@string/status_bar_title">
 
         <CheckBoxPreference 
             android:key="status_bar_brightness_control"
@@ -85,4 +85,5 @@
             android:defaultValue="false" />
 
 </PreferenceCategory>
+
 </PreferenceScreen>

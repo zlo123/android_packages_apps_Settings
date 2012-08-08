@@ -4186,12 +4186,6 @@
     <string name="dev_purian23_title">Purian23</string>
     <string name="dev_purian23_twitter">Purian23</string>
     <string name="dev_purian23_donate">http://tinyurl.com/dxvdj6v</string>
-    <string name="dev_hiemanshu_title">Hiemanshu</string>
-    <string name="dev_hiemanshu_twitter">hiemanshu</string>
-    <string name="dev_hiemanshu_donate">http://goo.gl/WdglP</string>
-    <string name="dev_morfic_title">The Real Morfic</string>
-    <string name="dev_morfic_twitter">morfique</string>
-    <string name="dev_morfic_donate">http://tinyurl.com/c8hkot3</string>
     <string name="dev_jdkoreclipse_title">jdkoreclipse</string>
     <string name="dev_jdkoreclipse_twitter">jdkoreclipse</string>
     <string name="dev_jdkoreclipse_donate">http://jdkoreclipse.net/donate.html</string>
@@ -4521,8 +4515,29 @@
     <string name="navigation_bar_save_message">Navigation bar settings saved</string>
     <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
 
+    <!-- Hardware Keys -->
+    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_bindings_title">Key actions</string>
+    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
+    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
+    <string name="hardware_keys_menu_press_title">Menu key</string>
+    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
+    <string name="hardware_keys_assist_press_title">Search key</string>
+    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
+    <string name="hardware_keys_app_switch_press_title">App switch key</string>
+    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
+    <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
+    <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
+    <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
+    <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_menu">Open/close menu</string>
+    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
+    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
+
     <!-- Power Widget  -->
-    <string name="status_bar_tweaks">Status Bar Tweaks</string>
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
     <string name="power_widget_behavior">Widget behavior</string>
@@ -4661,6 +4676,11 @@
     <string name="lockscreen_background_color_fill">Color fill</string>
     <string name="lockscreen_background_custom_image">Custom image</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
+
+    <!-- Lock screen misc. settings -->
+    <string name="lockscreen_battery_status_title">Battery status</string>
+    <string name="lockscreen_battery_status_charging">Only when charging</string>
+    <string name="lockscreen_battery_status_alwayson">Always on</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_general_title">General</string>
@@ -5038,9 +5058,13 @@
     <string name="dpi">DPI</string>
     <string name="group_applications">Applications</string>
 
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
     <!-- Power menu screenshot -->
     <string name="power_menu_screenshot_title">Power menu screenshot</string>
 
-    <!-- **** LiQuiD Edits ADDITIONS END **** -->
+    <!-- **** LiquidSmoth Edits END **** -->
 
 </resources>

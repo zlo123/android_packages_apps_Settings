@@ -69,7 +69,7 @@ import com.android.settings.liquid.SettingsPreferenceFragment;
 import com.android.settings.util.ShortcutPickerHelper;
 import com.android.settings.widget.NavBarItemPreference;
 import com.android.settings.widget.SeekBarPreference;
-import com.android.settings.widget.TouchInterceptor;
+import com.android.settings.liquid.fragments.TouchInterceptor;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -67,4 +67,9 @@
         android:title="@string/power_menu_screenshot_title"
         android:defaultValue="false" />
 
+    <PreferenceScreen
+        android:key="hardware_keys"
+        android:fragment="com.android.settings.liquid.fragments.HardwareKeys"
+        android:title="@string/hardware_keys_title" />
+
 </PreferenceScreen>

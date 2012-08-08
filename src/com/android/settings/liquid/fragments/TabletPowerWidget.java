@@ -38,14 +38,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.settings.Utils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.liquid.fragments.TouchInterceptor;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class TabletPowerWidget extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
