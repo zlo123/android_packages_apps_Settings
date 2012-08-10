@@ -4270,7 +4270,7 @@
 
     <!-- Navigation Bar  -->
     <string name="combined_navigation_bar_title">@string/navigation_bar_title</string>
-    <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navigation_bar_title">Navigation Bar</string>
     <string name="navigation_bar_show">Show Navigation Bar</string>
     <string name="hw_keys_title">Hardware Keys</string>
     <string name="key_menu_enabled">Menu Key Enabled</string>
@@ -4283,6 +4283,8 @@
     <string name="navigation_bar_reset_message">Delete current settings and restore to default?</string>
     <string name="navigation_bar_save_message">Navigation bar settings saved</string>
     <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
+    <string name="navigation_bar_menu_editable">Editable</string>
+    <string name="navigation_bar_menu_locked">Locked</string>
 
     <!-- Hardware Keys -->
     <string name="hardware_keys_bindings_title">Key actions</string>
