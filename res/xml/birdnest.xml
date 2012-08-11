@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2011 The Android Open Source Project
+<!-- Copyright (C) 2011 The LiquidSmooth Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,57 +15,56 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="">
- <PreferenceCategory android:key="category"
-             android:title="@string/birdnest_title">
- <PreferenceScreen 
-            android:key="about_the_team"
-            android:title="@string/about_the_team"
-            android:fragment="com.android.settings.liquid.fragments.AboutLiquid" />
-       </PreferenceCategory>
-     <PreferenceCategory android:key="category"
+
+    <PreferenceCategory android:key="category"
+              android:title="@string/birdnest_title">
+        <PreferenceScreen 
+              android:key="about_the_team"
+              android:title="@string/about_the_team"
+              android:fragment="com.android.settings.liquid.fragments.AboutLiquid" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="category"
               android:title="@string/visual_settings_title">
-  <PreferenceScreen
-            android:key="@+id/interface_settings"
-            android:title="@string/interface_settings_title"
-            android:fragment="com.android.settings.liquid.fragments.InterfaceSettings" />
         <PreferenceScreen
-            android:key="@+id/lock_screen_settings"
-            android:title="@string/lock_screen_title"
-            android:fragment="com.android.settings.liquid.fragments.LockscreenInterface" />
+              android:key="@+id/interface_settings"
+              android:title="@string/interface_settings_title"
+              android:fragment="com.android.settings.liquid.fragments.InterfaceSettings" />
+        <PreferenceScreen
+              android:key="@+id/lock_screen_settings"
+              android:title="@string/lock_screen_title"
+              android:fragment="com.android.settings.liquid.fragments.LockscreenInterface" />
     </PreferenceCategory>
-  <PreferenceCategory android:key="category"
+
+    <PreferenceCategory android:key="category"
               android:title="@string/uth_settings_title">
-     <PreferenceScreen
-            android:key="@+id/performance_settings"
-            android:title="@string/performance_settings_title"
-            android:fragment="com.android.settings.liquid.fragments.PerformanceSettings" />
-  <PreferenceScreen
-            android:key="@+id/propmodder"
-            android:title="@string/propmodder_title"
-            android:fragment="com.android.settings.liquid.fragments.PropModder" />
+        <PreferenceScreen
+              android:key="@+id/performance_settings"
+              android:title="@string/performance_settings_title"
+              android:fragment="com.android.settings.liquid.fragments.PerformanceSettings" />
+        <PreferenceScreen
+              android:key="@+id/propmodder"
+              android:title="@string/propmodder_title"
+              android:fragment="com.android.settings.liquid.fragments.PropModder" />
     </PreferenceCategory>
-        <PreferenceCategory android:key="category"
+
+    <PreferenceCategory android:key="category"
               android:title="@string/misc_title">
-     <!--   <PreferenceScreen
-            android:key="@+id/backup_restore"
-            android:title="@string/backup_restore_title"
-            android:fragment="com.android.settings.liquid.fragments.BackupRestore" />-->
+   <!-- <PreferenceScreen
+              android:key="@+id/backup_restore"
+              android:title="@string/backup_restore_title"
+              android:fragment="com.android.settings.liquid.fragments.BackupRestore" /> -->
         <PreferenceScreen
-            android:key="@+id/dynamic_changelog"
-            android:title="@string/dynamic_changelog_title"
-            android:fragment="com.android.settings.liquid.fragments.DynamicChangeLog" />
+              android:key="@+id/dynamic_changelog"
+              android:title="@string/dynamic_changelog_title"
+              android:fragment="com.android.settings.liquid.fragments.DynamicChangeLog" />
         <PreferenceScreen
-            android:key="@+id/gooim_support"
-            android:title="@string/gooim_support_title"
-            android:fragment="com.android.settings.liquid.installer.GooImSupport" />
-      <PreferenceScreen
-            android:key="@+id/open_recovery"
-            android:title="@string/open_recovery_title"
-            android:fragment="com.android.settings.liquid.installer.OpenRecoveryScriptSupport" />
-      
-   <!--     <PreferenceScreen
-            android:key="@+id/themes_settings"
-            android:title="@string/themes_settings_title"
-            android:fragment="com.tmobile.themechooser.ThemeChooser" />-->
+              android:key="@+id/gooim_support"
+              android:title="@string/gooim_support_title"
+              android:fragment="com.android.settings.liquid.installer.GooImSupport" />
+        <PreferenceScreen
+              android:key="@+id/open_recovery"
+              android:title="@string/open_recovery_title"
+              android:fragment="com.android.settings.liquid.installer.OpenRecoveryScriptSupport" />
     </PreferenceCategory>
 </PreferenceScreen>
