@@ -4142,8 +4142,9 @@
     <string name="interface_settings_title">Interface</string>
     <string name="statusbar_battery_title">Battery</string>
     <string name="statusbar_clock_title">Clock</string>
-    <string name="status_bar_title">Statusbar</string>
+    <string name="hardware_keys_title">Hardware</string>
     <string name="navigation_bar_title">Navigation</string>
+    <string name="status_bar_title">Statusbar</string>
     <string name="notification_drawer_title">Notification</string>
     <string name="header_category_interface">INTERFACE</string>
     <string name="header_category_customization">ROM CUSTOMIZATION</string>
@@ -4518,7 +4519,6 @@
     <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
 
     <!-- Hardware Keys -->
-    <string name="hardware_keys_title">Hardware keys</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
     <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
     <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
