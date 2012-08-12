@@ -4817,6 +4817,10 @@
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_profiles_title">Profile Switcher</string>
 
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Mass storage</string>
+    <string name="usb_mass_storage_summary">Enable USB mass storage</string>
+
 	<!-- LIQUIDSMOOTH START EDITS -->
 
     <!-- BirdNest -->
