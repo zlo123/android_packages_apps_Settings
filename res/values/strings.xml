@@ -5067,9 +5067,6 @@
     <!-- Power menu screenshot -->
     <string name="power_menu_screenshot_title">Power menu screenshot</string>
 
-    <!-- Power menu screenshot -->
-    <string name="power_menu_reboot_title">Power menu reboot options</string>
-
     <!-- **** LiquidSmoth Edits END **** -->
 
 </resources>

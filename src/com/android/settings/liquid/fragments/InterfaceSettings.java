@@ -43,14 +43,12 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_DRAWER_TABLET = "notification_drawer_tablet";
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_SCREENSHOT = "power_menu_screenshot";
-    private static final String KEY_REBOOT = "power_menu_reboot";
 	private static final String KEY_HARDWARE_KEYS = "hardware_keys";
 
     private ListPreference mFontSizePref;
     private PreferenceScreen mPhoneDrawer;
     private PreferenceScreen mTabletDrawer;
     private CheckBoxPreference mScreenshotPref;
-    private CheckBoxPreference mRebootPref;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -67,10 +65,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
         mScreenshotPref = (CheckBoxPreference) findPreference(KEY_SCREENSHOT);
         mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENSHOT_ENABLED, 0) == 1));
-        mRebootPref = (CheckBoxPreference) findPreference(KEY_REBOOT);
-        mRebootPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_REBOOT_ENABLED, 0) == 1));
-
 
         if (Utils.isTablet(getActivity())) {
             if (mPhoneDrawer != null) {
@@ -165,13 +159,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENSHOT_ENABLED,
                     value ? 1 : 0);
-        } else if (preference == mRebootPref) {
-            value = mRebootPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_REBOOT_ENABLED,
-                    value ? 1 : 0);
-            } else{
-         
+        } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
