@@ -4160,11 +4160,11 @@
 
     <!-- about the team -->
     <string name="learn_more_title">Learn more about the team</string>
-    <string name="liquid_website_title">LiquidSmoothROMs Website</string>
+    <string name="liquid_website_title">LiquidSmooth Website</string>
     <string name="liquid_website_summary">Visit our website</string>
-    <string name="liquid_source_title">LiquidSmoothROMs Github</string>
+    <string name="liquid_source_title">LiquidSmooth Github</string>
     <string name="liquid_source_summary">View our code!</string>
-    <string name="liquid_irc_title">LiquidSmoothROMs IRC</string>
+    <string name="liquid_irc_title">LiquidSmooth IRC</string>
     <string name="liquid_irc_summary">Visit freenode #liquids</string>
     <string name="devs">Meet the developers</string>
     <string name="dev_liquid_title">Liquid</string>
@@ -4305,7 +4305,7 @@
     <string name="wipe_dalvik_checkbox_title">Wipe Dalvik Cache</string>
     <string name="backup_checkbox_title">Perform Backup</string>
     <string name="backup_compression_checkbox_title">Use Backup Compression</string>
-    <string name="installation_button_title">Install new LiquidSmoothROM</string>
+    <string name="installation_button_title">Install new LiquidSmooth</string>
     <string name="warn_about_dirty_flash">If you don\'t perform a clean install we don\'t want your bug reports... FYI</string>
     <string name="warn_about_no_backup">Really??? One should always keep a backup</string>
     <string name="filewrite_success">Writing recovery script: success</string>

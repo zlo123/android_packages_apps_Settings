@@ -101,13 +101,13 @@ public class DynamicChangeLog extends SettingsPreferenceFragment {
     private static final String TAG = "DynamicChangeLog";
 
     // example of commit list from parser
-    // https://api.github.com/repos/LiquidSmoothROMs/android_frameworks_base/commits?page=1
+    // https://api.github.com/repos/LiquidSmooth/android_frameworks_base/commits?page=1
     // example of repo list from parser
-    // https://api.github.com/orgs/LiquidSmoothROMs/repos
+    // https://api.github.com/orgs/LiquidSmooth/repos
 
     // github json api addresses
     private static final String GITHUB_JSON = "https://api.github.com/";
-    private static final String ORGANIZATION = "LiquidSmoothROMs/";
+    private static final String ORGANIZATION = "LiquidSmooth/";
     private static final String REPO_URL = GITHUB_JSON + "orgs/" + ORGANIZATION + "repos";
     private static final String REPOS_PARSER = GITHUB_JSON + "repos/show/"
             + ORGANIZATION; // returns a list of our projects

@@ -27,7 +27,6 @@ import com.android.settings.R;
 public class AboutLiquid extends SettingsPreferenceFragment {
 
     public static final String TAG = "About Liquid";
-
     Preference mSiteUrl;
     Preference mSourceUrl;
     Preference mIrcUrl;
@@ -40,18 +39,18 @@ public class AboutLiquid extends SettingsPreferenceFragment {
         mSiteUrl = findPreference("liquid_website");
         mSourceUrl = findPreference("liquid_source");
         mIrcUrl = findPreference("liquid_irc");
-
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://liquidsmoothroms.com/");
+            launchUrl("http://www.liquidsmooth.org/");
         } else if (preference == mSourceUrl) {
-            launchUrl("http://github.com/LiquidSmoothROMs");
+            launchUrl("http://github.com/LiquidSmooth");
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=liquids");
         }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
