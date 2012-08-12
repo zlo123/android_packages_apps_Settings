@@ -4285,8 +4285,11 @@
     <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
     <string name="navigation_bar_menu_editable">Editable</string>
     <string name="navigation_bar_menu_locked">Locked</string>
+    <string name="navigation_bar_left_title">Navigation bar on left</string>
+    <string name="navigation_bar_left_summary">Moves the navbar to the left during landscape (A reboot is recommended!)</string>
 
     <!-- Hardware Keys -->
+    <string name="hardware_keys_title">Hardware Keys</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
     <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
     <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
