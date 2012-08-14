@@ -1447,14 +1447,6 @@
 
         <activity android:name=".liquid.fragments.PerformanceSettings" />
 
-        <activity android:name=".liquid.fragments.LockscreenTargets" />
-
-        <activity android:name=".liquid.fragments.LockscreenInterface" />
-
-        <activity android:name=".liquid.fragments.Weather" />
-
-        <activity android:name=".liquid.fragments.Calendar" />
-
         <activity android:name=".profiles.ProfilesSettings" />
 
         <activity android:name=".profiles.ProfileConfig" />
@@ -1468,6 +1460,16 @@
         <activity android:name=".profiles.NFCProfileWriter" />
 
         <activity android:name=".profiles.NFCProfileSelect" />
+
+        <activity android:name=".liquid.fragments.LockscreenTargets" />
+
+        <activity android:name=".liquid.fragments.LockscreenInterface" />
+
+        <activity android:name=".liquid.fragments.Weather" />
+
+        <activity android:name=".liquid.fragments.Calendar" />
+
+        <activity android:name=".liquid.fragments.PowerMenu" />
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
