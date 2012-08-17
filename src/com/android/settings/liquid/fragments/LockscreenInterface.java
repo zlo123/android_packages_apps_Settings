@@ -52,10 +52,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
-    public static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
+
     private ListPreference mCustomBackground;
-    private CheckBoxPreference mVibratePref;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
     private ListPreference mBatteryStatus;
@@ -83,12 +82,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
-
-        mVibratePref = (CheckBoxPreference) findPreference(KEY_VIBRATE_PREF);
-        boolean bVibrate = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_VIBRATE_ENABLED, 1) == 1 ? true : false;
-        mVibratePref.setChecked(bVibrate);
-        mVibratePref.setOnPreferenceChangeListener(this);
 
         mIsScreenLarge = Utils.isTablet(getActivity());
 
@@ -280,16 +273,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                     Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
-        } else if (preference == mVibratePref) {
-            boolean bValue = Boolean.valueOf((Boolean) objValue);
-            int value = 0;
-            if (bValue) {
-                value = 1;
-            }
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_VIBRATE_ENABLED, value);
-            return true;
         }
+
         return false;
     }
 }
