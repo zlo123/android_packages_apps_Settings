@@ -4735,12 +4735,13 @@
     <string name="interface_navring_settings_summary">Edit your custom nav ring apps</string>
 
     <!-- Customization | Powermenu -->
-    <string name="power_menu_reboot_title">Reboot</string>
+    <string name="power_menu_airplane_mode_title">Airplane Mode</string>
+    <string name="power_menu_expanded_desktop">Expanded Desktop</string>
+    <string name="power_menu_navigation_title">Navigation</string>
     <string name="power_menu_profiles_title">Profiles</string>
+    <string name="power_menu_reboot_title">Reboot</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_expanded_desktop">Statusbar</string>
-    <string name="power_menu_navbartoggle_title">NavBar Toggle and Button Controls</string>
-    <string name="power_menu_silenttoggle_title">Silent</string>
+    <string name="power_menu_silent_mode_title">Silent Mode</string>
 
     <!-- Customization | Sound -->
     <string name="volume_overlay_title">Volume Panel Style</string>
