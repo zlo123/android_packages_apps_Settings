@@ -177,7 +177,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
             setupLockAfterPreference();
             updateLockAfterPreferenceSummary();
         } else if (!mLockPatternUtils.isLockScreenDisabled() && !isStockSecurity) {
-            addPreferencesFromResource(R.xml.security_settings_slide_delay_cyanogenmod);
+            addPreferencesFromResource(R.xml.security_settings_slide_delay_liquid);
 
             mSlideLockDelayToggle = (CheckBoxPreference) root
                     .findPreference(SLIDE_LOCK_DELAY_TOGGLE);
@@ -211,7 +211,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
             checkPowerInstantLockDependency();
 
             // Add the additional CyanogenMod settings
-            addPreferencesFromResource(R.xml.security_settings_cyanogenmod);
+            addPreferencesFromResource(R.xml.security_settings_liquid);
 
             // Quick Unlock Screen Control
             mQuickUnlockScreen = (CheckBoxPreference) root

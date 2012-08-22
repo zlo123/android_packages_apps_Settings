@@ -4655,7 +4655,7 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
-    <!-- Lock screen shortcuts -->
+    <!-- Lockscreen shortcuts -->
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom application</string>
     <string name="select_custom_activity_title">Select custom activity</string>
@@ -4787,40 +4787,35 @@
     <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
     <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
 
-    <!-- Power menu screenshot -->
-    <string name="power_menu_title">Power menu</string>
-    <string name="power_menu_reboot_title">Reboot menu</string>
+    <!-- Powermenu Options -->
+    <string name="power_menu_title">Powermenu</string>
+    <string name="power_menu_reboot_title">Rebootmenu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_profiles_title">Profile switcher</string>
+    <string name="power_menu_profiles_title">Profile Switcher</string>
 
 	<!-- LIQUIDSMOOTH START EDITS -->
 
-    <!-- Liquid Settings -->
+    <!-- BirdNest -->
     <string name="birdnest_title">BirdNest</string>
-    <string name="visual_settings_title">VISUAL CUSTOMIZATION SETTINGS</string>
-    <string name="uth_settings_title">UNDER-THE-HOOD SETTINGS</string>
-    <string name="misc_title">MISCELLANEOUS SETTINGS</string>
-    <string name="about_the_team">About TeamLiquid</string>
-    <string name="backup_restore_title">Backup Restore</string>
-    <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
+    <string name="visual_settings_title">VISUAL CUSTOMIZATIONS</string>
+    <string name="uth_settings_title">PERFORMANCE OPTIMIZATIONS</string>
+    <string name="misc_title">MISCELLANEOUS OPTIONS</string>
+    <string name="about_the_team">TeamLiquid</string>
+    <string name="dynamic_changelog_title">Changelog</string>
     <string name="lock_screen_title">Lockscreen</string>
-    <string name="open_recovery_title">Open Recovery</string>
     <string name="performance_settings_title">Performance</string>
-    <string name="profiles_settings_title">Profiles</string>
-    <string name="propmodder_title">Prop Modder</string>
+    <string name="propmodder_title">Propmodder</string>
     <string name="themes_settings_title">Themes</string>
     <string name="interface_settings_title">Interface</string>
-    <string name="statusbar_battery_title">Battery</string>
-    <string name="statusbar_clock_title">Clock</string>
     <string name="hardware_keys_title">Hardware Keys</string>
     <string name="navigation_bar_title">Navigation Bar</string>
     <string name="status_bar_title">Statusbar</string>
-    <string name="notification_drawer_title">Notification</string>
+    <string name="notification_drawer_title">Notifications</string>
     <string name="header_category_interface">INTERFACE</string>
     <string name="header_category_customization">ROM CUSTOMIZATION</string>
 
-    <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
+    <!-- Colorpicker -->
+    <string name="dialog_color_picker">Colorpicker</string>
     <string name="press_color_to_apply">Press On color to apply</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
@@ -4829,7 +4824,7 @@
     <string name="set">Set</string>
     <string name="ics_color">Default</string>
 
-    <!-- About TeamLiquid -->
+    <!-- TeamLiquid -->
     <string name="learn_more_title">Learn more about the team</string>
     <string name="liquid_website_title">LiquidSmooth Website</string>
     <string name="liquid_website_summary">Visit our website</string>
@@ -4857,7 +4852,7 @@
     <string name="dev_jdkoreclipse_twitter">jdkoreclipse</string>
     <string name="dev_jdkoreclipse_donate">http://jdkoreclipse.net/donate.html</string>
 
-    <!-- File Picker -->
+    <!-- Filepicker -->
     <string name="clear">Clearscreen</string>
     <string name="empty_text">No Data</string>
     <string name="filename_text">Filename: </string>
@@ -4875,35 +4870,7 @@
     <string name="no_filename_save_error">No filename detected ...Please enter a filename to save</string>
     <string name="location_tracker">Location: %s</string>
 
-    <!-- Backup Restore -->
-    <string name="backup_string">Backup/Restore</string>
-    <string name="backup_alert_title">Filename</string>
-    <string name="backup_alert_message">Name your settings file</string>
-    <string name="backup_category_title">Backup</string>
-    <string name="restore_category_title">Restore</string>
-    <string name="theme_category_title">Theme</string>
-    <string name="backup_title">Backup Liquid Settings</string>
-    <string name="backup_summary">save your settings</string>
-    <string name="restore_title">Restore Liquid Settings</string>
-    <string name="restore_summary">apply your backup</string>
-    <string name="name_theme_title">Name your theme!</string>
-    <string name="positive_button">Make Theme</string>
-    <string name="positive_thanks_button">Thanks</string>
-    <string name="positive_theme_button">Theme</string>
-    <string name="negative_button">I\'m scared</string>
-    <string name="negative_theme_button">Backup</string>
-    <string name="delete_button">Delete Theme (final)</string>
-    <string name="apply_button">Apply Theme</string>
-    <string name="title_prompt">Title: </string>
-    <string name="summary_prompt">Summary: </string>
-    <string name="want_to_make_theme_message">Theme or backup</string>
-    <string name="want_to_make_theme_title">What would you like to do?</string>
-    <string name="what_happened_title">So whats going on?</string>
-    <string name="delete_or_apply">Apply or delete theme?</string>
-    <string name="theme_title_hint">Name your theme.</string>
-    <string name="theme_summary_hint">Give description</string>
-
-    <!-- Prop Modder -->
+    <!-- Propmodder -->
     <string name="buildprop_title">/system/build.prop mods</string>
     <string name="nonprop_cat_title">Mods involving init.d script</string>
     <string name="main_warning_title">YOU HAVE BEEN WARNED</string>
@@ -4960,42 +4927,10 @@
     <string name="pref_gpu_title">GPU Acceleration</string>
     <string name="pref_gpu_summary">To enable hardware acceleration where the GPU controls the UI instead of the CPU</string>
 
-    <!-- Open Recovery -->
-    <string name="open_recovery_cat_title">Versions found</string>
-    <string name="request_download_description">Downloading: </string>
-    <string name="request_download_title">Just relax and let it happen</string>
-    <string name="download_title">Download file</string>
-    <string name="wipe_cache_checkbox_title">Wipe Cache</string>
-    <string name="wipe_data_checkbox_title">Wipe Data</string>
-    <string name="wipe_dalvik_checkbox_title">Wipe Dalvik Cache</string>
-    <string name="backup_checkbox_title">Perform Backup</string>
-    <string name="backup_compression_checkbox_title">Use Backup Compression</string>
-    <string name="installation_button_title">Install new LiquidSmooth</string>
-    <string name="warn_about_dirty_flash">If you don\'t perform a clean install we don\'t want your bug reports... FYI</string>
-    <string name="warn_about_no_backup">Really??? One should always keep a backup</string>
-    <string name="filewrite_success">Writing recovery script: success</string>
-    <string name="filewrite_fail">Writing recovery script: fail</string>
-    <string name="file_path_title">FilePath</string>
-    <string name="file_size_title">FileSize</string>
-    <string name="md5_title">MD5 Checksum</string>
-    <string name="execute_title">Execute Install</string>
-    <string name="generating_md5">Calculating md5 checksum...</string>
-    <string name="click_here_to_find_zips">No file detected click here to find .zip files</string>
-    <string name="verify_md5_with_gooim">verifying md5...</string>
-    <string name="verify_md5_pass">Goo.im verified md5</string>
-    <string name="verify_md5_fail">Goo.im failed to verify md5</string>
-    <string name="other_devs_list">Goo.im devs list</string>
-    <string name="other_gooim_devs_menu_title">Cheat on Team Liquid</string>
-    <string name="username">Username: </string>
-    <string name="password">Password: </string>
-    <string name="gooim_supporters_menu_title">GooIm Supporters</string>
-    <string name="dev_list">Dev List</string>
-    <string name="button_ok">Ok</string>
-    <string name="button_cancel">Canecl</string>
-    <string name="inform_user_about_cipher">Liquid Settings stores your password using 128 bit AES encryption</string>
-
-    <!-- Dynamic Changelog -->
-    <string name="dynamic_changelog">Dynamic ChangeLog</string>
+    <!-- Changelog -->
+    <string name="dynamic_changelog">Changelog</string>
+    <string name="group_applications">Applications</string>
+    <string name="open_recovery_cat_title">Versions Found</string>
     <string name="initial_changelog_category_title">Changelog</string>
     <string name="changelog_menu_projects_title">View Projects List</string>
     <string name="changelog_menu_commitlog_title">View Most Recent Commits</string>
