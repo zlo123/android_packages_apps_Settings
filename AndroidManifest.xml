@@ -963,6 +963,7 @@
 
         <!-- Second and third-level settings -->
 
+
         <!-- Lock screen settings -->
         <activity android:name="ConfirmLockPattern"/>
 
@@ -1233,6 +1234,9 @@
                 android:value="com.android.settings.nfc.AndroidBeam" />
         </activity>
 
+
+
+
         <!-- Development settings -->
 
         <activity android:name="DebugIntentSender" android:label="@string/debug_intent_sender_label">
@@ -1476,15 +1480,15 @@
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="liquid/profile" />
+                <data android:mimeType="cm/profile" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ApnEditor" />
 
         <activity android:name=".notificationlight.NotificationLightSettings" />
 
         <activity android:name=".notificationlight.BatteryLightSettings" />
+
+        <activity android:name=".ApnEditor" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
@@ -1532,44 +1536,8 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
 
-    <!-- *
-         *
-         * Begin LiquidSmooth Activities
-         *
-         * -->
+		<!-- LiquidSmooth Start Activities -->
 
-        <activity android:name=".liquid.installer.OpenRecoveryScriptSupport"
-            android:label="OpenRecoveryScript Support" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".liquid.installer.ZipArchiveHandlerActivity"
-            android:label="Zip Archive Handler (OpenRecoverySupport)" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:mimeType="application/zip" />
-                <data android:scheme="content" android:host="*"
-                    android:pathPattern=".*\\.zip" />
-                <data android:scheme="file" android:host="*"
-                    android:pathPattern=".*\\.zip" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".util.FilePicker">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".liquid.installer.GooImSupport"
-            android:label="Goo.im Suppport" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".liquid.BirdNest"
             android:label="BirdNest" >
             <intent-filter>
@@ -1607,20 +1575,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".liquid.fragments.StatusBarBattery"
-            android:label="StatusBar Battery" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".liquid.fragments.StatusBarClock"
-            android:label="StatusBar Clock" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <receiver android:name=".liquid.fragments.BootReceiver" android:enabled="true">
             <intent-filter>
@@ -1628,13 +1582,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".liquid.fragments.Navbar"
-            android:label="Navigation Bar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-               <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
+		<!-- LiquidSmooth End Activities -->
     </application>
 </manifest>

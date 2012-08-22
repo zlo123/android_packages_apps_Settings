@@ -274,7 +274,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
         }
-
         return false;
     }
 }

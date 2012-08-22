@@ -82,10 +82,7 @@
         <attr name="fillColorSecondary" format="color" />
     </declare-styleable>
 
-<!-- *
-     * Begin LiquidSmooth attrs
-     *
-     * -->
+	<!-- **** LIQUIDSMOOTH START STYLES **** -->
     <declare-styleable name="SeekBarPreference">
         <attr name="seekbar_max" format="integer" />
         <attr name="seekbar_min" format="integer" />
@@ -98,4 +95,5 @@
         <attr name="donateLink" format="string" />
         <attr name="avatar" format="reference" />
     </declare-styleable>
+	<!-- **** LIQUIDSMOOTH END STYLES **** -->
 </resources>

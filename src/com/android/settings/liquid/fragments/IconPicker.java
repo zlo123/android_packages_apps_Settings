@@ -141,6 +141,7 @@ public class IconPicker {
     }
 
     class IconAdapter extends BaseAdapter {
+
         String[] labels;
         TypedArray icons;
 
@@ -185,6 +186,7 @@ public class IconPicker {
             tt.setCompoundDrawables(ic, null, null, null);
             return iView;
         }
+
     }
 
     class IconItem {

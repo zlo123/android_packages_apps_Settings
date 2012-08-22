@@ -71,7 +71,7 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             String use16bppAlpha = SystemProperties.get(USE_16BPP_ALPHA_PROP, "0");
             mUse16bppAlphaPref.setChecked("1".equals(use16bppAlpha));
 
-            /* Display the warning dialog */
+            /* Display the warning dialog
             alertDialog = new AlertDialog.Builder(getActivity()).create();
             alertDialog.setTitle(R.string.performance_settings_warning_title);
             alertDialog.setMessage(getResources().getString(R.string.performance_settings_warning));
@@ -83,7 +83,7 @@ public class PerformanceSettings extends SettingsPreferenceFragment
                         }
                     });
 
-            alertDialog.show();
+            alertDialog.show();  */
         }
     }
 
@@ -107,7 +107,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             SystemProperties.set(USE_DITHERING_PERSIST_PROP, newVal);
             mUseDitheringPref.setSummary(mUseDitheringPref.getEntries()[index]);
         }
-
         return true;
     }
 }

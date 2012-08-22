@@ -170,7 +170,7 @@
         <item>Very fast</item>
     </string-array>
     <!-- Do not translate. -->
-    <string-array name="tts_rate_values">
+    <string-array name="tts_rate_values" translatable="false">
         <item>60</item>
         <item>80</item>
         <item>100</item>
@@ -187,7 +187,7 @@
         <item>Very high</item>
     </string-array>
     <!-- Do not translate. -->
-    <string-array name="tts_pitch_values">
+    <string-array name="tts_pitch_values" translatable="false">
         <item>50</item>
         <item>80</item>
         <item>100</item>
@@ -203,7 +203,6 @@
         <item>Questo è un esempio di sintesi vocale in italiano.</item>
         <item>Este es un ejemplo de síntesis de voz en español.</item>
     </string-array>
-
     <string-array name="tts_demo_string_langs" translatable="false">
         <item>eng</item>
         <item>fra</item>
@@ -211,6 +210,7 @@
         <item>ita</item>
         <item>spa</item>
     </string-array>
+
 
     <!-- Wi-Fi settings -->
 
@@ -274,7 +274,7 @@
 
     <!-- Match this with the constants in AccessPoint. --> <skip />
     <!-- Wi-Fi security choices used when manually added a Wi-Fi network -->
-    <string-array name="wifi_security">
+    <string-array name="wifi_security" translatable="false">
         <!-- The Wi-Fi network does not have any security. -->
         <item>@string/wifi_security_none</item>
         <!-- Do not translate. -->
@@ -287,7 +287,7 @@
 
     <!-- Match this with the constants in AccessPoint. --> <skip />
     <!-- Wi-Fi security types for New User Dialog. EAP is not configurable. -->
-    <string-array name="wifi_security_no_eap">
+    <string-array name="wifi_security_no_eap" translatable="false">
         <!-- The Wi-Fi network does not have any security. -->
         <item>@string/wifi_security_none</item>
         <!-- Do not translate. -->
@@ -308,7 +308,7 @@
 
     <!-- Match this with the constants in WifiDialog. --> <skip />
     <!-- Wi-Fi settings.  The type of EAP method a Wi-Fi network has. -->
-    <string-array name="wifi_eap_method">
+    <string-array name="wifi_eap_method" translatable="false">
         <!-- Do not translate. -->
         <item>PEAP</item>
         <!-- Do not translate. -->
@@ -338,7 +338,8 @@
         <item>Unsuccessful</item>
         <item>Available</item>
         <item>Out-of-range</item>
-    </string-array>
+   </string-array>
+
 
     <!-- Bluetooth Settings -->
 
@@ -382,7 +383,7 @@
 
     <!-- Match with wifi_sleep_policy_entries and the values of the settings in Settings class. --> <skip />
     <!-- Do not translate. -->
-    <string-array name="wifi_sleep_policy_values">
+    <string-array name="wifi_sleep_policy_values" translatable="false">
         <!-- Do not translate. -->
         <item>2</item>
         <!-- Do not translate. -->
@@ -403,7 +404,7 @@
 
     <!-- Match with wifi_frequency_band_entries and the values of the settings in WifiManager. -->
     <!-- Do not translate. -->
-    <string-array name="wifi_frequency_band_values">
+    <string-array name="wifi_frequency_band_values" translatable="false">
         <!-- Do not translate. -->
         <item>0</item>
         <!-- Do not translate. -->
@@ -463,7 +464,7 @@
     </string-array>
 
     <!-- Do not translate. -->
-    <string-array name="emergency_tone_values">
+    <string-array name="emergency_tone_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -490,7 +491,7 @@
         <item>PAP or CHAP</item>
     </string-array>
 
-    <string-array translatable="false" name="apn_auth_values">
+    <string-array name="apn_auth_values" translatable="false">
         <!-- Do not translate. -->
         <item>0</item>
         <!-- Do not translate. -->
@@ -508,7 +509,7 @@
         <item>IPv4/IPv6</item>
     </string-array>
 
-    <string-array translatable="false" name="apn_protocol_values">
+    <string-array name="apn_protocol_values" translatable="false">
         <!-- Do not translate. -->
         <item>IP</item>
         <!-- Do not translate. -->
@@ -524,7 +525,7 @@
         <item>Unspecified</item>
     </string-array>
 
-    <string-array translatable="false" name="bearer_values">
+    <string-array name="bearer_values" translatable="false">
         <!-- Do not translate. -->
         <item>14</item>
         <!-- Do not translate. -->
@@ -726,233 +727,6 @@
         <item>3</item>
         <item>2</item>
         <item>1</item>
-    </string-array>
-
-<!-- *
-     * Begin LiquidSmooth arrays
-     *
-     * -->
-
-  <!-- PropModder -->
-  <string-array name="entries_wifi_scan" translatable="false">
-        <item>0</item>
-        <item>15</item>
-        <item>30</item>
-        <item>45</item>
-        <item>60</item>
-        <item>75</item>
-        <item>90</item>
-        <item>105</item>
-        <item>120</item>
-        <item>135</item>
-        <item>150</item>
-        <item>165</item>
-        <item>180</item>
-        <item>195</item>
-        <item>210</item>
-        <item>225</item>
-        <item>240</item>
-        <item>255</item>
-        <item>270</item>
-        <item>285</item>
-        <item>300</item>
-        <item>315</item>
-        <item>330</item>
-        <item>345</item>
-        <item>360</item>
-        <item>375</item>
-        <item>390</item>
-        <item>405</item>
-        <item>420</item>
-    </string-array>
-
-    <string-array name="entries_lcd_density" translatable="false">
-        <item>240</item>
-        <item>242</item>
-        <item>244</item>
-        <item>246</item>
-        <item>248</item>
-        <item>250</item>
-        <item>252</item>
-        <item>254</item>
-        <item>256</item>
-        <item>258</item>
-        <item>260</item>
-        <item>262</item>
-        <item>264</item>
-        <item>266</item>
-        <item>268</item>
-        <item>270</item>
-        <item>272</item>
-        <item>274</item>
-        <item>276</item>
-        <item>278</item>
-        <item>280</item>
-        <item>282</item>
-        <item>284</item>
-        <item>285</item>
-        <item>286</item>
-        <item>288</item>
-        <item>290</item>
-        <item>292</item>
-        <item>294</item>
-        <item>296</item>
-        <item>298</item>
-        <item>300</item>
-        <item>302</item>
-        <item>304</item>
-        <item>306</item>
-        <item>308</item>
-        <item>310</item>
-        <item>312</item>
-        <item>314</item>
-        <item>316</item>
-        <item>318</item>
-        <item>320</item>
-        <item>322</item>
-        <item>324</item>
-        <item>326</item>
-        <item>328</item>
-        <item>330</item>
-        <item>332</item>
-        <item>334</item>
-        <item>336</item>
-        <item>338</item>
-        <item>340</item>
-        <item>342</item>
-        <item>344</item>
-        <item>346</item>
-        <item>348</item>
-        <item>350</item>
-        <item>352</item>
-        <item>354</item>
-        <item>356</item>
-        <item>358</item>
-        <item>360</item>
-    </string-array>
-
-    <string-array name="entries_max_events" translatable="false">
-        <item>60</item>
-        <item>65</item>
-        <item>70</item>
-        <item>75</item>
-        <item>80</item>
-        <item>85</item>
-        <item>90</item>
-        <item>95</item>
-        <item>100</item>
-        <item>105</item>
-        <item>110</item>
-        <item>115</item>
-        <item>120</item>
-        <item>160</item>
-        <item>165</item>
-        <item>170</item>
-        <item>175</item>
-        <item>180</item>
-        <item>185</item>
-        <item>190</item>
-        <item>195</item>
-        <item>200</item>
-        <item>205</item>
-        <item>210</item>
-        <item>215</item>
-        <item>220</item>
-        <item>225</item>
-        <item>230</item>
-        <item>235</item>
-        <item>240</item>
-        <item>245</item>
-        <item>250</item>
-        <item>260</item>
-        <item>265</item>
-        <item>270</item>
-        <item>275</item>
-        <item>280</item>
-        <item>290</item>
-        <item>295</item>
-        <item>300</item>
-    </string-array>
-
-    <string-array name="entries_usb_mode_values" translatable="flase">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <string-array name="entries_usb_mode" translatable="true">
-        <item>Portal And Tools</item>
-        <item>Windows Media Sync</item>
-        <item>Memory Card Access</item>
-        <item>Charge Only</item>
-    </string-array>
-
-    <string-array name="entries_ring_delay" translatable="false">
-        <item>0</item>
-        <item>50</item>
-        <item>100</item>
-        <item>200</item>
-        <item>300</item>
-        <item>400</item>
-        <item>500</item>
-        <item>600</item>
-        <item>700</item>
-        <item>800</item>
-        <item>900</item>
-        <item>1000</item>
-        <item>1050</item>
-        <item>1100</item>
-        <item>1200</item>
-        <item>1300</item>
-        <item>1400</item>
-        <item>1500</item>
-        <item>1600</item>
-        <item>1700</item>
-        <item>1800</item>
-        <item>1900</item>
-        <item>2000</item>
-        <item>2050</item>
-        <item>2100</item>
-        <item>2200</item>
-        <item>2300</item>
-        <item>2400</item>
-        <item>2500</item>
-        <item>3000</item>
-    </string-array>
-
-    <string-array name="entries_vm_heapsize" translatable="false">
-        <item>16m</item>
-        <item>24m</item>
-        <item>28m</item>
-        <item>32m</item>
-        <item>36m</item>
-        <item>42m</item>
-        <item>48m</item>
-        <item>52m</item>
-        <item>56m</item>
-        <item>64m</item>
-        <item>68m</item>
-        <item>72m</item>
-        <item>76m</item>
-        <item>84m</item>
-        <item>96m</item>
-        <item>128m</item>
-        <item>160m</item>
-        <item>192m</item>
-        <item>224m</item>
-        <item>256m</item>
-    </string-array>
-
-    <string-array name="entries_fast_up_explain">
-        <item>Remove</item>
-        <item>HSUPA Disabled (Capped)</item>
-        <item>HSUPA Enabled</item>
-        <item>HSUPA Enabled (Uncapped)</item>
-    </string-array>
-
-    <string-array name="entries_fast_up" translatable="false">
-        <item>disable</item>
     </string-array>
 
     <!-- Volume Overlay options. -->
@@ -1239,7 +1013,7 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="lockscreen_delay_entries">
+    <string-array name="lockscreen_delay_entries" translatable="false">
         <item>@string/slide_lock_delay_none</item>
         <item>@string/slide_lock_delay_1s</item>
         <item>@string/slide_lock_delay_5s</item>
@@ -1406,18 +1180,437 @@
     </string-array>
 
     <!-- Arrays for root access capability -->
-    <string-array name="root_access_entries">
+    <string-array name="root_access_entries" translatable="false">
         <item>@string/root_access_none</item>
         <item>@string/root_access_apps</item>
         <item>@string/root_access_adb</item>
         <item>@string/root_access_all</item>
     </string-array>
 
-    <string-array name="root_access_values">
+    <string-array name="root_access_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+    </string-array>
+
+    <!-- Values for the notification light pulse spinners -->
+    <string-array name="notification_pulse_length_entries" translatable="false">
+        <item>@string/pulse_length_always_on</item>
+        <item>@string/pulse_length_very_short</item>
+        <item>@string/pulse_length_short</item>
+        <item>@string/pulse_length_normal</item>
+        <item>@string/pulse_length_long</item>
+        <item>@string/pulse_length_very_long</item>
+    </string-array>
+
+    <string-array name="notification_pulse_length_values" translatable="false">
+        <item>0</item>
+        <item>250</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2500</item>
+        <item>5000</item>
+    </string-array>
+
+    <string-array name="notification_pulse_speed_entries" translatable="false">
+        <item>@string/pulse_speed_very_fast</item>
+        <item>@string/pulse_speed_fast</item>
+        <item>@string/pulse_speed_normal</item>
+        <item>@string/pulse_speed_slow</item>
+        <item>@string/pulse_speed_very_slow</item>
+    </string-array>
+
+    <string-array name="notification_pulse_speed_values" translatable="false">
+        <item>250</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2500</item>
+        <item>5000</item>
+    </string-array>
+
+    <string-array name="weather_interval_entries" translatable="false">
+        <item>@string/weather_refresh_manual</item>
+        <item>@string/weather_refresh_30min</item>
+        <item>@string/weather_refresh_60min</item>
+        <item>@string/weather_refresh_2hrs</item>
+        <item>@string/weather_refresh_4hrs</item>
+        <item>@string/weather_refresh_6hrs</item>
+        <item>@string/weather_refresh_8hrs</item>
+    </string-array>
+
+    <string-array name="weather_interval_values" translatable="false">
+        <item>0</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>240</item>
+        <item>360</item>
+        <item>480</item>
+    </string-array>
+
+    <string-array name="calendar_lookahead_entries" translatable="false">
+        <item>@string/calendar_lookahead_3hrs</item>
+        <item>@string/calendar_lookahead_6hrs</item>
+        <item>@string/calendar_lookahead_12hrs</item>
+        <item>@string/calendar_lookahead_1day</item>
+        <item>@string/calendar_lookahead_3days</item>
+        <item>@string/calendar_lookahead_1wk</item>
+    </string-array>
+
+    <string-array name="calendar_lookahead_values" translatable="false">
+        <item>10800000</item>
+        <item>21600000</item>
+        <item>43200000</item>
+        <item>86400000</item>
+        <item>259200000</item>
+        <item>604800000</item>
+    </string-array>
+
+    <string-array name="calendar_show_event_metadata_entries" translatable="false">
+        <item>@string/calendar_metadata_none</item>
+        <item>@string/calendar_metadata_first_line</item>
+        <item>@string/calendar_metadata_all</item>
+    </string-array>
+
+    <string-array name="calendar_show_event_metadata_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="lockscreen_background_entries" translatable="false">
+        <item>@string/lockscreen_background_color_fill</item>
+        <item>@string/lockscreen_background_custom_image</item>
+        <item>@string/lockscreen_background_default_wallpaper</item>
+    </string-array>
+
+    <string-array name="lockscreen_background_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- WiFi sleep idle timeout (turn off after this period) -->
+    <string-array name="wifi_idle_mn_entries" translatable="false">
+        <item>@string/wifi_idle_5mn</item>
+        <item>@string/wifi_idle_15mn</item>
+        <item>@string/wifi_idle_30mn</item>
+        <item>@string/wifi_idle_1h</item>
+        <item>@string/wifi_idle_3h</item>
+    </string-array>
+    <string-array name="wifi_idle_mn_values" translatable="false">
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+    </string-array>
+
+    <!-- DHCP lease times for tethering settings -->
+    <string-array name="tethering_lease_time_entries" translatable="false">
+        <item>@string/dhcp_lease_30mn</item>
+        <!-- keep this in sync with DEFAULT_LEASE_TIME in system/netd/TetherController.h -->
+        <item>@string/dhcp_lease_1h</item>
+        <item>@string/dhcp_lease_2h</item>
+        <item>@string/dhcp_lease_4h</item>
+        <item>@string/dhcp_lease_6h</item>
+        <item>@string/dhcp_lease_12h</item>
+        <item>@string/dhcp_lease_24h</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="tethering_lease_time_values" translatable="false">
+        <item>1800</item>
+        <item>-1</item>
+        <item>7200</item>
+        <item>14400</item>
+        <item>21600</item>
+        <item>43200</item>
+        <item>86400</item>
+    </string-array>
+
+    <string-array name="increasing_ring_interval_entries" translatable="false">
+        <item>@string/increasing_ring_interval_eachring</item>
+        <item>@string/increasing_ring_interval_half_second</item>
+        <item>@string/increasing_ring_interval_1second</item>
+        <item>@string/increasing_ring_interval_2seconds</item>
+        <item>@string/increasing_ring_interval_3seconds</item>
+        <item>@string/increasing_ring_interval_5seconds</item>
+        <item>@string/increasing_ring_interval_10seconds</item>
+    </string-array>
+
+    <integer-array name="increasing_ring_interval_values" translatable="false">
+        <item>0</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>10000</item>
+    </integer-array>
+
+    <string-array name="dithering_entries" translatable="false">
+        <item>@string/dithering_no_dither</item>
+        <item>@string/dithering_color_banding</item>
+        <item>@string/dithering_blur_effect</item>
+    </string-array>
+
+    <string-array name="dithering_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="lockscreen_battery_status_entries">
+        <item>@string/lockscreen_battery_status_charging</item>
+        <item>@string/lockscreen_battery_status_alwayson</item>
+    </string-array>
+
+    <string-array name="lockscreen_battery_status_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="hardware_keys_action_entries" translatable="false">
+        <item>@string/hardware_keys_action_nothing</item>
+        <item>@string/hardware_keys_action_menu</item>
+        <item>@string/hardware_keys_action_app_switch</item>
+        <item>@string/hardware_keys_action_search</item>
+        <item>@string/hardware_keys_action_voice_search</item>
+        <item>@string/hardware_keys_action_in_app_search</item>
+    </string-array>
+
+    <string-array name="hardware_keys_action_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+<!-- **** LIQUIDSMOOTH START EDITS **** -->
+
+  <string-array name="entries_wifi_scan" translatable="false">
+        <item>0</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>75</item>
+        <item>90</item>
+        <item>105</item>
+        <item>120</item>
+        <item>135</item>
+        <item>150</item>
+        <item>165</item>
+        <item>180</item>
+        <item>195</item>
+        <item>210</item>
+        <item>225</item>
+        <item>240</item>
+        <item>255</item>
+        <item>270</item>
+        <item>285</item>
+        <item>300</item>
+        <item>315</item>
+        <item>330</item>
+        <item>345</item>
+        <item>360</item>
+        <item>375</item>
+        <item>390</item>
+        <item>405</item>
+        <item>420</item>
+    </string-array>
+
+    <string-array name="entries_lcd_density" translatable="false">
+        <item>240</item>
+        <item>242</item>
+        <item>244</item>
+        <item>246</item>
+        <item>248</item>
+        <item>250</item>
+        <item>252</item>
+        <item>254</item>
+        <item>256</item>
+        <item>258</item>
+        <item>260</item>
+        <item>262</item>
+        <item>264</item>
+        <item>266</item>
+        <item>268</item>
+        <item>270</item>
+        <item>272</item>
+        <item>274</item>
+        <item>276</item>
+        <item>278</item>
+        <item>280</item>
+        <item>282</item>
+        <item>284</item>
+        <item>285</item>
+        <item>286</item>
+        <item>288</item>
+        <item>290</item>
+        <item>292</item>
+        <item>294</item>
+        <item>296</item>
+        <item>298</item>
+        <item>300</item>
+        <item>302</item>
+        <item>304</item>
+        <item>306</item>
+        <item>308</item>
+        <item>310</item>
+        <item>312</item>
+        <item>314</item>
+        <item>316</item>
+        <item>318</item>
+        <item>320</item>
+        <item>322</item>
+        <item>324</item>
+        <item>326</item>
+        <item>328</item>
+        <item>330</item>
+        <item>332</item>
+        <item>334</item>
+        <item>336</item>
+        <item>338</item>
+        <item>340</item>
+        <item>342</item>
+        <item>344</item>
+        <item>346</item>
+        <item>348</item>
+        <item>350</item>
+        <item>352</item>
+        <item>354</item>
+        <item>356</item>
+        <item>358</item>
+        <item>360</item>
+    </string-array>
+
+    <string-array name="entries_max_events" translatable="false">
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>105</item>
+        <item>110</item>
+        <item>115</item>
+        <item>120</item>
+        <item>160</item>
+        <item>165</item>
+        <item>170</item>
+        <item>175</item>
+        <item>180</item>
+        <item>185</item>
+        <item>190</item>
+        <item>195</item>
+        <item>200</item>
+        <item>205</item>
+        <item>210</item>
+        <item>215</item>
+        <item>220</item>
+        <item>225</item>
+        <item>230</item>
+        <item>235</item>
+        <item>240</item>
+        <item>245</item>
+        <item>250</item>
+        <item>260</item>
+        <item>265</item>
+        <item>270</item>
+        <item>275</item>
+        <item>280</item>
+        <item>290</item>
+        <item>295</item>
+        <item>300</item>
+    </string-array>
+
+    <string-array name="entries_usb_mode_values" translatable="flase">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="entries_usb_mode" translatable="true">
+        <item>Portal And Tools</item>
+        <item>Windows Media Sync</item>
+        <item>Memory Card Access</item>
+        <item>Charge Only</item>
+    </string-array>
+
+    <string-array name="entries_ring_delay" translatable="false">
+        <item>0</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>800</item>
+        <item>900</item>
+        <item>1000</item>
+        <item>1050</item>
+        <item>1100</item>
+        <item>1200</item>
+        <item>1300</item>
+        <item>1400</item>
+        <item>1500</item>
+        <item>1600</item>
+        <item>1700</item>
+        <item>1800</item>
+        <item>1900</item>
+        <item>2000</item>
+        <item>2050</item>
+        <item>2100</item>
+        <item>2200</item>
+        <item>2300</item>
+        <item>2400</item>
+        <item>2500</item>
+        <item>3000</item>
+    </string-array>
+
+    <string-array name="entries_vm_heapsize" translatable="false">
+        <item>16m</item>
+        <item>24m</item>
+        <item>28m</item>
+        <item>32m</item>
+        <item>36m</item>
+        <item>42m</item>
+        <item>48m</item>
+        <item>52m</item>
+        <item>56m</item>
+        <item>64m</item>
+        <item>68m</item>
+        <item>72m</item>
+        <item>76m</item>
+        <item>84m</item>
+        <item>96m</item>
+        <item>128m</item>
+        <item>160m</item>
+        <item>192m</item>
+        <item>224m</item>
+        <item>256m</item>
+    </string-array>
+
+    <string-array name="entries_fast_up_explain">
+        <item>Remove</item>
+        <item>HSUPA Disabled (Capped)</item>
+        <item>HSUPA Enabled</item>
+        <item>HSUPA Enabled (Uncapped)</item>
+    </string-array>
+
+    <string-array name="entries_fast_up" translatable="false">
+        <item>disable</item>
     </string-array>
 
     <string-array name="entries_prox_delay_explain">
@@ -1517,444 +1710,6 @@
         <item>5120</item>
         <item>6144</item>
     </string-array>
-    
-    <string-array name="battery_icon_entries">
-        <item>Icon</item>
-        <item>Text</item>
-        <item>Icon/Text</item>
-        <item>Icon/Centered</item>
-        <item>Circle</item>
-        <item>Hide</item>
-    </string-array>
 
-    <string-array name="battery_icon_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-	<string-array name="battery_bar_entries">
-		<item>Hide</item>
-		<item>Statusbar</item>
-		<item>Navbar Top</item>
-		<item>Navbar Bottom</item>
-	</string-array>
-
-	<string-array name="battery_bar_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-	</string-array>
-
-	<string-array name="battery_bar_style_entries">
-		<item>Regular</item>
-		<item>Center</item>
-	</string-array>
-
-	<string-array name="battery_bar_style_values">
-		<item>0</item>
-		<item>1</item>
-	</string-array>
-
-	<string-array name="battery_bar_thickness_entries">
-		<item>1 dp</item>
-		<item>2 dp</item>
-		<item>3 dp</item>
-		<item>4 dp</item>
-	</string-array>
-
-	<string-array name="battery_bar_thickness_values">
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-		<item>4</item>
-	</string-array>
-	<string-array name="clock_style_entries">
-		<item>Right</item>
-		<item>Center</item>
-		<item>None</item>
-	</string-array>
-
-	<string-array name="clock_style_values">
-		<item>1</item>
-		<item>2</item>
-		<item>0</item>
-	</string-array>
-
-	<string-array name="clock_ampm_entries">
-		<item>Don\'t Show</item>
-		<item>Small AM/PM</item>
-		<item>Large AM/PM</item>
-	</string-array>
-
-	<string-array name="clock_ampm_values">
-		<item>2</item>
-		<item>1</item>
-		<item>0</item>
-	</string-array>
-
-	<string-array name="clock_weekday_entries">
-		<item>Hide</item>
-		<item>Small</item>
-		<item>Regular</item>
-	</string-array>
-
-	<string-array name="clock_weekday_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-	</string-array>
-
-    <!-- Values for the notification light pulse spinners -->
-    <string-array name="notification_pulse_length_entries">
-        <item>@string/pulse_length_always_on</item>
-        <item>@string/pulse_length_very_short</item>
-        <item>@string/pulse_length_short</item>
-        <item>@string/pulse_length_normal</item>
-        <item>@string/pulse_length_long</item>
-        <item>@string/pulse_length_very_long</item>
-    </string-array>
-
-    <string-array name="notification_pulse_length_values" translatable="false">
-        <item>0</item>
-        <item>250</item>
-        <item>500</item>
-        <item>1000</item>
-        <item>2500</item>
-        <item>5000</item>
-    </string-array>
-
-    <string-array name="notification_pulse_speed_entries">
-        <item>@string/pulse_speed_very_fast</item>
-        <item>@string/pulse_speed_fast</item>
-        <item>@string/pulse_speed_normal</item>
-        <item>@string/pulse_speed_slow</item>
-        <item>@string/pulse_speed_very_slow</item>
-    </string-array>
-
-    <string-array name="notification_pulse_speed_values" translatable="false">
-        <item>250</item>
-        <item>500</item>
-        <item>1000</item>
-        <item>2500</item>
-        <item>5000</item>
-    </string-array>
-
-    <string-array name="weather_interval_entries">
-        <item>@string/weather_refresh_manual</item>
-        <item>@string/weather_refresh_30min</item>
-        <item>@string/weather_refresh_60min</item>
-        <item>@string/weather_refresh_2hrs</item>
-        <item>@string/weather_refresh_4hrs</item>
-        <item>@string/weather_refresh_6hrs</item>
-        <item>@string/weather_refresh_8hrs</item>
-    </string-array>
-
-    <string-array name="weather_interval_values" translatable="false">
-        <item>0</item>
-        <item>30</item>
-        <item>60</item>
-        <item>120</item>
-        <item>240</item>
-        <item>360</item>
-        <item>480</item>
-    </string-array>
-
-    <string-array name="calendar_lookahead_entries">
-        <item>@string/calendar_lookahead_3hrs</item>
-        <item>@string/calendar_lookahead_6hrs</item>
-        <item>@string/calendar_lookahead_12hrs</item>
-        <item>@string/calendar_lookahead_1day</item>
-        <item>@string/calendar_lookahead_3days</item>
-        <item>@string/calendar_lookahead_1wk</item>
-    </string-array>
-
-    <string-array name="calendar_lookahead_values" translatable="false">
-        <item>10800000</item>
-        <item>21600000</item>
-        <item>43200000</item>
-        <item>86400000</item>
-        <item>259200000</item>
-        <item>604800000</item>
-    </string-array>
-
-    <string-array name="calendar_show_event_metadata_entries">
-        <item>@string/calendar_metadata_none</item>
-        <item>@string/calendar_metadata_first_line</item>
-        <item>@string/calendar_metadata_all</item>
-    </string-array>
-
-    <string-array name="calendar_show_event_metadata_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="lockscreen_background_entries" translatable="false">
-        <item>@string/lockscreen_background_color_fill</item>
-        <item>@string/lockscreen_background_custom_image</item>
-        <item>@string/lockscreen_background_default_wallpaper</item>
-    </string-array>
-
-    <string-array name="lockscreen_background_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <!-- WiFi sleep idle timeout (turn off after this period) -->
-    <string-array name="wifi_idle_mn_entries" translatable="false">
-        <item>@string/wifi_idle_5mn</item>
-        <item>@string/wifi_idle_15mn</item>
-        <item>@string/wifi_idle_30mn</item>
-        <item>@string/wifi_idle_1h</item>
-        <item>@string/wifi_idle_3h</item>
-    </string-array>
-    <string-array name="wifi_idle_mn_values" translatable="false">
-        <item>5</item>
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-    </string-array>
-
-    <!-- DHCP lease times for tethering settings -->
-    <string-array name="tethering_lease_time_entries">
-        <item>@string/dhcp_lease_30mn</item>
-        <!-- keep this in sync with DEFAULT_LEASE_TIME in system/netd/TetherController.h -->
-        <item>@string/dhcp_lease_1h</item>
-        <item>@string/dhcp_lease_2h</item>
-        <item>@string/dhcp_lease_4h</item>
-        <item>@string/dhcp_lease_6h</item>
-        <item>@string/dhcp_lease_12h</item>
-        <item>@string/dhcp_lease_24h</item>
-    </string-array>
-
-    <!-- Do not translate. -->
-    <string-array name="tethering_lease_time_values" translatable="false">
-        <item>1800</item>
-        <item>-1</item>
-        <item>7200</item>
-        <item>14400</item>
-        <item>21600</item>
-        <item>43200</item>
-        <item>86400</item>
-    </string-array>
-
-    <string-array name="increasing_ring_interval_entries" translatable="false">
-        <item>@string/increasing_ring_interval_eachring</item>
-        <item>@string/increasing_ring_interval_half_second</item>
-        <item>@string/increasing_ring_interval_1second</item>
-        <item>@string/increasing_ring_interval_2seconds</item>
-        <item>@string/increasing_ring_interval_3seconds</item>
-        <item>@string/increasing_ring_interval_5seconds</item>
-        <item>@string/increasing_ring_interval_10seconds</item>
-    </string-array>
-
-    <integer-array name="increasing_ring_interval_values">
-        <item>0</item>
-        <item>500</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3000</item>
-        <item>5000</item>
-        <item>10000</item>
-    </integer-array>
-
-    <string-array name="dithering_entries" translatable="false">
-        <item>@string/dithering_no_dither</item>
-        <item>@string/dithering_color_banding</item>
-        <item>@string/dithering_blur_effect</item>
-    </string-array>
-
-    <string-array name="dithering_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="lockscreen_battery_status_entries">
-        <item>@string/lockscreen_battery_status_charging</item>
-        <item>@string/lockscreen_battery_status_alwayson</item>
-    </string-array>
-
-    <string-array name="lockscreen_battery_status_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
-
-    <string-array name="hardware_keys_action_entries" translatable="false">
-        <item>@string/hardware_keys_action_nothing</item>
-        <item>@string/hardware_keys_action_menu</item>
-        <item>@string/hardware_keys_action_app_switch</item>
-        <item>@string/hardware_keys_action_search</item>
-        <item>@string/hardware_keys_action_voice_search</item>
-        <item>@string/hardware_keys_action_in_app_search</item>
-    </string-array>
-
-    <string-array name="hardware_keys_action_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-    <string-array name="navigation_bar_width_entries">
-        <item>42 dp (Default)</item>
-        <item>36 dp</item>
-        <item>30 dp</item>
-        <item>24 dp</item>
-    </string-array>
-
-    <string-array name="navigation_bar_width">
-        <item>42</item>
-        <item>36</item>
-        <item>30</item>
-        <item>24</item>
-    </string-array>
-
-    <string-array name="navigation_bar_height_entries">
-        <item>52 dp</item>
-        <item>50 dp</item>
-        <item>48 dp (Default)</item>
-        <item>46 dp</item>
-        <item>44 dp</item>
-        <item>42 dp (Primo)</item>
-        <item>40 dp</item>
-        <item>38 dp</item>
-        <item>36 dp</item>
-        <item>30 dp</item>
-        <item>24 dp</item>
-    </string-array>
-
-    <string-array name="navigation_bar_height">
-        <item>52</item>
-        <item>50</item>
-        <item>48</item>
-        <item>46</item>
-        <item>44</item>
-        <item>42</item>
-        <item>40</item>
-        <item>38</item>
-        <item>36</item>
-        <item>30</item>
-        <item>24</item>
-    </string-array>
-
-    <string-array name="navigation_bar_qty_entries">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-    <string-array name="navigation_bar_qty_values" translatable="false">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-    <string-array name="navbar_button_entries">
-        <item>Home</item>
-        <item>Back</item>
-        <item>Recents</item>
-        <item>Search</item>
-        <item>Menu</item>
-        <item>Widgets</item>
-        <item>Kill app</item>
-	    <item>Power</item>
-        <item>Custom app</item>
-        <item>Blank</item>
-    </string-array>
-
-    <string-array name="navbar_button_values" translatable="false">
-        <item>**home**</item>
-        <item>**back**</item>
-        <item>**recents**</item>
-        <item>**search**</item>
-        <item>**menu**</item>
-        <item>**widgets**</item>
-        <item>**kill**</item>
-        <item>**power**</item>
-        <item>**app**</item>
-        <item>**null**</item>
-    </string-array>
-
-    <string-array name="recent_app_switcher_entries">
-        <item>Stock</item>
-        <item>WebOS</item>
-        <item>Sense 4</item>
-    </string-array>
-
-    <string-array name="recent_app_switcher_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-		<item>2</item>
-    </string-array>
-
-    <string-array name="long_press_home_entries">
-        <item>Default</item>
-        <item>Nothing</item>
-        <item>Pre-ICS</item>
-        <item>Show</item>
-    </string-array>
-
-    <string-array name="long_press_home_values" translatable="false">
-        <item>-1</item>
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="pref_navigation_menu_entries">
-		<item>Right</item>
-		<item>Left</item>
-		<item>Both</item>
-        <item>Remove</item>
-	</string-array>
-
-	<string-array name="pref_navigation_menu_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-        <item>4</item>
-	</string-array>
-
-       <string-array name="pref_navigation_menu_display_entries">
-		<item>Default</item>
-		<item>Invisible Icons</item>
-		<item>Always Show</item>
-		<item>Both Behaviours</item>
-	</string-array>
-
-	<string-array name="pref_navigation_menu_display_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-	</string-array>
-
-        <string-array name="glow_times_entries">
-        <item>Off</item>
-        <item>Fast</item>
-        <item>Quick</item>
-        <item>Normal</item>
-    </string-array>
-
-    <string-array name="glow_times_values">
-        <item>0|0</item>
-        <item>100|10</item>
-        <item>250|25</item>
-        <item>500|50</item>
-    </string-array>
-
+    <!-- **** LIQUIDSMOOTH END EDITS **** -->
 </resources>

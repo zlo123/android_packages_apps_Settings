@@ -256,6 +256,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements OnPrefer
             boolean enabled = mShowActionOverflow.isChecked();
             Settings.System.putInt(getContentResolver(), Settings.System.UI_FORCE_OVERFLOW_BUTTON,
                     enabled ? 1 : 0);
+            // Show appropriate
             if (enabled) {
                 Toast.makeText(getActivity(), R.string.hardware_keys_show_overflow_toast_enable,
                         Toast.LENGTH_LONG).show();

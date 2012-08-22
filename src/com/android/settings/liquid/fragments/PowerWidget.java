@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2011 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.net.wimax.WimaxHelper;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -60,15 +61,11 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private static final String UI_EXP_WIDGET_HIDE_ONCHANGE = "expanded_hide_onchange";
     private static final String UI_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
-    private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
-    private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
     private CheckBoxPreference mPowerWidget;
     private CheckBoxPreference mPowerWidgetHideOnChange;
     private CheckBoxPreference mPowerWidgetHideScrollBar;
     private ListPreference mPowerWidgetHapticFeedback;
-    private CheckBoxPreference mStatusBarBrightnessControl;
-    private CheckBoxPreference mStatusBarNotifCount;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -102,12 +99,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mPowerWidgetHapticFeedback.setValue(Integer.toString(Settings.System.getInt(
                     getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, 2)));
- 			mStatusBarBrightnessControl = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
-        	mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-            		Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
-    		mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NOTIF_COUNT);
-        	mStatusBarNotifCount.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                	Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1));
         }
     }
 
@@ -141,14 +132,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HIDE_SCROLLBAR,
                     value ? 1 : 0);
-          } else if (preference == mStatusBarBrightnessControl) {
-            value = mStatusBarBrightnessControl.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, value ? 1 : 0);
-        } else if (preference == mStatusBarNotifCount) {
-            value = mStatusBarNotifCount.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -164,13 +147,16 @@ public class PowerWidget extends SettingsPreferenceFragment implements
         }
 
         private static final String TAG = "PowerWidgetActivity";
+
         private static final String BUTTONS_CATEGORY = "pref_buttons";
         private static final String SELECT_BUTTON_KEY_PREFIX = "pref_button_";
+
         private static final String EXP_BRIGHTNESS_MODE = "pref_brightness_mode";
         private static final String EXP_NETWORK_MODE = "pref_network_mode";
         private static final String EXP_SCREENTIMEOUT_MODE = "pref_screentimeout_mode";
         private static final String EXP_RING_MODE = "pref_ring_mode";
         private static final String EXP_FLASH_MODE = "pref_flash_mode";
+
         private HashMap<CheckBoxPreference, String> mCheckBoxPrefs = new HashMap<CheckBoxPreference, String>();
 
         MultiSelectListPreference mBrightnessMode;
@@ -246,11 +232,10 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                     .getCurrentButtons(getActivity().getApplicationContext()));
 
             // Don't show WiMAX option if not supported
-            /*
-             * boolean isWimaxEnabled = WimaxHelper.isWimaxSupported(this); if
-             * (!isWimaxEnabled) {
-             * PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIMAX); }
-             */
+            boolean isWimaxEnabled = WimaxHelper.isWimaxSupported(getActivity());
+            if (!isWimaxEnabled) {
+                PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIMAX);
+            }
 
             // fill that checkbox map!
             for (PowerWidgetUtil.ButtonInfo button : PowerWidgetUtil.BUTTONS.values()) {
@@ -305,10 +290,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                             break;
                     }
                 }
-                /*
-                 * else if (PowerWidgetUtil.BUTTON_WIMAX.equals(button.getId()))
-                 * { if (!isWimaxEnabled) { cb.setEnabled(false); } }
-                 */
 
                 // add to the category
                 prefButtons.addPreference(cb);
@@ -424,6 +405,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                 return val.toString().split(SEPARATOR);
             }
         }
+
     }
 
     public static class PowerWidgetOrder extends ListFragment
@@ -552,6 +534,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                 }
 
                 PowerWidgetUtil.ButtonInfo button = mButtons.get(position);
+
                 final TextView name = (TextView) v.findViewById(R.id.name);
                 final ImageView icon = (ImageView) v.findViewById(R.id.icon);
 

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The Android Open Source Project
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -12,14 +12,6 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
--->
-
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/other_gooim_devs"
-          android:title="@string/other_gooim_devs_menu_title"
-          android:showAsAction="ifRoom|withText" />
-
-    <item android:id="@+id/gooim_supporters"
-          android:title="@string/gooim_supporters_menu_title"
-          android:showAsAction="ifRoom|withText" />
-</menu>
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="applications_settings_summary" msgid="6616938758022986257">"ئەپ باشقۇرۇش"</string>
+</resources>

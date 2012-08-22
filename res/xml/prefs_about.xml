@@ -46,28 +46,16 @@
             liquid:avatar="@drawable/avatar_jbirdvegas" />
 
         <com.android.settings.widget.DeveloperPreference
-            android:title="@string/dev_n0coast_title"
-            liquid:twitterHandle="@string/dev_n0coast_twitter"
-            liquid:donateLink="@string/dev_n0coast_donate"
-            liquid:avatar="@drawable/avatar_n0coast" />
-
-        <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_jdkoreclipse_title"
             liquid:twitterHandle="@string/dev_jdkoreclipse_twitter"
             liquid:donateLink="@string/dev_jdkoreclipse_donate"
             liquid:avatar="@drawable/avatar_jdkoreclipse" />
 
         <com.android.settings.widget.DeveloperPreference
-            android:title="@string/dev_purian23_title"
-            liquid:twitterHandle="@string/dev_purian23_twitter"
-            liquid:donateLink="@string/dev_purian23_donate"
-            liquid:avatar="@drawable/avatar_purian23" />
-
-        <com.android.settings.widget.DeveloperPreference
-            android:title="@string/dev_amplified_title"
-            liquid:twitterHandle="@string/dev_amplified_twitter"
-            liquid:donateLink="@string/dev_amplified_donate"
-            liquid:avatar="@drawable/avatar_amplified" />
+            android:title="@string/dev_n0coast_title"
+            liquid:twitterHandle="@string/dev_n0coast_twitter"
+            liquid:donateLink="@string/dev_n0coast_donate"
+            liquid:avatar="@drawable/avatar_n0coast" />
 
 	    <com.android.settings.widget.DeveloperPreference
             android:title="@string/dev_winner00_title"

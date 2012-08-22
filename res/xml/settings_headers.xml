@@ -17,6 +17,7 @@
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />
 
@@ -168,7 +169,9 @@
         android:fragment="com.android.settings.SecuritySettings"
         android:icon="@drawable/ic_settings_security"
         android:title="@string/security_settings_title"
-        android:id="@+id/security_settings" />
+        android:id="@+id/security_settings">
+        <extra android:name="stock_security" android:value="true" />
+    </header>
 
     <!-- Language -->
     <header

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2011 The CyanogenMod Project
  * This code has been modified. Portions copyright (C) 2012 ParanoidAndroid Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,6 +62,7 @@ public class TabletPowerWidget extends SettingsPreferenceFragment
                 refreshToggles();
         }
     }
+
 
     private void refreshToggles(){
         mPowerWidgets = Settings.System.getString(mContext.getContentResolver(), Settings.System.WIDGET_BUTTONS_TABLET);
