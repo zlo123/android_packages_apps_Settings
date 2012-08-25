@@ -23,11 +23,13 @@
             android:title="@string/brightness"
             android:dialogTitle="@string/brightness" />
 
+<!-- Hide until code is ported from CM9
         <PreferenceScreen
             android:key="backlight_widget"
             android:fragment="com.android.settings.liquid.fragments.Backlight"
             android:title="@string/backlight_title"
             android:summary="@string/backlight_summary" />
+-->
 
         <PreferenceScreen
             android:key="display_rotation"
@@ -61,7 +63,7 @@
             android:title="@string/battery_light_title"
             android:fragment="com.android.settings.notificationlight.BatteryLightSettings" />
 
-<!--
+<!-- Remove until merged from CM9
         <PreferenceCategory
             android:key="category_animation_options"
             android:title="@string/display_category_animation_options_title"/>
