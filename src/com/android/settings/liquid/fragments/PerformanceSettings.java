@@ -109,4 +109,5 @@ public class PerformanceSettings extends SettingsPreferenceFragment
         }
         return true;
     }
+
 }

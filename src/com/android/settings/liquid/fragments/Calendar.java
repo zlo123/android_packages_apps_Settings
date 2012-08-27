@@ -226,5 +226,6 @@ public class Calendar extends SettingsPreferenceFragment implements
         CharSequence[] getEntryValues() {
             return mEntryValues;
         }
+
     }
 }

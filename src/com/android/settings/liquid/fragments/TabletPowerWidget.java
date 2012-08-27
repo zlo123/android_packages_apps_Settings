@@ -255,4 +255,5 @@ public class TabletPowerWidget extends SettingsPreferenceFragment
             }
         }
     }
+
 }

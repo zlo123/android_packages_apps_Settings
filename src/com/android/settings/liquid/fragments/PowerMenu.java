@@ -86,4 +86,5 @@ public class PowerMenu extends SettingsPreferenceFragment {
 
         return true;
     }
+
 }

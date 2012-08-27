@@ -561,4 +561,5 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             }
         }
     }
+
 }
