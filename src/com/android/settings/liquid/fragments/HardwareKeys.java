@@ -29,7 +29,8 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class HardwareKeys extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class HardwareKeys extends SettingsPreferenceFragment implements
+    OnPreferenceChangeListener {
 
     private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
     private static final String HARDWARE_KEYS_ENABLE_CUSTOM = "hardware_keys_enable_custom";

@@ -31,7 +31,8 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class NavigationBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class NavigationBar extends SettingsPreferenceFragment implements
+    OnPreferenceChangeListener {
 
     private static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
     private static final String KEY_MENU_ENABLED = "key_menu_enabled";

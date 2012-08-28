@@ -15,7 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-			android:title="@string/birdnest_title">
+        android:title="@string/birdnest_title">
 
     <PreferenceCategory android:key="category"
               android:title="@string/visual_settings_title">

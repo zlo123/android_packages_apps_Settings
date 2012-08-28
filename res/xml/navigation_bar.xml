@@ -16,9 +16,8 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/combined_navigation_bar_title">
+    android:title="@string/navigation_bar_title">
 
-    <!-- Status bar tweaks -->
     <PreferenceCategory
         android:title="@string/navigation_bar_title">
 
