@@ -130,7 +130,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
                 toast.show();
             }
             return true;
-        if (preference == mNavbarLeftPref) {
+        } else if (preference == mNavbarLeftPref) {
             value = mNavbarLeftPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.NAVBAR_LEFT, value ? 1 : 0);

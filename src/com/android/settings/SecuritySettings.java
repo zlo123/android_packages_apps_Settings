@@ -166,7 +166,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         DevicePolicyManager dpm =
                 (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
 
-        if (UserId.myUserId() == 0 && !isCmSecurity) {
+        if (UserId.myUserId() == 0 && !isLsSecurity) {
             switch (dpm.getStorageEncryptionStatus()) {
             case DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE:
                 // The device is currently encrypted.
