@@ -34,13 +34,11 @@ import com.android.settings.SettingsPreferenceFragment;
 public class NavigationBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
-    private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
     private static final String KEY_MENU_ENABLED = "key_menu_enabled";
     private static final String KEY_BACK_ENABLED = "key_back_enabled";
     private static final String KEY_HOME_ENABLED = "key_home_enabled";
 
     private CheckBoxPreference mNavigationBarShow;
-    private CheckBoxPreference mNavbarLeftPref;
     private CheckBoxPreference mMenuKeyEnabled;
     private CheckBoxPreference mBackKeyEnabled;
     private CheckBoxPreference mHomeKeyEnabled;
@@ -64,14 +62,12 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mNavigationBarShow = (CheckBoxPreference) prefSet.findPreference(NAVIGATION_BAR_SHOW);
-        mNavbarLeftPref = (CheckBoxPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
         mMenuKeyEnabled = (CheckBoxPreference) prefSet.findPreference(KEY_MENU_ENABLED);
         mBackKeyEnabled = (CheckBoxPreference) prefSet.findPreference(KEY_BACK_ENABLED);
         mHomeKeyEnabled = (CheckBoxPreference) prefSet.findPreference(KEY_HOME_ENABLED);
+
         mNavigationBarShow.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, 0) == 1));
-        mNavbarLeftPref.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.NAVBAR_LEFT, 0)) == 1);
         if (mNavigationBarShow.isChecked()) {
             enableKeysPrefs();
         } else {
@@ -80,12 +76,9 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
     }
 
     public void enableKeysPrefs() {
-        mNavbarLeftPref.setEnabled(true);
         mMenuKeyEnabled.setEnabled(true);
         mBackKeyEnabled.setEnabled(true);
         mHomeKeyEnabled.setEnabled(true);
-        mNavbarLeftPref.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.NAVBAR_LEFT, 1) == 1));
         mMenuKeyEnabled.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.KEY_MENU_ENABLED, 1) == 1));
         mBackKeyEnabled.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -95,15 +88,12 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
     }
 
     public void resetKeys() {
-        mNavbarLeftPref.setEnabled(false);
         mMenuKeyEnabled.setEnabled(false);
         mBackKeyEnabled.setEnabled(false);
         mHomeKeyEnabled.setEnabled(false);
-        mNavbarLeftPref.setEnabled(true);
         mMenuKeyEnabled.setChecked(true);
         mBackKeyEnabled.setChecked(true);
         mHomeKeyEnabled.setChecked(true);
-        Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(), Settings.System.NAVBAR_LEFT, 1);
         Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(), Settings.System.KEY_MENU_ENABLED, 1);
         Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(), Settings.System.KEY_BACK_ENABLED, 1);
         Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(), Settings.System.KEY_HOME_ENABLED, 1);
@@ -129,11 +119,6 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), R.string.navigation_bar_reboot_message, Toast.LENGTH_LONG);
                 toast.show();
             }
-            return true;
-        } else if (preference == mNavbarLeftPref) {
-            value = mNavbarLeftPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.NAVBAR_LEFT, value ? 1 : 0);
             return true;
         } else if (preference == mMenuKeyEnabled) {
             value = mMenuKeyEnabled.isChecked();
