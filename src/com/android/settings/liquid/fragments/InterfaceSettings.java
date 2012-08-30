@@ -33,8 +33,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class InterfaceSettings extends SettingsPreferenceFragment implements
-    OnPreferenceChangeListener {
+public class InterfaceSettings extends SettingsPreferenceFragment {
 
     private static final String TAG = "InterfaceSettings";
     private static final String KEY_NOTIFICATION_DRAWER = "notification_drawer";
