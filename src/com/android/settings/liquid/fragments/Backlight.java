@@ -145,6 +145,7 @@ public class Backlight extends SettingsPreferenceFragment implements
             Settings.System.putLong(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LIGHTS_CHANGED, tag);
         }
+
         return handled;
     }
 

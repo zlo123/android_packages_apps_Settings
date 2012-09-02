@@ -175,7 +175,12 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         mIm = (InputManager)getActivity().getSystemService(Context.INPUT_SERVICE);
         updateInputDevices();
 
-        mStatusBarImeSwitcher = (CheckBoxPreference) findPreference(KEY_IME_SWITCHER);
+        // Enable or disable mStatusBarImeSwitcher based on boolean value: config_show_cmIMESwitcher
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_show_cmIMESwitcher)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_IME_SWITCHER));
+        } else {
+            mStatusBarImeSwitcher = (CheckBoxPreference) findPreference(KEY_IME_SWITCHER);
+        }
 
         mStylusIconEnabled = (CheckBoxPreference) findPreference(KEY_STYLUS_ICON_ENABLED);
 
@@ -270,11 +275,6 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
             if (SHOW_INPUT_METHOD_SWITCHER_SETTINGS) {
                 mShowInputMethodSelectorPref.setOnPreferenceChangeListener(this);
             }
-        }
-
-        if (mStatusBarImeSwitcher != null) {
-            mStatusBarImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
         }
 
         if (mStylusIconEnabled != null) {
@@ -407,7 +407,8 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                     saveInputMethodSelectorVisibility((String)value);
                 }
             }
-        } else if (preference == mVolumeKeyCursorControl) {
+        }
+        if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) value;
             int val = Integer.parseInt(volumeKeyCursorControl);
             Settings.System.putInt(getActivity().getContentResolver(),
