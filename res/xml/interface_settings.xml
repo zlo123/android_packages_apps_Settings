@@ -23,11 +23,6 @@
         android:title="@string/hardware_keys_title" />
 
     <PreferenceScreen
-        android:key="navigation_bar"
-        android:fragment="com.android.settings.liquid.fragments.NavigationBar"
-        android:title="@string/navigation_bar_title" />
-
-    <PreferenceScreen
         android:key="notification_drawer"
         android:fragment="com.android.settings.liquid.fragments.PowerWidget"
         android:title="@string/notifications_title" />

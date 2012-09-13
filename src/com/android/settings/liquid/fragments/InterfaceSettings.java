@@ -38,14 +38,12 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
     private static final String TAG = "InterfaceSettings";
     private static final String KEY_NOTIFICATION_DRAWER = "notification_drawer";
     private static final String KEY_NOTIFICATION_DRAWER_TABLET = "notification_drawer_tablet";
-    private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_POWER_MENU = "power_menu";
     private static final String KEY_STATUS_BAR = "status_bar";
 
     private PreferenceScreen mPhoneDrawer;
     private PreferenceScreen mTabletDrawer;
-    private PreferenceScreen mNavigationBar;
     private PreferenceScreen mHardwareKeys;
     private PreferenceScreen mPowerMenu;
     private PreferenceScreen mStatusBar;
@@ -60,7 +58,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
 
         mPhoneDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER);
         mTabletDrawer = (PreferenceScreen) findPreference(KEY_NOTIFICATION_DRAWER_TABLET);
-        mNavigationBar = (PreferenceScreen) findPreference(KEY_NAVIGATION_BAR);
         mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
         mPowerMenu = (PreferenceScreen) findPreference(KEY_POWER_MENU);
         mStatusBar = (PreferenceScreen) findPreference(KEY_STATUS_BAR);
@@ -68,9 +65,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
         if (Utils.isTablet(getActivity())) {
             if (mPhoneDrawer != null) {
                 getPreferenceScreen().removePreference(mPhoneDrawer);
-            }
-            if (mNavigationBar != null) {
-                getPreferenceScreen().removePreference(mNavigationBar);
             }
         } else {
             if (mTabletDrawer != null) {
@@ -81,7 +75,12 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
-            if (windowManager.hasNavigationBar()) {
+            if (!windowManager.hasNavigationBar()) {
+                Preference naviBar = findPreference(KEY_NAVIGATION_BAR);
+                if (naviBar != null) {
+                    getPreferenceScreen().removePreference(naviBar);
+                }
+            } else {
                 Preference hardKeys = findPreference(KEY_HARDWARE_KEYS);
                 if (hardKeys != null) {
                     getPreferenceScreen().removePreference(hardKeys);
