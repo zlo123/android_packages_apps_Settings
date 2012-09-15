@@ -74,12 +74,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
 
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-            Preference hardKeys = findPreference(KEY_HARDWARE_KEYS);
-            if (hardKeys != null) {
-                getPreferenceScreen().removePreference(hardKeys);
-            }
-        } catch (RemoteException e) {
+
+        Preference hardKeys = findPreference(KEY_HARDWARE_KEYS);
+        if (hardKeys != null) {
+            getPreferenceScreen().removePreference(hardKeys);
         }
     }
 }
