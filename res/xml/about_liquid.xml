@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The LiquidSmooth Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/about_liquid_title"
+    xmlns:liquid="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="learn_more"
+        android:title="@string/learn_more_title">
+
+        <Preference
+            android:key="liquid_website"
+            android:title="@string/liquid_website_title"
+            android:summary="@string/liquid_website_summary" />
+
+        <Preference
+            android:key="liquid_source"
+            android:title="@string/liquid_source_title"
+            android:summary="@string/liquid_source_summary" />
+
+        <Preference
+            android:key="liquid_irc"
+            android:title="@string/liquid_irc_title"
+            android:summary="@string/liquid_irc_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="devs"
+        android:title="@string/devs">
+
+        <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_liquid_title"
+            liquid:twitterHandle="@string/dev_liquid_twitter"
+            liquid:donateLink="@string/dev_liquid_donate"
+            liquid:avatar="@drawable/avatar_liquid" />
+
+        <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_liquidzgrl_title"
+            liquid:twitterHandle="@string/dev_liquidzgrl_twitter"
+            liquid:donateLink="@string/dev_liquidzgrl_donate"
+            liquid:avatar="@drawable/avatar_liquidzgrl" />
+
+        <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_hiemanshu_title"
+            liquid:twitterHandle="@string/dev_hiemanshu_twitter"
+            liquid:donateLink="@string/dev_hiemanshu_donate"
+            liquid:avatar="@drawable/avatar_hiemanshu" />
+
+        <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_jdkoreclipse_title"
+            liquid:twitterHandle="@string/dev_jdkoreclipse_twitter"
+            liquid:donateLink="@string/dev_jdkoreclipse_donate"
+            liquid:avatar="@drawable/avatar_jdkoreclipse" />
+
+        <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_n0coast_title"
+            liquid:twitterHandle="@string/dev_n0coast_twitter"
+            liquid:donateLink="@string/dev_n0coast_donate"
+            liquid:avatar="@drawable/avatar_n0coast" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

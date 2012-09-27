@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<!-- Copyright (C) 2012 The LiquidSmooth Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
-
 
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />
@@ -57,27 +56,27 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- Customization -->
-    <header android:title="@string/header_category_customization" />
+    <!-- LIQUIDSMOOTH -->
+    <header android:title="@string/liquidsmooth_category_title" />
 
-    <!-- BirdNest -->
+    <!-- Liquid Launcher -->
     <header
-        android:id="@+id/birdnest"
-        android:fragment="com.android.settings.liquid.BirdNest"
-        android:title="@string/birdnest_title"
-        android:icon="@drawable/ic_settings_birdnest" />
+        android:id="@+id/liquid_launcher"
+        android:icon="@drawable/ic_launcher_liquid"
+        android:title="@string/liquid_launcher_title" />
 
-    <!-- Launcher -->
+    <!-- Liquid Splasher -->
     <header
-        android:id="@+id/launcher_settings"
-        android:title="@string/launcher_settings_title"
-        android:icon="@drawable/ic_settings_launcher" />
+        android:id="@+id/liquid_splasher"
+        android:icon="@drawable/ic_settings_liquid"
+        android:title="@string/liquid_splasher_title"
+        android:fragment="com.android.settings.liquid.LiquidSplasher" />
 
-    <!-- Themes -->
+    <!-- Theme Chooser -->
     <header
-        android:id="@+id/themes_settings"
+        android:id="@+id/theme_chooser"
         android:icon="@drawable/ic_settings_themes"
-        android:title="@string/themes_settings_title">
+        android:title="@string/theme_chooser_title">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.tmobile.themechooser"
@@ -133,7 +132,7 @@
     <header
         android:id="@+id/advanced_settings"
         android:title="@string/advanced_settings_title"
-        android:icon="@drawable/ic_settings_advanced">
+        android:icon="@drawable/ic_settings_device_parts">
         <intent
             android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
             android:targetPackage="com.cyanogenmod.settings.device"

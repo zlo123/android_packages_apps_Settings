@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The LiquidSmooth Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/liquid_splasher_title">
+
+    <PreferenceCategory android:key="aboutliquid_category"
+        android:title="@string/aboutliquid_category_title">
+
+        <PreferenceScreen
+            android:key="@+id/about_liquid"
+            android:title="@string/about_settings_title"
+            android:fragment="com.android.settings.liquid.AboutLiquid" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="customization_category"
+        android:title="@string/customization_category_title">
+
+        <PreferenceScreen
+            android:key="@+id/display_settings"
+            android:title="@string/display_settings_title"
+            android:fragment="com.android.settings.liquid.DisplaySettings" />
+
+        <PreferenceScreen
+            android:key="@+id/interface_settings"
+            android:title="@string/interface_settings_title"
+            android:fragment="com.android.settings.liquid.InterfaceSettings" />
+
+        <PreferenceScreen
+            android:key="@+id/lockscreen_settings"
+            android:title="@string/lockscreen_settings_title"
+            android:fragment="com.android.settings.liquid.LockscreenSettings" />
+
+        <PreferenceScreen
+            android:key="@+id/navigation_settings"
+            android:title="@string/navigation_settings_title"
+            android:fragment="com.android.settings.liquid.NavigationSettings" />
+
+        <PreferenceScreen
+            android:key="@+id/powermenu_settings"
+            android:title="@string/powermenu_settings_title"
+            android:fragment="com.android.settings.liquid.PowermenuSettings" />
+
+        <PreferenceScreen
+            android:key="@+id/sound_settings"
+            android:title="@string/sound_settings_title"
+            android:fragment="com.android.settings.liquid.SoundSettings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="notification_category"
+        android:title="@string/notification_category_title">
+
+        <PreferenceScreen
+            android:key="@+id/notification_toggles"
+            android:title="@string/notification_toggles_title"
+            android:fragment="com.android.settings.liquid.PowerToggles" />
+
+        <PreferenceScreen
+            android:key="@+id/notification_widget"
+            android:title="@string/notification_widget_title"
+            android:fragment="com.android.settings.liquid.PowerWidget" />
+
+        <PreferenceScreen
+            android:key="@+id/statusbar_settings"
+            android:title="@string/statusbar_settings_title"
+            android:fragment="com.android.settings.liquid.StatusbarSettings" />
+	</PreferenceCategory>
+
+    <PreferenceCategory android:key="optimization_category"
+        android:title="@string/optimization_category_title">
+
+		<PreferenceScreen
+		    android:key="@+id/kernel_settings"
+		    android:title="@string/kernel_settings_title"
+		    android:fragment="com.android.settings.performance.KernelSettings" />
+
+		<PreferenceScreen
+		    android:key="@+id/processor_settings"
+		    android:title="@string/processor_settings_title"
+		    android:fragment="com.android.settings.performance.ProcessorSettings" />
+
+		<PreferenceScreen
+		    android:key="@+id/startup_settings"
+		    android:title="@string/startup_settings_title"
+		    android:fragment="com.android.settings.performance.StartupSettings" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The CyanogenMod Project
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2012 The LiquidSmooth Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/power_menu_title"
+    android:title="@string/powermenu_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <CheckBoxPreference
@@ -25,13 +25,28 @@
         android:defaultValue="true" />
 
     <CheckBoxPreference
+        android:key="power_menu_profiles"
+        android:title="@string/power_menu_profiles_title"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
         android:key="power_menu_screenshot"
         android:title="@string/power_menu_screenshot_title"
         android:defaultValue="false" />
 
     <CheckBoxPreference
-        android:key="power_menu_profiles"
-        android:title="@string/power_menu_profiles_title"
+        android:key="power_menu_airplanemode"
+        android:title="@string/airplane_mode"
+        android:defaultValue="true" />
+
+    <CheckBoxPreference
+        android:key="power_menu_navbartoggle"
+        android:title="@string/power_menu_navbartoggle_title"
+        android:defaultValue="true" />
+
+    <CheckBoxPreference
+        android:key="power_menu_silenttoggle"
+        android:title="@string/power_menu_silenttoggle_title"
         android:defaultValue="true" />
 
 </PreferenceScreen>

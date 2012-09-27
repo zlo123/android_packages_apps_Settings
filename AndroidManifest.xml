@@ -1441,54 +1441,104 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-        <activity android:name=".liquid.fragments.LightLevelsActivity" />
+        <!-- LiquidSmooth Start Activities -->
 
-        <activity android:name=".liquid.fragments.PowerWidget" />
+        <activity android:name=".liquid.AboutLiquid" />
 
-        <activity android:name=".liquid.fragments.TabletPowerWidget" />
+        <activity android:name=".liquid.Backlight" />
 
-        <activity android:name=".liquid.fragments.ThemesSettings" />
+        <activity android:name=".liquid.Calendar" />
 
-        <activity android:name=".liquid.fragments.InterfaceSettings" />
+        <activity android:name=".liquid.DisplayRotation" />
 
-        <activity android:name=".liquid.fragments.PerformanceSettings" />
+        <activity android:name=".liquid.DisplaySettings" />
 
-        <activity android:name=".profiles.ProfilesSettings" />
+        <activity android:name=".liquid.HardwareSettings" />
+    
+        <activity android:name=".liquid.InterfaceSettings" />
 
-        <activity android:name=".profiles.ProfileConfig" />
+        <activity android:name=".liquid.LightLevels" />
 
-        <activity android:name=".profiles.AppGroupList" />
+        <activity android:name=".liquid.LiquidSplasher"
+            android:label="LiquidSplasher" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".liquid.LockscreenSettings" />
+
+        <activity android:name=".liquid.LockscreenTargets" />
+
+        <activity android:name=".liquid.NavigationSettings" />
+
+        <activity android:name=".liquid.NavRingTargets" />
+
+        <activity android:name=".liquid.PowermenuSettings" />
+
+        <activity android:name=".liquid.PowerToggles" />
+
+        <activity android:name=".liquid.PowerWidget" />
+
+        <activity android:name=".liquid.QuietHours" />
+
+        <activity android:name=".liquid.ScreenSecurity" />
+
+        <activity android:name=".liquid.SoundSettings" />
+
+        <activity android:name=".liquid.StatusbarSettings" />
+
+        <activity android:name=".liquid.TabletWidget" />
+
+        <activity android:name=".liquid.Weather" />
+
+        <activity android:name=".notificationlight.BatteryLightSettings" />
+
+        <activity android:name=".notificationlight.NotificationLightSettings" />
 
         <activity android:name=".profiles.AppGroupConfig" />
 
-        <activity android:name=".profiles.ProfileGroupConfig" />
-
-        <activity android:name=".profiles.NFCProfileWriter" />
-
-        <activity android:name=".profiles.NFCProfileSelect" />
-
-        <activity android:name=".liquid.fragments.LockscreenTargets" />
-
-        <activity android:name=".liquid.fragments.LockscreenInterface" />
-
-        <activity android:name=".liquid.fragments.Weather" />
-
-        <activity android:name=".liquid.fragments.Calendar" />
-
-        <activity android:name=".liquid.fragments.PowerMenu" />
+        <activity android:name=".profiles.AppGroupList" />
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="liquid/profile" />
+                <data android:mimeType="cm/profile" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".notificationlight.NotificationLightSettings" />
+        <activity android:name=".profiles.NFCProfileSelect" />
 
-        <activity android:name=".notificationlight.BatteryLightSettings" />
+        <activity android:name=".profiles.NFCProfileWriter" />
+
+        <activity android:name=".profiles.ProfileConfig" />
+
+        <activity android:name=".profiles.ProfileGroupConfig" />
+
+        <activity android:name=".profiles.ProfilesSettings" />
+
+        <activity android:name=".performance.KernelSettings" />
+
+        <activity android:name=".performance.ProcessorSettings" />
+
+        <activity android:name=".performance.StartupSettings" />
+
+        <activity android:name=".performance.VoltageSettings" />
+
+        <receiver android:name=".service.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".service.BootService" />
+
+        <service android:name=".service.FlipService" />
+
+		<!-- LiquidSmooth End Activities -->
 
         <activity android:name=".ApnEditor" />
 
@@ -1538,52 +1588,5 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
 
-		<!-- LiquidSmooth Start Activities -->
-
-        <activity android:name=".liquid.BirdNest"
-            android:label="BirdNest" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".liquid.fragments.PropModder"
-            android:label="Propmodder" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        <receiver android:name="com.android.server.AppsLaunchFailureReceiver" >
-            <intent-filter>
-                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE" />
-                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE_RESET" />
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-                <action android:name="com.tmobile.intent.action.THEME_PACKAGE_UPDATED" />
-                <category android:name="com.tmobile.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE" />
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-        </activity>
-        <activity android:name=".liquid.fragments.AboutLiquid"
-            android:label="About Team Liquid" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".util.ShowBuildProp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-        <receiver android:name=".liquid.fragments.BootReceiver" android:enabled="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-		<!-- LiquidSmooth End Activities -->
     </application>
 </manifest>

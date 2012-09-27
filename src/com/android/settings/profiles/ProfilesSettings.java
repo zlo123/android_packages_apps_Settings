@@ -54,6 +54,7 @@ public class ProfilesSettings extends SettingsPreferenceFragment {
     private static final String TAB_PROFILES = "profiles";
     private static final String TAB_APPGROUPS = "appgroups";
     private static final String PROFILE_SERVICE = "profile";
+    private static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_ADD_PROFILE = Menu.FIRST + 1;
@@ -80,8 +81,8 @@ public class ProfilesSettings extends SettingsPreferenceFragment {
             Bundle savedInstanceState) {
 
         mContainer = container;
-        if (mTabHost == null) {
-            mTabHost = (TabHost) inflater.inflate(R.layout.profile_tabs, container, false);
+        mTabHost = (TabHost) inflater.inflate(R.layout.profile_tabs, container, false);
+        if (mTabHost != null) {
             mProfileManager = (ProfileManager) getActivity().getSystemService(PROFILE_SERVICE); 
             mActivity = getActivity();
 
@@ -218,7 +219,7 @@ public class ProfilesSettings extends SettingsPreferenceFragment {
         }
 
         boolean enabled = Settings.System.getInt(mActivity.getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
+                SYSTEM_PROFILES_ENABLED, 1) == 1;
 
         String tabId = mTabHost.getCurrentTabTag();
         if (TAB_PROFILES.equals(tabId) && enabled) {

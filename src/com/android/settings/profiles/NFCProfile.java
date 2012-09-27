@@ -46,7 +46,9 @@ public class NFCProfile extends Activity {
 
     private static final String PREFS_PREVIOUS_PROFILE = "previous-profile";
 
-    static final String PROFILE_MIME_TYPE = "liquid/profile";
+    static final String PROFILE_MIME_TYPE = "cm/profile";
+
+    private static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
 
     private ProfileManager mProfileManager;
 
@@ -85,8 +87,7 @@ public class NFCProfile extends Activity {
     private void handleProfileMimeType(byte[] payload) {
         UUID profileUuid = NFCProfileUtils.toUUID(payload);
 
-        boolean enabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
+        boolean enabled = Settings.System.getInt(getContentResolver(), SYSTEM_PROFILES_ENABLED, 1) == 1;
 
         if (enabled) {
             // Only do NFC profile changing if System Profile support is enabled

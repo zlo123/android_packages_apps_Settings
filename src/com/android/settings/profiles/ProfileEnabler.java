@@ -27,6 +27,8 @@ public class ProfileEnabler implements CompoundButton.OnCheckedChangeListener  {
     private boolean mStateMachineEvent;
     private ProfilesSettings mParent;
 
+    private static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
+
     public ProfileEnabler(Context context, ProfilesSettings parent, Switch switch_) {
         mContext = context;
         mSwitch = switch_;
@@ -52,7 +54,7 @@ public class ProfileEnabler implements CompoundButton.OnCheckedChangeListener  {
 
     private void setSwitchState() {
         boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
+                SYSTEM_PROFILES_ENABLED, 1) == 1;
         mStateMachineEvent = true;
         mSwitch.setChecked(enabled);
         mStateMachineEvent = false;
@@ -63,8 +65,7 @@ public class ProfileEnabler implements CompoundButton.OnCheckedChangeListener  {
             return;
         }
         // Handle a switch change
-        Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, isChecked ? 1 : 0);
+        Settings.System.putInt(mContext.getContentResolver(), SYSTEM_PROFILES_ENABLED, isChecked ? 1 : 0);
 
         if (mParent != null) {
             mParent.refreshActiveTab();

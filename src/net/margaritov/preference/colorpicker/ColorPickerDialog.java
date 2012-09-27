@@ -19,7 +19,6 @@ package net.margaritov.preference.colorpicker;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -29,11 +28,12 @@ import android.widget.LinearLayout;
 
 import com.android.settings.R;
 
-public class ColorPickerDialog extends Dialog implements
-        ColorPickerView.OnColorChangedListener, View.OnClickListener {
-    private static final String TAG = "ColorPickerDialog";
-    private static final boolean DEBUG = false;
-
+public class ColorPickerDialog
+        extends
+        Dialog
+        implements
+        ColorPickerView.OnColorChangedListener,
+        View.OnClickListener {
 
     private ColorPickerView mColorPicker;
 
@@ -68,8 +68,11 @@ public class ColorPickerDialog extends Dialog implements
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
+
         View layout = inflater.inflate(R.layout.dialog_color_picker, null);
+
         setContentView(layout);
+
         setTitle(R.string.dialog_color_picker);
 
         mColorPicker = (ColorPickerView) layout.findViewById(R.id.color_picker_view);
@@ -80,8 +83,11 @@ public class ColorPickerDialog extends Dialog implements
         mIcsColor = (Button) layout.findViewById(R.id.ics_color);
 
         ((LinearLayout) mOldColor.getParent()).setPadding(
-                Math.round(mColorPicker.getDrawingOffset()), 0,
-                Math.round(mColorPicker.getDrawingOffset()), 0);
+                Math.round(mColorPicker.getDrawingOffset()),
+                0,
+                Math.round(mColorPicker.getDrawingOffset()),
+                0
+                );
 
         mOldColor.setOnClickListener(this);
         mNewColor.setOnClickListener(this);
@@ -90,21 +96,19 @@ public class ColorPickerDialog extends Dialog implements
         mColorPicker.setColor(color, true);
         mHex.setText(ColorPickerPreference.convertToARGB(color));
         mSetButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 String text = mHex.getText().toString();
-
                 try {
                     int newColor = ColorPickerPreference.convertToColorInt(text);
                     mColorPicker.setColor(newColor, true);
-                    if (DEBUG) Log.d(TAG, String.format("newColor int: %s", newColor));
                 } catch (Exception e) {
-                    if (DEBUG) e.printStackTrace();
                 }
             }
         });
-
         mIcsColor.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 try {

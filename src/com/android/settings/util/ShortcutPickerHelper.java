@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2012 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,6 @@
  */
 
 package com.android.settings.util;
-
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
@@ -33,7 +32,6 @@ import android.os.Parcelable;
 import android.util.Log;
 
 import com.android.settings.R;
-
 public class ShortcutPickerHelper {
 
     private Fragment mParent;
@@ -44,6 +42,14 @@ public class ShortcutPickerHelper {
     public static final int REQUEST_CREATE_SHORTCUT = 102;
 
     public interface OnPickListener {
+        /**
+         * Callback after a shortcut is picked
+         * 
+         * @param uri Intent for the shortcut
+         * @param friendlyName Title
+         * @param icon Icon for the shortcut, or null
+         * @param isApplication true for standard app, false for "shortcut"
+         */
         void shortcutPicked(String uri, String friendlyName, Bitmap icon, boolean isApplication);
     }
 
@@ -70,13 +76,14 @@ public class ShortcutPickerHelper {
 
     public void pickShortcut() {
         Bundle bundle = new Bundle();
+
         ArrayList<String> shortcutNames = new ArrayList<String>();
         shortcutNames.add(mParent.getString(R.string.group_applications));
         bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
 
         ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
         shortcutIcons.add(ShortcutIconResource.fromContext(mParent.getActivity(),
-                R.drawable.ic_launcher));
+                android.R.drawable.sym_def_app_icon));
         bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
 
         Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
@@ -130,7 +137,7 @@ public class ShortcutPickerHelper {
                     final int id = resources.getIdentifier(iconResource.resourceName, null, null);
                     bmp = BitmapFactory.decodeResource(resources, id);
                 } catch (Exception e) {
-                    Log.w("LiquidControl.ShortcutPicker", "Could not load shortcut icon: " + extra);
+                    Log.w("LiquidSplasher.ShortcutPicker", "Could not load shortcut icon: " + extra);
                 }
             }
         }
@@ -148,6 +155,7 @@ public class ShortcutPickerHelper {
                 friendlyName = ai.name;
             }
         }
+
         return friendlyName != null || labelOnly ? friendlyName : intent.toUri(0);
     }
 
@@ -174,7 +182,7 @@ public class ShortcutPickerHelper {
             return getFriendlyShortcutName(intent);
         } catch (URISyntaxException e) {
         }
+
         return uri;
     }
 }
-

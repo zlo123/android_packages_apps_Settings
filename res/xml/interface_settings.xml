@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The CyanogenMod Project
+<!-- Copyright (C) 2012 The LiquidSmooth Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,32 +14,65 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/interface_settings_title">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/interface_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
-        android:key="hardware_keys"
-        android:fragment="com.android.settings.liquid.fragments.HardwareKeys"
-        android:title="@string/hardware_keys_title" />
+    <PreferenceCategory
+        android:key="general_category"
+        android:title="@string/profiles_general_title">
 
-    <PreferenceScreen
-        android:key="notification_drawer"
-        android:fragment="com.android.settings.liquid.fragments.PowerWidget"
-        android:title="@string/notifications_title" />
+        <Preference
+            android:key="custom_carrier_label"
+            android:title="@string/custom_carrier_label_title" />
 
-    <PreferenceScreen
-        android:key="notification_drawer_tablet"
-        android:fragment="com.android.settings.liquid.fragments.TabletPowerWidget"
-        android:title="@string/notifications_title" />
+        <ListPreference
+            android:key="volume_key_cursor_control"
+            android:persistent="false"
+            android:dialogTitle="@string/volume_key_cursor_control_title"
+            android:title="@string/volume_key_cursor_control_title"
+            android:entries="@array/volume_key_cursor_control_entries"
+            android:entryValues="@array/volume_key_cursor_control_values" />
 
-    <PreferenceScreen
-        android:key="power_menu"
-        android:fragment="com.android.settings.liquid.fragments.PowerMenu"
-        android:title="@string/power_menu_title" />
+        <CheckBoxPreference
+            android:key="recent_kill_all"
+            android:title="@string/recent_kill_all"
+            android:summary="@string/recent_kill_all_summary" />
 
-    <PreferenceScreen
-        android:key="status_bar"
-        android:fragment="com.android.settings.liquid.fragments.StatusBar"
-        android:title="@string/status_bar_title" />
+        <CheckBoxPreference
+            android:key="status_bar_ime_switcher"
+            android:title="@string/ime_switcher_notify"
+            android:summary="@string/ime_switcher_notify_summary"
+            android:defaultValue="true"
+            android:persistent="false" />
+
+        <CheckBoxPreference
+            android:key="pref_disable_bootanimation"
+            android:title="@string/pref_disable_bootanimation_title"
+            android:summary="@string/pref_disable_bootanimation_summary" />
+
+        <CheckBoxPreference
+            android:key="kill_app_longpress_back"
+            android:title="@string/kill_app_longpress_back"
+            android:summary="@string/kill_app_longpress_back_summary"/>
+
+        <CheckBoxPreference
+            android:key="alarm"
+            android:title="@string/enable_alarm_icon_title"
+            android:summary="@string/enable_alarm_icon__summary" />
+
+        <CheckBoxPreference
+            android:key="mode_tabletui"
+            android:title="@string/tablet_ui"
+            android:summary="@string/tablet_ui_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="lcd_density_setup"
+            android:title="@string/lcd_density_title"
+            android:summary="@string/lcd_density_summary" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

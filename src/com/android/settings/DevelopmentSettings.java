@@ -68,12 +68,16 @@ import android.widget.Switch;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import com.android.settings.util.CMDProcessor;
+import com.android.settings.util.Helpers;
+
 /*
  * Displays preferences for application developers.
  */
 public class DevelopmentSettings extends PreferenceFragment
         implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener,
                 OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
+
     private static final String TAG = "DevelopmentSettings";
 
     private static final String ENABLE_ADB = "enable_adb";
@@ -82,6 +86,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private static final String KEEP_SCREEN_ON = "keep_screen_on";
     private static final String ALLOW_MOCK_LOCATION = "allow_mock_location";
+    private static final String ALLOW_MOCK_SMS = "allow_mock_sms";
     private static final String HDCP_CHECKING_KEY = "hdcp_checking";
     private static final String HDCP_CHECKING_PROPERTY = "persist.sys.hdcp_checking";
     private static final String ENFORCE_READ_EXTERNAL = "enforce_read_external";
@@ -113,11 +118,49 @@ public class DevelopmentSettings extends PreferenceFragment
             = "immediately_destroy_activities";
     private static final String APP_PROCESS_LIMIT_KEY = "app_process_limit";
 
-    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-
     private static final String SHOW_ALL_ANRS_KEY = "show_all_anrs";
 
     private static final String TAG_CONFIRM_ENFORCE = "confirm_enforce";
+
+    private static final String APPEND_CMD = "echo \"%s=%s\" >> /system/build.prop";
+    private static final String KILL_PROP_CMD = "busybox sed -i \"/%s/D\" /system/build.prop";
+    private static final String REPLACE_CMD = "busybox sed -i \"/%s/ c %<s=%s\" /system/build.prop";
+    private static final String LOGCAT_CMD = "busybox sed -i \"/log/ c %s\" /system/etc/init.d/72propmodder_script";
+    private static final String FIND_CMD = "grep -q \"%s\" /system/build.prop";
+    private static final String REMOUNT_CMD = "busybox mount -o %s,remount -t yaffs2 /dev/block/mtdblock1 /system";
+    private static final String PROP_EXISTS_CMD = "grep -q %s /system/build.prop";
+    private static final String DISABLE = "disable";
+    private static final String SHOWBUILD_PATH = "/system/tmp/showbuild";
+    private static final String INIT_SCRIPT_TEMP_PATH = "/system/tmp/init_script";
+    private static final String WIFI_SCAN_PREF = "pref_wifi_scan_interval";
+    private static final String WIFI_SCAN_PROP = "wifi.supplicant_scan_interval";
+    private static final String WIFI_SCAN_PERSIST_PROP = "persist.wifi_scan_interval";
+    private static final String WIFI_SCAN_DEFAULT = System.getProperty(WIFI_SCAN_PROP);
+    private static final String LCD_DENSITY_PREF = "pref_lcd_density";
+    private static final String LCD_DENSITY_PROP = "ro.sf.lcd_density";
+    private static final String LCD_DENSITY_PERSIST_PROP = "persist.lcd_density";
+    private static final String LCD_DENSITY_DEFAULT = System.getProperty(LCD_DENSITY_PROP);
+    private static final String USB_MODE_PREF = "pref_usb_mode";
+    private static final String USB_MODE_PROP = "ro.default_usb_mode";
+    private static final String USB_MODE_PERSIST_PROP = "persist.usb_mode";
+    private static final String USB_MODE_DEFAULT = System.getProperty(USB_MODE_PROP);
+    private static final String RING_DELAY_PREF = "pref_ring_delay";
+    private static final String RING_DELAY_PROP = "ro.telephony.call_ring.delay";
+    private static final String RING_DELAY_PERSIST_PROP = "persist.call_ring.delay";
+    private static final String RING_DELAY_DEFAULT = System.getProperty(RING_DELAY_PROP);
+    private static final String VM_HEAPSIZE_PREF = "pref_vm_heapsize";
+    private static final String VM_HEAPSIZE_PROP = "dalvik.vm.heapsize";
+    private static final String VM_HEAPSIZE_PERSIST_PROP = "persist.vm_heapsize";
+    private static final String VM_HEAPSIZE_DEFAULT = System.getProperty(VM_HEAPSIZE_PROP);
+    private static final String FAST_UP_PREF = "pref_fast_up";
+    private static final String FAST_UP_PROP = "ro.ril.hsxpa";
+    private static final String FAST_UP_PERSIST_PROP = "persist.fast_up";
+    private static final String FAST_UP_DEFAULT = System.getProperty(FAST_UP_PROP);
+    private static final String MOD_BUTTON_TEXT = "doMod";
+    private static final String SLEEP_PREF = "pref_sleep";
+    private static final String SLEEP_PROP = "pm.sleep_mode";
+    private static final String SLEEP_PERSIST_PROP = "persist.sleep";
+    private static final String SLEEP_DEFAULT = System.getProperty(SLEEP_PROP);
 
     private static final int RESULT_DEBUG_APP = 1000;
 
@@ -136,6 +179,7 @@ public class DevelopmentSettings extends PreferenceFragment
     private CheckBoxPreference mKeepScreenOn;
     private CheckBoxPreference mEnforceReadExternal;
     private CheckBoxPreference mAllowMockLocation;
+    private CheckBoxPreference mAllowMockSMS;
     private PreferenceScreen mPassword;
 
     private String mDebugApp;
@@ -161,10 +205,16 @@ public class DevelopmentSettings extends PreferenceFragment
     private ListPreference mAppProcessLimit;
 
     private CheckBoxPreference mShowAllANRs;
-    private CheckBoxPreference mKillAppLongpressBack;
 
     private ListPreference mRootAccess;
     private Object mSelectedRootValue;
+                    
+    private ListPreference mWifiScanPref;
+    private ListPreference mLcdDensityPref;
+    private ListPreference mRingDelayPref;
+    private ListPreference mVmHeapsizePref;
+    private ListPreference mFastUpPref;
+    private ListPreference mSleepPref;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
     private final ArrayList<CheckBoxPreference> mResetCbPrefs
@@ -179,6 +229,14 @@ public class DevelopmentSettings extends PreferenceFragment
     private Dialog mAdbTcpDialog;
     private Dialog mRootDialog;
 
+    // To track whether Yes was clicked in the adb warning dialog
+    private boolean mOkClicked;
+    private Dialog mOkDialog;
+    private String mCurrentDialog;
+
+    //handler for command processor
+    private final CMDProcessor cmd = new CMDProcessor();
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -188,7 +246,7 @@ public class DevelopmentSettings extends PreferenceFragment
                 ServiceManager.getService(Context.BACKUP_SERVICE));
         mDpm = (DevicePolicyManager)getActivity().getSystemService(Context.DEVICE_POLICY_SERVICE);
 
-        addPreferencesFromResource(R.xml.development_prefs);
+        addPreferencesFromResource(R.xml.development_settings);
 
         mEnableAdb = findAndInitCheckboxPref(ENABLE_ADB);
         mAdbOverNetwork = findAndInitCheckboxPref(ADB_TCPIP);
@@ -196,8 +254,28 @@ public class DevelopmentSettings extends PreferenceFragment
         mKeepScreenOn = findAndInitCheckboxPref(KEEP_SCREEN_ON);
         mEnforceReadExternal = findAndInitCheckboxPref(ENFORCE_READ_EXTERNAL);
         mAllowMockLocation = findAndInitCheckboxPref(ALLOW_MOCK_LOCATION);
+        mAllowMockSMS = findAndInitCheckboxPref(ALLOW_MOCK_SMS);
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
+
+        mWifiScanPref = (ListPreference) findPreference(WIFI_SCAN_PREF);
+        mAllPrefs.add(mWifiScanPref);
+        mWifiScanPref.setOnPreferenceChangeListener(this);
+        mLcdDensityPref = (ListPreference) findPreference(LCD_DENSITY_PREF);
+        mAllPrefs.add(mLcdDensityPref);
+        mLcdDensityPref.setOnPreferenceChangeListener(this);
+        mRingDelayPref = (ListPreference) findPreference(RING_DELAY_PREF);
+        mAllPrefs.add(mRingDelayPref);
+        mRingDelayPref.setOnPreferenceChangeListener(this);
+        mVmHeapsizePref = (ListPreference) findPreference(VM_HEAPSIZE_PREF);
+        mAllPrefs.add(mVmHeapsizePref);
+        mVmHeapsizePref.setOnPreferenceChangeListener(this);
+        mFastUpPref = (ListPreference) findPreference(FAST_UP_PREF);
+        mAllPrefs.add(mFastUpPref);
+        mFastUpPref.setOnPreferenceChangeListener(this);
+        mSleepPref = (ListPreference) findPreference(SLEEP_PREF);
+        mAllPrefs.add(mSleepPref);
+        mSleepPref.setOnPreferenceChangeListener(this);
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);
         mAllPrefs.add(mDebugAppPref);
@@ -239,11 +317,10 @@ public class DevelopmentSettings extends PreferenceFragment
         mAllPrefs.add(mAppProcessLimit);
         mAppProcessLimit.setOnPreferenceChangeListener(this);
 
-        mShowAllANRs = (CheckBoxPreference) findPreference(SHOW_ALL_ANRS_KEY);
+        mShowAllANRs = (CheckBoxPreference) findPreference(
+                SHOW_ALL_ANRS_KEY);
         mAllPrefs.add(mShowAllANRs);
         mResetCbPrefs.add(mShowAllANRs);
-
-        mKillAppLongpressBack = findAndInitCheckboxPref(KILL_APP_LONGPRESS_BACK);
 
         Preference hdcpChecking = findPreference(HDCP_CHECKING_KEY);
         if (hdcpChecking != null) {
@@ -256,6 +333,7 @@ public class DevelopmentSettings extends PreferenceFragment
         if (!removeRootOptionsIfRequired()) {
             mAllPrefs.add(mRootAccess);
         }
+        updateScreen();
     }
 
     private CheckBoxPreference findAndInitCheckboxPref(String key) {
@@ -362,8 +440,6 @@ public class DevelopmentSettings extends PreferenceFragment
             mLastEnabledState = true;
             setPrefsEnabledState(mLastEnabledState);
         }
-
-        updateKillAppLongpressBackOptions();
     }
 
     void updateCheckBox(CheckBoxPreference checkBox, boolean value) {
@@ -385,6 +461,8 @@ public class DevelopmentSettings extends PreferenceFragment
         updateCheckBox(mEnforceReadExternal, isPermissionEnforced(context, READ_EXTERNAL_STORAGE));
         updateCheckBox(mAllowMockLocation, Settings.Secure.getInt(cr,
                 Settings.Secure.ALLOW_MOCK_LOCATION, 0) != 0);
+        updateCheckBox(mAllowMockSMS, Settings.Secure.getInt(cr,
+                Settings.Secure.ALLOW_MOCK_SMS, 0) != 0);
         updateHdcpValues();
         updatePasswordSummary();
         updateDebuggerOptions();
@@ -443,7 +521,6 @@ public class DevelopmentSettings extends PreferenceFragment
             }
         }
         resetDebuggerOptions();
-        resetRootAccessOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -508,17 +585,6 @@ public class DevelopmentSettings extends PreferenceFragment
         }
     }
 
-    private void writeKillAppLongpressBackOptions() {
-        Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.Secure.KILL_APP_LONGPRESS_BACK,
-                mKillAppLongpressBack.isChecked() ? 1 : 0);
-    }
-
-    private void updateKillAppLongpressBackOptions() {
-        mKillAppLongpressBack.setChecked(Settings.Secure.getInt(
-            getActivity().getContentResolver(), Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
-    }
-        
     private void updatePasswordSummary() {
         try {
             if (mBackupManager.hasBackupPassword()) {
@@ -652,7 +718,6 @@ public class DevelopmentSettings extends PreferenceFragment
                 data.writeInt(showUpdates);
                 flinger.transact(1002, data, null, 0);
                 data.recycle();
-
                 updateFlingerOptions();
             }
         } catch (RemoteException ex) {
@@ -669,7 +734,6 @@ public class DevelopmentSettings extends PreferenceFragment
                 data.writeInt(disableOverlays);
                 flinger.transact(1008, data, null, 0);
                 data.recycle();
-
                 updateFlingerOptions();
             }
         } catch (RemoteException ex) {
@@ -874,9 +938,7 @@ public class DevelopmentSettings extends PreferenceFragment
             if (isChecked != mLastEnabledState) {
                 if (isChecked) {
                     mDialogClicked = false;
-                    if (mEnableDialog != null) {
-                        dismissDialogs();
-                    }
+                    if (mEnableDialog != null) dismissDialogs();
                     mEnableDialog = new AlertDialog.Builder(getActivity()).setMessage(
                             getActivity().getResources().getString(
                                     R.string.dev_settings_warning_message))
@@ -953,7 +1015,6 @@ public class DevelopmentSettings extends PreferenceFragment
                         Settings.Secure.ADB_PORT, -1);
                 updateAdbOverNetwork();
             }
-
         } else if (preference == mAdbNotify) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ADB_NOTIFY,
@@ -973,6 +1034,10 @@ public class DevelopmentSettings extends PreferenceFragment
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ALLOW_MOCK_LOCATION,
                     mAllowMockLocation.isChecked() ? 1 : 0);
+        } else if (preference == mAllowMockSMS) {
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.ALLOW_MOCK_SMS,
+                    mAllowMockSMS.isChecked() ? 1 : 0);
         } else if (preference == mDebugAppPref) {
             startActivityForResult(new Intent(getActivity(), AppPicker.class), RESULT_DEBUG_APP);
         } else if (preference == mWaitForDebugger) {
@@ -1001,8 +1066,6 @@ public class DevelopmentSettings extends PreferenceFragment
             writeShowHwScreenUpdatesOptions();
         } else if (preference == mDebugLayout) {
             writeDebugLayoutOptions();
-        } else if (preference == mKillAppLongpressBack) {
-            writeKillAppLongpressBackOptions();
         }
 
         return false;
@@ -1049,6 +1112,26 @@ public class DevelopmentSettings extends PreferenceFragment
                 writeRootAccessOptions(newValue);
             }
             return true;
+        } else if (newValue != null) {
+            if (preference == mWifiScanPref) {
+                return doMod(WIFI_SCAN_PERSIST_PROP, WIFI_SCAN_PROP,
+                                newValue.toString());
+            } else if (preference == mLcdDensityPref) {
+                return doMod(LCD_DENSITY_PERSIST_PROP, LCD_DENSITY_PROP,
+                                newValue.toString());
+            } else if (preference == mRingDelayPref) {
+                return doMod(RING_DELAY_PERSIST_PROP, RING_DELAY_PROP,
+                                newValue.toString());
+            } else if (preference == mVmHeapsizePref) {
+                return doMod(VM_HEAPSIZE_PERSIST_PROP, VM_HEAPSIZE_PROP,
+                                newValue.toString());
+            } else if (preference == mFastUpPref) {
+                return doMod(FAST_UP_PERSIST_PROP, FAST_UP_PROP,
+                                newValue.toString());
+            } else if (preference == mSleepPref) {
+                return doMod(SLEEP_PERSIST_PROP, SLEEP_PROP,
+                                newValue.toString());
+            }
         }
         return false;
     }
@@ -1192,7 +1275,6 @@ public class DevelopmentSettings extends PreferenceFragment
                     ((DevelopmentSettings) getTargetFragment()).updateAllOptions();
                 }
             });
-
             return builder.create();
         }
     }
@@ -1213,6 +1295,110 @@ public class DevelopmentSettings extends PreferenceFragment
                     .setPermissionEnforced(READ_EXTERNAL_STORAGE, enforced);
         } catch (RemoteException e) {
             throw new RuntimeException("Problem talking with PackageManager", e);
+        }
+    }
+
+    private boolean doMod(String persist, String key, String value) {
+                        
+        if (persist != null) {
+            SystemProperties.set(persist, value);
+        }
+        backupBuildProp();
+        if (!mount("rw")) {
+            throw new RuntimeException("Could not remount /system rw");
+        }
+        boolean success = false;
+        try {
+            if (!propExists(key) && value.equals(DISABLE)) {
+            } else if (propExists(key)) {
+                if (value.equals(DISABLE)) {
+                    success = cmd.su.runWaitFor(String.format(KILL_PROP_CMD, key)).success();
+                } else {
+                    success = cmd.su.runWaitFor(String.format(REPLACE_CMD, key, value)).success();
+                }
+            } else {
+                success = cmd.su.runWaitFor(String.format(APPEND_CMD, key, value)).success();
+            }
+            if (!success) {
+                restoreBuildProp();
+            } else {
+                updateScreen();
+            }
+        } finally {
+            mount("ro");
+        }
+        return success;
+    }
+
+    public boolean mount(String read_value) {
+        return cmd.su.runWaitFor(String.format(REMOUNT_CMD, read_value)).success();
+    }
+                    
+    public boolean propExists(String prop) {
+        return cmd.su.runWaitFor(String.format(PROP_EXISTS_CMD, prop)).success();
+    }
+                    
+    public void updateShowBuild() {
+        try {
+            mount("rw");
+            cmd.su.runWaitFor("cp -f /system/build.prop " + SHOWBUILD_PATH).success();
+            cmd.su.runWaitFor("chmod 777 " + SHOWBUILD_PATH).success();
+        } finally {
+            mount("ro");
+        }
+    }
+                    
+    public boolean backupBuildProp() {
+        return cmd.su.runWaitFor("cp /system/build.prop /system/tmp/pm_build.prop").success();
+    }
+                    
+    public boolean restoreBuildProp() {
+        return cmd.su.runWaitFor("cp /system/tmp/pm_build.prop /system/build.prop").success();
+    }
+                    
+    public void updateScreen() {
+        //update all the summaries
+        String wifi = Helpers.findBuildPropValueOf(WIFI_SCAN_PROP);
+        if (!wifi.equals(DISABLE)) {
+            mWifiScanPref.setValue(wifi);
+            mWifiScanPref.setSummary(String.format(getString(R.string.pref_wifi_scan_alt_summary), wifi));
+        } else {
+            mWifiScanPref.setValue(WIFI_SCAN_DEFAULT);
+        }
+        String lcd = Helpers.findBuildPropValueOf(LCD_DENSITY_PROP);
+        if (!lcd.equals(DISABLE)) {
+            mLcdDensityPref.setValue(lcd);
+            mLcdDensityPref.setSummary(String.format(getString(R.string.pref_lcd_density_alt_summary), lcd));
+        } else {
+            mLcdDensityPref.setValue(LCD_DENSITY_DEFAULT);
+        }
+        String ring = Helpers.findBuildPropValueOf(RING_DELAY_PROP);
+        if (!ring.equals(DISABLE)) {
+            mRingDelayPref.setValue(ring);
+            mRingDelayPref.setSummary(String.format(getString(R.string.pref_ring_delay_alt_summary), ring));
+        } else {
+            mRingDelayPref.setValue(RING_DELAY_DEFAULT);
+        }
+        String vm = Helpers.findBuildPropValueOf(VM_HEAPSIZE_PROP);
+        if (!vm.equals(DISABLE)) {
+            mVmHeapsizePref.setValue(vm);
+            mVmHeapsizePref.setSummary(String.format(getString(R.string.pref_vm_heapsize_alt_summary), vm));
+        } else {
+            mVmHeapsizePref.setValue(VM_HEAPSIZE_DEFAULT);
+        }
+        String fast = Helpers.findBuildPropValueOf(FAST_UP_PROP);
+        if (!fast.equals(DISABLE)) {
+            mFastUpPref.setValue(fast);
+            mFastUpPref.setSummary(String.format(getString(R.string.pref_fast_up_alt_summary), fast));
+        } else {
+            mFastUpPref.setValue(FAST_UP_DEFAULT);
+        }
+        String sleep = Helpers.findBuildPropValueOf(SLEEP_PROP);
+        if (!sleep.equals(DISABLE)) {
+            mSleepPref.setValue(sleep);
+            mSleepPref.setSummary(String.format(getString(R.string.pref_sleep_alt_summary), sleep));
+        } else {
+            mSleepPref.setValue(SLEEP_DEFAULT);
         }
     }
 }
