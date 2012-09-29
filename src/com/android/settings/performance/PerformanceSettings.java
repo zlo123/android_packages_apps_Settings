@@ -32,8 +32,8 @@ import com.android.settings.Utils;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.Helpers;
 
-public class KernelSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+public class PerformanceSettings extends SettingsPreferenceFragment implements
+                OnPreferenceChangeListener {
 
     public static final String KSM_RUN_FILE = "/sys/kernel/mm/ksm/run";
 
@@ -80,7 +80,7 @@ public class KernelSettings extends SettingsPreferenceFragment implements
             int bropen, brclose;
             String currentIOScheduler = null;
 
-            addPreferencesFromResource(R.xml.kernel_settings);
+            addPreferencesFromResource(R.xml.performance_settings);
 
             PreferenceScreen prefSet = getPreferenceScreen();
 
@@ -142,7 +142,6 @@ public class KernelSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-
         if (preference == mKSMPref) {
             Utils.fileWriteOneLine(KSM_RUN_FILE, mKSMPref.isChecked() ? "1" : "0");
             return true;

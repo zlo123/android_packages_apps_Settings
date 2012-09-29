@@ -4322,7 +4322,7 @@
     <string name="statusbar_settings_title">Statusbar</string>
 
     <!-- Optimization | Titles -->
-    <string name="kernel_settings_title">Kernel</string>
+    <string name="performance_settings_title">Performance</string>
     <string name="processor_settings_title">Processor</string>
     <string name="startup_settings_title">Startup</string>
 
@@ -4420,28 +4420,6 @@
     <string name="pref_volume_wake_title">Volume rocker wake</string>
     <string name="pref_volume_wake_summary">Pressing the volume rocker up/down will wake the device</string>
 
-    <!-- Customization | Hardware Keys -->
-    <string name="hardware_keys_title">Hardware keys</string>
-    <string name="hardware_keys_bindings_title">Key actions</string>
-    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
-    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
-    <string name="hardware_keys_menu_press_title">Menu key</string>
-    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
-    <string name="hardware_keys_assist_press_title">Search key</string>
-    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
-    <string name="hardware_keys_app_switch_press_title">App switch key</string>
-    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
-    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
-    <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
-    <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
-    <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
-    <string name="hardware_keys_action_nothing">No action</string>
-    <string name="hardware_keys_action_menu">Open/close menu</string>
-    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
-    <string name="hardware_keys_action_search">Search assistant</string>
-    <string name="hardware_keys_action_voice_search">Voice search</string>
-    <string name="hardware_keys_action_in_app_search">In-app search</string>
-
     <!-- Customization | Interface -->
     <string name="misc">Misc</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
@@ -4468,7 +4446,7 @@
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
 
-    <!-- Customization | Lockscreen -->
+    <!-- Interface | Lockscreen -->
     <string name="lockscreen_style_options_title">Lockscreen style</string>
     <string name="lockscreen_custom_background_title">Background</string>
     <string name="lockscreen_custom_background_dialog_title">Choose color</string>
@@ -4600,6 +4578,28 @@
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
 
+    <!-- Customization | Hardware Keys -->
+    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_bindings_title">Key actions</string>
+    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
+    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
+    <string name="hardware_keys_menu_press_title">Menu key</string>
+    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
+    <string name="hardware_keys_assist_press_title">Search key</string>
+    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
+    <string name="hardware_keys_app_switch_press_title">App switch key</string>
+    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
+    <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
+    <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
+    <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
+    <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_menu">Open/close menu</string>
+    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
+    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
+
     <!-- Customization | Navigation -->
     <string name="header_navbar">Navigation bar</string>
     <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
@@ -4653,7 +4653,7 @@
     <string name="button_transparency_title">Navigation button transparency</string>
     <string name="menu_nav_bar_reset">Reset navigation bar</string>
     <string name="dpi">DPI</string>
-    <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
+    <string name="navbar_ring_cat">Navbar Ring Targets</string>
     <string name="interface_navring">Ring Targets</string>
     <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
     <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
@@ -4829,6 +4829,8 @@
     <string name="toggleWimax">WiMax</string>
 
     <!-- Notification | Statusbar -->
+    <string name="status_bar_transparency_title">Statusbar Transparency</string>
+    <string name="status_bar_transparency_summary">Adjust statusbar transparency</string>
     <string name="battery_icon_category">Battery icon options</string>
     <string name="battery_icon">Battery icon style</string>
     <string name="battery_not_title">Battery icon in notifications</string>
@@ -4861,10 +4863,8 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications</string>
 
-    <!-- Optimization | Kernel -->
-    <string name="overclocking_title">Overclocking</string>
-    <string name="kernel_controls_title">Kernel controls</string>
-    <string name="kernel_controls_summary">Customize the extended features of the kernel</string>
+    <!-- Optimization | Performance -->
+    <string name="performance_title">Overclocking</string>
     <string name="memory_controls_title">Memory</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Compress memory for increased virtual capacity (requires reboot)</string>
