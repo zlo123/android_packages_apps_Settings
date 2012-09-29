@@ -27,6 +27,7 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -69,6 +70,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
 
     public static final String TAG = "InterfaceSettings";
 
+    private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
+    private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_IME_SWITCHER = "status_bar_ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
@@ -80,6 +83,15 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     private static final String PREF_ALARM_ENABLE = "alarm";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
 
+    private static final int REQUEST_PICK_WALLPAPER = 201;
+    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
+    private static final int SELECT_ACTIVITY = 4;
+    private static final int SELECT_WALLPAPER = 5;
+
+    private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
+
+    Preference mNotificationWallpaper;
+    Preference mWallpaperAlpha;
     Preference mCustomLabel;
     CheckBoxPreference mStatusBarImeSwitcher;
     CheckBoxPreference mRecentKillAll;
@@ -90,6 +102,11 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     CheckBoxPreference mTabletui;
     Preference mLcdDensity;
 
+    Random randomGenerator = new Random();
+
+    private File customnavTemp;
+
+    private int seekbarProgress;
     String mCustomLabelText = null;
 
     int newDensityValue;
@@ -114,6 +131,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         }
 
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
+
+        customnavTemp = new File(getActivity().getFilesDir()+"notification_wallpaper.jpg");
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -150,6 +169,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                     Settings.System.MODE_TABLET_UI, false));
 
+        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
+
+        mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
 
@@ -167,6 +190,15 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         String disableBootanimation = SystemProperties.get
                 (DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
         mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
+
+        if (mTablet) {
+            prefs.removePreference(mNotificationWallpaper);
+            prefs.removePreference(mWallpaperAlpha);
+        } else {
+            prefs.removePreference(mTabletui);
+        }
+        
+        setHasOptionsMenu(true);
     }
 
     private void writeKillAppLongpressBackOptions() {
@@ -216,6 +248,86 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         } else if (preference == mDisableBootanimPref) {
             SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
                                  mDisableBootanimPref.isChecked() ? "1" : "0");
+        } else if (preference == mNotificationWallpaper) {
+            Display display = getActivity().getWindowManager().getDefaultDisplay();
+            int width = display.getWidth();
+            int height = display.getHeight();
+            Rect rect = new Rect();
+            Window window = getActivity().getWindow();
+            window.getDecorView().getWindowVisibleDisplayFrame(rect);
+            int statusBarHeight = rect.top;
+            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
+            int titleBarHeight = contentViewTop - statusBarHeight;
+
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+            intent.setType("image/*");
+            intent.putExtra("crop", "true");
+            boolean isPortrait = getResources()
+                    .getConfiguration().orientation
+                    == Configuration.ORIENTATION_PORTRAIT;
+            intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
+            intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
+            intent.putExtra("outputX", width);
+            intent.putExtra("outputY", height);
+            intent.putExtra("scale", true);
+            intent.putExtra("scaleUpIfNeeded", true);
+            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+            try {
+                customnavTemp.createNewFile();
+                customnavTemp.setWritable(true, false);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(customnavTemp));
+                intent.putExtra("return-data", false);
+                startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+            } catch (IOException e) {
+            } catch (ActivityNotFoundException e) {
+            }
+            return true;
+        } else if (preference == mWallpaperAlpha) {
+            Resources res = getActivity().getResources();
+            String cancel = res.getString(R.string.cancel);
+            String ok = res.getString(R.string.ok);
+            String title = res.getString(R.string.alpha_dialog_title);
+            float savedProgress = Settings.System.getFloat(getActivity()
+                        .getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
+
+            LayoutInflater factory = LayoutInflater.from(getActivity());
+            final View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
+            SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
+            OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekbar, int progress, boolean fromUser) {
+                    seekbarProgress = seekbar.getProgress();
+                }
+                @Override
+                public void onStopTrackingTouch(SeekBar seekbar) {
+                }
+                @Override
+                public void onStartTrackingTouch(SeekBar seekbar) {
+                }
+            };
+            seekbar.setProgress((int) (savedProgress * 100));
+            seekbar.setMax(100);
+            seekbar.setOnSeekBarChangeListener(seekBarChangeListener);
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(title)
+                    .setView(alphaDialog)
+                    .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // nothing
+                }
+            })
+            .setPositiveButton(ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    float val = ((float) seekbarProgress / 100);
+                    Settings.System.putFloat(getActivity().getContentResolver(),
+                        Settings.System.NOTIF_WALLPAPER_ALPHA, val);
+                    Helpers.restartSystemUI();
+                }
+            })
+            .create()
+            .show();
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
@@ -275,6 +387,62 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
             return true;
         }
+
         return false;
+    }
+
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.user_interface, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.remove_wallpaper:
+                if (customnavTemp.exists()) {
+                    customnavTemp.delete();
+                }
+                Helpers.restartSystemUI();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == REQUEST_PICK_WALLPAPER) {
+
+                FileOutputStream wallpaperStream = null;
+                try {
+                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
+                            Context.MODE_WORLD_READABLE);
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
+                }
+
+                Uri selectedImageUri = Uri.fromFile(customnavTemp);
+                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
+
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
+                Helpers.restartSystemUI();
+            }
+        }
+    }
+
+    public void copy(File src, File dst) throws IOException {
+        InputStream in = new FileInputStream(src);
+        FileOutputStream out = new FileOutputStream(dst);
+
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+            out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
     }
 }
