@@ -4588,6 +4588,7 @@
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
     <string name="lockscreen_see_through_title">See through</string>
     <string name="lockscreen_see_through_summary">Allows to see the activity behind the lock screen</string>
+
     <!-- Customization | Hardware Keys -->
     <string name="hardware_keys_title">Hardware keys</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
@@ -4875,7 +4876,7 @@
     <string name="status_bar_notif_count_summary">Display number of pending notifications</string>
 
     <!-- Optimization | Performance -->
-    <string name="performance_title">Overclocking</string>
+    <string name="overclocking_title">Overclocking</string>
     <string name="memory_controls_title">Memory</string>
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Compress memory for increased virtual capacity (requires reboot)</string>

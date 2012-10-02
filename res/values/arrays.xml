@@ -1005,7 +1005,59 @@
         <item>26</item>
     </string-array>
 
-    <string-array name="lockscreen_delay_entries">
+    <string-array name="entries_status_bar_am_pm">
+        <item>Normal</item>
+        <item>Small</item>
+        <item>None (default)</item>
+    </string-array>
+
+    <string-array name="values_status_bar_am_pm" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="entries_transparency">
+        <item>0%</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+        <item>100%</item>
+    </string-array>
+
+    <string-array name="values_transparency" translatable="false">
+        <item>100</item>
+        <item>75</item>
+        <item>50</item>
+        <item>25</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="entries_status_bar_battery">
+        <item>Icon (default)</item>
+        <item>Percentage</item>
+        <item>Hidden</item>
+    </string-array>
+
+    <string-array name="values_status_bar_battery" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+     <string-array name="entries_status_bar_signal" translatable="false">
+        <item>@string/status_bar_signal_text_show_bars</item>
+        <item>@string/status_bar_signal_text_show_text</item>
+        <item>@string/status_bar_signal_text_hidden</item>
+     </string-array>
+
+     <string-array name="values_status_bar_signal" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="lockscreen_delay_entries" translatable="false">
         <item>@string/slide_lock_delay_none</item>
         <item>@string/slide_lock_delay_1s</item>
         <item>@string/slide_lock_delay_5s</item>
