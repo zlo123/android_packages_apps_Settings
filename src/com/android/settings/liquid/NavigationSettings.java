@@ -567,6 +567,9 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
                 Settings.System.putString(
                         getContentResolver(),
+                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex], "");
+                Settings.System.putString(
+                        getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex],
                         Uri.fromFile(
                                 new File(getActivity().getApplicationContext().getFilesDir(), iconName)).getPath());
@@ -801,6 +804,10 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
                         return; // NOOOOO
                     }
                     bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                    Settings.System
+                            .putString(
+                                    getContentResolver(),
+                                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
                     Settings.System
                             .putString(
                                     getContentResolver(),
