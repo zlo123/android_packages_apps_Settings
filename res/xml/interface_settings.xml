@@ -13,7 +13,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/interface_settings_title"
@@ -81,6 +80,12 @@
             android:key="lcd_density_setup"
             android:title="@string/lcd_density_title"
             android:summary="@string/lcd_density_summary" />
+
+        <CheckBoxPreference
+            android:key="use_alt_resolver"
+            android:title="@string/alt_resolver"
+            android:summary="@string/alt_resolver_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

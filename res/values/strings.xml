@@ -4454,6 +4454,8 @@
     <string name="pref_disable_bootanimation_summary">Disable animation for fast boot</string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
+    <string name="alt_resolver">Use Alt Default App Grid</string>
+    <string name="alt_resolver_summary">Use Alternate (GB style) Default App Picker</string>
 
     <!-- Interface | Lockscreen -->
     <string name="lockscreen_style_options_title">Lockscreen style</string>

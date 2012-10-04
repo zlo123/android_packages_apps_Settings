@@ -82,6 +82,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
     private static final String PREF_ALARM_ENABLE = "alarm";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
+    private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -101,6 +102,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     CheckBoxPreference mAlarm;
     CheckBoxPreference mTabletui;
     Preference mLcdDensity;
+    CheckBoxPreference mUseAltResolver;
 
     Random randomGenerator = new Random();
 
@@ -144,22 +146,22 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             mStatusBarImeSwitcher = (CheckBoxPreference) findPreference(KEY_IME_SWITCHER);
             if (mStatusBarImeSwitcher != null) {
                 mStatusBarImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                        Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
+                    Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
             }
         }
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
+                    Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
 
         mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
         mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
         mVolumeKeyCursorControl.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0)));
+                    .getContentResolver(), Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0)));
         mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
-                updateKillAppLongpressBackOptions();
+                    updateKillAppLongpressBackOptions();
         
         mAlarm = (CheckBoxPreference) findPreference(PREF_ALARM_ENABLE);
         mAlarm.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -168,6 +170,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
         mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                     Settings.System.MODE_TABLET_UI, false));
+
+        mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
+            mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                    Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
@@ -361,6 +367,11 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             ((PreferenceActivity) getActivity())
             .startPreferenceFragment(new DensityChanger(), true);
             return true;
+        } else if (preference == mUseAltResolver) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
+                    isCheckBoxPrefernceChecked(preference));
+            return ture;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -442,6 +453,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         while ((len = in.read(buf)) > 0) {
             out.write(buf, 0, len);
         }
+
         in.close();
         out.close();
     }
