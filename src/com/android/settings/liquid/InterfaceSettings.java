@@ -368,10 +368,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             .startPreferenceFragment(new DensityChanger(), true);
             return true;
         } else if (preference == mUseAltResolver) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.ACTIVITY_RESOLVER_USE_ALT,
-                    isCheckBoxPrefernceChecked(preference));
-            return ture;
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

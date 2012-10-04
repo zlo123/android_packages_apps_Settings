@@ -84,9 +84,9 @@
         android:title="@string/optimization_category_title">
 
 		<PreferenceScreen
-		    android:key="@+id/kernel_settings"
-		    android:title="@string/kernel_settings_title"
-		    android:fragment="com.android.settings.performance.KernelSettings" />
+		    android:key="@+id/performance_settings"
+		    android:title="@string/performance_settings_title"
+		    android:fragment="com.android.settings.performance.PerformanceSettings" />
 
 		<PreferenceScreen
 		    android:key="@+id/processor_settings"

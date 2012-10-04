@@ -137,7 +137,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
             case 1:
                 mUSBFastCharge.setSummary("No data transfer via USB will be allowed till turned off");
                 break;
-
         }
     }
 
@@ -166,7 +165,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
                 return true;
             }
         }
-
         return false;
     }
 

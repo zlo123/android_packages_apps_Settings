@@ -25,7 +25,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.android.settings.performance.ProcessorSettings;
-import com.android.settings.performance.KernelSettings;
+import com.android.settings.performance.PerformanceSettings;
 import com.android.settings.Utils;
 
 import java.util.Arrays;
@@ -57,7 +57,7 @@ public class BootReceiver extends BroadcastReceiver {
         } else {
             SystemProperties.set(IOSCHED_SETTINGS_PROP, "false");
         }
-        if (Utils.fileExists(KernelSettings.KSM_RUN_FILE)) {
+        if (Utils.fileExists(PerformanceSettings.KSM_RUN_FILE)) {
             if (SystemProperties.getBoolean(KSM_SETTINGS_PROP, false) == false
                 && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
                 SystemProperties.set(KSM_SETTINGS_PROP, "true");
@@ -111,13 +111,13 @@ public class BootReceiver extends BroadcastReceiver {
     private void configureIOSched(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         
-        if (prefs.getBoolean(KernelSettings.SOB_PREF, false) == false) {
+        if (prefs.getBoolean(PerformanceSettings.SOB_PREF, false) == false) {
             Log.i(TAG, "Restore disabled by user preference.");
             return;
         }
         
-        String ioscheduler = prefs.getString(KernelSettings.IOSCHED_PREF, null);
-        String availableIOSchedulersLine = Utils.fileReadOneLine(KernelSettings.IOSCHED_LIST_FILE);
+        String ioscheduler = prefs.getString(PerformanceSettings.IOSCHED_PREF, null);
+        String availableIOSchedulersLine = Utils.fileReadOneLine(PerformanceSettings.IOSCHED_LIST_FILE);
         boolean noSettings = ((availableIOSchedulersLine == null) || (ioscheduler == null));
         List<String> ioschedulers = null;
         
@@ -128,7 +128,7 @@ public class BootReceiver extends BroadcastReceiver {
                 ioschedulers = Arrays.asList(availableIOSchedulersLine.replace("[", "").replace("]", "").split(" "));
             }
             if (ioscheduler != null && ioschedulers != null && ioschedulers.contains(ioscheduler)) {
-                Utils.fileWriteOneLine(KernelSettings.IOSCHED_LIST_FILE, ioscheduler);
+                Utils.fileWriteOneLine(PerformanceSettings.IOSCHED_LIST_FILE, ioscheduler);
             }
             Log.d(TAG, "I/O scheduler settings restored.");
         }
@@ -137,9 +137,9 @@ public class BootReceiver extends BroadcastReceiver {
     private void configureKSM(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         
-        boolean ksm = prefs.getBoolean(KernelSettings.KSM_PREF, false);
+        boolean ksm = prefs.getBoolean(PerformanceSettings.KSM_PREF, false);
         
-        Utils.fileWriteOneLine(KernelSettings.KSM_RUN_FILE, ksm ? "1" : "0");
+        Utils.fileWriteOneLine(PerformanceSettings.KSM_RUN_FILE, ksm ? "1" : "0");
         Log.d(TAG, "KSM settings restored.");
     }
 }

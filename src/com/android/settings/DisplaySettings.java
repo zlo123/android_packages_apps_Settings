@@ -51,31 +51,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_SCREEN_SAVER = "screensaver";
-<<<<<<< HEAD
-=======
-    private static final String KEY_BATTERY_LIGHT = "battery_light";
-    private static final String KEY_DISPLAY_ROTATION = "display_rotation";
-    private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
-    private static final String KEY_ELECTRON_BEAM_ANIMATION_ON = "electron_beam_animation_on";
-    private static final String KEY_ELECTRON_BEAM_ANIMATION_OFF = "electron_beam_animation_off";
-    private static final String KEY_ELECTRON_BEAM_CATEGORY_ANIMATION = "category_animation_options";
-    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
-    private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
-
-    private static final String ROTATION_ANGLE_0 = "0";
-    private static final String ROTATION_ANGLE_90 = "90";
-    private static final String ROTATION_ANGLE_180 = "180";
-    private static final String ROTATION_ANGLE_270 = "270";
-    private static final String ROTATION_ANGLE_DELIM = ", ";
-    private static final String ROTATION_ANGLE_DELIM_FINAL = " & ";
-
-    private CheckBoxPreference mLockScreenRotation;
-    private CheckBoxPreference mVolumeWake;
-    private CheckBoxPreference mElectronBeamAnimationOn;
-    private CheckBoxPreference mElectronBeamAnimationOff;
-    private PreferenceScreen mNotificationPulse;
-    private PreferenceScreen mBatteryPulse;
->>>>>>> 1cdb4fa... Allow localization for lockscreen rotation summary
 
     private CheckBoxPreference mAccelerometer;
     private ListPreference mFontSizePref;
@@ -141,41 +116,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
-<<<<<<< HEAD
-=======
-        if (!rotationEnabled) {
-            summary.append(getString(R.string.display_rotation_disabled));
-        } else {
-            ArrayList<String> rotationList = new ArrayList<String>();
-            String delim = "";
-            summary.append(getString(R.string.display_rotation_enabled) + " ");
-            if (lockScreenRotationEnabled) {
-                rotationList.add(getString(R.string.lock_screen_title));
-            }
-            if ((mode & DisplayRotation.ROTATION_0_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_0);
-            }
-            if ((mode & DisplayRotation.ROTATION_90_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_90);
-            }
-            if ((mode & DisplayRotation.ROTATION_180_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_180);
-            }
-            if ((mode & DisplayRotation.ROTATION_270_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_270);
-            }
-            for(int i=0;i<rotationList.size();i++) {
-                summary.append(delim).append(rotationList.get(i));
-                if (rotationList.size() >= 2 && (rotationList.size() - 2) == i) {
-                    delim = " " + ROTATION_ANGLE_DELIM_FINAL + " ";
-                } else {
-                    delim = ROTATION_ANGLE_DELIM + " ";
-                }
-            }
-            summary.append(" " + getString(R.string.display_rotation_unit));
-        }
-        preference.setSummary(summary);
->>>>>>> 1cdb4fa... Allow localization for lockscreen rotation summary
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
