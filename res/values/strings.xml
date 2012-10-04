@@ -4455,7 +4455,7 @@
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
 
-    <!-- Customization | Lockscreen -->
+    <!-- Interface | Lockscreen -->
     <string name="lockscreen_style_options_title">Lockscreen style</string>
     <string name="lockscreen_custom_background_title">Background</string>
     <string name="lockscreen_custom_background_dialog_title">Choose color</string>
@@ -4630,6 +4630,7 @@
     <string name="navbar_action_back">Back</string>
     <string name="navbar_action_recents">Recents</string>
     <string name="navbar_action_search">Search</string>
+    <string name="navbar_action_screenshot">Screenshot</string>
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
