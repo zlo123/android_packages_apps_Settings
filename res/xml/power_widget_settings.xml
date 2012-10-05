@@ -13,11 +13,16 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/notification_widget_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <!-- Tablet Widget -->
+    <PreferenceScreen
+        android:key="tablet_widget"
+        android:title="@string/tablet_widget_title"
+        android:fragment="com.android.settings.liquid.TabletWidget" />
 
     <!-- Power Widget -->
     <PreferenceCategory
@@ -25,7 +30,7 @@
 
         <CheckBoxPreference
             android:key="expanded_widget"
-            android:title="@string/title_expanded_widget"
+            android:title="@string/power_widget_title"
             android:defaultValue="true" />
 
         <PreferenceScreen
@@ -49,17 +54,6 @@
             android:entries="@array/power_widget_brightness_location_entries"
             android:entryValues="@array/power_widget_brightness_location_values"
             android:title="@string/brightness_location_title" />
-
-    </PreferenceCategory>
-
-    <!-- Tablet Widget -->
-    <PreferenceCategory
-       android:title="@string/tablet_widget_title">
-
-        <PreferenceScreen
-            android:key="tablet_widget"
-            android:title="@string/tablet_widget_title"
-            android:fragment="com.android.settings.liquid.TabletWidget" />
 
     </PreferenceCategory>
 

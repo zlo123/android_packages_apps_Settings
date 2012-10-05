@@ -61,12 +61,6 @@
             liquid:donateLink="@string/dev_hiemanshu_donate"
             liquid:avatar="@drawable/avatar_hiemanshu" />
 
-	<com.android.settings.widgets.DeveloperPreference
-            android:title="@string/dev_raymanfx_title"
-            liquid:twitterHandle="@string/dev_raymanfx_twitter"
-            liquid:donateLink="@string/dev_raymanfx_donate"
-            liquid:avatar="@drawable/avatar_raymanfx" />
-
         <com.android.settings.widgets.DeveloperPreference
             android:title="@string/dev_jdkoreclipse_title"
             liquid:twitterHandle="@string/dev_jdkoreclipse_twitter"
@@ -78,6 +72,13 @@
             liquid:twitterHandle="@string/dev_n0coast_twitter"
             liquid:donateLink="@string/dev_n0coast_donate"
             liquid:avatar="@drawable/avatar_n0coast" />
+
+	    <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_raymanfx_title"
+            liquid:twitterHandle="@string/dev_raymanfx_twitter"
+            liquid:donateLink="@string/dev_raymanfx_donate"
+            liquid:avatar="@drawable/avatar_raymanfx" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

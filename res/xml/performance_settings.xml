@@ -20,6 +20,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:title="@string/fast_charge_title" >
+
+        <CheckBoxPreference
+            android:key="usb_fast_charge"
+            android:title="@string/usb_fast_charge_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/io_scheds_title" >
 
         <ListPreference
@@ -49,15 +58,6 @@
             android:key="pref_ksm"
             android:title="@string/pref_ksm_title"
             android:summary="@string/pref_ksm_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/fast_charge_title" >
-
-        <CheckBoxPreference
-            android:key="usb_fast_charge"
-            android:title="@string/usb_fast_charge_title" />
 
     </PreferenceCategory>
 

@@ -58,6 +58,7 @@ import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.IWindowManager;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -208,11 +209,8 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
         mGlowTimes.setOnPreferenceChangeListener(this);
 
-        mHardwareKeys = (PreferenceScreen) findPreference(PREF_HARDWARE_KEYS);
-
         // don't allow devices that must use a navigation bar to disable it
         if (hasNavBarByDefault || mTablet) {
-            prefs.removePreference(mHardwareKeys);
             prefs.removePreference(mEnableNavigationBar);
         }
 
@@ -233,6 +231,18 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
         if (mTablet) {
             prefs.removePreference(mNavBarMenuDisplay);
+        }
+
+        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if (windowManager.hasNavigationBar()) {
+                Preference hardKeys = findPreference(PREF_HARDWARE_KEYS);
+                if (hardKeys != null) {
+                    getPreferenceScreen().removePreference(hardKeys);
+                }
+            }
+        } catch (RemoteException e) {
         }
 
         refreshSettings();

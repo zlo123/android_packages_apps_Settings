@@ -17,8 +17,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/liquid_splasher_title">
 
-    <PreferenceCategory android:key="aboutliquid_category"
-        android:title="@string/aboutliquid_category_title">
+    <PreferenceCategory android:key="liquidsmooth_category"
+        android:title="@string/liquidsmooth_category_title">
 
         <PreferenceScreen
             android:key="@+id/about_liquid"

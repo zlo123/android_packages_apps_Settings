@@ -19,23 +19,29 @@
     android:title="@string/notification_toggles_title"
     xmlns:liquid="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="enable_toggles"
-        android:summary="@string/enabled_toggles_summary"
-        android:title="@string/enabled_toggles_title" />
+    <PreferenceCategory
+        android:key="general_category"
+        android:title="@string/general_settings_title" >
 
-    <Preference
-        android:key="toggles"
-        android:summary="@string/toggles_order_summary"
-        android:title="@string/toggles_order_title" />
+        <Preference
+            android:key="enable_toggles"
+            android:summary="@string/enabled_toggles_summary"
+            android:title="@string/enabled_toggles_title" />
 
-    <com.scheffsblend.smw.Preferences.ImageListPreference
-        android:entries="@array/toggles_layout_entries"
-        android:entryValues="@array/toggles_layout_entries"
-        liquid:entryImages="@array/toggles_layout_images"
-        liquid:summaryImage="@drawable/toggle_layout_summary"
-        android:key="toggles_layout_preference"
-        android:title="@string/toggles_layout_title" />
+        <Preference
+            android:key="toggles"
+            android:summary="@string/toggles_order_summary"
+            android:title="@string/toggles_order_title" />
+
+        <com.scheffsblend.smw.Preferences.ImageListPreference
+            android:entries="@array/toggles_layout_entries"
+            android:entryValues="@array/toggles_layout_entries"
+            liquid:entryImages="@array/toggles_layout_images"
+            liquid:summaryImage="@drawable/toggle_layout_summary"
+            android:key="toggles_layout_preference"
+            android:title="@string/toggles_layout_title" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="advanced_cat"
@@ -71,6 +77,12 @@
             android:key="toggle_btn_alpha"
             android:title="@string/toggle_button_alpha_title" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="additional_options"
+        android:title="@string/additional_options_title">
+
         <ListPreference
             android:entries="@array/brightness_location_entries"
             android:entryValues="@array/brightness_location_values"
@@ -81,7 +93,6 @@
             android:key="reset_toggles"
             android:summary="@string/reset_toggles_summary"
             android:title="@string/reset_toggles_title" >
-
         </Preference>
 
     </PreferenceCategory>

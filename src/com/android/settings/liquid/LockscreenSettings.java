@@ -59,13 +59,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     public static final String KEY_WIDGETS_PREF = "lockscreen_widgets";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
-    public static final String KEY_SEE_TRHOUGH_PREF = "lockscreen_see_through";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
 
     private ListPreference mCustomBackground;
     private ListPreference mWidgetsAlignment;
-    private CheckBoxPreference mSeeThrough;
     private Preference mWeatherPref;
     private Preference mCalendarPref;
     private ColorPickerPreference mLockscreenTextColor;
@@ -90,10 +88,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
-
-        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH_PREF);
-        mSeeThrough.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1));
 
         wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
         wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
@@ -222,12 +216,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSeeThrough) {
-            int value = mSeeThrough.isChecked() ? 1 : 0;
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_SEE_THROUGH, value);
-            return true;
-        }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
