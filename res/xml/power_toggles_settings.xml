@@ -45,7 +45,7 @@
 
     <PreferenceCategory
         android:key="advanced_cat"
-        android:title="@string/advanced_settings" >
+        android:title="@string/advanced_settings_title" >
     
         <ListPreference
             android:entries="@array/toggle_style_entries"

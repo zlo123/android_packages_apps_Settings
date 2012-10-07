@@ -51,9 +51,8 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "LockscreenSettings";
-    private static final boolean DEBUG = true;
     private static final int LOCKSCREEN_BACKGROUND = 1024;
+    private static final String TAG = "LockscreenSettings";
     public static final String KEY_WEATHER_PREF = "lockscreen_weather";
     public static final String KEY_CALENDAR_PREF = "lockscreen_calendar";
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
@@ -122,7 +121,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         } else if (value.isEmpty()) {
             resId = R.string.lockscreen_background_custom_image;
             mCustomBackground.setValueIndex(1);
-            mSeeThrough.setEnabled(false);
         } else {
             resId = R.string.lockscreen_background_color_fill;
             mCustomBackground.setValueIndex(0);
@@ -209,14 +207,12 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
                 Toast.makeText(mActivity, getResources().getString(R.string.
                         lockscreen_background_result_not_successful), Toast.LENGTH_LONG).show();
-                mSeeThrough.setEnabled(true);
             }
         }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -224,7 +220,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         boolean handled = false;
         if (preference == mCustomBackground) {
             int indexOf = mCustomBackground.findIndexOfValue(objValue.toString());
-            mSeeThrough.setEnabled(indexOf != 1);
             switch (indexOf) {
                 //Displays color dialog when user has chosen color fill
                 case 0:
@@ -317,13 +312,12 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
-                                    Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
-            if (DEBUG) Log.d(TAG, String.format("new color hex value: %d", intHex));
+                    Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
             return true;
         } else if (preference == mWidgetsAlignment) {
             int value = Integer.valueOf((String) objValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                                    Settings.System.LOCKSCREEN_LAYOUT, value);
+                    Settings.System.LOCKSCREEN_LAYOUT, value);
             return true;
         } else if (preference == mClockAlign) {
             int value = Integer.valueOf((String) objValue);

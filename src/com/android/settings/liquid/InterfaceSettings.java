@@ -183,7 +183,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
                 com.android.internal.R.bool.config_showNavigationBar);
 
         if (hasNavBarByDefault || mTablet) {
-            ((PreferenceGroup) findPreference("general_category"))
+            ((PreferenceGroup) findPreference("advanced_options"))
                     .removePreference(mKillAppLongpressBack);
         }
 

@@ -980,7 +980,7 @@
     </string-array>
   
     <string-array name="haptic_feedback_entries">
-        <item>Use global setting</item>
+        <item>Use Global</item>
         <item>On</item>
         <item>Off</item>
     </string-array>
@@ -994,7 +994,7 @@
     <string-array name="pref_zram_size_entries">
         <item>Disabled</item>
         <item>10%</item>
-        <item>18% (default)</item>
+        <item>18% (Default)</item>
         <item>26%</item>
     </string-array>
 
@@ -1008,7 +1008,7 @@
     <string-array name="entries_status_bar_am_pm">
         <item>Normal</item>
         <item>Small</item>
-        <item>None (default)</item>
+        <item>None (Default)</item>
     </string-array>
 
     <string-array name="values_status_bar_am_pm" translatable="false">
@@ -1017,24 +1017,8 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="entries_transparency">
-        <item>0%</item>
-        <item>25%</item>
-        <item>50%</item>
-        <item>75%</item>
-        <item>100%</item>
-    </string-array>
-
-    <string-array name="values_transparency" translatable="false">
-        <item>100</item>
-        <item>75</item>
-        <item>50</item>
-        <item>25</item>
-        <item>0</item>
-    </string-array>
-
     <string-array name="entries_status_bar_battery">
-        <item>Icon (default)</item>
+        <item>Icon (Default)</item>
         <item>Percentage</item>
         <item>Hidden</item>
     </string-array>
@@ -1139,7 +1123,7 @@
     <string-array name="profile_entries">
         <item>On</item>
         <item>Off</item>
-        <item>No override</item>
+        <item>No Override</item>
     </string-array>
 
     <!-- Values for vibrate_entries matching constants in SoundSettings. Do not translate. -->
@@ -1415,10 +1399,10 @@
 
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">
-        <item>Icon only</item>
-        <item>Text only</item>
-        <item>Icon with text</item>
-        <item>Icon with centered text</item>
+        <item>Icon Only</item>
+        <item>Text Only</item>
+        <item>Icon/Text</item>
+        <item>Icon/Centered Text</item>
         <item>CircleMOD</item>
         <item>Hide</item>
     </string-array>
@@ -1434,9 +1418,9 @@
 
     <!-- clock stuff -->
     <string-array name="clock_style_entries">
-        <item>Right clock</item>
-        <item>Center clock</item>
-        <item>No clock</item>
+        <item>Right</item>
+        <item>Center</item>
+        <item>None</item>
     </string-array>
 
     <string-array name="clock_style_values" translatable="false">
@@ -1446,7 +1430,7 @@
     </string-array>
 
     <string-array name="clock_ampm_entries">
-        <item>Don\'t show</item>
+        <item>Don\'t Show</item>
         <item>Small AM/PM</item>
         <item>Regular AM/PM</item>
     </string-array>
@@ -1459,8 +1443,8 @@
 
     <string-array name="clock_weekday_entries">
         <item>Don\'t show</item>
-        <item>Small weekday</item>
-        <item>Regular weekday</item>
+        <item>Small Weekday</item>
+        <item>Regular Weekday</item>
     </string-array>
 
     <string-array name="clock_weekday_values" translatable="false">
@@ -1500,72 +1484,7 @@
         <item>405</item>
         <item>420</item>
     </string-array>
-    
-    <string-array name="entries_lcd_density" translatable="false">
-        <item>240</item>
-        <item>242</item>
-        <item>244</item>
-        <item>246</item>
-        <item>248</item>
-        <item>250</item>
-        <item>252</item>
-        <item>254</item>
-        <item>256</item>
-        <item>258</item>
-        <item>260</item>
-        <item>262</item>
-        <item>264</item>
-        <item>266</item>
-        <item>268</item>
-        <item>270</item>
-        <item>272</item>
-        <item>274</item>
-        <item>276</item>
-        <item>278</item>
-        <item>280</item>
-        <item>282</item>
-        <item>284</item>
-        <item>285</item>
-        <item>286</item>
-        <item>288</item>
-        <item>290</item>
-        <item>292</item>
-        <item>294</item>
-        <item>296</item>
-        <item>298</item>
-        <item>300</item>
-        <item>302</item>
-        <item>304</item>
-        <item>306</item>
-        <item>308</item>
-        <item>310</item>
-        <item>312</item>
-        <item>314</item>
-        <item>316</item>
-        <item>318</item>
-        <item>320</item>
-        <item>322</item>
-        <item>324</item>
-        <item>326</item>
-        <item>328</item>
-        <item>330</item>
-        <item>332</item>
-        <item>334</item>
-        <item>336</item>
-        <item>338</item>
-        <item>340</item>
-        <item>342</item>
-        <item>344</item>
-        <item>346</item>
-        <item>348</item>
-        <item>350</item>
-        <item>352</item>
-        <item>354</item>
-        <item>356</item>
-        <item>358</item>
-        <item>360</item>
-    </string-array>
-    
+ 
     <string-array name="entries_max_events" translatable="false">
         <item>60</item>
         <item>65</item>
@@ -1760,8 +1679,8 @@
     <string-array name="battery_bar_entries">
         <item>Hide</item>
         <item>Statusbar</item>
-        <item>Top of navbar</item>
-        <item>Bottom of navbar</item>
+        <item>Top Of Navbar</item>
+        <item>Bottom Of Navbar</item>
     </string-array>
     
     <string-array name="battery_bar_values" translatable="false">
@@ -1773,7 +1692,7 @@
     
     <string-array name="battery_bar_style_entries">
         <item>Regular</item>
-        <item>Center-mirrored</item>
+        <item>Center-Mirrored</item>
     </string-array>
     
     <string-array name="battery_bar_style_values" translatable="false">
@@ -1813,10 +1732,10 @@
 	</string-array>
     
 	<string-array name="pref_navigation_menu_display_entries">
-		<item>Default JB behavior</item>
-		<item>Always show invisible icons</item>
-		<item>Always show</item>
-		<item>Default JB with invisible icons when hidden</item>
+		<item>Default JB Behavior</item>
+		<item>Always Show Invisible Icons</item>
+		<item>Always Show</item>
+		<item>Default JB With Invisible Icons</item>
 	</string-array>
     
 	<string-array name="pref_navigation_menu_display_values" translatable="false">
@@ -1851,10 +1770,10 @@
 		<item>Menu</item>
 		<item>Toggle Widgets</item>
         <item>Open IME Switcher</item>
-		<item>Kill app</item>
+		<item>Kill App</item>
 		<item>Power</item>
         <item>Notifications</item>
-		<item>Custom app</item>
+		<item>Custom App</item>
 		<item>Blank</item>
 	</string-array>
     
@@ -1875,7 +1794,7 @@
 	</string-array>
     
     <string-array name="navigation_bar_width_entries">
-        <item>42 dp (default)</item>
+        <item>42 dp (Default)</item>
         <item>40 dp</item>
         <item>38 dp</item>
         <item>36 dp</item>
@@ -1893,7 +1812,7 @@
     </string-array>
     
     <string-array name="navigation_bar_height_entries">
-        <item>48 dp (default)</item>
+        <item>48 dp (Default)</item>
         <item>44 dp</item>
         <item>42 dp</item> 
         <item>40 dp</item>
@@ -1915,7 +1834,7 @@
     </string-array>
     
     <string-array name="navigation_bar_height_landscape_entries">
-        <item>48 dp (default)</item>
+        <item>48 dp (Default)</item>
         <item>44 dp</item>
         <item>42 dp</item>
         <item>40 dp</item>
@@ -2013,11 +1932,11 @@
     </string-array>
 
     <string-array name="pref_navring_amount_entries">
-        <item>1 target</item>
-        <item>2 targets</item>
-        <item>3 targets</item>
-        <item>4 targets</item>
-        <item>5 targets</item>
+        <item>1 Target</item>
+        <item>2 Targets</item>
+        <item>3 Targets</item>
+        <item>4 Targets</item>
+        <item>5 Targets</item>
     </string-array>
 
     <string-array name="pref_navring_amount_values">
@@ -2030,17 +1949,20 @@
 
     <!-- toggle style -->
     <string-array name="toggle_style_entries">
-        <item>Icon only</item>
-        <item>Text only</item>
+        <item>Icon Only</item>
+        <item>Text Only</item>
     </string-array>
+
     <string-array name="toggle_style_values" translatable="false">
         <item>2</item>
         <item>3</item>
     </string-array>
+
     <string-array name="toggles_layout_images">
         <item>@drawable/toggle_layout_switches</item>
         <item>@drawable/toggle_layout_buttons</item>
     </string-array>
+
     <string-array name="toggles_layout_entries">
         <item>0</item>
         <item>1</item>
@@ -2058,6 +1980,7 @@
         <item>TORCH</item>
         <item>SYNC</item>
     </string-array>
+
     <string-array name="available_toggles_values">
         <item>@string/toggle_auto_rotate</item>
         <item>@string/toggle_bluetooth</item>
@@ -2083,8 +2006,8 @@
 
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries">
-        <item>On top</item>
-        <item>On the bottom</item>
+        <item>On Top</item>
+        <item>On Bottom</item>
         <item>Don\'t Show</item>
     </string-array>
     
@@ -2108,9 +2031,9 @@
     </string-array>
 
     <string-array name="signal_style_entries">
-        <item>Show signal bars</item>
-        <item>Show signal text</item>
-        <item>Show with dBm</item>
+        <item>Signal Bars</item>
+        <item>Signal Text</item>
+        <item>Signal With dBm</item>
     </string-array>
 
     <string-array name="signal_style_values">
@@ -2120,8 +2043,8 @@
     </string-array>
 
     <string-array name="wifi_signal_style_entries">
-        <item>Show signal bars</item>
-        <item>Show Signal Text</item>
+        <item>Signal Bars</item>
+        <item>Signal Text</item>
     </string-array>
 
     <string-array name="wifi_signal_style_values" translatable="false">
@@ -2224,21 +2147,6 @@
         <item>210000</item>
         <item>240000</item>
         <item>300000</item>
-    </string-array>
-
-    <string-array name="lcd_density_entries" translatable="false">
-        <item>160</item>
-        <item>180</item>
-        <item>200</item>
-        <item>220</item>
-        <item>240</item>
-        <item>241</item>
-        <item>260</item>
-        <item>280</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>@string/custom_density</item>
     </string-array>
 
     <string-array name="lcd_density_stock_entries">

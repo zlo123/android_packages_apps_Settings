@@ -31,11 +31,6 @@
         android:title="@string/customization_category_title">
 
         <PreferenceScreen
-            android:key="@+id/display_settings"
-            android:title="@string/display_settings_title"
-            android:fragment="com.android.settings.liquid.DisplaySettings" />
-
-        <PreferenceScreen
             android:key="@+id/interface_settings"
             android:title="@string/interface_settings_title"
             android:fragment="com.android.settings.liquid.InterfaceSettings" />

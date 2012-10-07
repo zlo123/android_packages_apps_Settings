@@ -18,8 +18,13 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="@+id/display_settings"
+        android:title="@string/display_settings_title"
+        android:fragment="com.android.settings.liquid.DisplaySettings" />
+
     <PreferenceCategory
-        android:key="general_category"
+        android:key="general_options"
         android:title="@string/profiles_general_title">
 
         <Preference
@@ -43,6 +48,12 @@
             android:title="@string/volume_key_cursor_control_title"
             android:entries="@array/volume_key_cursor_control_entries"
             android:entryValues="@array/volume_key_cursor_control_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="advanced_options"
+        android:title="@string/advanced_settings_title" >
 
         <CheckBoxPreference
             android:key="recent_kill_all"
@@ -70,6 +81,12 @@
             android:key="alarm"
             android:title="@string/enable_alarm_icon_title"
             android:summary="@string/enable_alarm_icon__summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="additional_options"
+        android:title="@string/additional_options_title">
 
         <CheckBoxPreference
             android:key="mode_tabletui"

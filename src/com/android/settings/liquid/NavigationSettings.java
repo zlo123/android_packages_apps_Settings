@@ -48,6 +48,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -92,7 +94,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
     private static final String ENABLE_NAVIGATION_BAR = "enable_navigation_bar";
     private static final String PREF_NAV_COLOR = "nav_button_color";
-    private static final String NAV_BAR_TRANSPARENCY = "nav_bar_transparency";
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_GLOW_TIMES = "glow_times";
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
@@ -113,7 +114,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     // move these later
     PreferenceScreen mHardwareKeys;
     ColorPickerPreference mNavigationBarColor;
-    private ListPreference mNavigationBarTransparency;
     ColorPickerPreference mNavigationBarGlowColor;
     ListPreference mGlowTimes;
     ListPreference menuDisplayLocation;
@@ -199,9 +199,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
-
-        mNavigationBarTransparency = (ListPreference) findPreference(NAV_BAR_TRANSPARENCY);
-        mNavigationBarTransparency.setOnPreferenceChangeListener(this);
 
         mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
         mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
@@ -397,10 +394,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_TINT, intHex);
             return true;
-        } else if (preference == mNavigationBarTransparency) {
-            int navBarTrans = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext()
-                    .getContentResolver(), Settings.System.NAV_BAR_TRANSPARENCY, navBarTrans);
         } else if (preference == mNavBar) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));

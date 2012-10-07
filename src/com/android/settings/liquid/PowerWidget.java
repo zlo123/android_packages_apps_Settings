@@ -49,8 +49,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.internal.telephony.Phone;
 import com.android.settings.R;
+import com.android.settings.Utils;
+import com.android.internal.telephony.Phone;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class PowerWidget extends SettingsPreferenceFragment implements
@@ -94,7 +95,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
 
             mPowerWidget.setChecked((Settings.System.getInt(getActivity().getApplicationContext()
                     .getContentResolver(),
-                    Settings.System.EXPANDED_VIEW_WIDGET, 1) == 1));
+                    Settings.System.EXPANDED_VIEW_WIDGET, 0) == 1));
             mPowerWidgetHideOnChange.setChecked((Settings.System.getInt(getActivity()
                     .getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HIDE_ONCHANGE, 0) == 1));
@@ -113,7 +114,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             mTabletWidget = (PreferenceScreen) findPreference(PREF_TABLET_WIDGET);
 
             if (!Utils.isTablet(getActivity())) {
-                if (mTabletDrawer != null) {
+                if (mTabletWidget != null) {
                     getPreferenceScreen().removePreference(mTabletWidget);
                 }
             }
@@ -598,5 +599,4 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             }
         }
     }
-
 }
