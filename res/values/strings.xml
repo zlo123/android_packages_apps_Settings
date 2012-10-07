@@ -4327,7 +4327,7 @@
 
     <!-- Notification | Titles -->
     <string name="notification_toggles_title">Toggles</string>
-    <string name="notification_widget_title">Widget</string>
+    <string name="notification_widget_title">CM Power Widgets</string>
     <string name="statusbar_settings_title">Statusbar</string>
 
     <!-- Optimization | Titles -->
