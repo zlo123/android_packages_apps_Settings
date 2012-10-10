@@ -4872,7 +4872,7 @@
     <string name="battery_bar">Battery Bar Location</string>
     <string name="battery_bar_style_title">Battery Bar Style</string>
     <string name="battery_bar_animate_title">Charging Animation</string>
-    <string name="battery_bar_animate_summary">The charging animation may result in an poor user experience</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in poor user experience</string>
     <string name="battery_bar_color">Battery Bar Color</string>
     <string name="battery_bar_thickness_title">Battery Bar Thickness</string>
     <string name="clock_cat">Clock Options</string>
