@@ -4321,6 +4321,10 @@
     <string name="dev_raymanfx_title">RaymanFX</string>
     <string name="dev_raymanfx_twitter">raymanfx</string>
     <string name="dev_raymanfx_donate">http://forum.xda-developers.com/member.php?u=3463426</string>
+    <string name="dev_toxicthunder_title">ToxicThunder</string>
+    <string name="dev_toxicthunder_twitter">toxicthunder99</string>
+    <string name="dev_toxicthunder_donate">http://forum.xda-developers.com/donatetome.php?u=4560687</string>
+
 
     <!-- Settings | Headers -->
     <string name="liquidsmooth_category_title">LIQUIDSMOOTH</string>
