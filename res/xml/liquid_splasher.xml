@@ -33,26 +33,31 @@
         <PreferenceScreen
             android:key="@+id/interface_settings"
             android:title="@string/interface_settings_title"
+	     android:icon="@drawable/ic_liquid_interface"
             android:fragment="com.android.settings.liquid.InterfaceSettings" />
 
         <PreferenceScreen
             android:key="@+id/lockscreen_settings"
             android:title="@string/lockscreen_settings_title"
+	     android:icon="@drawable/ic_liquid_lockscreen"
             android:fragment="com.android.settings.liquid.LockscreenSettings" />
 
         <PreferenceScreen
             android:key="@+id/navigation_settings"
             android:title="@string/navigation_settings_title"
+	     android:icon="@drawable/ic_liquid_navigation"
             android:fragment="com.android.settings.liquid.NavigationSettings" />
 
         <PreferenceScreen
             android:key="@+id/powermenu_settings"
             android:title="@string/powermenu_settings_title"
+	     android:icon="@drawable/ic_liquid_powermenu"
             android:fragment="com.android.settings.liquid.PowermenuSettings" />
 
         <PreferenceScreen
             android:key="@+id/sound_settings"
             android:title="@string/sound_settings_title"
+	     android:icon="@drawable/ic_liquid_sound"
             android:fragment="com.android.settings.liquid.SoundSettings" />
     </PreferenceCategory>
 
@@ -62,16 +67,19 @@
         <PreferenceScreen
             android:key="@+id/notification_toggles"
             android:title="@string/notification_toggles_title"
+	     android:icon="@drawable/ic_liquid_toggles"
             android:fragment="com.android.settings.liquid.PowerToggles" />
 
         <PreferenceScreen
             android:key="@+id/notification_widget"
             android:title="@string/notification_widget_title"
+	     android:icon="@drawable/ic_liquid_widgets"
             android:fragment="com.android.settings.liquid.PowerWidget" />
 
         <PreferenceScreen
             android:key="@+id/statusbar_settings"
             android:title="@string/statusbar_settings_title"
+	     android:icon="@drawable/ic_liquid_statusbar"
             android:fragment="com.android.settings.liquid.StatusbarSettings" />
 	</PreferenceCategory>
 
@@ -81,16 +89,19 @@
 		<PreferenceScreen
 		    android:key="@+id/performance_settings"
 		    android:title="@string/performance_settings_title"
+		    android:icon="@drawable/ic_liquid_performance"
 		    android:fragment="com.android.settings.performance.PerformanceSettings" />
 
 		<PreferenceScreen
 		    android:key="@+id/processor_settings"
 		    android:title="@string/processor_settings_title"
+		    android:icon="@drawable/ic_liquid_processor"
 		    android:fragment="com.android.settings.performance.ProcessorSettings" />
 
 		<PreferenceScreen
 		    android:key="@+id/startup_settings"
 		    android:title="@string/startup_settings_title"
+		    android:icon="@drawable/ic_liquid_startup"
 		    android:fragment="com.android.settings.performance.StartupSettings" />
     </PreferenceCategory>
 
