@@ -4719,7 +4719,7 @@
     <string name="power_menu_profiles_title">Profiles</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_expanded_desktop">Statusbar</string>
-    <string name="power_menu_navbartoggle_title">Navigation</string>
+    <string name="power_menu_navbartoggle_title">NavBar Toggle and Button Controls</string>
     <string name="power_menu_silenttoggle_title">Silent</string>
 
     <!-- Customization | Sound -->
