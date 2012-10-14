@@ -5083,25 +5083,16 @@
 
 	<!-- TOXIC SUMMARIES -->
 	
-    <string name="liquid_interface">Custom DPI, notification backgrounds, backlight settings, rotation modes</string>
-	
-	<string name="liquid_lockscreen">Set your favorite apps as lockscreen targets, add your own custom colors, layouts and more</string>
-	
-	<string name="liquid_navigation">Define navbar settings, colors, layout etc</string>
-	
-	<string name="liquid_powermenu">The 'power' of the power button - now at your fingertips</string>
-	
-	<string name="liquid_sound">Define quiet hours, facedown actions and volume controls</string>
-	
-	<string name="liquid_toggles">Your ROM, your style - choose your toggles and layouts</string>
-	
-	<string name="liquid_widgets">Want the best of both worlds? Why not!</string>
-	
-	<string name="liquid_statusbar">Tweak those signal bars, battery icons and clock styles. Set custom colors and layouts to match your style.</string>
-	
-	<string name="liquid_processor">Governor settings, voltage control  etc for advanced users</string>
-	
-	<string name="liquid_startup">Set cron jobs to execute on device startup.</string>
+    <string name="liquid_interface">Custom DPI, notification backgrounds, backlight settings, rotation modes</string>	
+    <string name="liquid_lockscreen">Set your favorite apps as lockscreen targets, add your own custom colors, layouts and more</string>
+    <string name="liquid_navigation">Define navbar settings, colors, layout etc</string>	
+    <string name="liquid_powermenu">The 'power' of the power button - now at your fingertips</string>	
+    <string name="liquid_sound">Define quiet hours, facedown actions and volume controls</string>	
+    <string name="liquid_toggles">Your ROM, your style - choose your toggles and layouts</string>	
+    <string name="liquid_widgets">Want the best of both worlds? Why not!</string>	
+    <string name="liquid_statusbar">Tweak those signal bars, battery icons and clock styles. Set custom colors and layouts to match your style.</string>	
+    <string name="liquid_processor">Governor settings, voltage control etc for advanced users</string>	
+    <string name="liquid_startup">Set cron jobs to execute on device startup.</string>
 
 	
 	<!--TOXIC EDITS END -->
