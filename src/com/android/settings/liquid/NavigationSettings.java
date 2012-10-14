@@ -339,7 +339,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
                     Settings.System.SYSTEMUI_NAVRING_AMOUNT, val);
             resetNavRing();
             refreshSettings();
-            Helpers.restartSystemUI();
             return true;
         } else if (preference == mNavBarButtonQty) {
             int val = Integer.parseInt((String) newValue);
@@ -452,7 +451,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.SYSTEMUI_NAVRING_2, "none");
             Settings.System.putString(getActivity().getContentResolver(),
-                    Settings.System.SYSTEMUI_NAVRING_3, "assist");
+                    Settings.System.SYSTEMUI_NAVRING_3, "none");
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.SYSTEMUI_NAVRING_4, "none");
             Settings.System.putString(getActivity().getContentResolver(),

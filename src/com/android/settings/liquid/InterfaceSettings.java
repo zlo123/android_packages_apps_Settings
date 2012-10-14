@@ -74,6 +74,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_IME_SWITCHER = "status_bar_ime_switcher";
+    private static final String PREF_LEFTY_MODE = "lefty_mode";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
@@ -105,6 +106,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     CheckBoxPreference mTabletui;
     Preference mLcdDensity;
     CheckBoxPreference mUseAltResolver;
+    CheckBoxPreference mLeftyMode;
 
     Random randomGenerator = new Random();
 
@@ -151,6 +153,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
                     Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
             }
         }
+
+        mLeftyMode = (CheckBoxPreference) findPreference(PREF_LEFTY_MODE);
+        mLeftyMode.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.NAVIGATION_BAR_LEFTY_MODE, false));
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
@@ -239,6 +245,12 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         if (preference == mStatusBarImeSwitcher) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_IME_SWITCHER, mStatusBarImeSwitcher.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mLeftyMode) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_LEFTY_MODE,
+                    isCheckBoxPrefernceChecked(preference));
+            Helpers.restartSystemUI();
             return true;
         } else if (preference == mRecentKillAll) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();

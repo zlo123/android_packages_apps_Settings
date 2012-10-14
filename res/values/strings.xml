@@ -4510,6 +4510,8 @@
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <string name="recent_kill_all">Kill-All-Button</string>
     <string name="recent_kill_all_summary">Displays a button on recents window</string>
+    <string name="lefty_mode_title">Lefty Mode</string>
+    <string name="lefty_mode_summary">Swap NavBar location (requires UI restart)</string>
     <string name="ram_bar">Recents RAM Bar</string>
     <string name="ram_bar_summary">Shows RAM usage in the recents menu</string>
     <string name="ime_switcher_notify">IME Switcher</string>

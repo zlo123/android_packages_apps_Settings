@@ -42,6 +42,12 @@ import com.android.settings.widgets.NavBarItemPreference;
 public class NavRingTargets extends SettingsPreferenceFragment 
         implements ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
+    public static final int NAVRING_ONE = 1;
+    public static final int NAVRING_TWO = 2;
+    public static final int NAVRING_THREE = 3;
+    public static final int NAVRING_FOUR = 4;
+    public static final int NAVRING_FIVE = 5;
+
     private ShortcutPickerHelper mPicker;
     private Preference mPreference;
     private String mString;
@@ -98,20 +104,23 @@ public class NavRingTargets extends SettingsPreferenceFragment
         mNavRingAmount = Settings.System.getInt(mContext.getContentResolver(),
                          Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
 
-        if (mNavRingAmount == 1) {
-            prefs.removePreference(mRing1);
+        switch (mNavRingAmount) {
+        case NAVRING_ONE:
             prefs.removePreference(mRing2);
+            prefs.removePreference(mRing3);
             prefs.removePreference(mRing4);
             prefs.removePreference(mRing5);
-        } else if (mNavRingAmount == 2) {
-            prefs.removePreference(mRing1);
+        case NAVRING_TWO:
+            prefs.removePreference(mRing3);
             prefs.removePreference(mRing4);
             prefs.removePreference(mRing5);
-        } else if (mNavRingAmount == 3) {
-            prefs.removePreference(mRing1);
+        case NAVRING_THREE:
+            prefs.removePreference(mRing4);
             prefs.removePreference(mRing5);
-        } else if (mNavRingAmount == 4) {
+        case NAVRING_FOUR:
             prefs.removePreference(mRing5);
+        default:
+            //leave them all
         }
 
     }
