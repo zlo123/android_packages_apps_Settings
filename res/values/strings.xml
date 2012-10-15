@@ -5086,7 +5086,7 @@
     <string name="liquid_interface">Custom DPI, notification backgrounds, backlight settings, rotation modes</string>	
     <string name="liquid_lockscreen">Set your favorite apps as lockscreen targets, add your own custom colors, layouts and more</string>
     <string name="liquid_navigation">Define navbar settings, colors, layout etc</string>	
-    <string name="liquid_powermenu">The 'power' of the power button - now at your fingertips</string>	
+    <string name="liquid_powermenu">Choose toggles and actions for your powermenu</string>	
     <string name="liquid_sound">Define quiet hours, facedown actions and volume controls</string>	
     <string name="liquid_toggles">Your ROM, your style - choose your toggles and layouts</string>	
     <string name="liquid_widgets">Want the best of both worlds? Why not!</string>	
