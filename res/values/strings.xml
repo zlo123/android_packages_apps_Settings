@@ -3721,11 +3721,6 @@
     <string name="strict_mode_summary">Flash screen when apps do long operations
             on main thread</string>
 
-    <!-- UI debug setting: show pointer location? [CHAR LIMIT=25] -->
-    <string name="pointer_location">Pointer location</string>
-    <!-- UI debug setting: show pointer location summary [CHAR LIMIT=50] -->
-    <string name="pointer_location_summary">Screen overlay showing current touch data</string>
-
     <!-- UI debug setting: show touches? [CHAR LIMIT=25] -->
     <string name="show_touches">Show touches</string>
     <!-- UI debug setting: show touches location summary [CHAR LIMIT=50] -->
@@ -4469,6 +4464,8 @@
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <string name="recent_kill_all">Kill-All-Button</string>
     <string name="recent_kill_all_summary">Displays a button on recents window</string>
+    <string name="ram_bar">Recents RAM Bar</string>
+    <string name="ram_bar_summary">Shows RAM usage in the recents menu</string>
     <string name="ime_switcher_notify">IME Switcher</string>
     <string name="ime_switcher_notify_summary">Display the input method selector</string>
     <string name="kill_app_longpress_back">Hold Back-To-Kill</string>
