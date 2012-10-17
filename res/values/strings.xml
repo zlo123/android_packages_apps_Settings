@@ -5094,6 +5094,7 @@
     <string name="liquid_statusbar">Tweak those signal bars, battery icons and clock styles. Set custom colors and layouts to match your style.</string>	
     <string name="liquid_processor">Governor settings, voltage control etc for advanced users</string>	
     <string name="liquid_startup">Set cron jobs to execute on device startup.</string>
+    <string name="liquid_performance">I/O settings, KSM, zRAM and UFC</string>
 
 	
 	<!--TOXIC EDITS END -->

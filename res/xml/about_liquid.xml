@@ -16,8 +16,8 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/about_liquid_title"
-	android:title="drawable/ic_liquid_about"
+	android:title="@string/about_liquid_title"
+    	android:icon="@drawable/ic_liquid_about"
     xmlns:liquid="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
