@@ -86,6 +86,11 @@
             liquid:donateLink="@string/dev_toxicthunder_donate"
             liquid:avatar="@drawable/avatar_toxicthunder" />
 
+	 <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_DAGr8_title"
+            liquid:twitterHandle="@string/dev_DAGr8_twitter"
+            liquid:donateLink="@string/dev_DAGr8_donate"
+            liquid:avatar="@drawable/avatar_dagr8" />
 
     </PreferenceCategory>
 
