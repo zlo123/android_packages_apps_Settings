@@ -4338,8 +4338,6 @@
     <string name="theme_chooser_title">Theme Chooser</string>
 
     <!-- Customization | Titles -->
-    <string name="about_settings_title">About</string>
-    <string name="display_settings_title">Display</string>
     <string name="interface_settings_title">Interface</string>
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="navigation_settings_title">Navigation</string>
@@ -4361,6 +4359,8 @@
     <string name="developer_tools_and_info_title">Tools &amp; Info</string>
 
     <!-- Customization | Display -->
+    <string name="about_settings_title">About</string>
+    <string name="display_settings_title">Display</string>
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_enabled">Enabled</string>
     <string name="display_rotation_disabled">Disabled</string>
@@ -5084,15 +5084,15 @@
 	<!-- TOXIC SUMMARIES -->
 	
     <string name="liquid_interface">Custom DPI, notification backgrounds, backlight settings, rotation modes</string>	
-    <string name="liquid_lockscreen">Set your favorite apps as lockscreen targets, add your own custom colors, layouts and more</string>
-    <string name="liquid_navigation">Define navbar settings, colors, layout etc</string>	
-    <string name="liquid_powermenu">Choose toggles and actions for your powermenu</string>	
-    <string name="liquid_sound">Define quiet hours, facedown actions and volume controls</string>	
-    <string name="liquid_toggles">Your ROM, your style - choose your toggles and layouts</string>	
-    <string name="liquid_widgets">Want the best of both worlds? Why not!</string>	
-    <string name="liquid_statusbar">Tweak those signal bars, battery icons and clock styles. Set custom colors and layouts to match your style.</string>	
-    <string name="liquid_processor">Governor settings, voltage control etc for advanced users</string>	
-    <string name="liquid_startup">Set cron jobs to execute on device startup.</string>
+    <string name="liquid_lockscreen">Lockscreen targets, add your own custom colors, layouts and more</string>
+    <string name="liquid_navigation">Navbar settings, colors, layout, buttons, DPI</string>	
+    <string name="liquid_powermenu">Toggles and actions for your powermenu</string>	
+    <string name="liquid_sound">Quiet hours, facedown actions and volume controls</string>	
+    <string name="liquid_toggles">Toggles and layouts</string>	
+    <string name="liquid_widgets">Power widgets</string>	
+    <string name="liquid_statusbar">Signal bars, battery icons, clock styles, custom colors and layouts</string>	
+    <string name="liquid_processor">Overclocking, undervolting, governors</string>	
+    <string name="liquid_startup">Sysctl tweaks, SD Card boost, cron jobs</string>
     <string name="liquid_performance">I/O settings, KSM, zRAM and UFC</string>
 
 	
