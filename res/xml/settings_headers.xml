@@ -59,18 +59,19 @@
     <!-- LIQUIDSMOOTH -->
     <header android:title="@string/liquidsmooth_category_title" />
 
-    <!-- Liquid Launcher -->
-    <header
-        android:id="@+id/liquid_launcher"
-        android:icon="@drawable/ic_launcher_liquid"
-        android:title="@string/liquid_launcher_title" />
-
     <!-- Liquid Splasher -->
     <header
         android:id="@+id/liquid_splasher"
         android:icon="@drawable/ic_settings_liquid"
         android:title="@string/liquid_splasher_title"
         android:fragment="com.android.settings.liquid.LiquidSplasher" />
+
+    <!-- Liquid Launcher -->
+    <header
+        android:id="@+id/liquid_launcher"
+        android:icon="@drawable/ic_launcher_liquid"
+        android:title="@string/liquid_launcher_title" />
+
 
     <!-- Theme Chooser -->
     <header
