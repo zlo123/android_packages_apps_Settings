@@ -4515,7 +4515,7 @@
     <string name="alt_resolver">Default App Picker</string>
     <string name="alt_resolver_summary">Use gingerbread style default app picker</string>
 
-    <!-- Interface | Lockscreen -->
+    <!-- Customization | Lockscreen -->
     <string name="lockscreen_style_options_title">Lockscreen Style</string>
     <string name="lockscreen_custom_background_title">Lockscreen Background</string>
     <string name="lockscreen_custom_background_dialog_title">Choose Color</string>
@@ -4824,6 +4824,11 @@
     <string name="toggles_order_summary">Choose order toggles are displayed</string>
     <string name="toggles_enable_haptic_feedback_title">Haptic Feedback</string>
     <string name="toggles_enable_haptic_feedback_summary">Use haptic feedback when pressing toggles</string>
+    <string name="title_settings_behavior">Use Default Behavior</string>
+    <string name="summary_settings_behavior_default">Short press for Settings, Long press for Toggles</string>
+    <string name="summary_settings_behavior_reverse">Short press for Toggles, Long press for Settings</string>
+    <string name="title_toggles_autohide">Autohide Toggles</string>
+    <string name="summary_toggles_autohide">Hide toggles after drawer closes</string>
     <string name="brightness_location_title">Brightness Location</string>
     <string name="reset_toggles_title">Reset Toggles</string>
     <string name="reset_toggles_summary">Reset all toggles and their order</string>
