@@ -52,7 +52,7 @@ public class PowerToggles extends SettingsPreferenceFragment implements OnPrefer
 
     private static final String TAG = "PowerToggles";
 
-    private static final String PREF_ENABLE_TOGGLES = "enable_toggles";
+    private static final String PREF_ENABLE_TOGGLES = "enabled_toggles";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
     private static final String PREF_TOGGLES_STYLE = "toggle_style";
     private static final String PREF_ALT_BUTTON_LAYOUT = "toggles_layout_preference";
@@ -61,6 +61,7 @@ public class PowerToggles extends SettingsPreferenceFragment implements OnPrefer
     private static final String PREF_TOGGLE_BTN_ALPHA = "toggle_btn_alpha";
     private static final String PREF_TOGGLE_BTN_BACKGROUND = "toggle_btn_background";
     private static final String PREF_TOGGLE_TEXT_COLOR = "toggle_text_color";
+    private static final String PREF_HAPTIC_FEEDBACK_TOGGLES_ENABLED = "toggles_haptic_feedback";
 
     Preference mEnabledToggles;
     Preference mLayout;
@@ -73,6 +74,7 @@ public class PowerToggles extends SettingsPreferenceFragment implements OnPrefer
     ColorPickerPreference mBtnEnabledColor;
     ColorPickerPreference mBtnDisabledColor;
     ColorPickerPreference mToggleTextColor;
+    CheckBoxPreference mHapticFeedback;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,10 @@ public class PowerToggles extends SettingsPreferenceFragment implements OnPrefer
         setTitle(R.string.notification_toggles_title);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.power_toggles_settings);
+
+        mHapticFeedback = (CheckBoxPreference) findPreference(PREF_HAPTIC_FEEDBACK_TOGGLES_ENABLED);
+        mHapticFeedback.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.HAPTIC_FEEDBACK_TOGGLES_ENABLED, false));
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
@@ -174,6 +180,11 @@ public class PowerToggles extends SettingsPreferenceFragment implements OnPrefer
 
             d.show();
 
+            return true;
+        } else if (preference == mHapticFeedback) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.HAPTIC_FEEDBACK_TOGGLES_ENABLED,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mLayout) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();

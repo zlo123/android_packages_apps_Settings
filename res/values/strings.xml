@@ -4822,6 +4822,8 @@
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle Order</string>
     <string name="toggles_order_summary">Choose order toggles are displayed</string>
+    <string name="toggles_enable_haptic_feedback_title">Haptic Feedback</string>
+    <string name="toggles_enable_haptic_feedback_summary">Use haptic feedback when pressing toggles</string>
     <string name="brightness_location_title">Brightness Location</string>
     <string name="reset_toggles_title">Reset Toggles</string>
     <string name="reset_toggles_summary">Reset all toggles and their order</string>
@@ -5124,8 +5126,6 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got It!</string>
     <string name="custom_density_dialog_button_reboot">Reboot Now</string>
-
-	<!-- TOXIC SUMMARIES -->
 	
     <string name="liquid_interface">Custom DPI, notification backgrounds, backlight settings, rotation modes</string>	
     <string name="liquid_lockscreen">Lockscreen targets, add your own custom colors, layouts and more</string>
@@ -5139,11 +5139,5 @@
     <string name="liquid_startup">Sysctl tweaks, SD Card boost, cron jobs</string>
     <string name="liquid_performance">I/O settings, KSM, zRAM and UFC</string>
 
-	
-	<!--TOXIC EDITS END -->
-	
-	
 	<!-- LIQUIDSMOOTH END EDITS -->
-	
-	
 </resources>
