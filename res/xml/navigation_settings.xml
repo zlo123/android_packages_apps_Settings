@@ -113,6 +113,20 @@
             android:title="@string/navigation_bar_width_title"
             android:summary="@string/navigation_bar_width_summary" />
 
+        <Preference
+            android:key="width_help"
+            android:enabled="false"
+            android:title="@string/navbar_width_help_title"
+            android:summary="@string/navbar_width_help_summary" />
+
+        <com.android.settings.widgets.SeekBarPreference
+            android:key="width_port"
+            android:title="@string/width_port_title" />
+
+        <com.android.settings.widgets.SeekBarPreference
+            android:key="width_land"
+            android:title="@string/width_land_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -152,8 +166,8 @@
             android:key="navbar_widgets_cat"
             android:title="@string/navbar_widgets">
             <Preference
-		android:key="navigation_bar_widgets"
-		android:title="@string/navbar_widgets_title" />
+		        android:key="navigation_bar_widgets"
+		        android:title="@string/navbar_widgets_title" />
 
     </PreferenceCategory>
 

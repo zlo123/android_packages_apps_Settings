@@ -4683,6 +4683,10 @@
     <string name="navbar_qty_summary">Choose number of navigation buttons</string>
     <string name="navbar_action_title">Button %1$s Action &amp; Icon</string>
     <string name="navbar_longpress_title">Button %1$s Longpress Action</string>
+    <string name="navbar_width_help_title">Navbar Combined Width</string>
+    <string name="navbar_width_help_summary">100 is 70\%% of screen width, 5 is 30\%% of screen width. 0 will default to per button width.</string>
+    <string name="width_port_title">Combined Width Port</string>
+    <string name="width_land_title">Combined Width Land</string>
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>
     <string name="navbar_action_recents">Recents</string>
