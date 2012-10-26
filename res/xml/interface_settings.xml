@@ -55,10 +55,15 @@
         android:key="advanced_options"
         android:title="@string/advanced_settings_title" >
 
-        <CheckBoxPreference
+	<CheckBoxPreference
             android:key="recent_kill_all"
             android:title="@string/recent_kill_all"
             android:summary="@string/recent_kill_all_summary" />
+
+        <CheckBoxPreference
+            android:key="ram_usage_bar"
+            android:title="@string/ram_bar"
+            android:summary="@string/ram_bar_summary" />
 
         <CheckBoxPreference
             android:key="status_bar_ime_switcher"

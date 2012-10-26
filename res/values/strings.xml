@@ -4323,12 +4323,6 @@
     <string name="tts_play_example_not_found_title">Warning</string>
     <string name="tts_play_example_not_found_msg">A text string sample wasn\'t found for the requested language</string>
 
-    <!--- Sms Security Limit -->
-    <string name="app_security_title">APP SECURITY</string>
-    <string name="sms_security_check_limit_title">SMS message limit</string>
-    <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending sms messages too requently. Currently: %d messages in 15 min</string>
-    <string name="sms_security_check_limit_default">30 (Default)</string>
-
 	<!-- LIQUIDSMOOTH START EDITS -->
 
     <!-- Settings | About -->
@@ -4506,6 +4500,8 @@
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <string name="recent_kill_all">Kill-All-Button</string>
     <string name="recent_kill_all_summary">Displays a button on recents window</string>
+    <string name="ram_bar">Recents RAM Bar</string>
+    <string name="ram_bar_summary">Shows RAM usage in the recents menu</string>
     <string name="ime_switcher_notify">IME Switcher</string>
     <string name="ime_switcher_notify_summary">Display the input method selector</string>
     <string name="kill_app_longpress_back">Hold Back-To-Kill</string>
@@ -4606,8 +4602,6 @@
     <string name="additional_options_title">Additional</string>
     <string name="unlock_menu_unlock_title">Menu Unlock</string>
     <string name="unlock_menu_unlock_summary">Pressing menu button unlocks device</string>
-    <string name="unlock_home_unlock_title">Home Unlock</string>
-    <string name="unlock_home_unlock_summary">Pressing the home button unlocks the device</string>
     <string name="unlock_quick_unlock_control_title">Quick Unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock magically with the PIN/Code</string>
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
@@ -4725,6 +4719,14 @@
     <string name="glow_times_superquick">Super Quick</string>
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
+    <string name="navbar_widgets_instructions">Swipe to view - Click to choose</string>
+    <string name="navbar_widgets_reset">Reset widgets</string>
+    <string name="navbar_widget_summary">Widget %1$s of %2$s</string>
+    <string name="navbar_widget_summary_add">Click to add Widget</string>
+    <string name="navbar_widgets_title">Configure widgets</string>
+    <string name="navbar_widgets_shiftLeft">Shift left</string>
+    <string name="navbar_widgets_shiftRight">Shift right</string>
+    <string name="navbar_widgets_delete">Delete widget</string>
     <string name="navigation_bar_style">Navbar Style</string>
     <string name="interface_navbar_color_title">Navbar Color</string>
     <string name="interface_navbar_color_summary">Change the color of the navigation bar</string>
@@ -5137,8 +5139,11 @@
     <string name="liquid_startup">Sysctl tweaks, SD Card boost, cron jobs</string>
     <string name="liquid_performance">I/O settings, KSM, zRAM and UFC</string>
 
+	
 	<!--TOXIC EDITS END -->
-
+	
+	
 	<!-- LIQUIDSMOOTH END EDITS -->
-
+	
+	
 </resources>

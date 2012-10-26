@@ -75,6 +75,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_IME_SWITCHER = "status_bar_ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+    private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
@@ -96,6 +97,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     Preference mCustomLabel;
     CheckBoxPreference mStatusBarImeSwitcher;
     CheckBoxPreference mRecentKillAll;
+    CheckBoxPreference mRamBar;
     ListPreference mVolumeKeyCursorControl;
     CheckBoxPreference mDisableBootanimPref;
     CheckBoxPreference mKillAppLongpressBack;
@@ -151,8 +153,12 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         }
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
-        mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
+        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, false));
+
+        mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
+	mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+                Settings.System.RAM_USAGE_BAR, false));
 
         mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
         mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
@@ -236,9 +242,13 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             return true;
         } else if (preference == mRecentKillAll) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
-            Helpers.restartSystemUI();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
+            return true;
+        } else if (preference == mRamBar) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RAM_USAGE_BAR, checked ? true : false);
             return true;
         } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
