@@ -123,6 +123,9 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     ListPreference mNavBarMenuDisplay;
     ListPreference mNavBarButtonQty;
     ListPreference mNavRingButtonQty;
+    ListPreference mNavBarColorPicker;
+    ListPreference mStockColor;
+
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
@@ -211,9 +214,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
         mGlowTimes.setOnPreferenceChangeListener(this);
 
-        float defaultAlpha = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
-                0.6f);
         mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
         mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
@@ -248,10 +248,10 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
-        mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
-        mNavBar.setOnPreferenceChangeListener(this);
+        mNavBarColorPicker = (ListPreference) findPreference(PREF_NAV_BAR_COLOR);
+        mNavBarColorPicker.setOnPreferenceChangeListener(this);
         
-        mStockColor = (Preference) findPreference(PREF_NAV_BAR_COLOR_DEF);
+        mStockColor = (ListPreference) findPreference(PREF_NAV_BAR_COLOR_DEF);
         mStockColor.setOnPreferenceClickListener(this);
 
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
@@ -433,7 +433,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_TINT, intHex);
             return true;
-        } else if (preference == mNavBar) {
+        } else if (preference == mNavBarColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);

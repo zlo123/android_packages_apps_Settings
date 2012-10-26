@@ -5125,4 +5125,24 @@
     <string name="liquid_performance">I/O settings, KSM, zRAM and UFC</string>
 
 	<!-- LIQUIDSMOOTH END EDITS -->
+
+	<!-- RAYMANFX EDITS -->
+
+    <string name="extras_category_title">EXTRAS</string>
+    <string name="extras_gapps_title">Google Applications</string>
+    <string name="extras_gapps_summary">Download Google Apps, e.g. PlayStore, Talk, Face Unlock</string>
+
+    <string name="extras_gapps">Download Google Applications</string>
+    <string name="gapps_from_goo">Download Gapps from Goo.im</string>
+    <string name="gapps_goo_title">Gapps download section at Goo.im</string>
+    <string name="gapps_goo_summary">Redirect me to the Gapps download center</string>
+
+    <string name="install_gapps">Install Google Applications</string>
+    <string name="install_gapps_recovery_title">Install the Gapps package from your recovery system</string>
+    <string name="install_gapps_recovery_summary">Reboot into your installed recovery system</string>
+    <string name="install_gapps_ota_title">Install Gapps on the fly without rebooting</string>
+    <string name="install_gapps_ota_summary">Select a Gapps package to install</string>
+
+	<!-- RAYMANFX EDITS END -->
+
 </resources>

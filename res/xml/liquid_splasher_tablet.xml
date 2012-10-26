@@ -12,6 +12,9 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
+
+	NOTE: Icon for PreferenceScreen with title @string/extras_gapps_title missing!
+	      Coming soon!
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
@@ -108,6 +111,16 @@
 		    android:icon="@drawable/ic_liquid_startup"
 			android:summary="@string/liquid_startup"
 		    android:fragment="com.android.settings.performance.StartupSettings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="extras_category"
+        android:title="@string/extras_category_title">
+
+		<PreferenceScreen
+		    android:key="@+id/extras_gapps"
+		    android:title="@string/extras_gapps_title"						android:summary="@string/extras_gapps_summary"
+		    android:fragment="com.raymanfx.settings.extras.Gapps" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
