@@ -123,6 +123,8 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     ListPreference mNavBarMenuDisplay;
     ListPreference mNavBarButtonQty;
     ListPreference mNavRingButtonQty;
+    ColorPickerPreference mNavBar;
+    Preference mStockColor;
 
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
@@ -246,8 +248,8 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
-	mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
-	mNavBar.setOnPreferenceChangeListener(this);
+	    mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
+    	mNavBar.setOnPreferenceChangeListener(this);
         
         mStockColor = (Preference) findPreference(PREF_NAV_BAR_COLOR_DEF);
         mStockColor.setOnPreferenceClickListener(this);
