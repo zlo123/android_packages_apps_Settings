@@ -84,6 +84,12 @@
             android:title="@string/screen_security_category"
             android:summary="@string/screen_security_summary" />
 
+        <PreferenceScreen
+            android:fragment="com.android.settings.liquid.LockscreenButtons"
+            android:key="lockscreen_buttons"
+            android:title="@string/lockscreen_buttons_title"
+            android:summary="@string/lockscreen_buttons_summary" />
+
         <Preference
             android:fragment="com.android.settings.liquid.LockscreenTargets"
             android:key="lockscreen_targets"

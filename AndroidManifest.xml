@@ -1468,6 +1468,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".liquid.LockscreenButtons" />
+
         <activity android:name=".liquid.LockscreenSettings" />
 
         <activity android:name=".liquid.LockscreenTargets" />

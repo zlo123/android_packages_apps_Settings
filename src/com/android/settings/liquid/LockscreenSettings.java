@@ -60,6 +60,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
 
     private ListPreference mCustomBackground;
     private ListPreference mWidgetsAlignment;
@@ -68,12 +69,17 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mLockscreenTextColor;
     private ListPreference mBatteryStatus;
     private ListPreference mClockAlign;
+    private PreferenceScreen mLockscreenButtons;
     private Activity mActivity;
     ContentResolver mResolver;
 
     private File wallpaperImage;
     private File wallpaperTemporary;
     private boolean mIsScreenLarge;
+
+    public boolean hasButtons() {
+        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,8 +100,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         mWidgetsAlignment = (ListPreference) findPreference(KEY_WIDGETS_PREF);
         mWidgetsAlignment.setOnPreferenceChangeListener(this);
         mWidgetsAlignment.setValue(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.LOCKSCREEN_LAYOUT,
-                0) + "");
+                .getContentResolver(), Settings.System.LOCKSCREEN_LAYOUT, 0) + "");
 
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
@@ -105,6 +110,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
         mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
         mClockAlign.setOnPreferenceChangeListener(this);
+
+        mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
+        if (!hasButtons()) {
+            getPreferenceScreen().removePreference(mLockscreenButtons);
+        }
 
         mIsScreenLarge = Utils.isTablet(getActivity());
 
