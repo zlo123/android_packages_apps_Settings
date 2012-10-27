@@ -4770,7 +4770,7 @@
     <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
     <string name="interface_navring_assist_title">Google Now</string>
     <string name="interface_softkey_settings">Software Keys</string>
-    <string name="interface_softkeys_pref_default_title">No Activity Selected</string>
+    <string name="interface_softkeys_pref_default_title">Click to select activity</string>
     <string name="interface_softkeys_pref_default_summary">Tap to select a custom long press activity</string>
     <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
     <string name="interface_softkeys_reboot_title">Reboot Menu</string>
@@ -5137,3 +5137,4 @@
 
 	<!-- LIQUIDSMOOTH END EDITS -->
 </resources>
+
