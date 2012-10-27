@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.net.Uri;
 import java.util.Formatter;
 import com.raymanfx.settings.tools.RootChecker;
+import com.raymanfx.settings.filepicker.FileChooser;
 
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -60,6 +61,7 @@ public class Gapps extends SettingsPreferenceFragment {
 	    RootChecker.runRootCommand("reboot recovery");
         } else if (preference == mFilePicker) {
             /* WIP */
+	    startActivity(new Intent(this, FileChooser.class));
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
