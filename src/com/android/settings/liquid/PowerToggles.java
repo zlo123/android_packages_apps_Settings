@@ -52,7 +52,7 @@ public class PowerToggles extends SettingsPreferenceFragment implements OnPrefer
 
     private static final String TAG = "PowerToggles";
 
-    private static final String PREF_ENABLE_TOGGLES = "enabled_toggles";
+    private static final String PREF_ENABLE_TOGGLES = "enable_toggles";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
     private static final String PREF_TOGGLES_STYLE = "toggle_style";
     private static final String PREF_ALT_BUTTON_LAYOUT = "toggles_layout_preference";
