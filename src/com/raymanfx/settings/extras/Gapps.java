@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 RaymanFX (raymanfx@gmail.com)
+ * Copyright (C) 2012 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,10 @@
 
 package com.raymanfx.settings.extras;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import java.util.Formatter;
-import com.raymanfx.settings.tools.RootChecker;
+import com.raymanfx.settings.tools.RunRootCommand;
 
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -52,12 +51,13 @@ public class Gapps extends SettingsPreferenceFragment {
 
 	}
 
-	@Override
-	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+@Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mGooUrl) {
             launchUrl("http://www.goo.im/gapps/");
         } else if (preference == mRebootRecovery) {
-	    RootChecker.runRootCommand("reboot recovery");
+            String reboot_recovery = "reboot recovery";
+	    new RunRootCommand().su.runWaitFor(String.format(reboot_recovery, 1));
         } else if (preference == mFilePicker) {
             /* WIP */
         }
