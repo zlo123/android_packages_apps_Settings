@@ -123,12 +123,9 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     ListPreference mNavBarMenuDisplay;
     ListPreference mNavBarButtonQty;
     ListPreference mNavRingButtonQty;
-<<<<<<< HEAD
     ColorPickerPreference mNavBar;
     Preference mStockColor;
 
-=======
->>>>>>> parent of 8dac0f5... SPLASHER: Add EXTRAS section for LiquidSmooth. Allows installing gapps from goo.im and soon installing an update.zip package with gapps on the fly!
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
@@ -217,9 +214,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
         mGlowTimes.setOnPreferenceChangeListener(this);
 
-        float defaultAlpha = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
-                0.6f);
         mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
         mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
@@ -254,13 +248,12 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
-<<<<<<< HEAD
 	    mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
     	mNavBar.setOnPreferenceChangeListener(this);
-=======
         mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
         mNavBar.setOnPreferenceChangeListener(this);
->>>>>>> parent of 8dac0f5... SPLASHER: Add EXTRAS section for LiquidSmooth. Allows installing gapps from goo.im and soon installing an update.zip package with gapps on the fly!
+        mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
+        mNavBar.setOnPreferenceChangeListener(this);
         
         mStockColor = (Preference) findPreference(PREF_NAV_BAR_COLOR_DEF);
         mStockColor.setOnPreferenceClickListener(this);
