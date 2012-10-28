@@ -22,9 +22,6 @@ import android.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import android.content.pm.PackageManager;
-import android.telephony.TelephonyManager;
-
 public class LiquidSplasher extends SettingsPreferenceFragment {
 
     private static final String TAG = "LiquidSplasher";
@@ -32,16 +29,6 @@ public class LiquidSplasher extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-     // Load the device specific settings (tablet vs phone)
-
-	PackageManager pm = getPackageManager();
-
-	boolean isTelephony = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);        	if (isTelephony) {
         addPreferencesFromResource(R.xml.liquid_splasher);
-	}
-	else {
-	addPreferencesFromResource(R.xml.liquid_splasher_tablet);
-	}
     }
 }
