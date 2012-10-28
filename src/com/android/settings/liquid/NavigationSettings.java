@@ -131,8 +131,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
-    ColorPickerPreference mNavBar;
-    Preference mStockColor;
     Preference mConfigureWidgets;
 
     private File customnavImage;
