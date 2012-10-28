@@ -61,7 +61,7 @@ public class Gapps extends SettingsPreferenceFragment {
 	    RootChecker.runRootCommand("reboot recovery");
         } else if (preference == mFilePicker) {
             /* WIP */
-	    //startActivity(new Intent(this, FileChooser.class));
+	    startActivity(new Intent(this, FileChooser.class));
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
