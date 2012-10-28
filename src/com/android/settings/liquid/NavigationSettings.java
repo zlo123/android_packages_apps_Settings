@@ -131,9 +131,8 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
-    Preference mWidthHelp;
-    SeekBarPreference mWidthPort;
-    SeekBarPreference mWidthLand;
+    ColorPickerPreference mNavBar;
+    Preference mStockColor;
     Preference mConfigureWidgets;
 
     private File customnavImage;
@@ -199,41 +198,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
 
-        float defaultAlpha = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.6f);
-        mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
-        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
-        mButtonAlpha.setOnPreferenceChangeListener(this);
-
-        mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
-        mNavigationBarColor.setOnPreferenceChangeListener(this);
-
-        mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
-        mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
-
-        mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
-        mGlowTimes.setOnPreferenceChangeListener(this);
-
-        mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
-        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
-        mButtonAlpha.setOnPreferenceChangeListener(this);
-
-        mWidthHelp = (Preference) findPreference("width_help");
-
-        float defaultPort = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH_PORT,
-                0f);
-        mWidthPort = (SeekBarPreference) findPreference("width_port");
-        mWidthPort.setInitValue((int) (defaultPort * 2.5f));
-        mWidthPort.setOnPreferenceChangeListener(this);
-
-        float defaultLand = Settings.System.getFloat(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH_LAND,
-                0f);
-        mWidthLand = (SeekBarPreference) findPreference("width_land");
-        mWidthLand.setInitValue((int) (defaultLand * 2.5f));
-        mWidthLand.setOnPreferenceChangeListener(this);
-
         // don't allow devices that must use a navigation bar to disable it
         if (hasNavBarByDefault || mTablet) {
             prefs.removePreference(mEnableNavigationBar);
@@ -261,10 +225,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
         if (mTablet) {
             prefs.removePreference(mNavBarMenuDisplay);
-        } else {
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mWidthHelp);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mWidthLand);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mWidthPort);
         }
 
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
@@ -468,22 +428,10 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mButtonAlpha) {
             float val = Float.parseFloat((String) newValue);
-            Log.e("R", "value: " + val * 0.01f);
+            Log.e("R", "value: " + val / 100);
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
-                    val * 0.01f);
-            return true;
-        } else if (preference == mWidthPort) {
-            float val = Float.parseFloat((String) newValue);
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_WIDTH_PORT,
-                    val * 0.4f);
-            return true;
-        } else if (preference == mWidthLand) {
-            float val = Float.parseFloat((String) newValue);
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_WIDTH_LAND,
-                    val * 0.4f);
+                    val / 100);
             return true;
         }
 
@@ -802,6 +750,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
                 e.printStackTrace();
             }
         }
+
         return getResources().getDrawable(R.drawable.ic_sysbar_null);
     }
 
