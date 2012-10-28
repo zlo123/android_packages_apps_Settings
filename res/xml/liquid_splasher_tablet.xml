@@ -13,6 +13,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 
+	NOTE: Icon for PreferenceScreen with title @string/extras_gapps_title missing!
+	      Coming soon!
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
@@ -116,9 +118,7 @@
 
 		<PreferenceScreen
 		    android:key="@+id/extras_gapps"
-		    android:title="@string/extras_gapps_title"
-		   android:icon="@drawable/ic_liquid_extras"
-			android:summary="@string/extras_gapps_summary"
+		    android:title="@string/extras_gapps_title"						android:summary="@string/extras_gapps_summary"
 		    android:fragment="com.raymanfx.settings.extras.Gapps" />
 
     </PreferenceCategory>
