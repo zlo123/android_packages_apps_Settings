@@ -25,8 +25,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class PowermenuSettings extends SettingsPreferenceFragment
-    implements Preference.OnPreferenceChangeListener {
+public class PowermenuSettings extends SettingsPreferenceFragment {
 
     private static final String TAG = "PowermenuSettings";
 
@@ -59,6 +58,7 @@ public class PowermenuSettings extends SettingsPreferenceFragment
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
         boolean showExpandedDesktopPref = 
                 getResources().getBoolean(R.bool.config_show_expandedDesktop);
+
         if (!showExpandedDesktopPref) {
             if (mExpandedDesktopPref != null) {
                 getPreferenceScreen().removePreference(mExpandedDesktopPref);
