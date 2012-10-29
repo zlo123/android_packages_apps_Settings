@@ -22,10 +22,10 @@
 
         <PreferenceScreen
             android:key="@+id/about_liquid"
-            android:title="@string/about_settings_title"
+            android:title="@string/about_liquid_title"
 			android:icon="@drawable/ic_liquid_about"
+            android:summary="@string/liquid_about"
             android:fragment="com.android.settings.liquid.AboutLiquid" />
-
     </PreferenceCategory>
 
     <PreferenceCategory android:key="customization_category"

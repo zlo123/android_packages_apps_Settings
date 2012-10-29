@@ -4323,6 +4323,8 @@
 	<!-- LIQUIDSMOOTH START EDITS -->
 
     <!-- Settings | About -->
+    <string name="about_liquid_title">About</string>
+    <string name="liquid_about">About the team and donation links</string>
     <string name="learn_more_title">More About Us</string>
     <string name="liquid_website_title">LiquidSmooth Website</string>
     <string name="liquid_website_summary">Visit Our Website</string>
@@ -4363,8 +4365,7 @@
     <string name="optimization_category_title">OPTIMIZATION</string>
 
     <!-- Settings | Options -->
-    <string name="about_liquid_title">About Liquid</string>
-    <string name="liquid_launcher_title">Liquid Launcher</string> 
+    <string name="liquid_launcher_title">Liquid Launcher</string>
     <string name="liquid_splasher_title">Liquid Splasher</string>
     <string name="theme_chooser_title">Theme Chooser</string>
 
@@ -4372,15 +4373,15 @@
     <string name="interface_settings_title">Interface</string>
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="navigation_settings_title">Navigation</string>
-    <string name="powermenu_settings_title">PowerMenu</string>
+    <string name="powermenu_settings_title">Powermenu</string>
     <string name="sound_settings_title">Sound</string>
 
     <!-- Customization | Summaries -->
-    <string name="liquid_interface">Custom DPI, notifications, backlight, and rotation</string>	
-    <string name="liquid_lockscreen">Lockscreen targets, color, layout, and security</string>
-    <string name="liquid_navigation">System navbar, color, layout, buttons, and size</string>	
-    <string name="liquid_powermenu">Enables options for OS PowerMenu</string>	
-    <string name="liquid_sound">Quiet hours, device facedown actions and volume control</string>
+    <string name="liquid_interface">Display options and notifications</string>
+    <string name="liquid_lockscreen">Custom targets, security, widgets</string>
+    <string name="liquid_navigation">Navbar buttons, color, and layout</string>
+    <string name="liquid_powermenu">Options for your device powermenu</string>
+    <string name="liquid_sound">Quiet hours, facedown, and volume</string>
 
     <!-- Notification | Titles -->
     <string name="notification_toggles_title">Toggles</string>
@@ -4388,9 +4389,9 @@
     <string name="statusbar_settings_title">Statusbar</string>
 
     <!-- Notification | Summaries -->
-    <string name="liquid_toggles">Power toogles and layout</string>	
-    <string name="liquid_widgets">Power widgets and layout</string>	
-    <string name="liquid_statusbar">Battery icons, clock, colors, signal and layouts</string>
+    <string name="liquid_toggles">Power toggles, styles, and colors</string>
+    <string name="liquid_widgets">Power widgets, tablets, and order</string>
+    <string name="liquid_statusbar">Battery icons, clock, and layouts</string>
 
     <!-- Optimization | Titles -->
     <string name="performance_settings_title">Performance</string>
@@ -4398,12 +4399,11 @@
     <string name="startup_settings_title">Startup</string>
 
 	<!-- Optimization | Summaries -->
-    <string name="liquid_processor">Overclocking, undervolting and kernel governors</string>	
-    <string name="liquid_startup">Sysctl tweaks, SDcard boost and CronJob Scheduler</string>
-    <string name="liquid_performance">Kernel scheduler, memory, zRAM, and fast charge</string>
+    <string name="liquid_processor">Overclock, governors, and voltage</string>
+    <string name="liquid_startup">System tweaks, sd boost, and jobs</string>
+    <string name="liquid_performance">Schedulers, zRAM, and fast charge</string>
 
     <!-- Customization | Display -->
-    <string name="about_settings_title">About</string>
     <string name="display_settings_title">Display</string>
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_enabled">Enabled</string>

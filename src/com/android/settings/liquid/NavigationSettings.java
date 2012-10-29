@@ -196,6 +196,21 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
 
+        mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
+        mNavigationBarColor.setOnPreferenceChangeListener(this);
+
+        mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
+        mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
+
+        mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
+        mGlowTimes.setOnPreferenceChangeListener(this);
+
+        float defaultAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.6f);
+        mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
+        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
+        mButtonAlpha.setOnPreferenceChangeListener(this);
+
         // don't allow devices that must use a navigation bar to disable it
         if (hasNavBarByDefault || mTablet) {
             prefs.removePreference(mEnableNavigationBar);
@@ -288,7 +303,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
         if (preference == mEnableNavigationBar) {
-
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
