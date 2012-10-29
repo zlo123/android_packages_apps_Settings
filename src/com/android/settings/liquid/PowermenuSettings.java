@@ -31,18 +31,18 @@ public class PowermenuSettings extends SettingsPreferenceFragment {
 
     private static final String KEY_AIRPLANE_MODE = "power_menu_airplane_mode";
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
-    private static final String KEY_NAVIGATION = "power_menu_navigation";
     private static final String KEY_REBOOT = "power_menu_reboot";
     private static final String KEY_PROFILES = "power_menu_profiles";
     private static final String KEY_SCREENSHOT = "power_menu_screenshot";
+    private static final String KEY_NAVIGATION = "power_menu_navigation";
     private static final String KEY_SILENT_MODE = "power_menu_silent_mode";
 
     private CheckBoxPreference mAirplaneModePref;
     private CheckBoxPreference mExpandedDesktopPref;
-    private CheckBoxPreference mNavigationPref;
     private CheckBoxPreference mRebootPref;
     private CheckBoxPreference mProfilesPref;
     private CheckBoxPreference mScreenshotPref;
+    private CheckBoxPreference mNavigationPref;
     private CheckBoxPreference mSilentModePref;
 
     @Override
@@ -53,36 +53,27 @@ public class PowermenuSettings extends SettingsPreferenceFragment {
 
         mAirplaneModePref = (CheckBoxPreference) findPreference(KEY_AIRPLANE_MODE);
         mAirplaneModePref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_AIRPLANE_MODE_ENABLED, 1) == 1));
+                Settings.System.POWER_MENU_AIRPLANE_MODE_ENABLED, 0) == 1));
 
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
-        boolean showExpandedDesktopPref = 
-                getResources().getBoolean(R.bool.config_show_expandedDesktop);
-
-        if (!showExpandedDesktopPref) {
-            if (mExpandedDesktopPref != null) {
-                getPreferenceScreen().removePreference(mExpandedDesktopPref);
-            }
-        } else {
-            mExpandedDesktopPref.setChecked((Settings.System.getInt(getContentResolver(),
-                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
-        }
-
-        mNavigationPref = (CheckBoxPreference) findPreference(KEY_NAVIGATION);
-        mNavigationPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_NAVIGATION_ENABLED, 1) == 1));
-
-        mProfilesPref = (CheckBoxPreference) findPreference(KEY_PROFILES);
-        mProfilesPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, 0) == 1));
+        mExpandedDesktopPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
 
         mRebootPref = (CheckBoxPreference) findPreference(KEY_REBOOT);
         mRebootPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_REBOOT_ENABLED, 1) == 1));
 
+        mProfilesPref = (CheckBoxPreference) findPreference(KEY_PROFILES);
+        mProfilesPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1));
+
         mScreenshotPref = (CheckBoxPreference) findPreference(KEY_SCREENSHOT);
         mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_SCREENSHOT_ENABLED, 0) == 1));
+                Settings.System.POWER_MENU_SCREENSHOT_ENABLED, 1) == 1));
+
+        mNavigationPref = (CheckBoxPreference) findPreference(KEY_NAVIGATION);
+        mNavigationPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_NAVIGATION_ENABLED, 0) == 1));
 
         mSilentModePref = (CheckBoxPreference) findPreference(KEY_SILENT_MODE);
         mSilentModePref.setChecked((Settings.System.getInt(getContentResolver(),
@@ -101,22 +92,22 @@ public class PowermenuSettings extends SettingsPreferenceFragment {
             value = mExpandedDesktopPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, value ? 1 : 0);
-        } else if (preference == mNavigationPref) {
-            value = mNavigationPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_NAVIGATION_ENABLED, value ? 1 : 0);
-        } else if (preference == mProfilesPref) {
-            value = mProfilesPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_PROFILES_ENABLED, value ? 1 : 0);
         } else if (preference == mRebootPref) {
             value = mRebootPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_REBOOT_ENABLED, value ? 1 : 0);
+        } else if (preference == mProfilesPref) {
+            value = mProfilesPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_PROFILES_ENABLED, value ? 1 : 0);
         } else if (preference == mScreenshotPref) {
             value = mScreenshotPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENSHOT_ENABLED, value ? 1 : 0);
+        } else if (preference == mNavigationPref) {
+            value = mNavigationPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_NAVIGATION_ENABLED, value ? 1 : 0);
         } else if (preference == mSilentModePref) {
             value = mSilentModePref.isChecked();
             Settings.System.putInt(getContentResolver(),
@@ -124,7 +115,6 @@ public class PowermenuSettings extends SettingsPreferenceFragment {
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
-
         return true;
     }
 }
