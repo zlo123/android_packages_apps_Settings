@@ -212,10 +212,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
 	    mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
     	mNavBar.setOnPreferenceChangeListener(this);
-        mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
-        mNavBar.setOnPreferenceChangeListener(this);
-        mNavBar = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
-        mNavBar.setOnPreferenceChangeListener(this);
         
         mStockColor = (Preference) findPreference(PREF_NAV_BAR_COLOR_DEF);
         mStockColor.setOnPreferenceClickListener(this);
