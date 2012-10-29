@@ -4263,7 +4263,7 @@
     <!-- Screen security - Screen security   -->
     <string name="screen_security_category">Screen Security</string>
     <string name="screen_security_title">Lock screen</string>
-    <string name="screen_security_summary">View or change lock screen security, delay and timeout settings</string>
+    <string name="screen_security_summary">View or change security, delay or timeout</string>
     <string name="additional_options_title">Additional options</string>
     <string name="unlock_menu_unlock_title">Menu unlock</string>
     <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
@@ -4375,19 +4375,32 @@
     <string name="powermenu_settings_title">Powermenu</string>
     <string name="sound_settings_title">Sound</string>
 
+    <!-- Customization | Summaries -->
+    <string name="liquid_interface">Custom DPI, notifications, backlight, and rotation</string>	
+    <string name="liquid_lockscreen">Lockscreen targets, colors, layouts, and security</string>
+    <string name="liquid_navigation">System navbar, colors, layout, buttons, and sizes</string>	
+    <string name="liquid_powermenu">Enables options for the operating system powermenu</string>	
+    <string name="liquid_sound">Quiet hours, phone facedown actions, and volume control</string>
+
     <!-- Notification | Titles -->
     <string name="notification_toggles_title">Toggles</string>
     <string name="notification_widget_title">Widgets</string>
     <string name="statusbar_settings_title">Statusbar</string>
+
+    <!-- Notification | Summaries -->
+    <string name="liquid_toggles">Power toogles and layout</string>	
+    <string name="liquid_widgets">Power widgets and layout</string>	
+    <string name="liquid_statusbar">Battery icons, clock, colors, signal and layouts</string>
 
     <!-- Optimization | Titles -->
     <string name="performance_settings_title">Performance</string>
     <string name="processor_settings_title">Processor</string>
     <string name="startup_settings_title">Startup</string>
 
-    <!-- Developer | Titles -->
-    <string name="device_info_title">Device Info</string>
-    <string name="developer_tools_and_info_title">Tools &amp; Info</string>
+	<!-- Optimization | Summaries -->
+    <string name="liquid_processor">Overclocking, undervolting, and kernel governors</string>	
+    <string name="liquid_startup">Sysctl tweaks, SDcard boost, and schedule cronjobs</string>
+    <string name="liquid_performance">Kernel scheduler, memory, zRAM, and fast charge</string>
 
     <!-- Customization | Display -->
     <string name="about_settings_title">About</string>
@@ -4512,6 +4525,35 @@
     <string name="alt_resolver">Default App Picker</string>
     <string name="alt_resolver_summary">Use gingerbread style default app picker</string>
 
+    <!-- Interface | LCD Density -->
+    <string name="lcd_density_title">LCD Density</string>
+    <string name="lcd_density_summary">unknown</string>
+    <string name="current_lcd_density">"Current LCD Density: "</string>
+    <string name="lcd_density_wizard">LCD Density Wizard</string>
+    <string name="follow_through_title">Follow Through!</string>
+    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
+    <string name="stock_density_title">1. Change LCD Density to stock value</string>
+    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
+    <string name="stock_density_changed_summary">"Density set to: "</string>
+    <string name="reboot_title">2. Reboot!</string>
+    <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
+    <string name="clear_market_data_title">3. Clear market data</string>
+    <string name="clear_market_data_cleared">Market data cleared</string>
+    <string name="clear_market_data_donot_cleared">"Market data couldn't be cleared, please clear it yourself!"</string>
+    <string name="open_market_title">4. Open Market and hit accept</string>
+    <string name="open_market_summary">Press back when done to return here.</string>
+    <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
+    <string name="custom_density_title">5. Change density to whatever you like!</string>
+    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
+    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
+    <string name="custom_density">Custom</string>
+    <string name="set_custom_density_title">Set Custom Density</string>
+    <string name="set_custom_density_set">Set</string>
+    <string name="custom_density_dialog_title">"WARNING!"</string>
+    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+    <string name="custom_density_dialog_button_got">Got It!</string>
+    <string name="custom_density_dialog_button_reboot">Reboot Now</string>
+
     <!-- Customization | Lockscreen -->
     <string name="lockscreen_style_options_title">Lockscreen Style</string>
     <string name="lockscreen_custom_background_title">Lockscreen Background</string>
@@ -4552,8 +4594,8 @@
     <string name="weather_invert_lowhigh">Invert Temperatures</string>
     <string name="weather_progress_title">Verifying Location</string>
     <string name="weather_refresh_manual">Manual</string>
-    <string name="weather_refresh_30min">30 Ninutes</string>
-    <string name="weather_refresh_60min">60 Ninutes</string>
+    <string name="weather_refresh_30min">30 Minutes</string>
+    <string name="weather_refresh_60min">60 Minutes</string>
     <string name="weather_refresh_2hrs">2 Hours</string>
     <string name="weather_refresh_4hrs">4 Hours</string>
     <string name="weather_refresh_6hrs">6 Hours</string>
@@ -4695,14 +4737,14 @@
     <string name="glow_times_superquick">Super Quick</string>
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
-    <string name="navbar_widgets_instructions">Swipe to view - Click to choose</string>
-    <string name="navbar_widgets_reset">Reset widgets</string>
+    <string name="navbar_widgets_instructions">Swipe To View (Click To Choose)</string>
+    <string name="navbar_widgets_reset">Reset Widgets</string>
     <string name="navbar_widget_summary">Widget %1$s of %2$s</string>
-    <string name="navbar_widget_summary_add">Click to add Widget</string>
-    <string name="navbar_widgets_title">Configure widgets</string>
-    <string name="navbar_widgets_shiftLeft">Shift left</string>
-    <string name="navbar_widgets_shiftRight">Shift right</string>
-    <string name="navbar_widgets_delete">Delete widget</string>
+    <string name="navbar_widget_summary_add">Click To Add Widget</string>
+    <string name="navbar_widgets_title">Configure Widgets</string>
+    <string name="navbar_widgets_shiftLeft">Shift Left</string>
+    <string name="navbar_widgets_shiftRight">Shift Right</string>
+    <string name="navbar_widgets_delete">Delete Widget</string>
     <string name="navigation_bar_style">Navbar Style</string>
     <string name="interface_navbar_color_title">Navbar Color</string>
     <string name="interface_navbar_color_summary">Change the color of the navigation bar</string>
@@ -4993,6 +5035,8 @@
     <string name="ps_enable_cron">Enable scheduled cron jobs</string>
 
     <!-- Developer | Debugging -->
+    <string name="device_info_title">Device Info</string>
+    <string name="developer_tools_and_info_title">Tools &amp; Info</string>
     <string name="debug_misc_category">Miscellanous</string>
     <string name="enable_adb">Android debugging</string>
     <string name="enable_adb_summary">Allow Android debug mode, the adb interface on USB (or on network)</string>
@@ -5080,46 +5124,6 @@
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
     <string name="group_applications">Applications</string>
 
-    <!-- LCD Density -->
-    <string name="lcd_density_title">LCD Density</string>
-    <string name="lcd_density_summary">unknown</string>
-    <string name="current_lcd_density">"Current LCD Density: "</string>
-    <string name="lcd_density_wizard">LCD Density Wizard</string>
-    <string name="follow_through_title">Follow Through!</string>
-    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
-    <string name="stock_density_title">1. Change LCD Density to stock value</string>
-    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
-    <string name="stock_density_changed_summary">"Density set to: "</string>
-    <string name="reboot_title">2. Reboot!</string>
-    <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
-    <string name="clear_market_data_title">3. Clear market data</string>
-    <string name="clear_market_data_cleared">Market data cleared</string>
-    <string name="clear_market_data_donot_cleared">"Market data couldn't be cleared, please clear it yourself!"</string>
-    <string name="open_market_title">4. Open Market and hit accept</string>
-    <string name="open_market_summary">Press back when done to return here.</string>
-    <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
-    <string name="custom_density_title">5. Change density to whatever you like!</string>
-    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
-    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
-    <string name="custom_density">Custom</string>
-    <string name="set_custom_density_title">Set Custom Density</string>
-    <string name="set_custom_density_set">Set</string>
-    <string name="custom_density_dialog_title">"WARNING!"</string>
-    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
-    <string name="custom_density_dialog_button_got">Got It!</string>
-    <string name="custom_density_dialog_button_reboot">Reboot Now</string>
-	
-    <string name="liquid_interface">Custom DPI, notification backgrounds, backlight settings, rotation modes</string>	
-    <string name="liquid_lockscreen">Lockscreen targets, add your own custom colors, layouts and more</string>
-    <string name="liquid_navigation">Navbar settings, colors, layout, buttons, DPI</string>	
-    <string name="liquid_powermenu">Toggles and actions for your powermenu</string>	
-    <string name="liquid_sound">Quiet hours, facedown actions and volume controls</string>	
-    <string name="liquid_toggles">Toggles and layouts</string>	
-    <string name="liquid_widgets">Power widgets</string>	
-    <string name="liquid_statusbar">Signal bars, battery icons, clock styles, custom colors and layouts</string>	
-    <string name="liquid_processor">Overclocking, undervolting, governors</string>	
-    <string name="liquid_startup">Sysctl tweaks, SD Card boost, cron jobs</string>
-    <string name="liquid_performance">I/O settings, KSM, zRAM and UFC</string>
-
 	<!-- LIQUIDSMOOTH END EDITS -->
+
 </resources>
