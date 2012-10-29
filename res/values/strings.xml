@@ -4372,15 +4372,15 @@
     <string name="interface_settings_title">Interface</string>
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="navigation_settings_title">Navigation</string>
-    <string name="powermenu_settings_title">Powermenu</string>
+    <string name="powermenu_settings_title">PowerMenu</string>
     <string name="sound_settings_title">Sound</string>
 
     <!-- Customization | Summaries -->
     <string name="liquid_interface">Custom DPI, notifications, backlight, and rotation</string>	
-    <string name="liquid_lockscreen">Lockscreen targets, colors, layouts, and security</string>
-    <string name="liquid_navigation">System navbar, colors, layout, buttons, and sizes</string>	
-    <string name="liquid_powermenu">Enables options for the operating system powermenu</string>	
-    <string name="liquid_sound">Quiet hours, phone facedown actions, and volume control</string>
+    <string name="liquid_lockscreen">Lockscreen targets, color, layout, and security</string>
+    <string name="liquid_navigation">System navbar, color, layout, buttons, and size</string>	
+    <string name="liquid_powermenu">Enables options for OS PowerMenu</string>	
+    <string name="liquid_sound">Quiet hours, device facedown actions and volume control</string>
 
     <!-- Notification | Titles -->
     <string name="notification_toggles_title">Toggles</string>
@@ -4398,8 +4398,8 @@
     <string name="startup_settings_title">Startup</string>
 
 	<!-- Optimization | Summaries -->
-    <string name="liquid_processor">Overclocking, undervolting, and kernel governors</string>	
-    <string name="liquid_startup">Sysctl tweaks, SDcard boost, and schedule cronjobs</string>
+    <string name="liquid_processor">Overclocking, undervolting and kernel governors</string>	
+    <string name="liquid_startup">Sysctl tweaks, SDcard boost and CronJob Scheduler</string>
     <string name="liquid_performance">Kernel scheduler, memory, zRAM, and fast charge</string>
 
     <!-- Customization | Display -->
