@@ -1886,7 +1886,7 @@
     </string-array>
 
     <string-array name="lockscreen_long_key_press_values" translatable="false">
-        <item></item>
+        <item>NONE</item>
         <item>NEXT</item>
         <item>PREVIOUS</item>
         <item>PLAYPAUSE</item>

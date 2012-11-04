@@ -66,11 +66,11 @@
             android:entries="@array/lockscreen_battery_status_entries"
             android:entryValues="@array/lockscreen_battery_status_values"/>
 
-        <Preference
-            android:fragment="com.android.settings.liquid.Weather"
-            android:key="lockscreen_weather"
-            android:summary="@string/lockscreen_weather_summary"
-            android:title="@string/lockscreen_weather_title" />
+        <PreferenceScreen
+            android:fragment="com.android.settings.liquid.LockscreenButtons"
+            android:key="lockscreen_buttons"
+            android:title="@string/lockscreen_buttons_title"
+            android:summary="@string/lockscreen_buttons_summary" />
 
         <Preference
             android:fragment="com.android.settings.liquid.Calendar"
@@ -84,17 +84,17 @@
             android:title="@string/screen_security_category"
             android:summary="@string/screen_security_summary" />
 
-        <PreferenceScreen
-            android:fragment="com.android.settings.liquid.LockscreenButtons"
-            android:key="lockscreen_buttons"
-            android:title="@string/lockscreen_buttons_title"
-            android:summary="@string/lockscreen_buttons_summary" />
-
         <Preference
             android:fragment="com.android.settings.liquid.LockscreenTargets"
             android:key="lockscreen_targets"
             android:summary="@string/lockscreen_target_summary"
             android:title="@string/lockscreen_target_title" />
+
+        <Preference
+            android:fragment="com.android.settings.liquid.Weather"
+            android:key="lockscreen_weather"
+            android:summary="@string/lockscreen_weather_summary"
+            android:title="@string/lockscreen_weather_title" />
 
     </PreferenceCategory>
 

@@ -64,11 +64,9 @@ public class LockscreenButtons extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final int deviceKeys = getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
-        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
-        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+        final boolean hasHomeKey = (KEY_MASK_HOME) != 0;
+        final boolean hasBackKey = (KEY_MASK_BACK) != 0;
+        final boolean hasMenuKey = (KEY_MASK_MENU) != 0;
 
         addPreferencesFromResource(R.xml.lockscreen_buttons_settings);
 
@@ -118,7 +116,6 @@ public class LockscreenButtons extends SettingsPreferenceFragment
             pref.setOnPreferenceChangeListener(this);
         }
     }
-
 
     @Override
     public void onResume() {
