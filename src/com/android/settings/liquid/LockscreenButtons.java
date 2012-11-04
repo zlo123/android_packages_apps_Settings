@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.liquid;
 
 import java.util.*;
 
@@ -40,7 +40,6 @@ public class LockscreenButtons extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "LockscreenButtons";
-
     private static final String LONG_PRESS_BACK = "lockscreen_long_press_back";
     private static final String LONG_PRESS_HOME = "lockscreen_long_press_home";
     private static final String LONG_PRESS_MENU = "lockscreen_long_press_menu";
@@ -64,12 +63,13 @@ public class LockscreenButtons extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final boolean hasHomeKey = (KEY_MASK_HOME) != 0;
-        final boolean hasBackKey = (KEY_MASK_BACK) != 0;
-        final boolean hasMenuKey = (KEY_MASK_MENU) != 0;
+        final int deviceKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
+        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
 
         addPreferencesFromResource(R.xml.lockscreen_buttons_settings);
-
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mLongBackAction = (ListPreference) prefSet.findPreference(LONG_PRESS_BACK);

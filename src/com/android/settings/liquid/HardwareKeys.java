@@ -34,7 +34,7 @@ public class HardwareKeys extends SettingsPreferenceFragment
 
     private static final String TAG = "HardwareKeys";
 
-    private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
+   private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
     private static final String HARDWARE_KEYS_ENABLE_CUSTOM = "hardware_keys_enable_custom";
     private static final String HARDWARE_KEYS_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String HARDWARE_KEYS_MENU_PRESS = "hardware_keys_menu_press";
@@ -77,10 +77,12 @@ public class HardwareKeys extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final boolean hasHomeKey = (KEY_MASK_HOME) != 0;
-        final boolean hasMenuKey = (KEY_MASK_MENU) != 0;
-        final boolean hasAssistKey = (KEY_MASK_ASSIST) != 0;
-        final boolean hasAppSwitchKey = (KEY_MASK_APP_SWITCH) != 0;
+        final int deviceKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+        final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
+        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
 
         addPreferencesFromResource(R.xml.hardware_keys);
         PreferenceScreen prefSet = getPreferenceScreen();
