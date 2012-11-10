@@ -249,7 +249,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         } else if (preference == mLeftyMode) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_LEFTY_MODE,
-                    isCheckBoxPrefernceChecked(preference));
+                    ((CheckBoxPreference) preference).isChecked());
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mRecentKillAll) {
