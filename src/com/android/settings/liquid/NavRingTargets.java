@@ -40,7 +40,7 @@ import com.android.settings.util.ShortcutPickerHelper;
 import com.android.settings.widgets.NavBarItemPreference;
 
 public class NavRingTargets extends SettingsPreferenceFragment 
-        implements ShortcutPickerHelper.OnPickListener, .OnPreferenceChangeListener {
+        implements ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
     private ShortcutPickerHelper mPicker;
     private Preference mPreference;
