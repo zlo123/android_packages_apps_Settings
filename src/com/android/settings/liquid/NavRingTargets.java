@@ -57,7 +57,7 @@ public class NavRingTargets extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.title_navring);
+        setTitle(R.string.navbar_ring_cat);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_navring);
 
@@ -217,21 +217,21 @@ public class NavRingTargets extends SettingsPreferenceFragment
         if (uri.equals("none")) {
                 return getResources().getString(R.string.none);
         } else if (uri.equals("screenshot")) {
-                return getResources().getString(R.string.take_screenshot);
+                return getResources().getString(R.string.interface_softkeys_screenshot_title);
         } else if (uri.equals("ime_switcher")) {
-                return getResources().getString(R.string.open_ime_switcher);
+                return getResources().getString(R.string.interface_softkeys_ime_switcher_title);
         } else if (uri.equals("ring_vib")) {
-                return getResources().getString(R.string.ring_vib);
+                return getResources().getString(R.string.interface_softkeys_ring_vib_title);
         } else if (uri.equals("ring_silent")) {
-                return getResources().getString(R.string.ring_silent);
+                return getResources().getString(R.string.interface_softkeys_ring_silent_title);
         } else if (uri.equals("ring_vib_silent")) {
-                return getResources().getString(R.string.ring_vib_silent);
+                return getResources().getString(R.string.interface_softkeys_ring_vib_silent_title);
         } else if (uri.equals("killcurrent")) {
-                return getResources().getString(R.string.kill_app);
+                return getResources().getString(R.string.interface_softkeys_kill_process_title);
         } else if (uri.equals("screenoff")) {
-                return getResources().getString(R.string.screen_off);
+                return getResources().getString(R.string.interface_softkeys_screenoff_title);
         } else if (uri.equals("assist")) {
-                return getResources().getString(R.string.google_now);
+                return getResources().getString(R.string.interface_navring_assist_title);
         } else {
                 return mPicker.getFriendlyNameForUri(uri);
         }

@@ -4782,6 +4782,7 @@
     <string name="interface_softkeys_ring_vib_silent_title">Ring/Vibrate/Silent</string>
     <string name="interface_softkeys_kill_process_title">Kill Task</string>
     <string name="interface_softkey_package_removed">The previously selected package was not found</string>
+    <string name="none">None</string>
     <string name="title_navring_amount">Ring Quantity</string>
     <string name="summary_navring_amount">Choose the number of ring targets</string>
     <string name="interface_navring_settings_title">Navbar Rings</string>
