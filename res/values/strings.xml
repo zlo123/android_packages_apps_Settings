@@ -5051,8 +5051,8 @@
 
     <!-- Optimization | Performance -->
     <string name="memory_controls_title">Memory</string>
-    <string name="fast_charge_title">Fast Charge</string>
-    <string name="usb_fast_charge_title">Charging</string>
+    <string name="fast_charge_title">Charging</string>
+    <string name="usb_fast_charge_title">Fast Charge</string>
     <string name="io_scheds_title">Schedulers</string>
     <string name="io_scheds_summary">Change I/O Scheduler</string>
     <string name="io_sched_title">I/O Scheduler</string>
