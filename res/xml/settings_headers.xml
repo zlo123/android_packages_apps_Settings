@@ -16,7 +16,7 @@
 
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
-	
+
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />
 
@@ -71,7 +71,6 @@
         android:id="@+id/liquid_launcher"
         android:icon="@drawable/ic_launcher_liquid"
         android:title="@string/liquid_launcher_title" />
-
 
     <!-- Theme Chooser -->
     <header

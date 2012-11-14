@@ -1203,7 +1203,7 @@
     <string name="keep_screen_on" msgid="1146389631208760344">"Permanecer ativo"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"A tela nunca entrará em inatividade enquanto estiver carregando."</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"Permitir locais fictícios"</string>
-    <string name="allow_mock_location_summary" msgid="317615105156345626">"Permitir locais fictícios"</string>
+    <string name="allow_mock_sms">Permitir SMS fictícios</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"Permitir a depuração USB?"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"A depuração USB serve apenas para fins de desenvolvimento. Use-a para copiar dados entre o computador e o dispositivo, instalar aplicativos no seu aparelho sem notificação e ler dados de registro."</string>
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"Ativar as configurações de desenvolvimento?"</string>
@@ -1417,9 +1417,6 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"Nenhuma conta está armazenando o backup dos dados"</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"Restauração automática"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"Ao reinstalar um aplicativo, restaura as configurações de backup e dados"</string>
-    <string name="bugreport_title" msgid="1009498799922543551">"Obter relatório de bugs"</string>
-    <string name="bugreport_message" msgid="1182209569732110590">"Isto coletará informações sobre o estado atual do dispositivo para enviá-las em uma mensagem de e-mail. Após iniciar o relatório de bugs, será necessário aguardar algum tempo até que esteja pronto para ser enviado. Tenha paciência."</string>
-    <string name="report" msgid="302437572240018342">"Gerar relatório"</string>
     <string name="local_backup_password_title" msgid="3860471654439418822">"Senha do backup local"</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"Os backups completos do computador não estão protegidos no momento"</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"Toque para alterar ou remover a senha de backups completos do desktop"</string>
@@ -1890,9 +1887,10 @@
     <string name="status_bar_toggle_brightness_summary">Permite ajustar o brilho deslizando através da barra de status</string>
     <string name="status_bar_toggle_info">Brilho automático está habilitado</string>
     <string name="status_bar_signal_text_title">Alternar exibição de sinal</string>
-    <string name="status_bar_signal_text_show_bars">Barras de sinal</string>
+    <string name="status_bar_style_icon">Ícone</string>
+    <string name="status_bar_style_hidden">Oculto</string>
     <string name="status_bar_signal_text_show_text">Texto de sinal</string>
-    <string name="status_bar_signal_text_hidden">Oculto</string>
+    <string name="status_bar_battery_status_percentage">Porcentagem</string>
     <string name="lock_screen_title">Tela de bloqueio</string>
     <string name="lockscreen_target_info">Arraste o botão para os alvos para criar atalhos</string>
     <string name="lockscreen_target_title">Atalhos da tela de bloqueio</string>
@@ -2279,4 +2277,71 @@
     <string name="io_sched_set_on_boot_summary">Restaura as configurações do escalonador I/O na inicialização</string>
     <string name="usb_mass_storage_title">Armazenamento em massa</string>
     <string name="usb_mass_storage_summary">Ativa o armazenamento em massa USB</string>
+    <string name="volume_key_cursor_control_title">Controlar cursor c/ botão de volume</string>
+    <string name="volume_key_cursor_control_off">Desativado</string>
+    <string name="volume_key_cursor_control_on">Aumentar/abaixar o volume move o cursor para esquerda/direita</string>
+    <string name="volume_key_cursor_control_on_reverse">Aumentar/abaixar o volume move o cursor para direita/esquerda</string>
+    <string name="lockscreen_clock_align_title">Alinhamento do relógio</string>
+    <string name="lockscreen_clock_align_left">Esquerda</string>
+    <string name="lockscreen_clock_align_center">Centro</string>
+    <string name="lockscreen_clock_align_right">Direita</string>
+    <string name="accessibility_home_button_answers_call_title">Atende chamada com botão home</string>
+    <string name="wifi_setting_countrycode_title">Código de região Wi-Fi</string>
+    <string name="wifi_setting_countrycode_summary">Especifique o código de região para o Wi-Fi</string>
+    <string name="wifi_setting_countrycode_error">Houve um problema ao definir o código de região.</string>
+    <string name="navigation_bar_menu_editable">Editável</string>
+    <string name="navigation_bar_menu_locked">Travada</string>
+    <string name="cmupdate_settings_title">Atualizações CyanogenMod</string>
+    <string name="cmupdate_settings_summary">Verifique por, visualizar ou instalar atualizações disponíveis</string>
+    <string name="dock_force_undock_title">Forçar retirada do dock</string>
+    <string name="dock_force_undock_summary_no_dock" product="tablet">O Tablet não está encaixado no dock</string>
+    <string name="dock_force_undock_summary_no_dock" product="default">O Telefone não está encaixado no dock</string>
+    <string name="dock_force_undock_summary" product="tablet">Desencaixar o Tablet do dock</string>
+    <string name="dock_force_undock_summary" product="default">Desencaixar o Telefone do dock</string>
+    <string name="status_bar_battery_status_circle">Círculo</string>
+    <string name="status_bar_battery_status_circle_percentage">Círculo com porcentagem</string>
+    <string name="app_security_title">Segurança dos aplicativos</string>
+    <string name="sms_security_check_limit_title">Limite de mensagens SMS</string>
+    <string name="sms_security_check_limit_summary">Alertar previnindo que aplicações enviem muitas mensagens SMS. Limite atual: Até %d mensagens durante 15 minutos</string>
+    <string name="sms_security_check_limit_default">30 (Padrão)</string>
+    <string name="unlock_home_unlock_title">Destravar com home</string>
+    <string name="unlock_home_unlock_summary">Destrava o dispositivo ao pressionar botão home</string>
+    <string name="power_menu_airplane_title">Modo avião</string>
+    <string name="power_menu_silent_title">Modo silencioso</string>
+    <string name="power_menu_expanded_desktop">Desktop expandido</string>
+    <string name="lockscreen_buttons_title">Ações dos botões</string>
+    <string name="lockscreen_buttons_summary">Visualizar ou mudar as ações dos botões na tela de bloqueio</string>
+    <string name="lockscreen_long_press_back_title">Toque longo no botão Voltar</string>
+    <string name="lockscreen_long_press_home_title">Toque longo no botão Home</string>
+    <string name="lockscreen_long_press_menu_title">Toque longo no botão Menu</string>
+    <string name="lockscreen_buttons_no_action">Sem ação</string>
+    <string name="lockscreen_buttons_flashlight">Lanterna</string>
+    <string name="lockscreen_buttons_next">Próxima música</string>
+    <string name="lockscreen_buttons_previous">Música anterior</string>
+    <string name="lockscreen_buttons_playpause">Reproduzir/Pausar música</string>
+    <string name="lockscreen_buttons_toggle_sound">Alternar som</string>
+    <string name="gestures_settings_title">Gestos com stylus</string>
+    <string name="category_spen_title">Gestos com stylus</string>
+    <string name="enable_subcat_title">Stylus</string>
+    <string name="enable_spen_title_head">Ativar gestos com stylus</string>
+    <string name="enable_spen_summary_head">Permite gestos com botão stylus a iniciar ações personalizadas. Aviso: Aplicações não serão permitidas a receber entrada ao segurar o botão stylus</string>
+    <string name="gestures_subcat_title">Gestos</string>
+    <string name="gestures_left_spen_title_head">Deslizar para esquerda</string>
+    <string name="gestures_left_spen_summary_head">Permite a iniciar uma ação personalizada ao deslizar para esquerda</string>
+    <string name="gestures_right_spen_title_head">Deslizar para direita</string>
+    <string name="gestures_right_spen_summary_head">Permite a iniciar uma ação personalizada ao deslizar para direita</string>
+    <string name="gestures_up_spen_title_head">Deslizar para cima</string>
+    <string name="gestures_up_spen_summary_head">Permite a iniciar uma ação personalizada ao deslizar para cima</string>
+    <string name="gestures_down_spen_title_head">Deslizar para baixo</string>
+    <string name="gestures_down_spen_summary_head">Permite a iniciar uma ação personalizada ao deslizar para baixo</string>
+    <string name="gestures_long_spen_title_head">Toque longo</string>
+    <string name="gestures_long_spen_summary_head">Permite a iniciar uma ação personalizada no toque longo</string>
+    <string name="gestures_double_spen_title_head">Toque duplo</string>
+    <string name="gestures_double_spen_summary_head">Permite a iniciar uma ação personalizada no toque duplo</string>
+    <string name="gestures_action_empty">Sem ação</string>
+    <string name="gestures_action_home">Ir para o Início</string>
+    <string name="gestures_action_back">Emular Tecla Voltar</string>
+    <string name="gestures_action_menu">Emular Tecla Menu</string>
+    <string name="gestures_action_search">Invocar Busca</string>
+    <string name="gestures_action_recent">Aplicações recentes</string>
 </resources>

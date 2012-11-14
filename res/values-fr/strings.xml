@@ -145,7 +145,7 @@
     <string name="pulse_speed_very_slow">Très lente</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
-    <string name="advanced_settings_title">Avancé</string>
+    <string name="advanced_settings_title">Options spécifiques</string>
 
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
@@ -170,31 +170,31 @@
     <string name="combined_bar_auto_hide_summary">Permet de cacher la barre combinée (boutons virtuels) pour les applications plein écran</string>
 
     <!-- Navigation Bar  -->
-	<string name="navigation_bar_title">Barre de navigation</string>
+    <string name="navigation_bar_title">Barre de navigation</string>
 
-	<string name="navigation_bar_help_text">1 - Pour commencer l\'édition, appuyer sur le cadenas\n\n2 - Appuyez sur n\'importe quels boutons pour assigner ou changer une fonctionnalité\n\n3 - Pression longue pour déplacer l\'ordre\n\n4 - Pour enregistrer, appuyer encore sur le cadenas\n\n5 - Pour remettre à zéro, appuyer sur le bouton reset\n\n</string>
-	<string name="navigation_bar_tips">&#8226; Les actions peuvent être assignée qu\'une seule fois\n\n&#8226; Le bouton d\'accueil ne peut être réassigné\n\n&#8226; Les boutons sur le bord ne peuvent être déplacé</string>
-	<string name="navigation_bar_tips_title">Astuces rapides</string>
-	<string name="navigation_bar_reset_message">Supprimer les paramètres actuels et remettre à zéro?</string>
-	<string name="navigation_bar_save_message">Paramètres de la barre de navigation enregistré</string>
-	<string name="navigation_bar_reset_toast">Barre de navigation remise à zéro</string>
+    <string name="navigation_bar_help_text">1 - Pour commencer l\'édition, appuyer sur le cadenas\n\n2 - Appuyez sur un des boutons pour assigner ou changer une fonctionnalité\n\n3 - Pression longue pour modifier l\'ordre\n\n4 - Pour enregistrer, appuyer à nouveau sur le cadenas\n\n5 - Pour remettre à zéro, appuyer sur le bouton reset\n\n</string>
+    <string name="navigation_bar_tips">&#8226; Les actions peuvent être assignée qu\'une seule fois\n\n&#8226; Le bouton d\'accueil ne peut être réassigné\n\n&#8226; Les boutons sur le bord ne peuvent être déplacés</string>
+    <string name="navigation_bar_tips_title">Astuces rapides</string>
+    <string name="navigation_bar_reset_message">Supprimer les paramètres actuels et remettre à zéro ?</string>
+    <string name="navigation_bar_save_message">Paramètres de la barre de navigation enregistrés</string>
+    <string name="navigation_bar_reset_toast">Barre de navigation remise à zéro</string>
 
     <!-- Hardware keys -->
-    <string name="hardware_keys_title">Touches physiques</string>
-    <string name="hardware_keys_bindings_title">Actions de la touche</string>
+    <string name="hardware_keys_title">Boutons physiques</string>
+    <string name="hardware_keys_bindings_title">Actions des boutons</string>
     <string name="hardware_keys_enable_custom_title">Activer les actions personnalisées</string>
-    <string name="hardware_keys_home_long_press_title">Touche home (appui long)</string>
-    <string name="hardware_keys_menu_press_title">Touche menu</string>
-    <string name="hardware_keys_menu_long_press_title">Touche menu (appui long)</string>
-    <string name="hardware_keys_assist_press_title">Touche recherche</string>
-    <string name="hardware_keys_assist_long_press_title">Touche recherche (appui long)</string>
-    <string name="hardware_keys_app_switch_press_title">Touche application récente</string>
-    <string name="hardware_keys_app_switch_long_press_title">Touche application récente (appui long)</string>
+    <string name="hardware_keys_home_long_press_title">Bouton Home (appui long)</string>
+    <string name="hardware_keys_menu_press_title">Bouton Menu</string>
+    <string name="hardware_keys_menu_long_press_title">Bouton Menu (appui long)</string>
+    <string name="hardware_keys_assist_press_title">Bouton Recherche</string>
+    <string name="hardware_keys_assist_long_press_title">Recherche (appui long)</string>
+    <string name="hardware_keys_app_switch_press_title">Bouton \"Applications récentes\"</string>
+    <string name="hardware_keys_app_switch_long_press_title">\"Applications récentes\" (appui long)</string>
     <string name="hardware_keys_show_overflow_title">Afficher le menu de l\'application</string>
-    <string name="hardware_keys_show_overflow_summary">Afficher le bouton menu (3 points) de l\'application dans celle-ci</string>
-    <string name="hardware_keys_show_overflow_toast_enable">Le menu de l\'application pourrait être visible qu\'après le redémarrage des applications</string>
-    <string name="hardware_keys_show_overflow_toast_disable">Le menu de l\'application pourrait être caché qu\'après le redémarrage des applications</string>
-    <string name="hardware_keys_action_nothing">Aucunes actions</string>
+    <string name="hardware_keys_show_overflow_summary">Afficher le bouton Menu (3 points) dans les applications</string>
+    <string name="hardware_keys_show_overflow_toast_enable">Le menu de l\'application ne pourrait être visible qu\'après le redémarrage des applications</string>
+    <string name="hardware_keys_show_overflow_toast_disable">Le menu de l\'application ne pourrait être caché qu\'après le redémarrage des applications</string>
+    <string name="hardware_keys_action_nothing">Aucune action</string>
     <string name="hardware_keys_action_menu">Ouvrir/fermer le menu</string>
     <string name="hardware_keys_action_app_switch">Applications récentes</string>
     <string name="hardware_keys_action_search">Assistant de recherche</string>
@@ -260,16 +260,19 @@
     <string name="status_bar_toggle_brightness_summary">Ajustement de la luminosité en glissant dans la barre</string>
     <string name="status_bar_toggle_info">Le rétroéclairage automatique est activé</string>
     <string name="status_bar_signal_text_title">Affichage du signal réseau</string>
-    <string name="status_bar_signal_text_show_bars">Icône (défaut)</string>
+    <string name="status_bar_style_icon">Icône</string>
+    <string name="status_bar_style_hidden">Ne pas afficher</string>
     <string name="status_bar_signal_text_show_text">Texte</string>
-    <string name="status_bar_signal_text_hidden">Caché</string>
+    <string name="status_bar_battery_status_percentage">Pourcentage</string>
+    <string name="status_bar_battery_status_circle">Cercle</string>
+    <string name="status_bar_battery_status_circle_percentage">Cercle avec pourcentage</string>
 
     <string name="lock_screen_title">Écran de verrouillage</string>
 
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_target_info">Glisser pour assigner les raccourcis</string>
     <string name="lockscreen_target_title">Raccourcis</string>
-    <string name="lockscreen_target_summary">Modifier ou configurer les raccourcis de l\'écran de verrouillage</string>
+    <string name="lockscreen_target_summary">Configurer les raccourcis de l\'écran de verrouillage</string>
     <string name="lockscreen_target_reset">Les raccourcis ont été réinitialisés</string>
     <string name="lockscreen_target_save">Raccourcis enregistrés</string>
     <string name="lockscreen_target_reset_title">Reset</string>
@@ -296,7 +299,7 @@
     <string name="weather_retrieve_location_dialog_title">Impossible de déterminer le lieu!</string>
     <string name="weather_retrieve_location_dialog_message">La localisation par le réseau est désactivée.\n\nVeuillez sélectionner manuellement le lieu</string>
     <string name="weather_retrieve_location_dialog_enable_button">Activer</string>
-    <string name="weather_invert_lowhigh">Inverser tempétatures min/max</string>
+    <string name="weather_invert_lowhigh">Inverser min/max température</string>
     <string name="weather_progress_title">Vérification du lieu</string>
 
     <!-- Lock screen Weather - Update frequency -->
@@ -466,8 +469,14 @@
     <string name="toggleScreenTimeout">Veille écran</string>
     <string name="toggleAirplane">Mode Avion</string>
     <string name="toggleFlashlight">Torche</string>
-    <string name="toggleLockScreen">Verouillage</string>
+    <string name="toggleLockScreen">Verrouillage</string>
     <string name="toggleWimax">WiMax</string>
+
+    <!-- GPS Source selection -->
+    <string name="location_gps_source_title">Source GPS</string>
+    <string name="location_gps_source_summary">Définir l\'origine des informations GPS, si vous préférez utiliser un dispositif externe Bluetooth au lieu de celui de l\'appareil</string>
+    <string name="location_gps_source_notification_title">Attention</string>
+    <string name="location_gps_source_notification">La source GPS a été modifiée, le GPS va être temporairement désactivé. Veuillez le réactiver avant utilisation!</string>
 
     <!-- Screen security - Screen security   -->
     <string name="screen_security_category">Verrouillage de l\'écran</string>
@@ -535,8 +544,8 @@
     <!-- Performance Settings : Dithering -->
     <string name="pref_use_dithering_title">Activer le tramage</string>
     <string name="dithering_no_dither">Désactiver le tramage</string>
-    <string name="dithering_color_banding">Régler les bandes de couleurs (défaut)</string>
-    <string name="dithering_blur_effect">Régler les bandes de couleurs et l\'effet de flou</string>
+    <string name="dithering_color_banding">Corriger les bandes de couleurs (défaut)</string>
+    <string name="dithering_blur_effect">Corriger les bandes de couleurs et l\'effet de flou</string>
 
     <!-- Performance Settings : 16bpp Alpha -->
     <string name="pref_use_16bpp_alpha_title">Transparence 16 bits</string>
@@ -556,10 +565,10 @@
     du système CyanogenMod pour comptabiliser le nombre d\'installations par type d\'appareil. Les informations envoyées contiennent un identifiant unique de appareil
     afin de limiter les doublons et en aucune manière ne compromet la sécurité de vos données. Ce jeu d\'informations est envoyé à chaque redémarrage pour ne conserver que les installations actives.
     \n\nVous pouvez visualiser ces données en sélectionnant \"Prévisualiser les données\".</string>
-    <string name="enable_reporting_title">Activer l\'envoi anonymes</string>
+    <string name="enable_reporting_title">Activer le reporting</string>
     <string name="preview_data_title">Prévisualiser les données</string>
     <string name="view_stats_title">Afficher les statistiques</string>
-    <string name="anonymous_learn_more">En savoir plus</string>
+    <string name="anonymous_learn_more">En savoir plus...</string>
 
     <!-- Anonymous Statistics - Notification -->
     <string name="anonymous_notification_desc">Activer ou non les statistiques CyanogenMod</string>
@@ -664,6 +673,15 @@
     <string name="adb_over_network_summary">"Activer le débogage sur toutes les interfaces (réseaux USB, Wi-Fi et Bluetooth)"</string>
     <!-- Warning for Adb over Network -->
     <string name="adb_over_network_warning">"ATTENTION: Lorsque cette fonction est activée, votre appareil est ouvert aux intrusions sur toutes les interfaces, y compris via le réseau mobile !\n\nIl est fortement conseillé de désactiver le réseau mobile avant d\'activer cette fonction.\n\nContinuer ?"</string>
+    <string name="adb_notify">Notification débogage</string>
+    <string name="adb_notify_summary">Afficher une notification lorsque le débogage est actif</string>
+    <string name="root_access">Accès root</string>
+    <string name="root_access_warning_title">Autoriser l\'accès root ?</string>
+    <string name="root_access_warning_message">Autoriser l\'accès root aux applications peut être très dangereux et corrompre la sécurité et la stabilité de votre appareil !</string>
+    <string name="root_access_none">Désactivé</string>
+    <string name="root_access_apps">Appli. uniquement</string>
+    <string name="root_access_adb">ADB uniquement</string>
+    <string name="root_access_all">Applications et ADB</string>
 
     <!-- Security & location settings screen, setting check box title. This controls whether the device shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="lockpattern_settings_enable_lock_before_unlock">Afficher les widgets avant le déverrouillage</string>
@@ -720,7 +738,10 @@
     <string name="power_menu_title">Menu marche/arrêt</string>
     <string name="power_menu_reboot_title">Redémarrer</string>
     <string name="power_menu_screenshot_title">Capture d\'écran</string>
+    <string name="power_menu_expanded_desktop">Bureau étendu</string>
     <string name="power_menu_profiles_title">Profils</string>
+    <string name="power_menu_airplane_title">Mode avion</string>
+    <string name="power_menu_silent_title">Panneau acoustique</string>
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">Outils dév.</string>
@@ -1374,7 +1395,7 @@
     <string name="search_settings" msgid="1910951467596035063">"Recherche"</string>
     <string name="search_settings_summary" msgid="9205656546570654169">"Configurer les paramètres et l\'historique de recherche"</string>
     <string name="display_settings" msgid="7965901687241669598">"Affichage"</string>
-    <string name="accelerometer_title" msgid="7854608399547349157">"Rotation auto de l\'écran"</string>
+    <string name="accelerometer_title" msgid="7854608399547349157">"Rotation auto écran"</string>
     <string name="accelerometer_summary_on" product="tablet" msgid="429982132339828942">"Changer automatiquement d\'orientation lors de la rotation de la tablette"</string>
     <string name="accelerometer_summary_on" product="default" msgid="1133737282813048021">"Changer automatiquement d\'orientation lors de la rotation du téléphone"</string>
     <string name="accelerometer_summary_off" product="tablet" msgid="4781734213242521682">"Changer automatiquement d\'orientation lors de la rotation de la tablette"</string>
@@ -1426,7 +1447,6 @@
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
     <string name="firmware_version" msgid="4801135784886859972">"Version d\'Android"</string>
     <string name="model_number" msgid="3765737700545384794">"Numéro du modèle"</string>
-    <string name="fcc_equipment_id" msgid="149114368246356737">"ID de l\'équipement"</string>
     <string name="baseband_version" msgid="1848990160763524801">"Version de bande de base"</string>
     <string name="kernel_version" msgid="9192574954196167602">"Version du noyau"</string>
     <string name="build_number" msgid="3075795840572241758">"Numéro de build"</string>
@@ -1916,7 +1936,6 @@
     <string name="keep_screen_on" msgid="1146389631208760344">"Rester activé"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"L\'écran ne se met jamais en veille lors du chargement de la batterie"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"Positions fictives"</string>
-    <string name="allow_mock_location_summary" msgid="317615105156345626">"Autoriser les positions fictives"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"Autoriser le débogage USB ?"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"Le débogage USB est conçu uniquement pour le développement. Utilisez-le pour copier des données entre votre ordinateur et votre appareil, installer des applications sur votre appareil sans notification et lire les données de journal."</string>
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"Activer les paramètres de développement ?"</string>
@@ -2130,9 +2149,6 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"Aucun compte ne stocke actuellement des données sauvegardées."</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"Restaurer automatiquement"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"Lors de la réinstallation d\'une application, restaurer les paramètres et les données sauvegardées"</string>
-    <string name="bugreport_title" msgid="1009498799922543551">"Établir un rapport de bug"</string>
-    <string name="bugreport_message" msgid="1182209569732110590">"Cela permet de recueillir des informations concernant l\'état actuel de votre appareil, qui sont ensuite envoyées sous forme d\'e-mail. Merci de patienter pendant la préparation du rapport de bug. Cette opération peut prendre quelques instants."</string>
-    <string name="report" msgid="302437572240018342">"Générer le rapport"</string>
     <string name="local_backup_password_title" msgid="3860471654439418822">"Mot de passe sauvegarde PC"</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"Les sauvegardes complètes sur PC ne sont pas protégées actuellement."</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"Appuyez pour modifier ou supprimer le mot de passe utilisé pour les sauvegardes complètes sur PC."</string>
@@ -2421,4 +2437,8 @@
     <string name="help_label" msgid="1107174367904110532">"Aide"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Diffusions cellulaires"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Sélectionnez les types d\'alertes d\'urgence à afficher."</string>
+
+    <!-- CM Updater -->
+    <string name="cmupdate_settings_title">Mises à jour CyanogenMod</string>
+    <string name="cmupdate_settings_summary">Vérifier, afficher ou installer les mises à jour disponibles</string>
 </resources>

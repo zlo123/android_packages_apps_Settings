@@ -714,7 +714,6 @@
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
     <string name="firmware_version" msgid="4801135784886859972">"Android верзија"</string>
     <string name="model_number" msgid="3765737700545384794">"Број модела"</string>
-    <string name="fcc_equipment_id" msgid="149114368246356737">"ИД опреме"</string>
     <string name="baseband_version" msgid="1848990160763524801">"Верзија основног пропусног опсега"</string>
     <string name="kernel_version" msgid="9192574954196167602">"Верзија језгра"</string>
     <string name="build_number" msgid="3075795840572241758">"Број верзије"</string>
@@ -1204,7 +1203,6 @@
     <string name="keep_screen_on" msgid="1146389631208760344">"Не закључавај"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"Екран неће бити у режиму спавања током пуњења"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"Дозволи лажне локације"</string>
-    <string name="allow_mock_location_summary" msgid="317615105156345626">"Дозволи лажне локације"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"Дозволи отклањање USB грешака?"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"Отклањање USB грешака намењено је само за сврхе програмирања. Користите га за копирање података са рачунара на уређај и обрнуто, инсталирање апликација на уређају без обавештења и читање података из евиденције."</string>
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"Желите ли да омогућите програмерска подешавања?"</string>
@@ -1418,9 +1416,6 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"Тренутно ниједан налог не чува резервне копије података"</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"Аутоматско враћање"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"Када поново инсталирате апликацију, вратите резервне копије подешавања и података"</string>
-    <string name="bugreport_title" msgid="1009498799922543551">"Направи извештај о грешци"</string>
-    <string name="bugreport_message" msgid="1182209569732110590">"Ово ће прикупити информације о тренутном стању уређаја и послати их у виду поруке е-поште. Од започињања извештаја о грешци до тренутка за његово слање проћи ће неко време; будите стрпљиви."</string>
-    <string name="report" msgid="302437572240018342">"Направи извештај"</string>
     <string name="local_backup_password_title" msgid="3860471654439418822">"Рез. копија лоз. рачунара"</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"Резервне копије читавог система тренутно нису заштићене"</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"Додирните да бисте променили или уклонили лозинку за прављење резервних копија читавог система на рачунару"</string>

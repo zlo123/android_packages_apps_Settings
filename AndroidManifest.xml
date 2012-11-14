@@ -1237,9 +1237,6 @@
                 android:value="com.android.settings.nfc.AndroidBeam" />
         </activity>
 
-
-
-
         <!-- Development settings -->
 
         <activity android:name="DebugIntentSender" android:label="@string/debug_intent_sender_label">
@@ -1442,7 +1439,7 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-        <!-- LiquidSmooth Start Activities -->
+        <!-- LiquidSmooth Begin Activities -->
 
         <activity android:name=".liquid.AboutLiquid" />
 
@@ -1452,13 +1449,11 @@
 
         <activity android:name=".liquid.DisplayRotation" />
 
-        <activity android:name=".liquid.DisplaySettings" />
-
-        <activity android:name=".liquid.HardwareSettings" />
+        <activity android:name=".liquid.HardwareKeys" />
     
         <activity android:name=".liquid.InterfaceSettings" />
 
-        <activity android:name=".liquid.LightLevels" />
+        <activity android:name=".liquid.LightLevelsActivity" />
 
         <activity android:name=".liquid.LiquidSplasher"
             android:label="LiquidSplasher" >
@@ -1470,29 +1465,21 @@
 
         <activity android:name=".liquid.LockscreenButtons" />
 
-        <activity android:name=".liquid.LockscreenSettings" />
+        <activity android:name=".liquid.LockscreenInterface" />
 
         <activity android:name=".liquid.LockscreenTargets" />
 
-        <activity android:name=".liquid.NavigationSettings" />
+        <activity android:name=".liquid.NavigationBar" />
 
         <activity android:name=".liquid.NavRingTargets" />
 
-        <activity android:name=".liquid.PowermenuSettings" />
+        <activity android:name=".liquid.PowerMenu" />
 
-        <activity android:name=".liquid.PowerToggles" />
-
-        <activity android:name=".liquid.PowerWidget" />
+        <activity android:name=".liquid.Toggles" />
 
         <activity android:name=".liquid.QuietHours" />
 
-        <activity android:name=".liquid.ScreenSecurity" />
-
-        <activity android:name=".liquid.SoundSettings" />
-
-        <activity android:name=".liquid.StatusbarSettings" />
-
-        <activity android:name=".liquid.TabletWidget" />
+        <activity android:name=".liquid.StatusBar" />
 
         <activity android:name=".liquid.Weather" />
 
@@ -1500,9 +1487,19 @@
 
         <activity android:name=".notificationlight.NotificationLightSettings" />
 
-        <activity android:name=".profiles.AppGroupConfig" />
+        <activity android:name=".profiles.ProfilesSettings" />
+
+        <activity android:name=".profiles.ProfileConfig" />
 
         <activity android:name=".profiles.AppGroupList" />
+
+        <activity android:name=".profiles.AppGroupConfig" />
+
+        <activity android:name=".profiles.ProfileGroupConfig" />
+
+        <activity android:name=".profiles.NFCProfileWriter" />
+
+        <activity android:name=".profiles.NFCProfileSelect" />
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
@@ -1513,37 +1510,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".profiles.NFCProfileSelect" />
-
-        <activity android:name=".profiles.NFCProfileWriter" />
-
-        <activity android:name=".profiles.ProfileConfig" />
-
-        <activity android:name=".profiles.ProfileGroupConfig" />
-
-        <activity android:name=".profiles.ProfilesSettings" />
-
-        <activity android:name=".performance.KernelSettings" />
+        <activity android:name=".performance.PerformanceSettings" />
 
         <activity android:name=".performance.ProcessorSettings" />
 
-        <activity android:name=".performance.StartupSettings" />
+        <activity android:name=".performance.SystemSettings" />
 
         <activity android:name=".performance.VoltageSettings" />
 
-        <receiver android:name=".service.BootReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
         <service android:name=".service.BootService" />
 
-        <service android:name=".service.FlipService" />
-
-		<!-- LiquidSmooth End Activities -->
-
         <activity android:name=".ApnEditor" />
+
+		<!-- LiquidSmooth Finish Activities -->
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
@@ -1589,6 +1568,12 @@
                 <action android:name="com.android.sync.SYNC_CONN_STATUS_CHANGED" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
+        </receiver>
+
+        <receiver android:name=".service.BootReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
         </receiver>
 
     </application>

@@ -159,6 +159,19 @@
     <item msgid="6670588712989942178">"Nur 5 GHz"</item>
     <item msgid="2715516524973207876">"Nur 2,4 GHz"</item>
   </string-array>
+  <string-array name="wifi_countrycode_entries">
+    <item>Vereinigte Staaten</item>
+    <item>Kanada, Taiwan</item>
+    <item>Deutschland</item>
+    <item>Europa</item>
+    <item>Japan, Russland</item>
+    <item>Australien</item>
+    <item>China</item>
+    <item>Korea</item>
+    <item>Türkei</item>
+    <item>Singapur</item>
+    <item>Brasilien</item>
+  </string-array>
   <string-array name="usage_stats_display_order_types">
     <item msgid="2100172576767439288">"Nutzungszeit"</item>
     <item msgid="3703676222230317933">"Startzähler"</item>
@@ -380,25 +393,6 @@
       <item>Normal</item>
       <item>Klein</item>
       <item>Aus (Standard)</item>
-    </string-array>
-
-    <string-array name="entries_status_bar_battery">
-      <item>Symbol (Standard)</item>
-      <item>Prozent</item>
-      <item>Versteckt</item>
-    </string-array>
-
-    <string-array name="lockscreen_delay_entries">
-      <item>Sofort</item>
-      <item>1 Sekunde</item>
-      <item>5 Sekunden</item>
-      <item>10 Sekunden</item>
-      <item>15 Sekunden</item>
-      <item>30 Sekunden</item>
-      <item>1 Minute</item>
-      <item>5 Minuten</item>
-      <item>10 Minuten</item>
-      <item>30 Minuten</item>
     </string-array>
 
     <!-- Profile mode options. -->

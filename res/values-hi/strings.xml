@@ -714,7 +714,6 @@
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
     <string name="firmware_version" msgid="4801135784886859972">"Android संस्‍करण"</string>
     <string name="model_number" msgid="3765737700545384794">"मॉडल नंबर"</string>
-    <string name="fcc_equipment_id" msgid="149114368246356737">"उपकरण आईडी"</string>
     <string name="baseband_version" msgid="1848990160763524801">"Baseband संस्‍करण"</string>
     <string name="kernel_version" msgid="9192574954196167602">"Kernel संस्‍करण"</string>
     <string name="build_number" msgid="3075795840572241758">"बिल्‍ड नबंर"</string>
@@ -1204,7 +1203,6 @@
     <string name="keep_screen_on" msgid="1146389631208760344">"सचेत रहें"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"चार्ज होने के दौरान स्‍क्रीन कभी निष्‍क्रिय नहीं होगी"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"कृत्रिम स्‍थानों को अनुमति दें"</string>
-    <string name="allow_mock_location_summary" msgid="317615105156345626">"कृत्रिम स्‍थानों को अनुमति दें"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"USB डीबग करने की अनुमति दें?"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"USB डीबग डीबग करने का उद्देश्‍य केवल विकास है. इसका उपयोग आपके कंप्‍यूटर और आपके उपकरण के बीच डेटा की प्रतिलिपि बनाने, बिना सूचना के आपके उपकरण पर एप्‍लिकेशन इंस्‍टॉल करने और लॉग डेटा पढ़ने के लिए करें."</string>
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"विकास सेटिंग की अनुमति दें?"</string>
@@ -1418,9 +1416,6 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"वर्तमान में कोई भी खाता बैकअप डेटा संग्रहीत नहीं कर रहा है"</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"स्‍वचालित पुनर्स्थापना"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"किसी एप्‍लिकेशन को पुन: इंस्‍टॉल करने पर, बैकअप ली गई सेटिंग और डेटा पुनर्स्‍थापित करें"</string>
-    <string name="bugreport_title" msgid="1009498799922543551">"बग रिपोर्ट लें"</string>
-    <string name="bugreport_message" msgid="1182209569732110590">"ईमेल संदेश के रूप में भेजने के लिए, इसके द्वारा आपके उपकरण की वर्तमान स्थिति के बारे में जानकारी एकत्रित की जाएगी. बग रिपोर्ट प्रारंभ करने से लेकर भेजने के लिए तैयार करने में कुछ समय लगेगा; कृपया धैर्य रखें."</string>
-    <string name="report" msgid="302437572240018342">"रिपोर्ट"</string>
     <string name="local_backup_password_title" msgid="3860471654439418822">"डेस्‍कटॉप बैकअप पासवर्ड"</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"डेस्‍कटॉप पूर्ण बैकअप वर्तमान में सुरक्षित नहीं हैं"</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"डेस्कटॉप के पूर्ण बैकअप के पासवर्ड को बदलने या निकालने के लिए स्‍पर्श करें."</string>

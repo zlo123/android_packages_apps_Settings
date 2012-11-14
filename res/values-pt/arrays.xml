@@ -344,11 +344,6 @@
     <item>Pequeno</item>
     <item>Nenhum (padrão)</item>
   </string-array>
-  <string-array name="entries_status_bar_battery">
-    <item>Ícone (padrão)</item>
-    <item>Porcentagem</item>
-    <item>Oculto</item>
-  </string-array>
   <string-array name="profile_entries">
     <item>Ligado</item>
     <item>Desligado</item>
@@ -360,5 +355,18 @@
   </string-array>
   <string-array name="location_entries_gps_source">
     <item>Usar GPS interno</item>
+  </string-array>
+  <string-array name="wifi_countrycode_entries">
+    <item>Estados Unidos</item>
+    <item>Canadá, Taiwan</item>
+    <item>Alemanha</item>
+    <item>Europa</item>
+    <item>Japão, Rússia</item>
+    <item>Austrália</item>
+    <item>China</item>
+    <item>Coréia</item>
+    <item>Turquia</item>
+    <item>Cingapura</item>
+    <item>Brasil</item>
   </string-array>
 </resources>

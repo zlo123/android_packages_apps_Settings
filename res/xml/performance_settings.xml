@@ -29,6 +29,47 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/display_settings_title" >
+
+		<CheckBoxPreference
+		    android:key="pref_use_16bpp_alpha"
+		    android:title="@string/pref_use_16bpp_alpha_title"
+		    android:summary="@string/pref_use_16bpp_alpha_summary" />
+
+        <CheckBoxPreference
+            android:key="pref_disable_bootanimation"
+            android:title="@string/pref_disable_bootanimation_title"
+            android:summary="@string/pref_disable_bootanimation_summary" />
+
+		<ListPreference
+		    android:key="pref_use_dithering"
+		    android:persistent="false"
+		    android:dialogTitle="@string/pref_use_dithering_title"
+		    android:title="@string/pref_use_dithering_title"
+		    android:entries="@array/dithering_entries"
+		    android:entryValues="@array/dithering_values"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/memory_controls_title" >
+
+        <CheckBoxPreference
+            android:key="pref_ksm"
+            android:title="@string/pref_ksm_title"
+            android:summary="@string/pref_ksm_summary" />
+
+        <ListPreference
+            android:key="pref_zram_size"
+            android:dialogTitle="@string/pref_zram_title"
+            android:title="@string/pref_zram_title"
+            android:summary="@string/pref_zram_summary"
+            android:entries="@array/pref_zram_size_entries"
+            android:entryValues="@array/pref_zram_size_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/io_scheds_title" >
 
         <ListPreference
@@ -40,24 +81,6 @@
             android:key="pref_io_sched_set_on_boot"
             android:title="@string/io_sched_set_on_boot"
             android:summary="@string/io_sched_set_on_boot_summary"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/memory_controls_title" >
-
-        <ListPreference
-            android:key="pref_zram_size"
-            android:dialogTitle="@string/pref_zram_title"
-            android:title="@string/pref_zram_title"
-            android:summary="@string/pref_zram_summary"
-            android:entries="@array/pref_zram_size_entries"
-            android:entryValues="@array/pref_zram_size_values" />
-
-        <CheckBoxPreference
-            android:key="pref_ksm"
-            android:title="@string/pref_ksm_title"
-            android:summary="@string/pref_ksm_summary" />
 
     </PreferenceCategory>
 

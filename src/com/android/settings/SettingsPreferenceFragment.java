@@ -48,7 +48,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     private SettingsDialogFragment mDialogFragment;
 
     private String mHelpUrl;
-    
+
     protected Context mContext;
     
     protected boolean mTablet;
@@ -56,7 +56,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        
+
         mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         mContext = getActivity().getApplicationContext();
 

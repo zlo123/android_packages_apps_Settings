@@ -714,7 +714,6 @@
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
     <string name="firmware_version" msgid="4801135784886859972">"Android ሥሪት"</string>
     <string name="model_number" msgid="3765737700545384794">"የሞዴል ቁጥር"</string>
-    <string name="fcc_equipment_id" msgid="149114368246356737">"የመሣሪያ መታወቂያ"</string>
     <string name="baseband_version" msgid="1848990160763524801">"የቤዝባንድ ሥሪት"</string>
     <string name="kernel_version" msgid="9192574954196167602">"የከርነል ሥሪት"</string>
     <string name="build_number" msgid="3075795840572241758">"የግንባታ ቁጥር"</string>
@@ -1204,7 +1203,6 @@
     <string name="keep_screen_on" msgid="1146389631208760344">"ነቅተህ ቆይ"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"ማያኃይል በመሙላት ላይበፍፁም አይተኛም"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"አስቂኝ ሥፍራዎችን ፍቀድ"</string>
-    <string name="allow_mock_location_summary" msgid="317615105156345626">"አስቂኝ ሥፍራዎችን ፍቀድ"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"የUSB ማረሚያ ይፈቀድ?"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"የUSB አድስ ለግንባታ አላማ ብቻ የታሰበ ነው። ከኮምፒዩተርህ ወደ መሳሪያህ ውሂብ ለመገልበጥ፣ መሣሪያህ ላይ ያለ ማሳወቂያ መተግበሪያዎችን መጫን፣ እና ማስታወሻ ውሂብ ማንበብ ለመጠቀም ይቻላል።"</string>
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"የግንባታ ቅንጅቶችን ፍቀድ?"</string>
@@ -1418,9 +1416,6 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"በአሁኑ ጊዜ ምንም መለያ ተተኪ አኑር ውሂብ እያከማቸ አይደለም።"</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"ራስ ሰር ነበረበት መልስ"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"መተግበሪያን ዳግም ስትጭን ምትኬ ቅንብሮች  እና ውሂብ እነበሩበት መልስ"</string>
-    <string name="bugreport_title" msgid="1009498799922543551">"የሳንካ ሪፖርት ውሰድ"</string>
-    <string name="bugreport_message" msgid="1182209569732110590">"ይሄ እንደ የኢሜይል መልዕክት አድርጎ የሚልከውን ስለመሣሪያዎ የአሁኑ ሁኔታ መረጃ ይሰበስባል። የሳንካ ሪፖርቱን ከመጀመር ጀምሮ እስኪላክ ድረስ ትንሽ ጊዜ ይወስዳል፤ እባክዎ ይታገሱ።"</string>
-    <string name="report" msgid="302437572240018342">"ሪፖርት አድርግ"</string>
     <string name="local_backup_password_title" msgid="3860471654439418822">"የዴስክቶፕ መጠባበቂያ ይለፍ ቃል"</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"ዴስክቶፕ ሙሉ ምትኬዎች በአሁኑ ሰዓት አልተጠበቁም"</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"ለዴስክቶፕ ሙሉ ምትኬዎች የይለፍ ቃል ለመለወጥ ወይም ለማስወገድ ንካ"</string>

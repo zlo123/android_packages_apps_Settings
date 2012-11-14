@@ -12,7 +12,6 @@
 -keep class com.android.settings.accounts.*
 -keep class com.android.settings.fuelgauge.*
 -keep class com.android.settings.users.*
--keep class com.android.settings.liquid.*
 
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {

@@ -46,7 +46,7 @@ public class AboutLiquid extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://www.liquidsmooth.org/");
+            launchUrl("http://www.liquidsmooth.net/");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/LiquidSmooth");
         } else if (preference == mIrcUrl) {

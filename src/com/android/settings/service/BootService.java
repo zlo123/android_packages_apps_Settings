@@ -62,10 +62,6 @@ public class BootService extends Service {
             preferences = PreferenceManager.getDefaultSharedPreferences(c);
             final CMDProcessor cmd = new CMDProcessor();
 
-            if (FlipService.getUserFlipAudioMode(c) != -1
-                || FlipService.getUserCallSilent(c) != 0)
-                c.startService(new Intent(c, FlipService.class));
-
             if (preferences.getBoolean(VoltageSettings
                     .KEY_APPLY_BOOT, false)) {
                 final List<Voltage> volts = VoltageSettings
