@@ -4601,6 +4601,9 @@
     <string name="dev_DAGr8_title">DAGr8</string>
     <string name="dev_DAGr8_twitter">Saurom_Projekt</string>
     <string name="dev_DAGr8_donate">http://forum.xda-developers.com/donatetome.php?u=2393342</string>
+    <string name="dev_winner00_title">winner00</string>
+    <string name="dev_winner00_twitter">expertontech</string>
+    <string name="dev_winner00_donate">http://bit.ly/UHzZzN</string>
 
     <!-- Settings | Headers -->
     <string name="liquidsmooth_category_title">LIQUIDSMOOTH</string>
