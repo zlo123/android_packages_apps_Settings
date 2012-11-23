@@ -115,7 +115,6 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     private static final int NAVBAR_DEFAULT_COLOR = 0xFF000000;
 
     Preference mNavRingTargets;
-    PreferenceScreen mHardwareKeys;
     ListPreference mGlowTimes;
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
