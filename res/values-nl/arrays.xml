@@ -367,11 +367,6 @@
         <item>Klein</item>
         <item>Geen (standaard)</item>
     </string-array>
-    <string-array name="entries_status_bar_battery">
-        <item>Icoon (standaard)</item>
-        <item>Percentage</item>
-        <item>Verborgen</item>
-    </string-array>
     <string-array name="profile_entries">
         <item>Aan</item>
         <item>Uit</item>
@@ -383,5 +378,18 @@
     </string-array>
     <string-array name="location_entries_gps_source">
         <item>Interne GPS gebruiken</item>
+    </string-array>
+    <string-array name="wifi_countrycode_entries">
+        <item>Verenigde Staten</item>
+        <item>Canada, Taiwan</item>
+        <item>Duitsland</item>
+        <item>Europa</item>
+        <item>Japan, Rusland</item>
+        <item>Australië</item>
+        <item>China</item>
+        <item>Korea</item>
+        <item>Turkije</item>
+        <item>Singapore</item>
+        <item>Brazilië</item>
     </string-array>
 </resources>

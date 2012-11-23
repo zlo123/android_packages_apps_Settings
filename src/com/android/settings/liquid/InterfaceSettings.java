@@ -61,70 +61,60 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.android.settings.util.CMDProcessor;
+import com.android.settings.Utils;
 import com.android.settings.util.Helpers;
+import com.android.settings.util.CMDProcessor;
+import com.android.settings.SettingsPreferenceFragment;
 
-public class InterfaceSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class InterfaceSettings extends SettingsPreferenceFragment
+			implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "InterfaceSettings";
-
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-    private static final String KEY_IME_SWITCHER = "status_bar_ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
-    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-    private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
-    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
-    private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
     private static final String PREF_ALARM_ENABLE = "alarm";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
-    private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
+    private static final String PREF_LEFTY_MODE = "lefty_mode";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
-
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
-    CheckBoxPreference mStatusBarImeSwitcher;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRamBar;
-    ListPreference mVolumeKeyCursorControl;
-    CheckBoxPreference mDisableBootanimPref;
     CheckBoxPreference mKillAppLongpressBack;
     CheckBoxPreference mAlarm;
     CheckBoxPreference mTabletui;
     Preference mLcdDensity;
-    CheckBoxPreference mUseAltResolver;
-
+    CheckBoxPreference mLeftyMode;
     Random randomGenerator = new Random();
 
     private File customnavTemp;
-
     private int seekbarProgress;
     String mCustomLabelText = null;
 
     int newDensityValue;
-
     DensityChanger densityFragment;
     Configuration mCurConfig = new Configuration();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.interface_settings);
 
-        PreferenceScreen prefs = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mLcdDensity = findPreference("lcd_density_setup");
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
@@ -141,45 +131,28 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
-        // Enable or disable mStatusBarImeSwitcher based on boolean value: config_show_cmIMESwitcher
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_show_cmIMESwitcher)) {
-            getPreferenceScreen().removePreference(findPreference(KEY_IME_SWITCHER));
-        } else {
-            mStatusBarImeSwitcher = (CheckBoxPreference) findPreference(KEY_IME_SWITCHER);
-            if (mStatusBarImeSwitcher != null) {
-                mStatusBarImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
-            }
-        }
-
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
-        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+        mRecentKillAll.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                     Settings.System.RECENT_KILL_ALL_BUTTON, false));
 
         mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
-	mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
-                Settings.System.RAM_USAGE_BAR, false));
-
-        mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
-        mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
-        mVolumeKeyCursorControl.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0)));
-        mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
+		mRamBar.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                    Settings.System.RAM_USAGE_BAR, false));
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                     updateKillAppLongpressBackOptions();
         
         mAlarm = (CheckBoxPreference) findPreference(PREF_ALARM_ENABLE);
-        mAlarm.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+        mAlarm.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, 1) == 1);
 
         mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
         mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                     Settings.System.MODE_TABLET_UI, false));
 
-        mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
-            mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                    Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
+        mLeftyMode = (CheckBoxPreference) findPreference(PREF_LEFTY_MODE);
+        mLeftyMode.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.NAVIGATION_BAR_LEFTY_MODE, false));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
@@ -188,43 +161,33 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
 
-        if (hasNavBarByDefault || mTablet) {
+        if (hasNavBarByDefault || Utils.isTablet(getActivity())) {
             ((PreferenceGroup) findPreference("advanced_options"))
                     .removePreference(mKillAppLongpressBack);
         }
 
-        if (!mTablet) {
-            prefs.removePreference(mTabletui);
-        }
-
-        mDisableBootanimPref = (CheckBoxPreference) getPreferenceScreen()
-                .findPreference(DISABLE_BOOTANIMATION_PREF);
-        String disableBootanimation = SystemProperties.get
-                (DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
-        mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
-
-        if (mTablet) {
-            prefs.removePreference(mNotificationWallpaper);
-            prefs.removePreference(mWallpaperAlpha);
+        if (Utils.isTablet(getActivity())) {
+            prefSet.removePreference(mNotificationWallpaper);
+            prefSet.removePreference(mWallpaperAlpha);
         } else {
-            prefs.removePreference(mTabletui);
+            prefSet.removePreference(mTabletui);
         }
         
         setHasOptionsMenu(true);
     }
 
     private void writeKillAppLongpressBackOptions() {
-        Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.KILL_APP_LONGPRESS_BACK, mKillAppLongpressBack.isChecked() ? 1 : 0);
+        Settings.System.putInt(mContext.getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_BACK, mKillAppLongpressBack.isChecked() ? 1 : 0);
     }
     
     private void updateKillAppLongpressBackOptions() {
-        mKillAppLongpressBack.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.KILL_APP_LONGPRESS_BACK, 0) != 0);
+        mKillAppLongpressBack.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
     }
 
     private void updateCustomLabelTextSummary() {
-        mCustomLabelText = Settings.System.getString(getActivity().getContentResolver(),
+        mCustomLabelText = Settings.System.getString(mContext.getContentResolver(),
                 Settings.System.CUSTOM_CARRIER_LABEL);
         if (mCustomLabelText == null || mCustomLabelText.length() == 0) {
             mCustomLabel.setSummary(R.string.custom_carrier_label_notset);
@@ -234,55 +197,41 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        if (preference == mStatusBarImeSwitcher) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_IME_SWITCHER, mStatusBarImeSwitcher.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mRecentKillAll) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mRecentKillAll) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
             return true;
         } else if (preference == mRamBar) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.RAM_USAGE_BAR, checked ? true : false);
             return true;
         } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
         } else if (preference == mAlarm) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUSBAR_SHOW_ALARM, checked ? 1 : 0);
-        } else if (preference == mTabletui) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.MODE_TABLET_UI,
-                    ((CheckBoxPreference) preference).isChecked());
             return true;
-        } else if (preference == mDisableBootanimPref) {
-            SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
-                                 mDisableBootanimPref.isChecked() ? "1" : "0");
+        } else if (preference == mTabletui) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.MODE_TABLET_UI, checked ? true : false);
+            return true;
         } else if (preference == mNotificationWallpaper) {
             Display display = getActivity().getWindowManager().getDefaultDisplay();
             int width = display.getWidth();
             int height = display.getHeight();
-            Rect rect = new Rect();
-            Window window = getActivity().getWindow();
-            window.getDecorView().getWindowVisibleDisplayFrame(rect);
-            int statusBarHeight = rect.top;
-            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
-            int titleBarHeight = contentViewTop - statusBarHeight;
-
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
             intent.setType("image/*");
             intent.putExtra("crop", "true");
             boolean isPortrait = getResources()
                     .getConfiguration().orientation
                     == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
-            intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
+            intent.putExtra("aspectX", isPortrait ? width : height);
+            intent.putExtra("aspectY", isPortrait ? height : width);
             intent.putExtra("outputX", width);
             intent.putExtra("outputY", height);
             intent.putExtra("scale", true);
@@ -305,7 +254,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             String title = res.getString(R.string.alpha_dialog_title);
             float savedProgress = Settings.System.getFloat(getActivity()
                         .getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
-
             LayoutInflater factory = LayoutInflater.from(getActivity());
             final View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
             SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
@@ -346,11 +294,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             .show();
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
-
-            // Set an EditText view to get user input
             final EditText input = new EditText(getActivity());
             input.setText(mCustomLabelText != null ? mCustomLabelText : "");
             alert.setView(input);
@@ -368,19 +313,18 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
             });
             alert.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                    // Canceled.
                 }
             });
-
             alert.show();
         } else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
             .startPreferenceFragment(new DensityChanger(), true);
             return true;
-        } else if (preference == mUseAltResolver) {
+        } else if (preference == mLeftyMode) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
-                    ((CheckBoxPreference) preference).isChecked());
+                    Settings.System.NAVIGATION_BAR_LEFTY_MODE, checked ? true : false);
+            Helpers.restartSystemUI();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -399,16 +343,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
-        if (preference == mVolumeKeyCursorControl) {
-            String volumeKeyCursorControl = (String) value;
-            int val = Integer.parseInt(volumeKeyCursorControl);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                                   Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
-            int index = mVolumeKeyCursorControl.findIndexOfValue(volumeKeyCursorControl);
-            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
-            return true;
-        }
-
         return false;
     }
 
@@ -435,7 +369,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_WALLPAPER) {
-
                 FileOutputStream wallpaperStream = null;
                 try {
                     wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
@@ -443,10 +376,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
                 }
-
                 Uri selectedImageUri = Uri.fromFile(customnavTemp);
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
                 Helpers.restartSystemUI();
             }
@@ -456,14 +387,12 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements Pre
     public void copy(File src, File dst) throws IOException {
         InputStream in = new FileInputStream(src);
         FileOutputStream out = new FileOutputStream(dst);
-
         // Transfer bytes from in to out
         byte[] buf = new byte[1024];
         int len;
         while ((len = in.read(buf)) > 0) {
             out.write(buf, 0, len);
         }
-
         in.close();
         out.close();
     }

@@ -29,12 +29,9 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class HardwareKeys extends SettingsPreferenceFragment
-        implements OnPreferenceChangeListener {
+public class HardwareKeys extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    private static final String TAG = "HardwareKeys";
-
-   private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
+    private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
     private static final String HARDWARE_KEYS_ENABLE_CUSTOM = "hardware_keys_enable_custom";
     private static final String HARDWARE_KEYS_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String HARDWARE_KEYS_MENU_PRESS = "hardware_keys_menu_press";
@@ -54,6 +51,7 @@ public class HardwareKeys extends SettingsPreferenceFragment
     private static final int ACTION_SEARCH = 3;
     private static final int ACTION_VOICE_SEARCH = 4;
     private static final int ACTION_IN_APP_SEARCH = 5;
+    private static final int ACTION_TORCH = 6;
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml

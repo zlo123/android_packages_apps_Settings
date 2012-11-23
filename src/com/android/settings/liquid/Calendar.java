@@ -62,7 +62,7 @@ public class Calendar extends SettingsPreferenceFragment implements
 
         mResolver = getContentResolver();
 
-        addPreferencesFromResource(R.xml.calendar_settings);
+        addPreferencesFromResource(R.xml.calendar_prefs);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 

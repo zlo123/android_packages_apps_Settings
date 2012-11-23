@@ -283,4 +283,3 @@ class WrappingCheckBoxPreference extends CheckBoxPreference {
         }
     }
 }
-

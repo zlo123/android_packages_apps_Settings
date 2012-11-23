@@ -26,6 +26,7 @@
 			android:icon="@drawable/ic_liquid_about"
             android:summary="@string/liquid_about"
             android:fragment="com.android.settings.liquid.AboutLiquid" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:key="customization_category"
@@ -43,54 +44,37 @@
             android:title="@string/lockscreen_settings_title"
 	        android:icon="@drawable/ic_liquid_lockscreen"
 			android:summary="@string/liquid_lockscreen"
-            android:fragment="com.android.settings.liquid.LockscreenSettings" />
+            android:fragment="com.android.settings.liquid.LockscreenInterface" />
 
         <PreferenceScreen
             android:key="@+id/navigation_settings"
             android:title="@string/navigation_settings_title"
 	        android:icon="@drawable/ic_liquid_navigation"
 			android:summary="@string/liquid_navigation"
-            android:fragment="com.android.settings.liquid.NavigationSettings" />
+            android:fragment="com.android.settings.liquid.NavigationBar" />
 
         <PreferenceScreen
             android:key="@+id/powermenu_settings"
             android:title="@string/powermenu_settings_title"
 	        android:icon="@drawable/ic_liquid_powermenu"
 			android:summary="@string/liquid_powermenu"
-            android:fragment="com.android.settings.liquid.PowermenuSettings" />
-
-        <PreferenceScreen
-            android:key="@+id/sound_settings"
-            android:title="@string/sound_settings_title"
-	        android:icon="@drawable/ic_liquid_sound"
-			android:summary="@string/liquid_sound"
-            android:fragment="com.android.settings.liquid.SoundSettings" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:key="notification_category"
-        android:title="@string/notification_category_title">
-
-        <PreferenceScreen
-            android:key="@+id/notification_toggles"
-            android:title="@string/notification_toggles_title"
-	        android:icon="@drawable/ic_liquid_toggles"
-			android:summary="@string/liquid_toggles"
-            android:fragment="com.android.settings.liquid.PowerToggles" />
-
-        <PreferenceScreen
-            android:key="@+id/notification_widget"
-            android:title="@string/notification_widget_title"
-	        android:icon="@drawable/ic_liquid_widgets"
-			android:summary="@string/liquid_widgets"
-            android:fragment="com.android.settings.liquid.PowerWidget" />
+            android:fragment="com.android.settings.liquid.PowerMenu" />
 
         <PreferenceScreen
             android:key="@+id/statusbar_settings"
             android:title="@string/statusbar_settings_title"
 	        android:icon="@drawable/ic_liquid_statusbar"
 			android:summary="@string/liquid_statusbar"
-            android:fragment="com.android.settings.liquid.StatusbarSettings" />
-	</PreferenceCategory>
+            android:fragment="com.android.settings.liquid.StatusBar" />
+
+        <PreferenceScreen
+            android:key="@+id/notification_toggles"
+            android:title="@string/notification_toggles_title"
+	        android:icon="@drawable/ic_liquid_toggles"
+			android:summary="@string/liquid_toggles"
+            android:fragment="com.android.settings.liquid.Toggles" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory android:key="optimization_category"
         android:title="@string/optimization_category_title">
@@ -110,11 +94,12 @@
 		    android:fragment="com.android.settings.performance.ProcessorSettings" />
 
 		<PreferenceScreen
-		    android:key="@+id/startup_settings"
-		    android:title="@string/startup_settings_title"
-		    android:icon="@drawable/ic_liquid_startup"
-			android:summary="@string/liquid_startup"
-		    android:fragment="com.android.settings.performance.StartupSettings" />
+		    android:key="@+id/system_settings"
+		    android:title="@string/system_settings_title"
+		    android:icon="@drawable/ic_liquid_system"
+			android:summary="@string/liquid_system"
+		    android:fragment="com.android.settings.performance.SystemSettings" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

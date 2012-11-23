@@ -57,6 +57,22 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
 
     public static final String SOB_PREF = "pref_io_sched_set_on_boot";
 
+    private static final String USE_DITHERING_PREF = "pref_use_dithering";
+
+    private static final String USE_DITHERING_PERSIST_PROP = "persist.sys.use_dithering";
+
+    private static final String USE_DITHERING_DEFAULT = "1";
+
+    private static final String USE_16BPP_ALPHA_PREF = "pref_use_16bpp_alpha";
+
+    private static final String USE_16BPP_ALPHA_PROP = "persist.sys.use_16bpp_alpha";
+
+    private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
+
+    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
+
+    private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
+
     private ListPreference mzRAM;
 
     private CheckBoxPreference mKSMPref;
@@ -66,6 +82,12 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
     private String mIOSchedulerFormat;
 
     private ListPreference mIOSchedulerPref;
+
+    private ListPreference mUseDitheringPref;
+
+    private CheckBoxPreference mUse16bppAlphaPref;
+
+    CheckBoxPreference mDisableBootanimPref;
 
     private int swapAvailable = -1;
 
@@ -81,7 +103,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
             String currentIOScheduler = null;
 
             addPreferencesFromResource(R.xml.performance_settings);
-
             PreferenceScreen prefSet = getPreferenceScreen();
 
             mzRAM = (ListPreference) prefSet.findPreference(ZRAM_PREF);
@@ -124,6 +145,23 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
                 mIOSchedulerPref.setSummary(String.format(mIOSchedulerFormat, currentIOScheduler));
                 mIOSchedulerPref.setOnPreferenceChangeListener(this);
             }
+
+            String useDithering = SystemProperties.get(USE_DITHERING_PERSIST_PROP, USE_DITHERING_DEFAULT);
+            mUseDitheringPref = (ListPreference) prefSet.findPreference(USE_DITHERING_PREF);
+            mUseDitheringPref.setOnPreferenceChangeListener(this);
+            mUseDitheringPref.setValue(useDithering);
+            mUseDitheringPref.setSummary(mUseDitheringPref.getEntry());
+
+            mUse16bppAlphaPref = (CheckBoxPreference) prefSet
+                    .findPreference(USE_16BPP_ALPHA_PREF);
+            String use16bppAlpha = SystemProperties.get(USE_16BPP_ALPHA_PROP, "0");
+            mUse16bppAlphaPref.setChecked("1".equals(use16bppAlpha));
+
+            mDisableBootanimPref = (CheckBoxPreference) prefSet
+                    .findPreference(DISABLE_BOOTANIMATION_PREF);
+            String disableBootanimation = SystemProperties.get
+                    (DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
+            mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
         }
 
         boolean fast = false;
@@ -144,6 +182,12 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
         if (preference == mKSMPref) {
             Utils.fileWriteOneLine(KSM_RUN_FILE, mKSMPref.isChecked() ? "1" : "0");
             return true;
+        } else if (preference == mUse16bppAlphaPref) {
+            SystemProperties.set(USE_16BPP_ALPHA_PROP,
+                    mUse16bppAlphaPref.isChecked() ? "1" : "0");
+        } else if (preference == mDisableBootanimPref) {
+            SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
+                                 mDisableBootanimPref.isChecked() ? "1" : "0");
         } else if (preference == mUSBFastCharge) {
             boolean checked = mUSBFastCharge.isChecked();
             String formatter = "echo %d > /sys/kernel/fast_charge/force_fast_charge";
@@ -164,6 +208,12 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
                 SystemProperties.set(ZRAM_PERSIST_PROP, (String) newValue);
                 return true;
             }
+        } else if (preference == mUseDitheringPref) {
+            String newVal = (String) newValue;
+            int index = mUseDitheringPref.findIndexOfValue(newVal);
+            SystemProperties.set(USE_DITHERING_PERSIST_PROP, newVal);
+            mUseDitheringPref.setSummary(mUseDitheringPref.getEntries()[index]);
+            return true;
         }
         return false;
     }

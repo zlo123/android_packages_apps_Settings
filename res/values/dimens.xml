@@ -60,6 +60,7 @@
 	<!-- Light settings dialog -->
     <dimen name="dialog_light_settings_width">400dip</dimen>
 
+    <!-- Navbar Heights -->
     <dimen name="navigation_bar_48">48.0dip</dimen>
     <dimen name="navigation_bar_44">44.0dip</dimen>
     <dimen name="navigation_bar_42">42.0dip</dimen>

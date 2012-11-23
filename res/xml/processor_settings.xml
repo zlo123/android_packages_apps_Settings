@@ -19,6 +19,13 @@
     android:title="@string/processor_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Voltage Control -->
+    <PreferenceScreen
+        android:key="voltage_settings"
+        android:title="@string/cpu_voltage"
+        android:summary="@string/cpu_voltage_summary"
+        android:fragment="com.android.settings.performance.VoltageSettings" />
+
     <PreferenceCategory
         android:key="overclocking_category"
         android:title="@string/overclocking_title" >
@@ -50,12 +57,5 @@
             android:summary="@string/cpu_set_on_boot_summary"/>
 
     </PreferenceCategory>
-
-    <!-- Voltage Control -->
-    <PreferenceScreen
-        android:key="voltage_settings"
-        android:title="@string/cpu_voltage"
-        android:summary="@string/cpu_voltage_summary"
-        android:fragment="com.android.settings.performance.VoltageSettings" />
 
 </PreferenceScreen>

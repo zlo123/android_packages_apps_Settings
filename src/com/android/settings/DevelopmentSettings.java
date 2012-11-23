@@ -77,7 +77,6 @@ import com.android.settings.util.Helpers;
 public class DevelopmentSettings extends PreferenceFragment
         implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener,
                 OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
-
     private static final String TAG = "DevelopmentSettings";
 
     private static final String ENABLE_ADB = "enable_adb";
@@ -241,7 +240,7 @@ public class DevelopmentSettings extends PreferenceFragment
                 ServiceManager.getService(Context.BACKUP_SERVICE));
         mDpm = (DevicePolicyManager)getActivity().getSystemService(Context.DEVICE_POLICY_SERVICE);
 
-        addPreferencesFromResource(R.xml.development_settings);
+        addPreferencesFromResource(R.xml.development_prefs);
 
         mEnableAdb = findAndInitCheckboxPref(ENABLE_ADB);
         mAdbOverNetwork = findAndInitCheckboxPref(ADB_TCPIP);
@@ -309,8 +308,7 @@ public class DevelopmentSettings extends PreferenceFragment
         mAllPrefs.add(mAppProcessLimit);
         mAppProcessLimit.setOnPreferenceChangeListener(this);
 
-        mShowAllANRs = (CheckBoxPreference) findPreference(
-                SHOW_ALL_ANRS_KEY);
+        mShowAllANRs = (CheckBoxPreference) findPreference(SHOW_ALL_ANRS_KEY);
         mAllPrefs.add(mShowAllANRs);
         mResetCbPrefs.add(mShowAllANRs);
 
@@ -513,6 +511,7 @@ public class DevelopmentSettings extends PreferenceFragment
             }
         }
         resetDebuggerOptions();
+        resetRootAccessOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -710,6 +709,7 @@ public class DevelopmentSettings extends PreferenceFragment
                 data.writeInt(showUpdates);
                 flinger.transact(1002, data, null, 0);
                 data.recycle();
+
                 updateFlingerOptions();
             }
         } catch (RemoteException ex) {
@@ -726,6 +726,7 @@ public class DevelopmentSettings extends PreferenceFragment
                 data.writeInt(disableOverlays);
                 flinger.transact(1008, data, null, 0);
                 data.recycle();
+
                 updateFlingerOptions();
             }
         } catch (RemoteException ex) {
@@ -930,7 +931,9 @@ public class DevelopmentSettings extends PreferenceFragment
             if (isChecked != mLastEnabledState) {
                 if (isChecked) {
                     mDialogClicked = false;
-                    if (mEnableDialog != null) dismissDialogs();
+                    if (mEnableDialog != null) {
+                        dismissDialogs();
+                    }
                     mEnableDialog = new AlertDialog.Builder(getActivity()).setMessage(
                             getActivity().getResources().getString(
                                     R.string.dev_settings_warning_message))
@@ -1007,6 +1010,7 @@ public class DevelopmentSettings extends PreferenceFragment
                         Settings.Secure.ADB_PORT, -1);
                 updateAdbOverNetwork();
             }
+
         } else if (preference == mAdbNotify) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ADB_NOTIFY,
@@ -1264,6 +1268,7 @@ public class DevelopmentSettings extends PreferenceFragment
                     ((DevelopmentSettings) getTargetFragment()).updateAllOptions();
                 }
             });
+
             return builder.create();
         }
     }

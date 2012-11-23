@@ -54,10 +54,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.internal.widget.multiwaveview.GlowPadView;
-import com.android.internal.widget.multiwaveview.TargetDrawable;
 import com.android.settings.R;
 import com.android.settings.Utils;
+import com.android.internal.widget.multiwaveview.GlowPadView;
+import com.android.internal.widget.multiwaveview.TargetDrawable;
 import com.android.settings.liquid.IconPicker.OnIconPickListener;
 
 public class LockscreenTargets extends Fragment implements ShortcutPickHelper.OnPickListener,

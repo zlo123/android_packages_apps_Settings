@@ -560,7 +560,7 @@
     <string name="wifi_disabled_generic" msgid="4259794910584943386">"Inaktiverad"</string>
     <string name="wifi_disabled_network_failure" msgid="3111321240793227690">"Undvek dålig Internetanslutning"</string>
     <string name="wifi_disabled_password_failure" msgid="8659805351763133575">"Autentiseringsproblem"</string>
-    <string name="wifi_not_in_range" msgid="1136191511238508967">"Inte i intervall"</string>
+    <string name="wifi_not_in_range" msgid="1136191511238508967">"Inte inom räckhåll"</string>
     <string name="wifi_wps_available_first_item" msgid="4422547079984583502">"WPS tillgängligt"</string>
     <string name="wifi_wps_available_second_item" msgid="8427520131718215301">" (WPS tillgängligt)"</string>
     <string name="wifi_secured_first_item" msgid="4072076186051083451">"Skyddad med <xliff:g id="WIFI_SECURITY_SHORT">%1$s</xliff:g>"</string>
@@ -714,7 +714,6 @@
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
     <string name="firmware_version" msgid="4801135784886859972">"Android-version"</string>
     <string name="model_number" msgid="3765737700545384794">"Modellnummer"</string>
-    <string name="fcc_equipment_id" msgid="149114368246356737">"Utrustnings-ID"</string>
     <string name="baseband_version" msgid="1848990160763524801">"Basbandsversion"</string>
     <string name="kernel_version" msgid="9192574954196167602">"Kernel-version"</string>
     <string name="build_number" msgid="3075795840572241758">"Version"</string>
@@ -1204,7 +1203,6 @@
     <string name="keep_screen_on" msgid="1146389631208760344">"Håll aktiverad"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"Skärmen vilar aldrig när laddning pågår"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"Tillåt skenplatser"</string>
-    <string name="allow_mock_location_summary" msgid="317615105156345626">"Tillåt skenplatser"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"Ska USB-felsökning tillåtas?"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"USB-felsökning ska endast användas i utvecklingssyfte. Använd den för att kopiera data mellan datorn och enheten, installera appar på enheten utan meddelanden och läsa loggdata."</string>
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"Tillåt utvecklarinställningar?"</string>
@@ -1302,7 +1300,7 @@
     <string name="usage_type_data_recv" msgid="7251090882025234185">"Mottagna data"</string>
     <string name="usage_type_audio" msgid="6957269406840886290">"Ljud"</string>
     <string name="usage_type_video" msgid="4295357792078579944">"Video"</string>
-    <string name="usage_type_on_time" msgid="3351200096173733159">"Tid som funktionen varit på"</string>
+    <string name="usage_type_on_time" msgid="3351200096173733159">"Tid aktiverad"</string>
     <string name="usage_type_no_coverage" msgid="3797004252954385053">"Tid utan täckning"</string>
     <string name="battery_action_stop" msgid="649958863744041872">"Tvingad avslutning"</string>
     <string name="battery_action_app_details" msgid="7861051816778419018">"Info om appen"</string>
@@ -1418,9 +1416,6 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"Säkerhetskopierade data lagras för tillfället inte på något konto"</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"Automatisk återställning"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"När du installerar om en app återställs säkerhetskopierade inställningar och data"</string>
-    <string name="bugreport_title" msgid="1009498799922543551">"Skapa felrapport"</string>
-    <string name="bugreport_message" msgid="1182209569732110590">"Nu hämtas information om aktuell status för enheten, som sedan skickas i ett e-postmeddelade. Det tar en liten stund innan felrapporten är färdig och kan skickas, så vi ber dig ha tålamod."</string>
-    <string name="report" msgid="302437572240018342">"Rapportera"</string>
     <string name="local_backup_password_title" msgid="3860471654439418822">"Lösenord för säkerhetskopia av datorn"</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"De fullständiga säkerhetskopiorna av datorn är för närvarande inte skyddade"</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"Tryck om du vill ändra eller ta bort lösenordet för fullständig säkerhetskopiering av datorn"</string>

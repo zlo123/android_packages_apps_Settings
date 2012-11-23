@@ -716,7 +716,6 @@
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
     <string name="firmware_version" msgid="4801135784886859972">"Androidバージョン"</string>
     <string name="model_number" msgid="3765737700545384794">"モデル番号"</string>
-    <string name="fcc_equipment_id" msgid="149114368246356737">"装置ID"</string>
     <string name="baseband_version" msgid="1848990160763524801">"ベースバンドバージョン"</string>
     <string name="kernel_version" msgid="9192574954196167602">"カーネルバージョン"</string>
     <string name="build_number" msgid="3075795840572241758">"ビルド番号"</string>
@@ -1206,7 +1205,6 @@
     <string name="keep_screen_on" msgid="1146389631208760344">"スリープモードにしない"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"充電中に画面をスリープにしない"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"擬似ロケーションを許可"</string>
-    <string name="allow_mock_location_summary" msgid="317615105156345626">"擬似ロケーションを許可する"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"USBデバッグを許可しますか？"</string>
     <string name="adb_warning_message" msgid="7316799925425402244">"USBデバッグは開発専用に設計されています。パソコンと端末の間でデータをコピーする場合や、アプリを通知なしで端末にインストールする場合、ログデータを読み取る場合に使用できます。"</string>
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"開発用の設定を許可しますか？"</string>
@@ -1420,9 +1418,6 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"バックアップデータを保存しているアカウントはありません"</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"自動復元"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"アプリを再インストールする際に、バックアップした設定とデータを復元する"</string>
-    <string name="bugreport_title" msgid="1009498799922543551">"バグレポートを取得"</string>
-    <string name="bugreport_message" msgid="1182209569732110590">"現在の端末の状態に関する情報が収集され、その内容がメールで送信されます。バグレポートが開始してから送信可能な状態となるまでには多少の時間がかかりますのでご了承ください。"</string>
-    <string name="report" msgid="302437572240018342">"レポート"</string>
     <string name="local_backup_password_title" msgid="3860471654439418822">"PCバックアップパスワード"</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"デスクトップのフルバックアップは現在保護されていません"</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"デスクトップのフルバックアップ用のパスワードを変更または削除する場合にタップします"</string>
@@ -1718,6 +1713,19 @@
     <string name="wifi_idle_30mn">30分</string>
     <string name="wifi_idle_1h">1時間</string>
     <string name="wifi_idle_3h">3時間</string>
+    <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's MAC address. -->
+    <string name="wifi_setting_countrycode_title">Wi-Fi地域コード</string>
+    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
+    <string name="wifi_setting_countrycode_summary">Wi-Fiの地域コードを指定する</string>
+    <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
+    <string name="wifi_setting_countrycode_error">地域コードの設定に問題がありました</string>
+
+    <string name="lockpattern_settings_enable_error_path_title">パターンエラーを表示</string>
+    <string name="lockpattern_settings_enable_dots_title">パターンドットを表示</string>
+
+    <string name="accessibility_home_button_answers_call_title">ホームボタンで着信に応答</string>
+    <string name="tts_play_example_not_found_title">警告</string>
+    <string name="tts_play_example_not_found_msg">要求された言語ではサンプルのテキストは見つかりませんでした。</string>
 
     <string name="battery_info_status_full">フル</string>
 
@@ -1897,6 +1905,8 @@
     <string name="navigation_bar_reset_message">現在の設定を破棄し、デフォルトに戻しますか?</string>
     <string name="navigation_bar_save_message">ナビゲーションバーの設定を保存しました</string>
     <string name="navigation_bar_reset_toast">ナビゲーションバーをデフォルトに戻しました</string>
+    <string name="navigation_bar_menu_editable">編集可能</string>
+    <string name="navigation_bar_menu_locked">ロック中</string>
 
     <!-- Hardware keys #CM -->
     <string name="hardware_keys_title">ハードウェアキー</string>
@@ -1979,9 +1989,10 @@
     <string name="status_bar_toggle_brightness_summary">ステータスバーをスライディングすることで明るさの調整ができるようにする</string>
     <string name="status_bar_toggle_info">自動明るさ調整は有効</string>
     <string name="status_bar_signal_text_title">代替の電波強度表示</string>
-    <string name="status_bar_signal_text_show_bars">シグナルバー</string>
+    <string name="status_bar_style_icon">アイコン</string>
+    <string name="status_bar_style_hidden">非表示</string>
     <string name="status_bar_signal_text_show_text">シグナルテキスト</string>
-    <string name="status_bar_signal_text_hidden">非表示</string>
+    <string name="status_bar_battery_status_percentage">パーセンテージ</string>
 
     <!-- Lock screen #CM -->
     <string name="lock_screen_title">ロック画面</string>
@@ -2071,6 +2082,11 @@
     <string name="lockscreen_battery_status_title">バッテリーステータス</string>
     <string name="lockscreen_battery_status_charging">充電中のみ</string>
     <string name="lockscreen_battery_status_alwayson">常に表示</string>
+
+    <string name="lockscreen_clock_align_title">時計の位置</string>
+    <string name="lockscreen_clock_align_left">左</string>
+    <string name="lockscreen_clock_align_center">中央</string>
+    <string name="lockscreen_clock_align_right">右</string>
 
     <!-- Profiles settings #CM -->
     <string name="profiles_settings_title">プロファイル</string>
@@ -2241,6 +2257,17 @@
     <string name="cpu_max_freq_title">最大CPUクロック</string>
     <string name="cpu_set_on_boot">起動時に適用</string>
     <string name="cpu_set_on_boot_summary">起動時にCPU設定を適用する</string>
+
+    <!-- Performance Settings : I/O scheduler settings title -->
+    <string name="io_scheds_title">I/O スケジューラ</string>
+    <!-- Performance Settings : I/O scheduler settings summary. -->
+    <string name="io_scheds_summary">I/O スケジューラを変更する</string>
+
+    <!-- Performance Settings : I/O scheduler settings sub items -->
+    <string name="io_sched_title">I/O スケジューラ</string>
+    <string name="io_sched_summary">%S</string>
+    <string name="io_sched_set_on_boot">起動時に設定</string>
+    <string name="io_sched_set_on_boot_summary">I/O スケジューラの変更を起動時に適用する</string>
 
     <!-- Memory Management -->
     <string name="memory_management_title">メモリマネジメント</string>
@@ -2447,5 +2474,19 @@
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">開発ツールの起動</string>
+    <string name="allow_mock_sms">擬似SMSを許可</string>
 
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">マスストレージ</string>
+    <string name="usb_mass_storage_summary">USBマスストレージを有効にする</string>
+
+    <!--- Volume key cursor control -->
+    <string name="volume_key_cursor_control_title">音量キーカーソル制御</string>
+    <string name="volume_key_cursor_control_off">無効</string>
+    <string name="volume_key_cursor_control_on">音量アップ/ダウンでカーソルを左/右に移動する</string>
+    <string name="volume_key_cursor_control_on_reverse">音量アップ/ダウンでカーソルを右/左に移動する</string>
+
+    <!-- CM Updater -->
+    <string name="cmupdate_settings_title">CyanogenModアップデート</string>
+    <string name="cmupdate_settings_summary">利用できるアップデートのチェック、表示及びインストール</string>
 </resources>

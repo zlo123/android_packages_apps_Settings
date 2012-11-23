@@ -38,17 +38,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.android.settings.util.CMDProcessor;
-import com.android.settings.util.CMDProcessor.CommandResult;
 import com.android.settings.util.Helpers;
+import com.android.settings.util.CMDProcessor;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.util.CMDProcessor.CommandResult;
 
-public class DensityChanger extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+public class DensityChanger extends SettingsPreferenceFragment
+                implements OnPreferenceChangeListener {
 
     private static final String TAG = "DensityChanger";
-
     ListPreference mStockDensity;
     Preference mReboot;
     Preference mClearMarketData;
@@ -56,7 +55,6 @@ public class DensityChanger extends SettingsPreferenceFragment implements
     ListPreference mCustomDensity;
 
     private static final int MSG_DATA_CLEARED = 500;
-
     private static final int DIALOG_DENSITY = 101;
     private static final int DIALOG_WARN_DENSITY = 102;
 
@@ -111,17 +109,14 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                     .getSystemService(Context.POWER_SERVICE);
             pm.reboot("Resetting density");
             return true;
-
         } else if (preference == mClearMarketData) {
-
             new ClearMarketDataTask().execute("");
             return true;
-
         } else if (preference == mOpenMarket) {
             Intent openMarket = new Intent(Intent.ACTION_MAIN)
                     .addCategory(Intent.CATEGORY_APP_MARKET)
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            ComponentName activityName = openMarket.resolveActivity(getActivity()
+                ComponentName activityName = openMarket.resolveActivity(getActivity()
                     .getPackageManager());
             if (activityName != null) {
                 mContext.startActivity(openMarket);
@@ -130,9 +125,7 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                         .setSummary(getResources().getString(R.string.open_market_summary_could_not_open));
             }
             return true;
-
         }
-
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -152,19 +145,16 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                                 EditText dpi = (EditText) textEntryView.findViewById(R.id.dpi_edit);
                                 Editable text = dpi.getText();
                                 Log.i(TAG, text.toString());
-
                                 try {
                                     newDensityValue = Integer.parseInt(text.toString());
                                     showDialog(DIALOG_WARN_DENSITY);
                                 } catch (Exception e) {
                                     mCustomDensity.setSummary(getResources().getString(R.string.custom_density_summary_invalid));
                                 }
-
                             }
                         })
                         .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-
                                 dialog.dismiss();
                             }
                         }).create();
@@ -175,7 +165,6 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                                 getResources().getString(R.string.custom_density_dialog_summary))
                         .setCancelable(false)
                         .setNeutralButton(getResources().getString(R.string.custom_density_dialog_button_got), new DialogInterface.OnClickListener() {
-
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 setLcdDensity(newDensityValue);
@@ -185,7 +174,6 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                             }
                         })
                         .setPositiveButton(getResources().getString(R.string.custom_density_dialog_button_reboot), new DialogInterface.OnClickListener() {
-
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 setLcdDensity(newDensityValue);
@@ -224,7 +212,6 @@ public class DensityChanger extends SettingsPreferenceFragment implements
             mStockDensity.setSummary(getResources().getString(R.string.stock_density_changed_summary) + newDensityValue);
             return true;
         }
-
         return false;
     }
 
@@ -252,7 +239,6 @@ public class DensityChanger extends SettingsPreferenceFragment implements
             for (String dir : cr.stdout.split("\n")) {
                 if (!dir.equals("lib")) {
                     String c = "rm -r " + vending + dir;
-                    // Log.i(TAG, c);
                     if (!new CMDProcessor().su.runWaitFor(c).success())
                         return false;
                 }

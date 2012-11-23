@@ -92,6 +92,12 @@
             liquid:donateLink="@string/dev_DAGr8_donate"
             liquid:avatar="@drawable/avatar_dagr8" />
 
+	 <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_winner00_title"
+            liquid:twitterHandle="@string/dev_winner00_twitter"
+            liquid:donateLink="@string/dev_winner00_donate"
+            liquid:avatar="@drawable/avatar_winner00" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
