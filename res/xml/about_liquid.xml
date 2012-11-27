@@ -104,6 +104,12 @@
             liquid:donateLink="@string/dev_dg4prez_donate"
             liquid:avatar="@drawable/avatar_dg4prez" />
 
+      <com.android.settings.widgets.DeveloperPreference
+           android:title="@string/dev_patrickc_title"
+           liquid:twitterHandle="@string/dev_patrickc_twitter"
+           liquid:donateLink="@string/dev_patrickc_donate"
+           liquid:avatar="@drawable/avatar_patrickc" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
