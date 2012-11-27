@@ -4613,6 +4613,10 @@
     <string name="dev_winner00_title">winner00</string>
     <string name="dev_winner00_twitter">expertontech</string>
     <string name="dev_winner00_donate">http://bit.ly/UHzZzN</string>
+    <string name="dev_dg4prez_title">dg4prez</string>
+    <string name="dev_dg4prez_twitter">LiquidROMs</string>
+    <string name="dev_dg4prez_donate">http://bit.ly/LiquidMaintainers</string>
+    
 
     <!-- Settings | Headers -->
     <string name="liquidsmooth_category_title">LIQUIDSMOOTH</string>
