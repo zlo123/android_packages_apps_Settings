@@ -57,40 +57,10 @@
             liquid:avatar="@drawable/avatar_liquidzgrl" />
 
         <com.android.settings.widgets.DeveloperPreference
-            android:title="@string/dev_hiemanshu_title"
-            liquid:twitterHandle="@string/dev_hiemanshu_twitter"
-            liquid:donateLink="@string/dev_hiemanshu_donate"
-            liquid:avatar="@drawable/avatar_hiemanshu" />
-
-        <com.android.settings.widgets.DeveloperPreference
-            android:title="@string/dev_jdkoreclipse_title"
-            liquid:twitterHandle="@string/dev_jdkoreclipse_twitter"
-            liquid:donateLink="@string/dev_jdkoreclipse_donate"
-            liquid:avatar="@drawable/avatar_jdkoreclipse" />
-
-        <com.android.settings.widgets.DeveloperPreference
             android:title="@string/dev_n0coast_title"
             liquid:twitterHandle="@string/dev_n0coast_twitter"
             liquid:donateLink="@string/dev_n0coast_donate"
             liquid:avatar="@drawable/avatar_n0coast" />
-
-	 <com.android.settings.widgets.DeveloperPreference
-            android:title="@string/dev_raymanfx_title"
-            liquid:twitterHandle="@string/dev_raymanfx_twitter"
-            liquid:donateLink="@string/dev_raymanfx_donate"
-            liquid:avatar="@drawable/avatar_raymanfx" />
-			
-	 <com.android.settings.widgets.DeveloperPreference
-            android:title="@string/dev_toxicthunder_title"
-            liquid:twitterHandle="@string/dev_toxicthunder_twitter"
-            liquid:donateLink="@string/dev_toxicthunder_donate"
-            liquid:avatar="@drawable/avatar_toxicthunder" />
-
-	 <com.android.settings.widgets.DeveloperPreference
-            android:title="@string/dev_DAGr8_title"
-            liquid:twitterHandle="@string/dev_DAGr8_twitter"
-            liquid:donateLink="@string/dev_DAGr8_donate"
-            liquid:avatar="@drawable/avatar_dagr8" />
 
 	 <com.android.settings.widgets.DeveloperPreference
             android:title="@string/dev_winner00_title"
@@ -99,16 +69,46 @@
             liquid:avatar="@drawable/avatar_winner00" />
 
 	 <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_toxicthunder_title"
+            liquid:twitterHandle="@string/dev_toxicthunder_twitter"
+            liquid:donateLink="@string/dev_toxicthunder_donate"
+            liquid:avatar="@drawable/avatar_toxicthunder" />
+
+	 <com.android.settings.widgets.DeveloperPreference
             android:title="@string/dev_dg4prez_title"
             liquid:twitterHandle="@string/dev_dg4prez_twitter"
             liquid:donateLink="@string/dev_dg4prez_donate"
             liquid:avatar="@drawable/avatar_dg4prez" />
+
+        <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_jdkoreclipse_title"
+            liquid:twitterHandle="@string/dev_jdkoreclipse_twitter"
+            liquid:donateLink="@string/dev_jdkoreclipse_donate"
+            liquid:avatar="@drawable/avatar_jdkoreclipse" />
+
+	 <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_raymanfx_title"
+            liquid:twitterHandle="@string/dev_raymanfx_twitter"
+            liquid:donateLink="@string/dev_raymanfx_donate"
+            liquid:avatar="@drawable/avatar_raymanfx" />
+			
+	 <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_DAGr8_title"
+            liquid:twitterHandle="@string/dev_DAGr8_twitter"
+            liquid:donateLink="@string/dev_DAGr8_donate"
+            liquid:avatar="@drawable/avatar_dagr8" />
 
       <com.android.settings.widgets.DeveloperPreference
            android:title="@string/dev_patrickc_title"
            liquid:twitterHandle="@string/dev_patrickc_twitter"
            liquid:donateLink="@string/dev_patrickc_donate"
            liquid:avatar="@drawable/avatar_patrickc" />
+           
+        <com.android.settings.widgets.DeveloperPreference
+            android:title="@string/dev_hiemanshu_title"
+            liquid:twitterHandle="@string/dev_hiemanshu_twitter"
+            liquid:donateLink="@string/dev_hiemanshu_donate"
+            liquid:avatar="@drawable/avatar_hiemanshu" />
 
     </PreferenceCategory>
 
