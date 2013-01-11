@@ -66,13 +66,14 @@ public class QuickSettingsUtil {
 
     static {
         TILES_DEFAULT.add(TILE_USER);
-        TILES_DEFAULT.add(TILE_BRIGHTNESS);
-        TILES_DEFAULT.add(TILE_SETTINGS);
         TILES_DEFAULT.add(TILE_WIFI);
         TILES_DEFAULT.add(TILE_MOBILEDATA);
+        TILES_DEFAULT.add(TILE_BRIGHTNESS);
         TILES_DEFAULT.add(TILE_BATTERY);
         TILES_DEFAULT.add(TILE_AIRPLANE);
-        TILES_DEFAULT.add(TILE_BLUETOOTH);
+        TILES_DEFAULT.add(TILE_TORCH;
+        TILES_DEFAULT.add(TILE_SYNC);
+        TILES_DEFAULT.add(TILE_SETTINGS);
     }
 
     /**
